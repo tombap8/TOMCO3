@@ -13,7 +13,7 @@ https://www.w3schools.com/
 4. 소스 빌드용 폴더 생성하기!
 
 5. 강의 동영상 백업 유튜브: 탐쌤코딩 시즌2
-https://www.youtube.com/channel/UCUlIM-C-ElFSe3z_K42FQVA
+https://www.youtube.com/channel/UCch9c_rrZUImFys0hVe7gYA
 
 6. 소스 깃허브 : 탐쌤코딩 시즌3
 https://github.com/tombap8/TOMCO3
