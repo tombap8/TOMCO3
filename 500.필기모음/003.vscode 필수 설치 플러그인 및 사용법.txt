@@ -15,6 +15,8 @@
    : 브라우저 실시간 미리보기
  4) Beautify : 자동줄맞춤
   -> 단축키 지정하기
+  -> 자동줄맞춤 추가 플러그인 : prettier
+    (단축키설정: ctrl+alt+p)
  5) CSS PEEK : CSS 미리보기/연결하기
  6) HTML to CSS autocompletion
  : html의 아이디, 클래스명을 읽어서 제시해줌
