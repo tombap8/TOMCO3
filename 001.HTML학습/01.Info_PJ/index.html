@@ -42,13 +42,16 @@
         요소에 같은 이름을 준다! */
 
         /* 중앙배치 클래스 */
-        .ct{
+        .ct {
             /* 가로크기 - width */
-            width: 760px;/* w760 */
+            width: 760px;
+            /* w760 */
             /* 테두리 - border */
-            border: 1px solid silver;/* bd */
+            border: 1px solid silver;
+            /* bd */
             /* 안쪽여백(패딩) - padding */
-            padding: 10px;/* p10 */
+            padding: 10px;
+            /* p10 */
             /* 바깥여백(마진) - margin */
             margin: 0 auto;
             /* 블록박스 중앙정렬 -> 마영오! 
@@ -71,25 +74,63 @@
                 ->>> padding도 위와 같음!!!
             */
             /* 블록요소 내부의 텍스트/인라인요소 중앙정렬 */
-            text-align: center;/* tac */
+            text-align: center;
+            /* tac */
         }
 
 
 
         /* 1. 상단영역 */
-        header#top{
+        header#top {
             /* 배경색 : background-color */
             background-color: #bfdcff;
 
             /* 하단마진 : margin-bottom */
-            margin-bottom: 20px;/* mb20 */
+            margin-bottom: 20px;
+            /* mb20 */
             /* 기존 .ct에 설정된 마진값 보다
             우선적용위해 아이디로 설정함! */
         }
-        /* 2. 메인영역 */
-        main#cont{
+
+        /* 1-1. 제목 */
+        #top h1 {
+            /* 글자색 : color */
+            color: hotpink;/* c */
+            /* 글자그림자 : text-shadow */
+            text-shadow: 2px 2px 2px #555;/* ts */
+            /* text-shadow: x축 y축 블러 색; */
 
         }
+        /* 1-2. 메뉴 */
+        .gnb a{
+            /* 글자색:기본값 파란색 */
+            color: green;
+            /* 밑줄변경: text-decoration
+            (기본값 underline) */
+            text-decoration: none;/* tdn */
+            /* 
+                text-decoration 속성
+                - underline 밑줄
+                - overline 윗줄
+                - linethrough 중간줄
+                - none 없음
+            */
+            /* 글자두께: font-weight  */
+            font-weight: bold;/* fwb */
+            /* 
+                font-weight 속성
+                - bold 두껍게
+                - bolder 더두껍게
+                - lighter 얇게
+                - 100~900
+                (기본적으로 글자체가 지원해야됨!)
+                - normal 두께 없앰
+            */
+        }
+
+
+        /* 2. 메인영역 */
+        main#cont {}
     </style>
 </head>
 
@@ -99,15 +140,15 @@
         <!-- 1-1.제목 -->
         <h1>네이버 요약뉴스</h1>
         <!-- 1-2.메뉴 -->
-        <nav>
+        <nav class="gnb">
             <a href="index.html">
                 <img src="images/logo.png" alt="네이버로고" style="width: 20px">
-            </a>
+            </a> | 
 
-            <a href="sub1.html">정치</a>
-            <a href="sub2.html">경제</a>
-            <a href="sub3.html">사회</a>
-            <a href="sub4.html">IT/과학</a>
+            <a href="sub1.html">정치</a> | 
+            <a href="sub2.html">경제</a> | 
+            <a href="sub3.html">사회</a> | 
+            <a href="sub4.html">IT/과학</a> | 
             <a href="sub5.html">TV/연예</a>
         </nav>
     </header>
