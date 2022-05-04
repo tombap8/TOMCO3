@@ -156,6 +156,26 @@
             color: hotpink;
         }
 
+        /* 로고이미지 */
+        /* .gnb>a>img{ -> 직계자식으로는 a생략불가 */
+        /* .gnb a img{ -> 자손선택으로는 a생략가능 */
+        .gnb img{
+            vertical-align: -3px;/* va */
+            /* 
+                vertical-align 속성
+                -> 인라인요소간 진행방향 세로정렬
+                -> 값은 정해진값 또는 수치값을 준다!
+                정해진값:top/middle/bottom/baseline
+
+                참고) 이미지는 기본적으로 옆에 글자가
+                올때 vertical-align:baseline을
+                기본값을 가진다. baseline은 이미지 하단
+                선을 기준한다는 의미임!
+            */
+        }
+
+
+
 
         /* 2. 메인영역 */
         main#cont {}
