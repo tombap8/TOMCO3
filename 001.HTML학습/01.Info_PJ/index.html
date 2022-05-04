@@ -113,19 +113,23 @@
         /* 1-1. 제목 */
         #top h1 {
             /* 글자색 : color */
-            color: hotpink;/* c */
+            color: hotpink;
+            /* c */
             /* 글자그림자 : text-shadow */
-            text-shadow: 2px 2px 2px #555;/* ts */
+            text-shadow: 2px 2px 2px #555;
+            /* ts */
             /* text-shadow: x축 y축 블러 색; */
 
         }
+
         /* 1-2. 메뉴 */
-        .gnb a{
+        .gnb a {
             /* 글자색:기본값 파란색 */
             color: green;
             /* 밑줄변경: text-decoration
             (기본값 underline) */
-            text-decoration: none;/* tdn */
+            text-decoration: none;
+            /* tdn */
             /* 
                 text-decoration 속성
                 - underline 밑줄
@@ -134,7 +138,8 @@
                 - none 없음
             */
             /* 글자두께: font-weight  */
-            font-weight: bold;/* fwb */
+            font-weight: bold;
+            /* fwb */
             /* 
                 font-weight 속성
                 - bold 두껍게
@@ -145,13 +150,15 @@
                 - normal 두께 없앰
             */
         }
+
         /* 메뉴a에 마우스 오버시 */
         /* 선택자:hover -> 마우스 오버시 가상클래스 */
         /* a+a 는 앞에 a요소가 있는 형제a요소를 선택
         ->  결과적으로 첫번째 a요소만 제외됨! */
-        .gnb a+a:hover{
+        .gnb a+a:hover {
             /* 텍스트 윗줄 */
-            text-decoration: overline;/* tdo */
+            text-decoration: overline;
+            /* tdo */
             /* 글자색 */
             color: hotpink;
         }
@@ -159,8 +166,9 @@
         /* 로고이미지 */
         /* .gnb>a>img{ -> 직계자식으로는 a생략불가 */
         /* .gnb a img{ -> 자손선택으로는 a생략가능 */
-        .gnb img{
-            vertical-align: -3px;/* va */
+        .gnb img {
+            vertical-align: -3px;
+            /* va */
             /* 
                 vertical-align 속성
                 -> 인라인요소간 진행방향 세로정렬
@@ -177,10 +185,12 @@
         /* 2. 메인영역 */
         main#cont {
             /* 하단마진 */
-            margin-bottom: 20px;/* mb20 */
+            margin-bottom: 20px;
+            /* mb20 */
         }
+
         /* 메인이미지 */
-        #cont img{
+        #cont img {
             width: 100% !important;
             /* 
                 [ CSS 적용 우선순위 ]
@@ -198,15 +208,17 @@
         }
 
         /* 하단주소 */
-        footer#info{
+        footer#info {
             /* 배경색 */
             background-color: #f0f0f0;
         }
-        footer#info address{
+
+        footer#info address {
             /* 안쪽여백 */
             padding: 20px;
             /* 글자 스타일: font-style */
-            font-style: normal;/* fsn */
+            font-style: normal;
+            /* fsn */
             /* 
                 font-style 속성
                 - italic 이탤릭체
@@ -218,13 +230,19 @@
             /* 글자색 */
             color: #222;
             /* 글자크기: font-size */
-            font-size: 14px;/* fz14 */
+            font-size: 14px;
+            /* fz14 */
             /* 
                 font-size 속성 : 글자크기
                 - 기본크기는 16px
                 12pt=16px (이육사)
             */
             line-height: 1.6;
+            /* 
+                line-height : 줄간격
+                - 단위없이 사용하면 글자크기기준 배수
+                - px, em 등 여러가지 단위 사용가능
+            */
         }
     </style>
 </head>
@@ -240,10 +258,10 @@
                 <img src="images/logo.png" alt="네이버로고" style="width: 20px">
             </a>
 
-            <a href="sub1.html">정치</a> | 
-            <a href="sub2.html">경제</a> | 
-            <a href="sub3.html">사회</a> | 
-            <a href="sub4.html">IT/과학</a> | 
+            <a href="sub1.html">정치</a> |
+            <a href="sub2.html">경제</a> |
+            <a href="sub3.html">사회</a> |
+            <a href="sub4.html">IT/과학</a> |
             <a href="sub5.html">TV/연예</a>
         </nav>
     </header>
