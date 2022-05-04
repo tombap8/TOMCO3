@@ -96,6 +96,21 @@
             /* tac */
         }
 
+        /* 다중클래스 적용연습 */
+
+        /* 글자색, 글자그림자 클래스 */
+        .fc{
+            color: skyblue;
+            text-shadow: 1px 1px 1px #000;
+        }
+        /* 글자밑줄 클래스 */
+        .fd{
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            /* 데코레이션 선 스타일 - 점선 */
+        }
+
+
 
 
         /* 1. 상단영역 */
@@ -244,6 +259,11 @@
                 - px, em 등 여러가지 단위 사용가능
             */
         }
+
+        /* 주소의 영문이름만 이탤릭체 */
+        #info span{
+            font-style: italic;
+        }
     </style>
 </head>
 
@@ -275,7 +295,7 @@
         <!-- 회사주소 및 정보 -->
         <address>
             서울시 강남구 역삼동 119 대호B 8F <br>
-            대표 : Tom Brace Parker <br>
+            대표 : <span>Tom Brace Parker</span> <br>
             Tel : 010-2222-3333
         </address>
     </footer>
@@ -310,6 +330,17 @@
             (웹접근성은 평등의 원칙으로 누구나 
             이미지의 설명을 들어볼 수 있게함 - 스크린 
             리더기에서 이것을 읽어준다!)
+
+            4. address 요소 : 주소나 대표자, 전화번호 등을
+                                담는 요소
+                -> 태그명이 "주소"라는 뜻이 있으므로
+                시멘틱!하다! (의미가 있다!)
+                Sementic Element
+
+            5. span 요소 : 인라인요소 범위지정
+                -> span은 '범위'라는 의미의 단어
+                -> 인라인요소로써 다른 아무런 셋팅이 없다!
+
 
             ____________________________________
 
