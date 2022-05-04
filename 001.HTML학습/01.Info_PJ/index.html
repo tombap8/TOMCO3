@@ -174,11 +174,58 @@
             */
         }
 
-
-
-
         /* 2. 메인영역 */
-        main#cont {}
+        main#cont {
+            /* 하단마진 */
+            margin-bottom: 20px;/* mb20 */
+        }
+        /* 메인이미지 */
+        #cont img{
+            width: 100% !important;
+            /* 
+                [ CSS 적용 우선순위 ]
+                inline > id > class > type
+
+                -> !important 를 설정값 뒤에쓰면 가장우선함
+                -> 주의사항: !important를 남발하면
+                JS구현시 인라인 css적용이 안되거나 다른
+                변경 덮어쓰기가 안될 수 있으므로 사용에 유의한다!
+
+                -> 일반적으로 우선순위가 밀리는 경우
+                상위부모요소를 선택하여 자손선택자 형식으로
+                선택하면 우선순위가 올라간다!!!
+            */
+        }
+
+        /* 하단주소 */
+        footer#info{
+            /* 배경색 */
+            background-color: #f0f0f0;
+        }
+        footer#info address{
+            /* 안쪽여백 */
+            padding: 20px;
+            /* 글자 스타일: font-style */
+            font-style: normal;/* fsn */
+            /* 
+                font-style 속성
+                - italic 이탤릭체
+                - normal 특징없음
+
+                참고) address 요소는 
+                이탤릭체가 기본셋팅되어 있다!
+            */
+            /* 글자색 */
+            color: #222;
+            /* 글자크기: font-size */
+            font-size: 14px;/* fz14 */
+            /* 
+                font-size 속성 : 글자크기
+                - 기본크기는 16px
+                12pt=16px (이육사)
+            */
+            line-height: 1.6;
+        }
     </style>
 </head>
 
