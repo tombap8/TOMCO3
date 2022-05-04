@@ -33,6 +33,24 @@
                 1)이름을 쓴 요소를 밝혀서 코딩함
                 2)같은이름의 클래스를 다양하게 쓸때
                 -> h1.ct / div.ct 서로 다르게 코딩함!
+            6. 직계자식선택자 : > (예: div>a)
+            7. 그룹선택자 : , (예: p,div)
+            8. 형제선택자 : + (예: a+a)
+            9. 다중형제선택자 : ~ (틸드) 형제요소 뒤쪽 모두
+                (예: li:nth-child(4)~li)
+            10. 속성선택자 : [] (예: a[href=#])
+            ___________________________________
+
+            [ 요소의 박스모델 ] - 네모난세상!
+            - 네모의 구성요소는?
+            1. 가로크기 : width
+            2. 세로크기 : height
+            3. 경계선 : border
+            4. 안쪽여백 : padding
+            5. 바깥여백 : margin
+
+            -> w3c 박스모델
+            https://www.w3schools.com/css/css_boxmodel.asp
 
 
         *******************************************/
@@ -129,7 +147,9 @@
         }
         /* 메뉴a에 마우스 오버시 */
         /* 선택자:hover -> 마우스 오버시 가상클래스 */
-        .gnb a:hover{
+        /* a+a 는 앞에 a요소가 있는 형제a요소를 선택
+        ->  결과적으로 첫번째 a요소만 제외됨! */
+        .gnb a+a:hover{
             /* 텍스트 윗줄 */
             text-decoration: overline;/* tdo */
             /* 글자색 */
@@ -151,7 +171,7 @@
         <nav class="gnb">
             <a href="index.html">
                 <img src="images/logo.png" alt="네이버로고" style="width: 20px">
-            </a> | 
+            </a>
 
             <a href="sub1.html">정치</a> | 
             <a href="sub2.html">경제</a> | 
