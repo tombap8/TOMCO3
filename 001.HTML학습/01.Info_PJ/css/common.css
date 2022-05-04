@@ -1,0 +1,270 @@
+@charset "utf-8";
+/* Info PJ 공통 클래스 - common.css */
+
+/* 외부 CSS파일은 반드시 상단에 맨위에
+문자셋 인코딩 셋팅을 해야함!
+@charset "utf-8" 은 2byte문자까지
+문제없이 인코딩해주는 형식이다!
+참고) w3c
+https://www.w3schools.com/charsets/ref_html_utf8.asp */
+
+
+/* 스타일 시트를 사용하는 영역 */
+/* CSS문법만 쓸 수 있음! */
+/******************************************* 
+            기본 사용법:
+            ________________
+
+            선택자 {
+                속성명: 값;
+            }
+            _________________
+
+            - 선택자 : 태그명, 아이디명, 클래스명 등
+            - 속성명 : 각 요소를 구성하는 상세속성들
+            - 값 : 각 속성에서 사용할 수 있는 값들
+            _____________________________________
+
+            [ CSS 선택자(Selector) ]
+            1. 타입선택자 : 요소명 (예:h1/a/p/div)
+            2. 자손선택자 : 띄어쓰기 (예: h1 a)
+            3. 아이디선택자 : # (예: #my)
+            4. 클래스선택자 : . (예: .you)
+            5. 종속선택자 : 태그명+아이디/클래스명
+                (예: header#top)
+                -> 종속선택자를 쓰는이유:
+                1)이름을 쓴 요소를 밝혀서 코딩함
+                2)같은이름의 클래스를 다양하게 쓸때
+                -> h1.ct / div.ct 서로 다르게 코딩함!
+            6. 직계자식선택자 : > (예: div>a)
+            7. 그룹선택자 : , (예: p,div)
+            8. 형제선택자 : + (예: a+a)
+            9. 다중형제선택자 : ~ (틸드) 형제요소 뒤쪽 모두
+                (예: li:nth-child(4)~li)
+            10. 속성선택자 : [] (예: a[href=#])
+            ___________________________________
+
+            [ 요소의 박스모델 ] - 네모난세상!
+            - 네모의 구성요소는?
+            1. 가로크기 : width
+            2. 세로크기 : height
+            3. 경계선 : border
+            4. 안쪽여백 : padding
+            5. 바깥여백 : margin
+
+            -> w3c 박스모델
+            https://www.w3schools.com/css/css_boxmodel.asp
+
+
+        *******************************************/
+
+/* 공통클래스 
+        - 같은 디자인을 가지는 
+        요소에 같은 이름을 준다! */
+
+/* 중앙배치 클래스 */
+.ct {
+    /* 가로크기 - width */
+    width: 760px;
+    /* w760 */
+    /* 테두리 - border */
+    border: 1px solid silver;
+    /* bd */
+    /* 안쪽여백(패딩) - padding */
+    padding: 10px;
+    /* p10 */
+    /* 바깥여백(마진) - margin */
+    margin: 0 auto;
+    /* 블록박스 중앙정렬 -> 마영오! 
+            양쪽바깥여백을 auto로 주면 양쪽여백을
+            등분할 하기 때문에 박스가 가운데 위치함*/
+    /* 
+                [ 마진값 설정하기 ]
+                margin: 값; (4방향)
+                margin: 값 값; (위아래 양쪽)
+                margin: 값 값 값; (위 양쪽 아래)
+                margin: 값 값 값 값; 
+                    (위 오른 아래 왼 -> 시계방향!)
+
+                ->>> padding도 위와 같음!!!
+
+                개별설정은
+                margin-top, margin-bottom,
+                margin-left, margin-right
+
+                ->>> padding도 위와 같음!!!
+            */
+    /* 블록요소 내부의 텍스트/인라인요소 중앙정렬 */
+    text-align: center;
+    /* tac */
+}
+
+/* 다중클래스 적용연습 */
+
+/* 글자색, 글자그림자 클래스 */
+.fc {
+    color: skyblue;
+    text-shadow: 1px 1px 1px #000;
+}
+
+/* 글자밑줄 클래스 */
+.fd {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    /* 데코레이션 선 스타일 - 점선 */
+}
+
+
+
+
+/* 1. 상단영역 */
+header#top {
+    /* 배경색 : background-color */
+    background-color: #bfdcff;
+
+    /* 하단마진 : margin-bottom */
+    margin-bottom: 20px;
+    /* mb20 */
+    /* 기존 .ct에 설정된 마진값 보다
+            우선적용위해 아이디로 설정함! */
+}
+
+/* 1-1. 제목 */
+#top h1 {
+    /* 글자색 : color */
+    color: hotpink;
+    /* c */
+    /* 글자그림자 : text-shadow */
+    text-shadow: 2px 2px 2px #555;
+    /* ts */
+    /* text-shadow: x축 y축 블러 색; */
+
+}
+
+/* 1-2. 메뉴 */
+.gnb a {
+    /* 글자색:기본값 파란색 */
+    color: green;
+    /* 밑줄변경: text-decoration
+            (기본값 underline) */
+    text-decoration: none;
+    /* tdn */
+    /* 
+                text-decoration 속성
+                - underline 밑줄
+                - overline 윗줄
+                - linethrough 중간줄
+                - none 없음
+            */
+    /* 글자두께: font-weight  */
+    font-weight: bold;
+    /* fwb */
+    /* 
+                font-weight 속성
+                - bold 두껍게
+                - bolder 더두껍게
+                - lighter 얇게
+                - 100~900
+                (기본적으로 글자체가 지원해야됨!)
+                - normal 두께 없앰
+            */
+}
+
+/* 메뉴a에 마우스 오버시 */
+/* 선택자:hover -> 마우스 오버시 가상클래스 */
+/* a+a 는 앞에 a요소가 있는 형제a요소를 선택
+        ->  결과적으로 첫번째 a요소만 제외됨! */
+.gnb a+a:hover {
+    /* 텍스트 윗줄 */
+    text-decoration: overline;
+    /* tdo */
+    /* 글자색 */
+    color: hotpink;
+}
+
+/* 로고이미지 */
+/* .gnb>a>img{ -> 직계자식으로는 a생략불가 */
+/* .gnb a img{ -> 자손선택으로는 a생략가능 */
+.gnb img {
+    vertical-align: -3px;
+    /* va */
+    /* 
+                vertical-align 속성
+                -> 인라인요소간 진행방향 세로정렬
+                -> 값은 정해진값 또는 수치값을 준다!
+                정해진값:top/middle/bottom/baseline
+
+                참고) 이미지는 기본적으로 옆에 글자가
+                올때 vertical-align:baseline을
+                기본값을 가진다. baseline은 이미지 하단
+                선을 기준한다는 의미임!
+            */
+}
+
+/* 2. 메인영역 */
+main#cont {
+    /* 하단마진 */
+    margin-bottom: 20px;
+    /* mb20 */
+}
+
+/* 메인이미지 */
+#cont img {
+    width: 100% !important;
+    /* 
+                [ CSS 적용 우선순위 ]
+                inline > id > class > type
+
+                -> !important 를 설정값 뒤에쓰면 가장우선함
+                -> 주의사항: !important를 남발하면
+                JS구현시 인라인 css적용이 안되거나 다른
+                변경 덮어쓰기가 안될 수 있으므로 사용에 유의한다!
+
+                -> 일반적으로 우선순위가 밀리는 경우
+                상위부모요소를 선택하여 자손선택자 형식으로
+                선택하면 우선순위가 올라간다!!!
+            */
+}
+
+/* 하단주소 */
+footer#info {
+    /* 배경색 */
+    background-color: #f0f0f0;
+}
+
+footer#info address {
+    /* 안쪽여백 */
+    padding: 20px;
+    /* 글자 스타일: font-style */
+    font-style: normal;
+    /* fsn */
+    /* 
+                font-style 속성
+                - italic 이탤릭체
+                - normal 특징없음
+
+                참고) address 요소는 
+                이탤릭체가 기본셋팅되어 있다!
+            */
+    /* 글자색 */
+    color: #222;
+    /* 글자크기: font-size */
+    font-size: 14px;
+    /* fz14 */
+    /* 
+                font-size 속성 : 글자크기
+                - 기본크기는 16px
+                12pt=16px (이육사)
+            */
+    line-height: 1.6;
+    /* 
+                line-height : 줄간격
+                - 단위없이 사용하면 글자크기기준 배수
+                - px, em 등 여러가지 단위 사용가능
+            */
+}
+
+/* 주소의 영문이름만 이탤릭체 */
+#info span {
+    font-style: italic;
+}
