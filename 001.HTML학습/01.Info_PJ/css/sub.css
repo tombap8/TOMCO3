@@ -84,5 +84,28 @@ main#cont {
   /* 줄간격: line-height */
   line-height: 1.6;
 }
+/* 인용구 박스 */
+.quote{
+    /* 배경색 */
+    background-color: #ececec;
+    /* 패딩 */
+    padding: 10px;
+}
+/* 인용구 제목 */
+.quote h3{
+    /* 글자중앙정렬 */
+    text-align: center;
+}
+/* 인용구 블록박스 */
+.quote blockquote{
+    /* 글자크기 */
+    font-size: 12px;
+    /* 글자들여쓰기: text-indent */
+    text-indent: 15px;/* ti15 */
+    /* 글자정렬: 양쪽정렬 */
+    text-align: justify;/* taj */
+    /* 줄간격 */
+    line-height: 1.7;
+}
 /************** 2-5. 기자소개 **************/
 /************** 2-6. 원본기사링크 **************/
