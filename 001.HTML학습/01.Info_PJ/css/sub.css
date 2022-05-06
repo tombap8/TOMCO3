@@ -16,70 +16,73 @@
 /* @import url(파일주소); */
 @import url(common.css);
 
+/* 서브페이지 메인 컨텐츠 박스 */
+main#cont {
+  /* 패딩변경 */
+  padding: 20px; /* p20 */
+}
+
 /************** 2-1. 언론사로고 **************/
-.prlogo img{
-    height: 32px;
-    /* 이미지는 가로, 세로중 하나만 주면 나머지는
+.prlogo img {
+  height: 32px;
+  /* 이미지는 가로, 세로중 하나만 주면 나머지는
     비율에 맞게 자동변경된다! */
 }
 /************** 2-2. 기사제목 **************/
-.atit{
-    /* 글자크기 : font-size */
-    font-size: 30px;/* fz308 */
-    /* 글자두께 : font-weight (normal보통)*/
-    font-weight: normal;/* fwn */
-    /* 글자체 : font-family (글자체 있는 순서대로 적용됨) */
-    font-family: "굴림","궁서","돋움","맑은고딕";/* ff */
-    /* 글자간격(자간) : letter-spacing */
-    letter-spacing: -2px;/* ls-2 */
-    /* 단어간격 : word-spacing */
-    word-spacing: 5px;/* ws5 */
-    /* 줄바꿈방지 - 필요에 따라 사용함! */
-    /* white-space: nowrap; */
-
+.atit {
+  /* 글자크기 : font-size */
+  font-size: 30px; /* fz308 */
+  /* 글자두께 : font-weight (normal보통)*/
+  font-weight: normal; /* fwn */
+  /* 글자체 : font-family (글자체 있는 순서대로 적용됨) */
+  font-family: "굴림", "궁서", "돋움", "맑은고딕"; /* ff */
+  /* 글자간격(자간) : letter-spacing */
+  letter-spacing: -2px; /* ls-2 */
+  /* 단어간격 : word-spacing */
+  word-spacing: 5px; /* ws5 */
+  /* 줄바꿈방지 - 필요에 따라 사용함! */
+  /* white-space: nowrap; */
 }
 /************** 2-3. 기사사진(+사진설명) **************/
-.afig{
-    /* 마진: 위아래 양쪽 */
-    margin: 15px 0;
-    /* figure의 기본마진 없앰! */
+.afig {
+  /* 마진: 위아래 양쪽 */
+  margin: 15px 0;
+  /* figure의 기본마진 없앰! */
 }
 /* 기사이미지 */
-.afig img{
-    width: 100%;/* w100p */
-    /* 부모박스를 기준으로 채움! */
-    /* 이미지는 가로,세로 중 하나만
+.afig img {
+  width: 100%; /* w100p */
+  /* 부모박스를 기준으로 채움! */
+  /* 이미지는 가로,세로 중 하나만
     크기를 주면 나머지는 자동으로 비율을
     유지한다! */
 }
 /* 이미지설명박스 */
-.afig figcaption{
-    text-align: center;/* tac */
-    /* 글자정렬 중앙
+.afig figcaption {
+  text-align: center; /* tac */
+  /* 글자정렬 중앙
     -> 주의사항: 글자정렬은 블록박스에서
     적용해야 내부의 인라인요소의 정렬이
     변경된다!(인라인에서하면 적용안됨!) */
-    
-    
-    /* 하단패딩 */
-    padding-bottom: 20px;/* pb20 */
+
+  /* 하단패딩 */
+  padding-bottom: 20px; /* pb20 */
 }
 /* 이미지 설명글 작은글자박스 */
-.afig small{
-    /* 글자체 */
-    font-family: "굴림";
-    /* 글자색 */
-    color: #777;
+.afig small {
+  /* 글자체 */
+  font-family: "굴림";
+  /* 글자색 */
+  color: #777;
 }
 /************** 2-4. 기사내용 **************/
-.atc{
-    /* 글자체: 원래 기본체는 "맑은 고딕" */
-    font-family: "맑은 고딕","궁서";
-    /* 글자크기 */
-    font-size: 17px;/* fz17 */
-    /* 줄간격: line-height */
-    line-height: 1.6;
-
+.atc {
+  /* 글자체: 원래 기본체는 "맑은 고딕" */
+  font-family: "맑은 고딕", "궁서";
+  /* 글자크기 */
+  font-size: 17px; /* fz17 */
+  /* 줄간격: line-height */
+  line-height: 1.6;
 }
 /************** 2-5. 기자소개 **************/
 /************** 2-6. 원본기사링크 **************/
