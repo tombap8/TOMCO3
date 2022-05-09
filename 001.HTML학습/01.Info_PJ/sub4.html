@@ -161,6 +161,47 @@
         <!-- 언론사 주요뉴스 -->
         <article class="nownews">
             <h3>언론사 주요뉴스</h3>
+            <!-- ul 순서없는 리스트사용! -->
+            <ul>
+                <li>
+                    <a href="https://news.mt.co.kr/mtview.php?no=2022050409303491942&NMBE" target="_blank">
+                        '심장질환' 이지혜, 라디오 하차 후 첫 심경 "우리 가족은…"
+                    </a>
+                </li>
+                <li>
+                    <a href="https://news.mt.co.kr/mtview.php?no=2022050410451985144&NMBE" target="_blank">
+                        "네가 뭔데 트와이스 사나를"…성시경, 日알바생에 발끈한 사연
+                    </a>
+                </li>
+                <li>
+                    <a href="https://news.mt.co.kr/mtview.php?no=2022050408293817364&NMBE" target="_blank">
+                        이경진, 결혼식 중 파혼에 유방암까지…"내게 왜 이러나 싶었다"
+                    </a>
+                </li>
+            </ul>
+        </article>
+
+        <!-- 랭킹뉴스 -->
+        <article class="rank">
+            <h3>랭킹뉴스</h3>
+            <!-- ol 순서있는리스트사용! -->
+            <ol>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/ranking/article/008/0004743051?ntype=RANKING" target="_blank">
+                        "이근, 우크라에 카메라맨 데려와…제정신이냐" 의용군 분노
+                    </a>
+                </li>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/ranking/article/008/0004743015?ntype=RANKING" target="_blank">
+                        1억2700만원 낸 '럭셔리 여행객' 한국 찾은 이유
+                    </a>
+                </li>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/ranking/article/008/0004743023?ntype=RANKING" target="_blank">
+                        LG의 '미친 기술력' 또 해냈다…'반뼘' 시네빔 레이저 4K에 감탄
+                    </a>
+                </li>
+            </ol>
         </article>
 
     </main>
@@ -241,6 +282,23 @@
 
         -> 주의사항: ul과 ol하위엔 반드시 li가 있어야한다!
         -> ul,ol은 활용도가 매우높다!
+
+        3. 용어정의리스트(dl:description list)
+            dl > dt + dd
+            __________________
+
+            dl : 용어리스트
+                (defines the description list)
+
+            dt : 용어정의
+                (defines the term)
+
+            dd : 용어설명
+                (description each term)
+            ______________________
+
+            -> 주의사항 : dl은 반드시 자식요소로 dt,dd가
+            한번이상 사용되어야함!!!
      -->
 </body>
 
