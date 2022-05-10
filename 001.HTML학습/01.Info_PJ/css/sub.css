@@ -22,6 +22,14 @@ main#cont {
   padding: 20px; /* p20 */
 }
 
+/* 메인 컨텐츠 공통 경계선 */
+#cont article{
+  border-top: 1px solid #ccc;/* bdt */
+  /* 보더위쪽: 두께 종류 색상(두종색) */
+  margin-top: 25px;/* mt25 */
+  /* 위쪽마진 */
+}
+
 /************** 2-1. 언론사로고 **************/
 .prlogo img {
   height: 32px;
@@ -88,6 +96,19 @@ main#cont {
 .quote{
     /* 배경색 */
     background-color: #ececec;
+    /* 배경색 옵션 속성 */
+    background-clip: content-box;
+    /* 
+      background-clip 배경색 옵션
+        1. content-box
+        -> 컨텐트영역에만 배경색넣기
+        (보더, 패딩빠짐)
+        2. padding-box
+        -> 패딩영역까지만 배경색넣기
+        (보더 빠짐)
+        3. border-box
+        -> 보더영역까지 배경색넣기(기본값)
+    */
     /* 패딩 */
     padding: 10px;
 }
@@ -107,5 +128,18 @@ main#cont {
     /* 줄간격 */
     line-height: 1.7;
 }
-/************** 2-5. 기자소개 **************/
-/************** 2-6. 원본기사링크 **************/
+/* 오늘의 작품 */
+.twork{
+  /* 글자중앙 */
+  text-align: center;
+  /* 배경색 */
+  background-color: #fdffbf;
+  /* 배경색 영역옵션 */
+  background-clip: content-box;
+  /* 패딩 */
+  padding: 20px;
+}
+/* 오늘의 작품 이미지 */
+.twork img{
+  width: 200px;
+}
