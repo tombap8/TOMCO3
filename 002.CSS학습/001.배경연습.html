@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>001.배경연습</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 세로높이값을 보이는 화면에 채움 
+            기본적으로 height는 auto로 셋팅되어서
+            내용만큼 높이가 생김 */
+            overflow: hidden;/* oh */
+            /* 넘치는 자식요소 숨기기
+            -> 여기서는 h1태그의 마진탑값을 포함하기 위함!
+            ((기본사항)) 블록요소 내부의 다른 블록요소가
+            마진탑값을 사용할 경우 부모요소 바깥으로
+            마진이 나가는 현상이 생김!
+            -> 부모요소에 넘치는 자식요소 숨기기 셋팅인
+            overflow: hidden 셋팅을 하면 자식요소의
+            마진탑값이 부모영역에 포함된다!
+            */
+        }
+
+        h1{
+            /* 블록요소 내부의 인라인요소나 글자 정렬 */
+            text-align: center;/* tac 중앙정렬 */
+        }
+
+        body{
+            /* 1. 배경색 - bgc */
+            background-color: pink;
+
+            /* 2. 배경이미지 - bgi
+            url(이미지경로) */
+            background-image: url(imgs/bg_logo_a_01.png);
+
+            /* 3. 배경반복여부 - bgr 
+            값:no-repeat 반복없음
+            repeat-x x축반복
+            repeat-y y축반복
+            repeat 반복(기본값) */
+            background-repeat: no-repeat;
+
+            /* 4. 배경고정 - bga
+            값: fixed 보이는 화면에 고정
+            스크롤시 내려가지 않고 그대로 있음! */
+            background-attachment: fixed;
+
+            /* 5. 배경위치: bgp 
+            값: 가로 세로 
+            가로 - 단위값(px,% 등), left, center, right
+            세로 - 단위값(px,% 등), top, center, bottom
+            ((기준: 가로는 요소의 맨왼쪽선,세로는 맨윗선
+            요소의 정중앙을 기점으로  - 50% 50%는 정중앙위치))
+            - 가로값은 기본값이 left임
+            - 세로값은 기본값이 center임!(안쓰면 중앙위치)
+             */
+            background-position: right bottom;
+
+            /* 6. 배경크기 - bgz 
+            값: 가로 세로
+            가로,세로중 한쪽 크기만 주면 이미지 비율유지
+            -특정값: 
+            contain 비율유지하며 이미지가 모두 보이도록 채움
+            cover 비율유지하면 빈곳이 없이 배경이미지 채움!
+            auto 비율유지 자동값
+            ((유의사항: 값을 하나만쓰면 가로크기만 적용되고 세로크기는 자동으로 셋팅됨.비율유지함!)) */
+            background-size: auto 200px;
+
+        }
+
+        /* 내부박스 */
+        .wrap{
+            height: 100%;
+            /* 부모(body) 높이만큼 채우기 */
+            overflow: hidden;
+            /* 자식요소 마진포함 */
+
+            /* 
+                [ 배경이미지를 여러개 주려면 어떻게하나? ]
+                -> 배경셋팅을 한번에 주고 콤마로 구분하여
+                여러개 배경을 셋팅할 수 있다!
+
+                background: 색 이미지 반복 고정 위치/크기
+                background: 색이반고윙/크
+
+                -> 유의사항: 여러배경 이미지 사용시 순서는
+                먼저셋팅한 배경이 위에 온다!
+
+                -> 참고) 배경이미지 크기 셋팅시 값을 
+                하나만쓰면 가로크기값이고 세로는 auto로 셋팅된다
+
+                -> 참고) 배경위치 세로 기본값은 center이다.
+
+                -> 주의사항) 한번에 배경 셋팅시
+                위치이동이 없고 크기만 셋팅할 경우에도
+                위치값을 0이라도 쓰고 슬래쉬를 써야 
+                크기값으로 셋팅이 된다!
+            */
+            background: 
+            url(./imgs/dc1.png) no-repeat center/400px,
+            url(./imgs/dc2.png) no-repeat right top/250px,
+            url(./imgs/dc3.png) no-repeat left bottom/300px,
+            url(./imgs/dc4.png) no-repeat right/200px,
+            url(./imgs/bg_mainvisual.jpg) no-repeat 0/50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>001.배경넣기 연습</h1>
+    </div>
+</body>
+</html>
