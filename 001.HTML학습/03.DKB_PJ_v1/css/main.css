@@ -7,8 +7,8 @@
 @import url(common.css);
 
 /* 구현중 공사중 외곽선 표시 */
-body *{
-    outline: 1px dashed gray;
+body * {
+  outline: 1px dashed gray;
 }
 /* 
     별(*) 선택자는 모든요소를 선택함!
@@ -17,3 +17,28 @@ body *{
     표시만 된다! 사용법은 border와 유사함
     ouline: 두께 종류 색상;
 */
+
+/* 컨텐츠 영역 최상위 부모 */
+body {
+  /* 한번에 배경주기 */
+  /* background: 색이반고윙/크; */
+  background: url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+    url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+}
+
+/************ 2. 메인영역 ************/
+/* 컨텐츠 속박스 */
+.cont {
+  padding-top: 400px;
+}
+/* 캐릭터 부모박스 */
+#cbx {
+  /* 부모박스 크기의 90% 가로크기 설정 */
+  width: 90%;
+  /* 마영오! - 블록요소 가로중앙 */
+  margin: 0 auto;
+  /* 높이값 */
+  height: 300px;
+  /* 외곽선 */
+  outline: 4px dotted red;
+}
