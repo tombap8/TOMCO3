@@ -29,6 +29,28 @@ main#cont {
   margin-top: 25px;/* mt25 */
   /* 위쪽마진 */
 }
+/* 메인 컨텐츠 아래 a요소 공통 */
+/* a의 기본셋팅을 변경함! - 글자색, 밑줄 필수! */
+#cont a{
+  /* 글자색 - color */
+  color: #222;
+  /* 글자데코 - text-decoration */
+  text-decoration: none;/* tdn */
+  /* 밑줄없앰 */
+
+  /* 글자크기 */
+  font-size: 14px;/* fz14 */
+  /* 글자체 - font-family */
+  font-family: gulim;/* ff */
+}
+/* a요소 마우스 오버시 */
+/* 오버시 가상클래스 :hover */
+#cont a:hover{
+  /* 글자색 */
+  color: lightseagreen;/* c */
+  /* 글자데코 - 밑줄 */
+  text-decoration: underline;/* tdu */
+}
 
 /************** 2-1. 언론사로고 **************/
 .prlogo img {
@@ -142,4 +164,15 @@ main#cont {
 /* 오늘의 작품 이미지 */
 .twork img{
   width: 200px;
+}
+
+/* 포토뉴스 이미지 */
+.pnews img{
+  /* 박스 그림자 */
+  box-shadow: 2px 2px 5px #555;
+  /* 
+  [ 박스 그림자 옵션 ]
+  box-shadow: inset hoff voff blur spread #000;
+  box-shadow: 내부그림자 x축 y축 경계흐림 확장 색; 
+  */
 }
