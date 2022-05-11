@@ -2,6 +2,17 @@
 /* 도깨비 공통클래스 CSS - core.css */
 /* 공통클래스, 웹폰트 등 구현 */
 
+/* CDN 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&display=swap');
+/* 
+    1. 설명내용
+    font-family: 'East Sea Dokdo', cursive;
+    2. 설명타이틀
+    font-family: 'Yeon Sung', cursive;
+    3. 한자
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+*/
+
 /* 중앙 속박스 */
 .inbox{
     /* 가로크기를 고정하면 작은화면에선 가로스크롤 생김*/
