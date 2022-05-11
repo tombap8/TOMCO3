@@ -176,3 +176,13 @@ main#cont {
   box-shadow: 내부그림자 x축 y축 경계흐림 확장 색; 
   */
 }
+
+/* 분야별 주요뉴스에 가상요소로 아이콘 넣기! */
+.secnews dt::before{
+  content: '♥';
+  color: red;
+}
+.secnews dd::before{
+  content: '☞';
+  color: blue;
+}

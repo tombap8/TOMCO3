@@ -31,6 +31,9 @@ body {
 /* 컨텐츠 속박스 */
 .cont {
     padding-top: 400px;
+
+    /* .inbox 최대가로크기 해제! */
+    max-width: none;
 }
 
 /* 캐릭터 부모박스 */
@@ -43,10 +46,16 @@ body {
     /* height: 300px; - 안씀! */
 
     /* float된 자식의 높이값 인식을 위해 overflow:hidden */
-    overflow: hidden;
+    /* overflow: hidden; - 여기서는 안씀 
+    -> 가상요소에 clear:both사용할 것임! */
 
     /* 외곽선 */
     outline: 4px dotted red;
+}
+
+/* 가상요소로 clear설정하기! */
+#cbx::before{
+    content: url(../images/blogo.png);
 }
 
 /* 캐릭터박스 공통 */
