@@ -50,10 +50,44 @@
 
              */
         /* h2요소 맨앞에 이미지 넣기 */
-        
-        
+        h2::before{
+            content: url(./imgs/blogo.png);
+            /* width: 200px;
+            height: 100px; */
+            /* 이미지는 원본 그대로 표시됨.
+            가로,세로 크기조정불가! */
+
+            /* 오른쪽 마진 조정 */
+            margin-right: 20px;
+            /* 인라인요소 진행방향 세로정렬 */
+            vertical-align: middle;
+            /* 값: top,middle,bottom,숫자px등 */
+
+        }
 
         /* 맨뒤 추가요소 ::after */
+        h2::after{
+            content: '';
+            /* content만 빈것으로 쓰면
+            마치 빈 span태그를 쓴것과 같다
+            크기가 적용안됨!
+            display를 적용하여 크기를 
+            변경할 수 있다!
+            display:block -> div와 비슷해짐!
+            만약 줄바꿈없이 디자인만 적용하려면
+            display:inline-block 를 적용함 */
+            display: inline-block;
+            width: 40px;
+            height: 60px;
+            /* border: 1px solid #000; */
+            background: url(./imgs/bg_logo_a_01.png) no-repeat center/cover;
+            vertical-align: middle;
+            margin-left: 20px;
+            /* 박스그림자:내부 x y blur spread 색 */
+            box-shadow: 0 0 10px #999;
+            border-radius: 5px;
+
+        }
         
         /* dl요소 디자인 */
         dl {
