@@ -63,7 +63,7 @@ body {
     /* 주의: block요소에만 적용됨! */
 }
 
-/* 캐릭터박스 공통 */
+/* 캐릭터박스 공통ㄹ */
 .cat {
     /* 4등분 가로크기는 몇%? 25% */
     width: 24%;
@@ -101,4 +101,31 @@ body {
     width: 100%;
     /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
     height크기를 안주면 비율을 유지함! */
+}
+
+/* 캐릭터 이름이미지 박스 */
+.ci span {
+    /* 블록으로 변경 - 부모박스 끝까지 차지 */
+    display: block;
+    /* 인라인요소 중앙정렬 */
+    text-align: center;
+}
+/* 이름이미지 중 첫번째 진한 이미지 숨기기 */
+/* 가상클래스로 첫번째 이미지 선택 */
+/* 첫번째 자식요소 선택 가상클래스 :first-child */
+.ci span img:first-child{
+    /* 화면출력 없앰 */
+    display: none;
+}
+/* .cat에 마우스 오버시 첫번째 이름이미지 보이기 */
+/* 마우스 오버시 가상클래스 :hover */
+.cat:hover .ci span img:first-child{
+    /* 원래 display로 복귀 */
+    display: inline;
+}
+/* .cat에 마우스 오버시 마지막째 이름이미지 숨기기 */
+/* 마지막째 자식요소 선택 가상클래스 :last-child */
+.cat:hover .ci span img:last-child{
+    /* 화면출력 없앰 */
+    display: none;
 }
