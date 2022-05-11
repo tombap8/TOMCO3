@@ -225,9 +225,17 @@
 
         /* 4번 이후 모든 li 전부셋팅 */
         /* 틸드(~)를 사용한 다중형제 요소 선택 */
+        .part1 li:nth-child(4)~li {
+            font-size: 25px;
+            font-family: "궁서";
+            color: orangered;
+        }
 
         /* 오버시 */
-
+        .part1 li:nth-child(4)~li:hover {
+            font-size: 28px;
+            color: blue;
+        }
 
         /* 마지막 li */
 
