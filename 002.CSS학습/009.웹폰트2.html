@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>웹폰트 CDN방식으로 적용하기</title>
+    <!-- external CDN방식 -->
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     <!-- 
         font-family: 'Monoton', cursive;
@@ -45,11 +46,11 @@
              */
 
         /* import방식 CDN 웹폰트 */
-        
+        @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Train+One&display=swap');
 
         /* 
-            font-family: 'Monoton', cursive;
-            font-family: 'Titan One', cursive;
+            font-family: 'Londrina Shadow', cursive;
+            font-family: 'Train One', cursive;
         */
 
         /* CDN 웹폰트 적용하기 */
@@ -65,9 +66,17 @@
             font-weight: normal;
         }
 
-        .cdn3 {}
+        .cdn3 {
+            font-family: 'Londrina Shadow', cursive;
+            color: darkgoldenrod;
+            font-weight: normal;
+        }
 
-        .cdn4 {}
+        .cdn4 {
+            font-family: 'Train One', cursive;
+            color: darkorange;
+            font-weight: normal;
+        }
     </style>
 </head>
 
