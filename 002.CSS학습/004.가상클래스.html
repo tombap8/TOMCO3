@@ -71,7 +71,6 @@
 
     */
 
-
         h1,
         h2 {
             text-align: center;
@@ -86,27 +85,40 @@
         } */
 
         /* 일반적으로 a요소 자체 디자인을 잡는다! */
-        
+        h2 a {
+            /* 글자색 */
+            color: hotpink;
+            /* 밑줄없앰 */
+            text-decoration: none;
+            /* 글자그림자: x축 y축 블러 색 */
+            text-shadow: 2px 2px 2px #777;
+        }
 
         /* :hover 마우스 오버상태 */
-        
-       
+        h2 a:hover {
+            /* 글자색 */
+            color: red;
+            /* 윗줄생김 */
+            text-decoration: overline;
+        }
+
 
         /* :active 마우스로 눌려진상태(클!) */
-        /* h2 a:active{
-            color: hotpink;
-            text-decoration: none;
-            text-shadow: 2px 2px 2px #777;
-        } */
+        h2 a:active{
+            color: blue;
+        }
 
         /* :visited 링크 방문후(한번클릭후) */
         /* h2 a:visited {
-            color: blue;
+            color: purple;
         } */
-        
+
 
         /* :focus 요소를 클릭하여 초점이 올때 */
-                
+        h2 a:focus{
+            outline: 10px dotted orangered;
+            /* outline: 두께 종류 색상 */
+        }
 
         /* 시인이름 */
         h3 {
@@ -144,45 +156,53 @@
         }
 
         /* 1번 li */
-       
-        /* 오버시(:hover) */  
-        
+        .part1 li:first-child{
+            font-size: 40px;
+            font-family: "궁서";
+            color: red;
+        }
+        /* 오버시(:hover) 
+        - 글자크기 50px, 글자색 blueviolet */
+        .part1 li:first-child:hover{
+            font-size: 50px;
+            color: blueviolet;
+        }
 
         /* 2번째 li */
-        
-        
-       
+
+
+
         /* 오버시 */
-        
-        
+
+
         /* 3번째 li */
-        
-        
+
+
         /* 오버시 */
-       
+
 
         /* 4번째 li */
-       
+
 
         /* 처음에 한글(b태그)숨기기 */
-        
+
 
         /* 오버시 한글(b태그)보이고*/
-        
+
         /* 오버시 한자(span태그)숨기기 */
-        
+
         /* 오버시 li에 노란배경색 */
-       
+
 
         /* 4번 이후 모든 li 전부셋팅 */
         /* 틸드(~)를 사용한 다중형제 요소 선택 */
-        
+
         /* 오버시 */
-        
+
 
         /* 마지막 li */
-       
-       
+
+
         /*      
             틸드(~)를 사용한 CSS가 한단계 더 선택하여서
             우선 순위가 높으므로 이것보다 우선순위를 
@@ -191,10 +211,10 @@
             -> 여기서 한단계 위의 부모는 body!
             (호가호위! 여우 뒤에 호랑이!)
         */
-       
+
 
         /* 두번째 파트 */
-        div.part2{
+        div.part2 {
             width: 800px;
             margin: 0 auto;
             /* 마영오! 가로중앙 */
@@ -209,14 +229,14 @@
         }
 
         /* 두번째 div */
-        
+
 
         /* 첫번째 i */
-        
-       
+
+
 
         /* 3번째 div 이후 div형제요소 모두 */
-        
+
 
 
         /* 
