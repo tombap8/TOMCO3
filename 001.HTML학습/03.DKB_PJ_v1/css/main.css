@@ -54,8 +54,13 @@ body {
 }
 
 /* 가상요소로 clear설정하기! */
-#cbx::before{
-    content: url(../images/blogo.png);
+/* ::after로 맨뒤에 가상요소추가 */
+#cbx::after{
+    content: '';
+    display: block;/* db */
+    /* div와 비슷 - 안쓰면 span과 비슷 */
+    clear: both;
+    /* 주의: block요소에만 적용됨! */
 }
 
 /* 캐릭터박스 공통 */
