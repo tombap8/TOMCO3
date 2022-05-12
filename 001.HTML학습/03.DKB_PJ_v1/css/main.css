@@ -141,21 +141,49 @@ body {
 
 /* 캐릭터 설명박스 */
 .cd {
+    height: 250px;
     background: url(../images/eachBG.jpg) no-repeat center/cover;
+    /* x축 스크롤바 트랙없는 
+    y축 스크롤 설정 */
+    overflow-y: scroll;
 }
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-family: 'Yeon Sung', cursive;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: normal;
     /* 패딩: 위 양쪽 아래 */
     padding: 5px 10px 0;
+}
+/* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
+.cd h3::before{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    vertical-align: -6px;
+    margin-right: 5px;
+    background: url(../images/bg_logo_a_01.png) no-repeat right -184px;
+    /* background: 색이반고윙/크; */
+    /* outline: 1px solid red; */
 }
 /* 캐릭터 설명 문단 */
 .cd p {
     font-family: 'East Sea Dokdo','ZCOOL QingKe HuangYou', cursive;
     font-size: 24px;
-    line-height: 1.6;
+    line-height: 30px;
+    /* 줄간격 배수단위로 쓰면 첫글자가 커서 첫줄 줄간격이
+    커지므로 특정px로 설정함! */
     padding: 10px;
     text-align: justify;
+}
+
+/* 캐릭터 설명 첫번째 p요소의 첫글자 
+가상요소로 디자인변경하기 */
+.cd p:first-of-type::first-letter {
+    font-size: 50px;
+    color: lightsalmon;
+    /* 그림자 4개로 글자 테두리주기 */
+    text-shadow: 1px 0 #000,
+    -1px 0 #000,0 1px #000,0 -1px #000;
 }
