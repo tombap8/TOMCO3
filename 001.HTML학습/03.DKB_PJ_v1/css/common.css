@@ -22,13 +22,12 @@
 
 /* 2-2. GNB메뉴 */
 .gnb{
-    background-color: #218cff;
+    /* background-color: #218cff; */
 }
 /* ul 초기화 */
 .gnb ul{
-    /* 가로크기: 
-    li하나 200px*4=800px */
-    width: 800px;
+    /* 가로크기 */
+    width: 668px;
 
     /* 마영오 - 블록요소 가로중앙정렬 */
     margin: 0 auto;
@@ -45,29 +44,30 @@
 .gnb>ul>li{
     /* 블록요소 옆으로 흐르게 */
     float: left;
-    height: 50px;
+    height: 44px;
+    padding: 0 15px;/* 양쪽패딩 */
 }
 /* li 하위 a요소 */
 .gnb>ul>li>a{
     /* 글자색 */
-    color: #fff;
+    color: #000;
     /* 밑줄없앰 */
     text-decoration: none;
     /* 글자크기 */
     font-size: 17px;
 
     /* 디자인적용위해 블록변경! */
-    display: block;
-    width: 200px;
-    text-align: center;
-    line-height: 50px;
+    /* display: block; */
+    /* width: 200px; */
+    /* text-align: center; */
+    line-height: 44px;
     /* 트랜지션: 속시이지 */
     transition: all .3s;
 }
 /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
 .gnb>ul>li:hover>a{
-    background-color: #c3e3ff;
-    color: #000;
+    /* background-color: #c3e3ff;
+    color: #000; */
 }
 
 /* 서브메뉴 */
@@ -78,7 +78,7 @@
     height: 0;/* h0 */
     overflow: hidden;/* oh */
     /* 배경색 */
-    background-color: #c3e3ff;
+    background-color: #fff;
     /* 트랜지션: 속시이지 */
     transition: height .4s ease-out;
     /* outline: 2px dotted blue; */
@@ -86,13 +86,17 @@
 }
 /* 상위메뉴 li에 마우스 오버시
 하위메뉴박스 높이값 복원하기(트랜지션) */
-/* 두번째메뉴 */
-.gnb>ul>li:nth-child(2):hover .smenu{
-    height: 180px;
+/* 첫번째메뉴 - 3개 */
+.gnb>ul>li:nth-child(1):hover .smenu{
+    height: 132px;/* 44*3 */
 }
-/* 세번째메뉴 */
+/* 세번째메뉴 - 4개 */
 .gnb>ul>li:nth-child(3):hover .smenu{
-    height: 100px;
+    height: 176px;/* 44*4 */
+}
+/* 네번째메뉴 - 2개 */
+.gnb>ul>li:nth-child(4):hover .smenu{
+    height: 88px;/* 44*2 */
 }
 
 /* 서브메뉴 ol요소
@@ -124,8 +128,8 @@
 }
 /* 서브메뉴 a에 오버시 */
 .smenu a:hover{
-    background-color: #ececec;
-    color: orangered;
+    /* background-color: #ececec;
+    color: orangered; */
 }
 
 
