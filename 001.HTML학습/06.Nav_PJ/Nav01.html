@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>유형1. 가로네비 서브별 드롭다운 세로형</title>
     <style>
-        html,body{
+        /* 초기화 */
+        html,body,ul,ol{
             margin: 0;
             padding: 0;
         }
+        /* ul,ol초기화 */
+        ul,ol{
+            /* 리스트박스 기본3無
+            - 마진0, 패딩0, 리스트스타일없음 */
+            list-style: none;
+        }
+
 
         /* GNB메뉴박스 */
         .gnb{
@@ -19,13 +27,10 @@
             li하나 200px*4=800px */
             width: 800px;
 
-            /* 리스트박스 기본3無 */
-            margin: 0 auto;
             /* 마영오 - 블록요소 가로중앙정렬 */
-            padding: 0;
-            list-style: none;  
+            margin: 0 auto;
             
-            outline: 2px dotted red;
+            /* outline: 2px dotted red; */
         }
         /* 가상요소로 clear설정하기 */
         .gnb ul::after{
@@ -34,12 +39,13 @@
             clear: both;
         }
         /* li 리스트요소 */
-        .gnb li{
+        .gnb>ul>li{
             /* 블록요소 옆으로 흐르게 */
             float: left;
+            height: 50px;
         }
         /* li 하위 a요소 */
-        .gnb a{
+        .gnb>ul>li>a{
             /* 글자색 */
             color: #fff;
             /* 밑줄없앰 */
@@ -50,17 +56,50 @@
             /* 디자인적용위해 블록변경! */
             display: block;
             width: 200px;
-            height: 50px;
             text-align: center;
             line-height: 50px;
             /* 트랜지션: 속시이지 */
             transition: all .3s;
         }
         /* a에 마우스 오버시 변경 */
-        .gnb a:hover{
+        .gnb>ul>li>a:hover{
             background-color: #c3e3ff;
             color: #000;
         }
+
+        /* 서브메뉴 */
+        .smenu{
+            /* 안쪽여백 */
+            padding: 10px;
+            /* 배경색 */
+            background-color: #c3e3ff;
+            /* outline: 2px dotted blue; */
+        }
+        /* 서브메뉴 a요소 */
+        .smenu a{
+            /* 글자색 */
+            color: #000;
+            /* 밑줄없앰 */
+            text-decoration: none;
+            /* 블록변경 */
+            display: block;
+            /* 글자중앙 */
+            text-align: center;
+            /* 글자크기 */
+            font-size: 14px;
+            /* 줄간격 */
+            line-height: 40px;
+        }
+        /* 서브메뉴 a에 오버시 */
+        .smenu a:hover{
+            background-color: #ececec;
+            color: orangered;
+        }
+
+
+
+
+
 
         /* 본문내용 */
         .cont{
