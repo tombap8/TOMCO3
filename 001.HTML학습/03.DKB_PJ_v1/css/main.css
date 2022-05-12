@@ -156,6 +156,10 @@ body {
     /* x축 스크롤바 트랙없는 
     y축 스크롤 설정 */
     overflow-y: scroll;
+    /* 상단마진 */
+    margin-top: 15px;
+    /* 둥근모서리 : 왼쪽위부터 시계방향 */
+    border-radius: 20px 5px 5px 20px;
 
     /* 트랜지션 : 속시이지 */
     transition: height .4s ease-out;
