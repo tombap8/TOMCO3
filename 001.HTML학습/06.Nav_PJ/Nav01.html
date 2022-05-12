@@ -61,19 +61,32 @@
             /* 트랜지션: 속시이지 */
             transition: all .3s;
         }
-        /* a에 마우스 오버시 변경 */
-        .gnb>ul>li>a:hover{
+        /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
+        .gnb>ul>li:hover>a{
             background-color: #c3e3ff;
             color: #000;
         }
 
         /* 서브메뉴 */
         .smenu{
-            /* 안쪽여백 */
-            padding: 10px;
+            /* 서브메뉴 숨김장치
+            -> 높이값0 + 넘치는자식요소 숨기기 
+            주의) 위아래방향 패딩 없어야함! */
+            height: 0;/* h0 */
+            overflow: hidden;/* oh */
             /* 배경색 */
             background-color: #c3e3ff;
             /* outline: 2px dotted blue; */
+        }
+        /* 서브메뉴 ol요소
+        - 안쪽 박스에 패딩을 준 이유는?
+        .smenu박스는 높이값을 0으로 자식요소
+        숨기기를 할 박스이므로 패딩이 있으면
+        높이값 0이어도 패딩때문에 숨겨지지 않는다!
+        따라서 안쪽박스에 패딩설정을 해야한다! */
+        .smenu ol{
+            /* 안쪽여백 */
+            padding: 10px;
         }
         /* 서브메뉴 a요소 */
         .smenu a{
