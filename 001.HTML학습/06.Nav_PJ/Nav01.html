@@ -78,6 +78,12 @@
             background-color: #c3e3ff;
             /* outline: 2px dotted blue; */
         }
+        /* 상위메뉴 li에 마우스 오버시
+        하위메뉴박스 높이값 복원하기(트랜지션) */
+        .gnb>ul>li:hover .smenu{
+            height: 180px;
+        }
+
         /* 서브메뉴 ol요소
         - 안쪽 박스에 패딩을 준 이유는?
         .smenu박스는 높이값을 0으로 자식요소
