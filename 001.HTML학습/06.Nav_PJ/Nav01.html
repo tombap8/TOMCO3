@@ -4,7 +4,70 @@
     <meta charset="UTF-8">
     <title>유형1. 가로네비 서브별 드롭다운 세로형</title>
     <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
 
+        /* GNB메뉴박스 */
+        .gnb{
+            background-color: #218cff;
+        }
+        /* ul 초기화 */
+        .gnb ul{
+            /* 가로크기: 
+            li하나 200px*4=800px */
+            width: 800px;
+
+            /* 리스트박스 기본3無 */
+            margin: 0 auto;
+            /* 마영오 - 블록요소 가로중앙정렬 */
+            padding: 0;
+            list-style: none;  
+            
+            /* outline: 2px dotted red; */
+        }
+        /* 가상요소로 clear설정하기 */
+        .gnb ul::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        /* li 리스트요소 */
+        .gnb li{
+            /* 블록요소 옆으로 흐르게 */
+            float: left;
+        }
+        /* li 하위 a요소 */
+        .gnb a{
+            /* 글자색 */
+            color: #fff;
+            /* 밑줄없앰 */
+            text-decoration: none;
+            /* 글자크기 */
+            font-size: 17px;
+
+            /* 디자인적용위해 블록변경! */
+            display: block;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            /* 트랜지션: 속시이지 */
+            transition: all .3s;
+        }
+        /* a에 마우스 오버시 변경 */
+        .gnb a:hover{
+            background-color: #c3e3ff;
+            color: #000;
+        }
+
+        /* 본문내용 */
+        .cont{
+            background-color: #ffdcdc;
+            text-align: center;
+            line-height: 50;
+        }
     </style>
 </head>
 <body>
@@ -26,5 +89,10 @@
             </li>
         </ul>
     </nav>
+
+    <!-- 내용박스 -->
+    <div class="cont">
+        본문내용
+    </div>
 </body>
 </html>
