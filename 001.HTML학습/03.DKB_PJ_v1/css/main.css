@@ -181,6 +181,8 @@ body {
         4) ease-in-out : 애니 시작과 끝에 천천히
         5) linear : 등속도
         -> 베이지곡선으로 매우 다채롭게 가속도 조정가능
+        -> w3c 속도비교:
+        https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_speed
     4. 지연 - 지연시간 즉, 애니 시작전 대기시간(초단위:s)
     5. 적용법: 오버시와 원상복귀되는 애니가 똑같다면
             오버설정 전인 원본에 한번만 주면 양방향이
