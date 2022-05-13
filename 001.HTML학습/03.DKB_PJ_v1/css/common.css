@@ -261,9 +261,9 @@ body {
   height: 241px;
 }
 /* 3-1. 하단추가정보링크 */
-.blink{
-    /* 안쪽 박스 상단을 패딩탑으로 밀기 */
-    padding-top: 5px;
+.blink {
+  /* 안쪽 박스 상단을 패딩탑으로 밀기 */
+  padding-top: 5px;
 }
 .blink ul {
   /* 블록박스 중앙정렬은 가로크기가
@@ -315,4 +315,26 @@ body {
   line-height: 2.8;
   /* 패딩 */
   padding: 5px;
+}
+
+/* 3-3. 회사주소박스 */
+.addr {
+  padding: 10px;
+}
+.addr address {
+  max-width: 804px;
+  margin: 0 auto;
+  border: 4px double #222;
+  font-size: 14px;
+  line-height: 2;
+  text-align: center;
+  /* address기본 이택릭체 해제 */
+  font-style: normal;
+  padding: 10px;
+  /* 박스크기유지 */
+  box-sizing: border-box;
+}
+/* 3-4. 하단로고박스 */
+.blogo {
+  text-align: center;
 }
