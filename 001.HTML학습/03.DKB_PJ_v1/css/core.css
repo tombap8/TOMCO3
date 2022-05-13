@@ -3,7 +3,7 @@
 /* 공통클래스, 웹폰트 등 구현 */
 
 /* CDN 웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=East+Sea+Dokdo&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&display=swap');
 /* 
     1. 설명내용
     font-family: 'East Sea Dokdo', cursive;
@@ -11,6 +11,8 @@
     font-family: 'Yeon Sung', cursive;
     3. 한자
     font-family: 'ZCOOL QingKe HuangYou', cursive;
+    4. 상단, 하단 글자
+    font-family: 'Nanum Gothic', sans-serif;
 */
 
 /* 스크롤바 디자인 클래스 */
@@ -42,4 +44,11 @@
 
     /* 마진에 의한 블록박스 중앙정렬 -> 마영오! */
     margin: 0 auto;
+}
+
+/* 가상요소로 float해제 셋팅 클래스 */
+.clb::after{
+    content: '';
+    display: block;
+    clear: both;
 }
