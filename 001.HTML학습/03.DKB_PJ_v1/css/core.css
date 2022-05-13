@@ -52,3 +52,13 @@
     display: block;
     clear: both;
 }
+/* IR(Image Replacement) 
+배경이미지 설명 숨기기 클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+/* IR기법 사용시 주의사항
+-> display:none사용금지! 왜? 스크린리더기가 못읽음! */
