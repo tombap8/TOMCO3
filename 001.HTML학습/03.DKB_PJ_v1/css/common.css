@@ -21,9 +21,9 @@
 }
 
 /* 2-2. GNB메뉴 */
-.gnb{
-    /* background-color: #218cff; */
-}
+/* .gnb{
+    background-color: #218cff;
+} */
 /* ul 초기화 */
 .gnb ul{
     /* 가로크기 */
@@ -72,10 +72,10 @@
     transition: all .3s;
 }
 /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
-.gnb>ul>li:hover>a{
-    /* background-color: #c3e3ff;
-    color: #000; */
-}
+/* .gnb>ul>li:hover>a{
+    background-color: #c3e3ff;
+    color: #000;
+} */
 
 /* 서브메뉴 */
 .smenu{
@@ -134,10 +134,10 @@
     transition: .3s;
 }
 /* 서브메뉴 a에 오버시 */
-.smenu a:hover{
-    /* background-color: #ececec;
-    color: orangered; */
-}
+/* .smenu a:hover{
+    background-color: #ececec;
+    color: orangered;
+} */
 
 
 /************** 2. 메인영역 **************/
