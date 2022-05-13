@@ -30,7 +30,20 @@ body {
 /************ 2. 메인영역 ************/
 /* 컨텐츠 속박스 */
 .cont {
+    /* 상단패딩 설정 */
     padding-top: 400px;
+    /* 기본height크기가 800px로 설정되어있으므로
+    그 높이값은 컨텐츠영역의 높이다!
+    따라서 패딩이나 보더는 그 크기에 더해진다!
+    그래서 높이값 크기를 800px로 유지하려면
+    계산해서 height값을 400px로 변경하거나
+    box-sizing:border-box로 설정하여 보더와 패딩이
+    지정한 크기 내부에 포함되도록 한다! */
+
+    /* 보더,패딩 포함설정 
+    - 기본값:content-box */
+    box-sizing: border-box;
+
 
     /* .inbox 최대가로크기 해제! */
     max-width: none;
@@ -50,7 +63,7 @@ body {
     -> 가상요소에 clear:both사용할 것임! */
 
     /* 외곽선 */
-    outline: 4px dotted red;
+    /* outline: 4px dotted red; */
 }
 
 /* 가상요소로 clear설정하기! */

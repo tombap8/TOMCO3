@@ -68,6 +68,10 @@ body{
     text-decoration: none;
 }
 /* sns 메뉴 리스트 */
+.sns{
+    /* 상단마진 - 위로이동! */
+    margin-top: -5px;
+}
 .sns a{
     /* 블록변경-디자인적용 */
    display: block;
@@ -112,7 +116,7 @@ body{
 /* ul 초기화 */
 .gnb ul {
     /* 가로크기 */
-    width: 668px;
+    width: 580px;
 
     /* 마영오 - 블록요소 가로중앙정렬 */
     margin: 0 auto;
@@ -165,7 +169,7 @@ body{
 /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
 .gnb>ul>li:hover>a {
     border-bottom: 4px solid red;
-    padding-bottom: 5px;
+    padding-bottom: 11px;
     /* 인라인요소의 위아래 방향 패딩과 보더는
     다른요소에 영향을 미치지 않고 디자인만 나온다! */
 }
@@ -187,7 +191,7 @@ body{
     /* 배경색 */
     background-color: #fff;
     /* 상단마진조정 */
-    margin-top: -1px;
+    margin-top: 4px;
     /* 트랜지션: 속시이지 */
     transition: height .4s ease-out;
     /* outline: 2px dotted blue; */
