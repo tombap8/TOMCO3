@@ -21,9 +21,15 @@
 /* 로고이미지 */
 #logo img{
     width: 100px;
+    vertical-align: top;
+    /* a요소나 div등으로 이미지를 싸면
+    하단에 4px공백이 들어감. 이것을 없애려면
+    vertical-align값을 설정하면 해결됨!
+    값으로 top/middle/bottom 뭘써도 됨  */
 }
+/* 1-2. 탑메뉴 */
 
-/* 2-2. GNB메뉴 */
+/* 1-3. GNB메뉴 */
 /* .gnb{
     background-color: #218cff;
 } */
@@ -96,6 +102,8 @@
     overflow: hidden;/* oh */
     /* 배경색 */
     background-color: #fff;
+    /* 상단마진조정 */
+    margin-top: -1px;
     /* 트랜지션: 속시이지 */
     transition: height .4s ease-out;
     /* outline: 2px dotted blue; */
