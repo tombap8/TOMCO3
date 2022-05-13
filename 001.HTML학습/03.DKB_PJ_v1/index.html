@@ -252,7 +252,47 @@ https://www.w3schools.com/tags/ref_language_codes.asp
     <!-- 3. 하단영역 -->
     <div id="info">
         <footer class="inbox info">
-
+            <!-- 3-1. 하단추가정보링크 -->
+            <div class="blink">
+                <ul class="clb">
+                    <li>
+                        <a href="#">법적고지</a>
+                    </li>
+                    <li>
+                        <a href="#">영상정보처리기기운영/관리방침</a>
+                    </li>
+                    <li>
+                        <a href="#">이메일무단수집거부</a>
+                    </li>
+                    <li>
+                        <a href="#">사이버감사실</a>
+                    </li>
+                    <li>
+                        <a href="#">찾아오시는길</a>
+                    </li>
+                    <li>
+                        <a href="#">개인정보처리방침</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 3-2. 브랜드 바로가기 -->
+            <div class="brand">
+                <select name="sel" id="sel">
+                    <option value="init">브랜드 바로가기</option>
+                    <option value="tvn">tvN</option>
+                    <option value="ocn">OCN</option>
+                    <option value="mnet">MNET</option>
+                </select>
+                <!-- 
+                    select 요소 : 지정된 값을 선택하는 입력요소
+                    - 하위필수요소 -> option요소 : 각 선택항목
+                    -> 유의사항 : 값을 선택할 경우 option의
+                    value속성값을 JS등에서 읽어간다. 그런데
+                    value를 안 쓸 수도 있는데 안쓰게되면
+                    꺽쇠사이에 있는 데이터를 읽어간다!
+                    
+                 -->
+            </div>
         </footer>
     </div>
 </body>

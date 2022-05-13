@@ -3,36 +3,36 @@
 /* 상단영역, 하단영역 등 공통디자인 */
 
 /* 공통 글씨체 : 나눔고딕 */
-body{
-    font-family: 'Nanum Gothic', sans-serif;
+body {
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 /************** 1. 상단영역 **************/
 #top {
-    /* 겉박스 */
-    /* 배경색 */
-    background-color: #fff;
-    /* 하단보더 */
-    border-bottom: 1px solid #ccc;
+  /* 겉박스 */
+  /* 배경색 */
+  background-color: #fff;
+  /* 하단보더 */
+  border-bottom: 1px solid #ccc;
 }
 
 .top {
-    /* 속박스 */
-    /* 높이값 */
-    height: 127px;
+  /* 속박스 */
+  /* 높이값 */
+  height: 127px;
 }
 
 /* 1-1. 메인로고 */
 #logo {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 /* 로고이미지 */
 #logo img {
-    width: 100px;
-    vertical-align: top;
-    /* a요소나 div등으로 이미지를 싸면
+  width: 100px;
+  vertical-align: top;
+  /* a요소나 div등으로 이미지를 싸면
     하단에 4px공백이 들어감. 이것을 없애려면
     vertical-align값을 설정하면 해결됨!
     값으로 top/middle/bottom 뭘써도 됨  */
@@ -41,72 +41,72 @@ body{
 /* 1-2. 탑메뉴 */
 
 /* 내용 리스트박스 */
-.tmenu ul{
-    /* 오른쪽 끝으로! */
-    float: right;
-    /* 마진탑으로 위로 올라감 
+.tmenu ul {
+  /* 오른쪽 끝으로! */
+  float: right;
+  /* 마진탑으로 위로 올라감 
     부모박스의 높이값은 0이됨! 왜? 빠져나가니까! */
-    margin-top: -50px;
+  margin-top: -50px;
 }
 
 .tmenu li {
-    /* 왼쪽방향 옆으로 흐르게 */
-    float: left;
+  /* 왼쪽방향 옆으로 흐르게 */
+  float: left;
 }
 
 /* 탑메뉴 상위li */
-.tmenu>ul>li{
-    padding: 0 5px;
+.tmenu > ul > li {
+  padding: 0 5px;
 }
 /* 탑메뉴 상위 a요소 */
-.tmenu>ul>li>a{
-    /* 글자크기 */
-    font-size: 15px;
-    /* 글자색 */
-    color: #000;
-    /* 밑줄없앰 */
-    text-decoration: none;
+.tmenu > ul > li > a {
+  /* 글자크기 */
+  font-size: 15px;
+  /* 글자색 */
+  color: #000;
+  /* 밑줄없앰 */
+  text-decoration: none;
 }
 /* sns 메뉴 리스트 */
-.sns{
-    /* 상단마진 - 위로이동! */
-    margin-top: -5px;
+.sns {
+  /* 상단마진 - 위로이동! */
+  margin-top: -5px;
 }
-.sns a{
-    /* 블록변경-디자인적용 */
-   display: block;
-   width: 100%;
-   height: 100%;
+.sns a {
+  /* 블록변경-디자인적용 */
+  display: block;
+  width: 100%;
+  height: 100%;
 }
-.sns li{
-    width: 30px;
-    height: 30px;
-    /* 배경이미지로 sns아이콘 넣기 */
-    background: url(../images/icons.png) no-repeat;
+.sns li {
+  width: 30px;
+  height: 30px;
+  /* 배경이미지로 sns아이콘 넣기 */
+  background: url(../images/icons.png) no-repeat;
 }
 /* 트위터 */
-.sns li:first-child{
-    background-position: 0 0;
+.sns li:first-child {
+  background-position: 0 0;
 }
 /* 트위터 오버시 */
-.sns li:first-child:hover{
-    background-position: 0 -30px;
+.sns li:first-child:hover {
+  background-position: 0 -30px;
 }
 /* 인스타그램 */
-.sns li:nth-child(2){
-    background-position: -30px 0;
+.sns li:nth-child(2) {
+  background-position: -30px 0;
 }
 /* 인스타그램 오버시 */
-.sns li:nth-child(2):hover{
-    background-position: -30px -30px;
+.sns li:nth-child(2):hover {
+  background-position: -30px -30px;
 }
 /* 페이스북 */
-.sns li:last-child{
-    background-position: -60px 0;
+.sns li:last-child {
+  background-position: -60px 0;
 }
 /* 페이스북 오버시 */
-.sns li:last-child:hover{
-    background-position: -60px -30px;
+.sns li:last-child:hover {
+  background-position: -60px -30px;
 }
 
 /* 1-3. GNB메뉴 */
@@ -115,107 +115,106 @@ body{
 } */
 /* ul 초기화 */
 .gnb ul {
-    /* 가로크기 */
-    width: 580px;
+  /* 가로크기 */
+  width: 580px;
 
-    /* 마영오 - 블록요소 가로중앙정렬 */
-    margin: 0 auto;
+  /* 마영오 - 블록요소 가로중앙정렬 */
+  margin: 0 auto;
 
-    /* outline: 2px dotted red; */
+  /* outline: 2px dotted red; */
 }
 
 /* 가상요소로 clear설정하기 */
 .gnb ul::after {
-    content: '';
-    display: block;
-    clear: both;
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* li 리스트요소 */
-.gnb>ul>li {
-    /* 블록요소 옆으로 흐르게 */
-    float: left;
-    height: 44px;
-    padding: 0 15px;
-    /* 양쪽패딩 */
+.gnb > ul > li {
+  /* 블록요소 옆으로 흐르게 */
+  float: left;
+  height: 44px;
+  padding: 0 15px;
+  /* 양쪽패딩 */
 }
 
 /* 세번째,네번째 li요소 가로크기주기 */
-.gnb>ul>li:nth-child(3),
-.gnb>ul>li:nth-child(4) {
-    width: 51px;
-    /* 서브메뉴로 인한 자동크기가 늘어나므로
+.gnb > ul > li:nth-child(3),
+.gnb > ul > li:nth-child(4) {
+  width: 51px;
+  /* 서브메뉴로 인한 자동크기가 늘어나므로
     글자크기만큼만 강제로 가로크기를 지정함! */
 }
 
 /* li 하위 a요소 */
-.gnb>ul>li>a {
-    /* 글자색 */
-    color: #000;
-    /* 밑줄없앰 */
-    text-decoration: none;
-    /* 글자크기 */
-    font-size: 17px;
+.gnb > ul > li > a {
+  /* 글자색 */
+  color: #000;
+  /* 밑줄없앰 */
+  text-decoration: none;
+  /* 글자크기 */
+  font-size: 17px;
 
-    /* 디자인적용위해 블록변경! */
-    /* display: block; */
-    /* width: 200px; */
-    /* text-align: center; */
-    line-height: 44px;
-    /* 트랜지션: 속시이지 */
-    /* transition: all .3s; -> 트랜지션 불필요! */
+  /* 디자인적용위해 블록변경! */
+  /* display: block; */
+  /* width: 200px; */
+  /* text-align: center; */
+  line-height: 44px;
+  /* 트랜지션: 속시이지 */
+  /* transition: all .3s; -> 트랜지션 불필요! */
 }
 
 /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
-.gnb>ul>li:hover>a {
-    border-bottom: 4px solid red;
-    padding-bottom: 11px;
-    /* 인라인요소의 위아래 방향 패딩과 보더는
+.gnb > ul > li:hover > a {
+  border-bottom: 4px solid red;
+  padding-bottom: 11px;
+  /* 인라인요소의 위아래 방향 패딩과 보더는
     다른요소에 영향을 미치지 않고 디자인만 나온다! */
 }
 
 /* 서브메뉴 */
 .smenu {
-    /* 가로크기 설정 - 부모박스 크기에 영향없도록 */
-    width: 88px;
-    /* 노랩박스만들기 - 공백속성 싸지마! 
+  /* 가로크기 설정 - 부모박스 크기에 영향없도록 */
+  width: 88px;
+  /* 노랩박스만들기 - 공백속성 싸지마! 
     좁아도 글자 안떨어짐(메뉴글자에 많이 설정함) */
-    white-space: nowrap;
-    /* 서브메뉴 숨김장치
+  white-space: nowrap;
+  /* 서브메뉴 숨김장치
     -> 높이값0 + 넘치는자식요소 숨기기 
     주의) 위아래방향 패딩 없어야함! */
-    height: 0;
-    /* h0 */
-    overflow: hidden;
-    /* oh */
-    /* 배경색 */
-    background-color: #fff;
-    /* 상단마진조정 */
-    margin-top: 4px;
-    /* 트랜지션: 속시이지 */
-    transition: height .4s ease-out;
-    /* outline: 2px dotted blue; */
-
+  height: 0;
+  /* h0 */
+  overflow: hidden;
+  /* oh */
+  /* 배경색 */
+  background-color: #fff;
+  /* 상단마진조정 */
+  margin-top: 4px;
+  /* 트랜지션: 속시이지 */
+  transition: height 0.4s ease-out;
+  /* outline: 2px dotted blue; */
 }
 
 /* 상위메뉴 li에 마우스 오버시
 하위메뉴박스 높이값 복원하기(트랜지션) */
 /* 첫번째메뉴 - 3개 */
-.gnb>ul>li:nth-child(1):hover .smenu {
-    height: 120px;
-    /* 40*3 */
+.gnb > ul > li:nth-child(1):hover .smenu {
+  height: 120px;
+  /* 40*3 */
 }
 
 /* 세번째메뉴 - 4개 */
-.gnb>ul>li:nth-child(3):hover .smenu {
-    height: 160px;
-    /* 40*4 */
+.gnb > ul > li:nth-child(3):hover .smenu {
+  height: 160px;
+  /* 40*4 */
 }
 
 /* 네번째메뉴 - 2개 */
-.gnb>ul>li:nth-child(4):hover .smenu {
-    height: 80px;
-    /* 40*2 */
+.gnb > ul > li:nth-child(4):hover .smenu {
+  height: 80px;
+  /* 40*2 */
 }
 
 /* 서브메뉴 ol요소 - 디자인상 없앰! */
@@ -225,20 +224,20 @@ body{
 
 /* 서브메뉴 a요소 */
 .smenu a {
-    /* 글자색 */
-    color: #000;
-    /* 밑줄없앰 */
-    text-decoration: none;
-    /* 블록변경 */
-    display: block;
-    /* 글자중앙 */
-    /* text-align: center; */
-    /* 글자크기 */
-    font-size: 14px;
-    /* 줄간격 */
-    line-height: 40px;
-    /* 트랜지션: 속시이지 */
-    transition: .3s;
+  /* 글자색 */
+  color: #000;
+  /* 밑줄없앰 */
+  text-decoration: none;
+  /* 블록변경 */
+  display: block;
+  /* 글자중앙 */
+  /* text-align: center; */
+  /* 글자크기 */
+  font-size: 14px;
+  /* 줄간격 */
+  line-height: 40px;
+  /* 트랜지션: 속시이지 */
+  transition: 0.3s;
 }
 
 /* 서브메뉴 a에 오버시 */
@@ -247,16 +246,73 @@ body{
     color: orangered;
 } */
 
-
 /************** 2. 메인영역 **************/
 .cont {
-    /* 높이값 */
-    height: 800px;
+  /* 높이값 */
+  height: 800px;
 }
 
-
 /************** 3. 하단영역 **************/
+#info {
+  background-color: rgba(255, 255, 255, 0.7);
+}
 .info {
-    /* 높이값 */
-    height: 241px;
+  /* 높이값 */
+  height: 241px;
+}
+/* 3-1. 하단추가정보링크 */
+.blink{
+    /* 안쪽 박스 상단을 패딩탑으로 밀기 */
+    padding-top: 5px;
+}
+.blink ul {
+  /* 블록박스 중앙정렬은 가로크기가
+    auto이면 안되고 부모보다 작아야함 */
+  width: 804px;
+  /* 마영오! 블록가로중앙 */
+  margin: 0 auto;
+}
+.blink li {
+  float: left;
+  padding: 0 15px;
+}
+/* 하단링크 a요소 */
+.blink a {
+  /* 글자색 */
+  color: #222;
+  /* 밑줄없앰 */
+  text-decoration: none;
+  /* 글자두껍게 */
+  font-weight: bold;
+  /* 글자크기 */
+  font-size: 14px;
+  /* 줄간격 */
+  line-height: 2.8;
+}
+/* 마우스 오버시 a요소 */
+.blink a:hover {
+  color: red;
+  text-decoration: underline;
+}
+/* 3-2. 브랜드 바로가기 */
+.brand select {
+  /* 블록변경 - 마진탑을 마이너스로 올릴때
+    인라인블록이어서 인라인 특성상 상단의
+    링크메뉴 글자부분에서 걸리게 됨. 따라서
+    이런제한이 없는 블록박스로 변경함! */
+  display: block;
+  /* 오른쪽 float */
+  float: right;
+  /* 마진탑 - 위로 올리기 */
+  margin-top: -35px;
+  /* 글자색 */
+  color: #222;
+  /* 글자두껍게 */
+  font-weight: bold;
+  /* 글자크기 */
+  font-size: 14px;
+  /* 줄간격 */
+  line-height: 2.8;
+  /* 패딩 */
+  padding: 5px;
 }
