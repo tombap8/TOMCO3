@@ -3,23 +3,28 @@
 /* 상단영역, 하단영역 등 공통디자인 */
 
 /************** 1. 상단영역 **************/
-#top{/* 겉박스 */
+#top {
+    /* 겉박스 */
     /* 배경색 */
     background-color: #fff;
     /* 하단보더 */
     border-bottom: 1px solid #ccc;
 }
-.top{/* 속박스 */
+
+.top {
+    /* 속박스 */
     /* 높이값 */
     height: 127px;
 }
+
 /* 1-1. 메인로고 */
-#logo{
+#logo {
     padding: 20px;
     text-align: center;
 }
+
 /* 로고이미지 */
-#logo img{
+#logo img {
     width: 100px;
     vertical-align: top;
     /* a요소나 div등으로 이미지를 싸면
@@ -27,44 +32,63 @@
     vertical-align값을 설정하면 해결됨!
     값으로 top/middle/bottom 뭘써도 됨  */
 }
+
 /* 1-2. 탑메뉴 */
+.tmenu ul{
+    float: right;
+}
+.tmenu ul,
+.tmenu ol {
+    /* float 자식요소 높이인식 */
+    overflow: hidden;
+}
+
+.tmenu li {
+    /* 옆으로 흐르게 */
+    float: left;
+}
 
 /* 1-3. GNB메뉴 */
 /* .gnb{
     background-color: #218cff;
 } */
 /* ul 초기화 */
-.gnb ul{
+.gnb ul {
     /* 가로크기 */
     width: 668px;
 
     /* 마영오 - 블록요소 가로중앙정렬 */
     margin: 0 auto;
-    
+
     /* outline: 2px dotted red; */
 }
+
 /* 가상요소로 clear설정하기 */
-.gnb ul::after{
+.gnb ul::after {
     content: '';
     display: block;
     clear: both;
 }
+
 /* li 리스트요소 */
-.gnb>ul>li{
+.gnb>ul>li {
     /* 블록요소 옆으로 흐르게 */
     float: left;
     height: 44px;
-    padding: 0 15px;/* 양쪽패딩 */
+    padding: 0 15px;
+    /* 양쪽패딩 */
 }
+
 /* 세번째,네번째 li요소 가로크기주기 */
 .gnb>ul>li:nth-child(3),
-.gnb>ul>li:nth-child(4){
+.gnb>ul>li:nth-child(4) {
     width: 51px;
     /* 서브메뉴로 인한 자동크기가 늘어나므로
     글자크기만큼만 강제로 가로크기를 지정함! */
 }
+
 /* li 하위 a요소 */
-.gnb>ul>li>a{
+.gnb>ul>li>a {
     /* 글자색 */
     color: #000;
     /* 밑줄없앰 */
@@ -80,8 +104,9 @@
     /* 트랜지션: 속시이지 */
     /* transition: all .3s; -> 트랜지션 불필요! */
 }
+
 /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
-.gnb>ul>li:hover>a{
+.gnb>ul>li:hover>a {
     border-bottom: 4px solid red;
     padding-bottom: 5px;
     /* 인라인요소의 위아래 방향 패딩과 보더는
@@ -89,7 +114,7 @@
 }
 
 /* 서브메뉴 */
-.smenu{
+.smenu {
     /* 가로크기 설정 - 부모박스 크기에 영향없도록 */
     width: 88px;
     /* 노랩박스만들기 - 공백속성 싸지마! 
@@ -98,8 +123,10 @@
     /* 서브메뉴 숨김장치
     -> 높이값0 + 넘치는자식요소 숨기기 
     주의) 위아래방향 패딩 없어야함! */
-    height: 0;/* h0 */
-    overflow: hidden;/* oh */
+    height: 0;
+    /* h0 */
+    overflow: hidden;
+    /* oh */
     /* 배경색 */
     background-color: #fff;
     /* 상단마진조정 */
@@ -109,19 +136,25 @@
     /* outline: 2px dotted blue; */
 
 }
+
 /* 상위메뉴 li에 마우스 오버시
 하위메뉴박스 높이값 복원하기(트랜지션) */
 /* 첫번째메뉴 - 3개 */
-.gnb>ul>li:nth-child(1):hover .smenu{
-    height: 120px;/* 40*3 */
+.gnb>ul>li:nth-child(1):hover .smenu {
+    height: 120px;
+    /* 40*3 */
 }
+
 /* 세번째메뉴 - 4개 */
-.gnb>ul>li:nth-child(3):hover .smenu{
-    height: 160px;/* 40*4 */
+.gnb>ul>li:nth-child(3):hover .smenu {
+    height: 160px;
+    /* 40*4 */
 }
+
 /* 네번째메뉴 - 2개 */
-.gnb>ul>li:nth-child(4):hover .smenu{
-    height: 80px;/* 40*2 */
+.gnb>ul>li:nth-child(4):hover .smenu {
+    height: 80px;
+    /* 40*2 */
 }
 
 /* 서브메뉴 ol요소 - 디자인상 없앰! */
@@ -130,7 +163,7 @@
 } */
 
 /* 서브메뉴 a요소 */
-.smenu a{
+.smenu a {
     /* 글자색 */
     color: #000;
     /* 밑줄없앰 */
@@ -146,6 +179,7 @@
     /* 트랜지션: 속시이지 */
     transition: .3s;
 }
+
 /* 서브메뉴 a에 오버시 */
 /* .smenu a:hover{
     background-color: #ececec;
@@ -154,14 +188,14 @@
 
 
 /************** 2. 메인영역 **************/
-.cont{
+.cont {
     /* 높이값 */
     height: 800px;
 }
 
 
 /************** 3. 하단영역 **************/
-.info{
+.info {
     /* 높이값 */
     height: 241px;
 }
