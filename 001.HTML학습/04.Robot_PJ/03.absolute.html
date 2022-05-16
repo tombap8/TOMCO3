@@ -66,8 +66,10 @@
                     >>>>>>> width 나 height 값을
                     %로 줄경우 부모자격이 있는 요소를
                     기준하여 잡는다!
-                    
+
             *************************************/
+            top: 0;
+            right: 0;
 
             color: #fff;
             /*  배경: 색이반고윙/크 */
@@ -105,6 +107,46 @@
             /*  배경: 색이반고윙/크 */
             background: url(./ab_img/ab4.jpg) no-repeat center/cover;
         }
+
+        /* 부모박스들 */
+        .bx2{
+            border: 2px dotted orange;
+            padding: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+        /* 각 부모박스 */
+        .s5{
+            position: relative;
+            background-color: lightblue;
+        }
+        .s6{
+            position: relative;
+            background-color: lightcoral;
+        }
+        .s7{
+            position: relative;
+            background-color: lightgreen;
+        }
+        .s8{
+            position: relative;
+            background-color: lightsalmon;
+        }
+        /* 부모찾는 앱솔루트 */
+        .abs{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+        /* 위치값 앱솔루트 */
+        .a4{
+            top: 0;
+            left: 0;
+            /* 나의 부모는? */
+        }
     </style>
 </head>
 <body>
@@ -114,6 +156,18 @@
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s3">s3</div>
     <div class="bx" id="a2">a2</div>
+
+    <!-- 부모를 찾는 앱솔루트 요소 -->
+    <div class="bx2 s5">s5
+        <div class="bx2 s6">s6
+            <div class="bx2 s7">s7
+                <div class="bx2 s8">s8
+                    <div class="abs a3">a3</div>
+                    <div class="abs a4">a4</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
