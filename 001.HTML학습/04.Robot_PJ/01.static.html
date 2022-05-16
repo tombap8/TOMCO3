@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Position - static</title>
+    <style>
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            /* 글자가로중앙 */
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            /* 글자세로중앙 - 높이값과 같은 줄간격 */
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bx" id="s1">s1</div>
+    <div class="bx" id="s2">s2</div>
+    <div class="bx" id="s3">s3</div>
+
+
+    <!-- 
+        [ 에밋코딩 기법 ]
+        : 에밋코딩은 줄여서 코딩하는 기법이다
+        전신은 젠코딩이라고 불렸다~
+
+        위에 쓴 에밋 해석:
+        .bx#s${s$}*3 
+        -> 클래스가 bx이고 아이디가 s번호이고
+        내용이 s번호인 div요소를 3개 만드시오!
+        ___________________
+
+        ((에밋표시법))
+        클래스나 아이디는 css문법과 동일함
+        $표시는 연속번호 자리를 나타냄
+        [] 대괄호는 속성
+        {} 중괄호는 데이터
+        * 별표시는 곱하기(여러개 만들때)
+
+        -> 기타참고문서
+        600.공유자료/zencoding.pdf
+    -->
+    
+</body>
+</html>
