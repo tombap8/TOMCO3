@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>Position - fixed</title>
     <style>
+      body{
+        height: 3000px;
+      }
       .bx {
         width: 100px;
         height: 100px;
@@ -21,8 +24,38 @@
         /************************************* 
           [ 4. fixed 포지션 ]
 
+          1) 위치값을 설정하지 않을때
+          - 자신보다 위에 있는 static한 요소
+          아래에 그대로 있다가 스크롤시 그 자리를
+          화면에서 지키고 그대로 움직이지 않음!
+          -> 젠틀앱솔루트와 유사!-> 젠틀픽스드!
+
+          2) 위치이동값을 썼을때
+          - 부모를 기준하여 위치를 잡는다!
+          -> 부모가 누구? 보이는 화면 즉,
+          window!!
+
+          -> 보이는 화면에서 사라지지 않게함!
+          -> 스크롤에 영향을 받지 않는다!
+          -> 부모를 제외한 모든 다른특성은
+          앱솔루트와 거의 동일하다!
+
+          3) 아무리 부모요소가 여러개일지라도
+          자식요소 중 fixed를 주면 화면을 기준함!
+
+          4) 부모박스가 fixed이면 그 자식요소들은
+          모두 화면에 고정된다!
+          (자식요소가 fixed일 필요가 없다!)
+
+          5) 화면 바깥으로 숨겼다 보이게 할 때
+          fixed를 사용함
+
+          6) z-index도 포지션이 있는 경우
+          숫자로 비교하여 위아래 위치관계를 정함!
 
         *************************************/
+        z-index: 99;
+
         width: 100%;
         height: 100px;
         line-height: 50px;
@@ -33,6 +66,25 @@
         color: #fff;
         background: url(./ab_img/ab0.jpg) repeat-x 0/auto 100%;
 
+      }
+      .f2{
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* 보이는 화면기준 */
+        z-index: 9999;
+        /* 맨위로 오게할 경우 가장 높은 숫자로
+        z-index를 셋팅함 */
+
+        width: 100%;
+        height: 100px;
+        line-height: 50px;
+        text-align: center;
+        border: 4px double green;
+        font-size: 30px;
+
+        color: #fff;
+        background: url(./ab_img/ab1.jpg) repeat-x 0/auto 100%;
       }
 
       #a1 {
@@ -191,7 +243,11 @@
 
     <!-- 화면고정 fixed 포지션 -->
     <div class="f1">f1</div>
-    <div class="f2">f2</div>
+    <div class="f2">f2
+      <div class="newabs">
+        나는 fixed자식!
+      </div>
+    </div>
 
     <!-- 부모를 찾는 앱솔루트 요소 -->
     <div class="bx2 s5">
