@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Position - absolute</title>
+    <style>
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            /* 글자가로중앙 */
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            /* 글자세로중앙 - 높이값과 같은 줄간격 */
+            line-height: 100px;
+        }
+
+        #a1{
+            position: absolute;
+            /************************************* 
+                [ 3. absolute 포지션 ]
+
+                1) absolute 포지션은 위치이동값을
+                쓰기전과 후로 나눠볼 수 있다!
+
+                    (1) 위치이동값을 쓰지 않은경우
+
+                    - 자기보다 위에 있는 static한
+                    요소를 존중하여 그 아래에 위치함
+                    (젠틀앱솔루트!)
+                    + 어떤요소의 자식요소로 앱솔루트를 주는 경우 위치값을
+                    안쓸때 그 부모박스안에 가만히 있는다!(젠틀앱솔루트!)
+
+                    - 자기보다 아래쪽에 있는 요소는
+                    앱솔루트를 인식하지 못하여
+                    같은자리를 차지한다!(올라옴!)
+
+                    (2) 위치이동값을 사용한 경우
+                    - 위치이동값을 사용한 부분에
+                    대해서만!!!!!!!!!!!!!!!!!
+                    앱솔루트가 위치를 잡을때 부모를
+                    찾는다!
+                    일반적으로 싸고 있는 요소가
+                    부모이지만
+                    앱솔루트는 싸고 있는 요소들 중
+                    포지션이 static이 아닌 요소를
+                    찾아 부모로 삼는다!(위치기준!)
+
+                    -> static이 아닌 포지션이란?
+                    relative / absolute / fixed
+                    sticky
+
+                    -> 위치 이동값을 쓰지 않은 부분은 젠틀하다!!!
+
+                    -> 부모자격이 있는 부모요소들 중
+                    가장 가깐운것이 부모가 된다!
+
+                    -> 만약 부모자격이 모두 없으면
+                    보이는 화면(window)을 기준한다!
+                    ->>> 보이는 화면은 body가 아님!
+                    스크롤이 생겨도 스크롤 위쪽
+                    보이는 화면만 지칭한다!
+
+                    ->>> 또한!!!
+                    >>>>>>> width 나 height 값을
+                    %로 줄경우 부모자격이 있는 요소를
+                    기준하여 잡는다!
+                    
+            *************************************/
+
+            color: #fff;
+            /*  배경: 색이반고윙/크 */
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+
+        #r1{
+            position: relative;
+            top: 50px;
+            left: 50px;
+
+            /* 아래에 있는 relative보다 위 */
+            z-index: 1;
+
+            color: #fff;
+            /*  배경: 색이반고윙/크 */
+            background: url(./ab_img/ab5.jpg) no-repeat center/cover;
+        }
+
+        #s2{
+            background-color: lightblue;
+        }
+
+        /* 두번째 relative요소 */
+        #r2{
+            position: relative;
+            bottom: 75px;
+            right: -86px;
+
+            /* static보다 아래는 z-index가 마이너스 */
+            /* z-index: -1; */
+
+
+            color: #fff;
+            /*  배경: 색이반고윙/크 */
+            background: url(./ab_img/ab4.jpg) no-repeat center/cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s2">s2</div>
+    <div class="bx" id="a1">a1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s3">s3</div>
+    <div class="bx" id="a2">a2</div>
+
+</body>
+</html>
