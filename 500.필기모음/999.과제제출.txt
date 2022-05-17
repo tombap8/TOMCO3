@@ -8,9 +8,6 @@ _______________________________
 
 폴더명: 
 
-    [ 01.HTML+CSS 웹개발 : 01. 시험지제출 ]
-    https://drive.google.com/drive/folders/1CpYgarTFwCnHDliLa04jBshqi35wQLPb
-
     [ 01.HTML+CSS 웹개발 : 02. 실기제출 ]
     https://drive.google.com/drive/folders/1fgwBqffPj4e1q5baGhEQCGb32dkjP1fy
 
