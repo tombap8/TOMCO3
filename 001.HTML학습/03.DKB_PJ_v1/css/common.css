@@ -116,7 +116,7 @@ body {
 /* ul 초기화 */
 .gnb ul {
   /* 가로크기 */
-  width: 580px;
+  width: 574px;
 
   /* 마영오 - 블록요소 가로중앙정렬 */
   margin: 0 auto;
@@ -140,13 +140,53 @@ body {
   /* 양쪽패딩 */
 }
 
+/* li에 가상요소로 서브메뉴 꽉차는 배경 만들기 
+- ::after를 쓰는 이유는 a요소 다음위치 젠틀앱솔루트로 하려고*/
+.gnb > ul > li.bgbx::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  /* left의 부모는? 보이는화면
+  (중간에 부모자격이 모두 없음)
+  top값은 젠틀함! */
+  width: 100%;
+  /* 100%는 부모역할을 하는 보이는화면 기준! */
+  height: 0;
+  background-color: #fff;
+  /* top부분 미세위치 조정은 마진탑으로! */
+  margin-top: 4px;
+  /* 트랜지션: 속시이지 -> .smenu와 동일! */
+  transition: height 0.4s ease-out;
+}
+
+/* li에 마우스 오버시 가상요소배경 하단보더 */
+.gnb > ul > li.bgbx:hover::after{
+  border-bottom: 2px solid red;
+}
+/* 첫번째 li오버시 가상요소배경 보이기 */
+.gnb > ul > li.m1:hover::after{
+  height: 120px;
+}
+/* 세번째 li오버시 가상요소배경 보이기 */
+.gnb > ul > li.m2:hover::after{
+  height: 160px;
+}
+/* 네번째 li오버시 가상요소배경 보이기 */
+.gnb > ul > li.m3:hover::after{
+  height: 80px;
+}
+
 /* 세번째,네번째 li요소 가로크기주기 */
-.gnb > ul > li:nth-child(3),
+/* .gnb > ul > li:nth-child(3),
 .gnb > ul > li:nth-child(4) {
   width: 51px;
-  /* 서브메뉴로 인한 자동크기가 늘어나므로
-    글자크기만큼만 강제로 가로크기를 지정함! */
-}
+} */
+/* 서브메뉴로 인한 자동크기가 늘어나므로
+  글자크기만큼만 강제로 가로크기를 지정함! 
+  -> 그.러.나...
+  서브메뉴가 앱솔루트이면 강제로 늘릴필요없음!
+  왜? 앱솔은 부모에게 영향을 주지 않는다! */
 
 /* li 하위 a요소 */
 .gnb > ul > li > a {
@@ -176,6 +216,14 @@ body {
 
 /* 서브메뉴 */
 .smenu {
+  position: absolute;
+  /* 젠틀앱솔루트!!!
+  -> li박스안에 그대로 있고
+  위에 있는 형제 a요소도 존중해서
+  그 아래에 그대로 위치하고 있다! */
+  z-index: 1;
+  /* 배경가상요소보다 바로 위! */
+
   /* 가로크기 설정 - 부모박스 크기에 영향없도록 */
   width: 88px;
   /* 노랩박스만들기 - 공백속성 싸지마! 
