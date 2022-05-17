@@ -72,3 +72,21 @@ body *{
     height: 40px;
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
 }
+/* 귀공통 */
+.ear{
+    position: absolute;
+    top: 80px;
+    /* 부모는? #head */
+    width: 50px;
+    height: 85px;
+    background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+
+}
+/* 귀1 */
+#ear1{
+    left: -50px;
+}
+/* 귀2 */
+#ear2{
+    right: -50px;
+}
