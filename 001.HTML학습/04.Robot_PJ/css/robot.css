@@ -11,3 +11,14 @@ body{
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
     
 }
+
+/* 공사중표시 */
+body *{
+    outline: 2px dashed lime;
+}
+
+/* 로봇머리 */
+#head{
+    width: 250px;
+    height: 250px;
+}
