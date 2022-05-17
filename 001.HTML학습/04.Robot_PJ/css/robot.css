@@ -207,14 +207,14 @@ body * {
     content: '';
     display: block;
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: -42px;
+    left: -9px;
     /* 부모는? .leg */
     width: 90px;
-    height: 60px;
+    height: 64px;
     border: 2px solid #555;
+    border-bottom: 18px solid #555;
     border-radius: 40px 40px 0 0;
-    /* 원 */
     background-color: #ccc;
     /* 크기유지: 보더박스(보더,패딩포함) */
     box-sizing: border-box;
