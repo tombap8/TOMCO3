@@ -87,6 +87,41 @@
         background: url(./ab_img/ab1.jpg) repeat-x 0/auto 100%;
       }
 
+      /* fixed를 부모로한 앱솔루트 */
+      .newabs{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        /* 부모는? .f2 */
+        background-color: pink;
+        line-height: 1;
+        color: #000;
+      }
+
+      /* 자식요소로 있는 경우 fixed만들기 */
+      .f3{
+        position: fixed;
+        top: 0;
+        right: -180px;
+        /* 부모는 보이는 화면 */
+
+        width: 300px;
+        height: 100px;
+        background-color: #ff0;
+        line-height: 100px;
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        z-index: 99999;
+
+        /* 트랜지션: 속시이지 */
+        transition: right .4s ease-out;
+      }
+      /* .f3에 마우스 오버시 right값 변경하여 화면에 등장 */
+      .f3:hover{
+        right: 0;
+      }
+
       #a1 {
         position: absolute;
         top: 0;
@@ -263,6 +298,9 @@
             <span class="spabs">
                 나는 span앱솔루트다!
             </span>
+            <div class="f3">
+              나는 fixed다!
+            </div>
           </div>
         </div>
       </div>
