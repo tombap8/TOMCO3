@@ -39,14 +39,25 @@ body {
 }
 
 /* 1-2. 탑메뉴 */
+.tmenu{
+  position: relative;
+  /* 부모자격! */
+}
 
 /* 내용 리스트박스 */
 .tmenu ul {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  /* 부모는? .tmenu */
+
+
+  /* 하단의 코딩은 앱솔루트 이전 작업 - 모두 불필요! */
   /* 오른쪽 끝으로! */
-  float: right;
+  /* float: right; */
   /* 마진탑으로 위로 올라감 
     부모박스의 높이값은 0이됨! 왜? 빠져나가니까! */
-  margin-top: -50px;
+  /* margin-top: -50px; */
 }
 
 .tmenu li {
@@ -343,16 +354,16 @@ body {
   text-decoration: underline;
 }
 /* 3-2. 브랜드 바로가기 */
+.brnad{
+  position: relative;
+  /* 부모자격 */
+}
 .brand select {
-  /* 블록변경 - 마진탑을 마이너스로 올릴때
-    인라인블록이어서 인라인 특성상 상단의
-    링크메뉴 글자부분에서 걸리게 됨. 따라서
-    이런제한이 없는 블록박스로 변경함! */
-  display: block;
-  /* 오른쪽 float */
-  float: right;
-  /* 마진탑 - 위로 올리기 */
-  margin-top: -35px;
+  position: absolute;
+  top: -37px;
+  right: 0;
+  /* 부모는? .brand */
+  
   /* 글자색 */
   color: #222;
   /* 글자두껍게 */
@@ -363,6 +374,19 @@ body {
   line-height: 2.8;
   /* 패딩 */
   padding: 5px;
+  
+  /* 
+  앱솔루트 변경 이전 사항 아래 변경 불필요!
+
+  블록변경 - 마진탑을 마이너스로 올릴때
+    인라인블록이어서 인라인 특성상 상단의
+    링크메뉴 글자부분에서 걸리게 됨. 따라서
+    이런제한이 없는 블록박스로 변경함! */
+  /* display: block; */
+  /* 오른쪽 float */
+  /* float: right; */
+  /* 마진탑 - 위로 올리기 */
+  /* margin-top: -35px; */
 }
 
 /* 3-3. 회사주소박스 */
