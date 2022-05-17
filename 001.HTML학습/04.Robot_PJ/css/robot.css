@@ -38,10 +38,12 @@ body * {
 
     width: 50px;
     height: 50px;
+    background-color: #fff;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    border-radius: 50%;
     /* 원 */
+    border-radius: 50%;
+    border: 5px double #555;
 }
 
 /* 눈1 */
@@ -113,7 +115,8 @@ body * {
     /* 마영오! */
     margin-top: 50px;
     margin-bottom: 500px;
-    background: url(../images/metal01.jpg) no-repeat center/cover;
+    background: url(../images/metal01.jpg) no-repeat center/cover;    
+    border-bottom: 10px solid #222;
 }
 
 /* 목 */
@@ -184,7 +187,7 @@ body * {
 /* 다리공통 */
 .leg {
     position: absolute;
-    top: 100%;
+    top: 310px;
     /* 부모는? #body */
 
     width: 70px;
