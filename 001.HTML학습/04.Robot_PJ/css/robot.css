@@ -118,9 +118,18 @@ body * {
 /* 팔공통 */
 .arm {
   position: absolute;
-  top: 10px;
+  top: 30px;
   /* 부모는? #body */
 
   width: 50px;
-  height: 250px;
+  height: 240px;
+  background: url(../images/metal02.jpg) repeat-y 0/100%;
+}
+/* 팔1 */
+#arm1{
+    left: -65px;
+}
+/* 팔2 */
+#arm2{
+    right: -65px;
 }
