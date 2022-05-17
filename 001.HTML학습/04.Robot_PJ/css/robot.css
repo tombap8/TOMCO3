@@ -9,6 +9,7 @@ html,body{
 body{
     /* 배경: 색이반고윙/크 */
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
+    padding-top: 100px;
     
 }
 
@@ -21,4 +22,7 @@ body *{
 #head{
     width: 250px;
     height: 250px;
+    /* 마영오! 블록중앙 */
+    margin: 0 auto;
+    background: url(../images/metal01.jpg) no-repeat center/cover;
 }
