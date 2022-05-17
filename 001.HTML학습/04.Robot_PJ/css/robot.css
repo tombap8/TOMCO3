@@ -133,3 +133,33 @@ body * {
 #arm2{
     right: -65px;
 }
+/* 가상요소로 집게손 만들기 */
+.arm::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -53px;
+    left: -15px;
+    /* 부모는? .arm */
+    width: 80px;
+    height: 80px;
+    border: 2px solid #555;
+    border-radius: 50%;/* 원 */
+    background-color: #ccc;
+    /* 크기유지: 보더박스(보더,패딩포함) */
+    box-sizing: border-box;
+}
+/* 가상요소로 집게손틈 만들기 */
+.arm::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -53px;
+    left: 15px;
+    /* 부모는? .arm */
+    width: 20px;
+    height: 51px;
+    background-color: #000;
+    border-radius: 10px;
+}
+
