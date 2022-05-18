@@ -257,22 +257,23 @@ body * {
 /* 스크린 */
 #screen{
     position: absolute;
-    top: 18px;
-    left: 13px;
+    top: 16px;
+    left: 11px;
     /* 부모는? #tv */
-    width: 137px;
-    height: 103px;
+    width: 142px;
+    height: 107px;
     background-color: #000;
     border-radius: 11px;
+    /* 넘치는 자식요소 숨기기 */
+    overflow: hidden;
 }
 /* 유튜브 아이프레임 */
 #screen iframe{
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: -21px;
     /* 부모는? #screen */
-
-    width: 100%;
+    width: 131%;
     height: 100%;
 
     /* 아이프레임 기본보더 없앰 */
