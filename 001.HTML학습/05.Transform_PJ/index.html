@@ -191,12 +191,13 @@
         }
 
         /* 
-                7. skew - x,y축 기울임
-                - skewX(각도deg), skewY(각도deg)
-                - 각도가 양수/음수에 따라 기울임 방향달라짐                
-            */
+            7. skew - x,y축 기울임
+            - skewX(각도deg), skewY(각도deg)
+            - skew(x축, y축)
+            - 각도가 양수/음수에 따라 기울임 방향달라짐                
+        */
         #trans7:hover img {
-           
+           transform: skewX(-30deg);
         }
 
         /* 
@@ -207,21 +208,22 @@
                - 값이 0이면 사라짐
              */
         #trans8 img {
-            
+            transform: scale(.5);
             /* 0.5배 -> 축소 */
         }
 
-        #trans8.on img {
-           
+        #trans8:hover img {
+           transform: scale(2);
             /* transform: scaleY(2); */
         }
 
         /* 
-                9. 복합적용하기
-                transform: 속성1 속성2 속성3 .....;
-              */
+            9. 복합적용하기
+            transform: 속성1 속성2 속성3 .....;
+        */
         #trans9:hover img {
-            
+            transform: scale(2) translate(-200%, -100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
+            transition-duration: 20s;
         }
 
         /* 
