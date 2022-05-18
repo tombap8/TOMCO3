@@ -174,19 +174,20 @@
            */
         #trans6:hover img {
             transform: rotate(5486deg);
+            /* 트랜지션 시간늘림 */
             transition-duration: 10s;
         }
 
         /* 회전축 변경하기 */
         #trans6 img {
-           
+            transform-origin: 100px 50px;
             /* 
             [트랜스폼 축변경 속성]
             transform-origin: 가로값 세로값;
             - 가로값: left, right, center, 몇px, 몇%
             - 세로값: top, bottom, center, 몇px, 몇%
             - 기본값은 center임!
-        */
+            */
         }
 
         /* 
