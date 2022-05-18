@@ -327,6 +327,42 @@ body {
 #dcbx p{
     /* 기본글자크기는 일반적으로 16px */
     font-size: 15px;
+    /* 줄간격: 배수/단위 등 */
     line-height: 1.8;
-    
+    /* 자간 */
+    letter-spacing: 1px;
+    /* 단어간격 */
+    word-spacing: 2px;
+
+    /*  가독성을 위한 다단설정 */
+    /* 다단표시(다중열속성) */
+
+    /* 다중열개수 */
+    column-count: 3;
+    /* 다중열구분선
+    -> 보더설정값과 같음(두께 종류 색상) */
+    column-rule: 5px dotted lightgreen;
+    /* 다중열사이간격
+    -> 구분선 오른쪽 간격조정 */
+    column-gap: 55px;
+
+    /* 문단정렬: 양쪽정렬 */
+    text-align: justify;
+    /* 단어깨기 */
+    word-break: break-all;
+    /* 1byte문자인 영어는 기본적으로
+    단어단위로 같이 구분되어 있으므로
+    문단에서 단어가 못들어가면 아랫줄로
+    내려가서 중간이나 끝에 비어보임!
+    이때 단어깨기설정을 해야 단어가
+    글자단위로 모두 정렬될 수 있다! */
+
+    /* 첫줄 들여쓰기 */
+    text-indent: 20px;
+}
+/* 가상요소로 첫글자 디자인변경 */
+#dcbx p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+    color: lightsalmon;
 }
