@@ -7,6 +7,13 @@
     font-family: 'Black Ops One', cursive;
     font-family: 'Orbitron', sans-serif;
 */
+html{
+    scroll-behavior: smooth;
+    /* 내부 아이디 요소 위치로 이동시
+    스크롤 애니메이션을 부드럽게 처리하는 속성!
+    최상위 요소인 html에 셋팅하면 전체페이지 
+    스크롤에 적용됨! */
+}
 
 html,
 body {
