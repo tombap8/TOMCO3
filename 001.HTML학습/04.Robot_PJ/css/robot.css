@@ -242,3 +242,26 @@ body * {
     right: -80px;
     border-radius: 5px 50% 50% 5px;
 }
+
+/* TV */
+#tv{
+    position: absolute;
+    top: 65px;
+    left: 26px;
+    /* 부모는? #body */
+
+    width: 200px;
+    height: 150px;
+    background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+}
+/* 스크린 */
+#screen{
+    position: absolute;
+    top: 18px;
+    left: 13px;
+    /* 부모는? #tv */
+    width: 137px;
+    height: 103px;
+    background-color: #f00;
+    border-radius: 5px;
+}
