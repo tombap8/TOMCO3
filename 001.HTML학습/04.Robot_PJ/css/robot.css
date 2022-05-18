@@ -304,3 +304,29 @@ body {
     inset 0 0 20px blue,
     inset 0 0 50px 10px cyan;
 }
+
+/* 로봇설명 제목 */
+#dcbx h2{
+    font-size: 35px;
+    text-align: center;
+    color: lime;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+}
+
+/* 로봇 출처 */
+#dcbx small{
+    display: block;
+    text-align: center;
+    color: #ff0;
+    font-size: 12px;
+    /* 최소글자크기 한계는 10px */
+}
+
+/* 설명문단 */
+#dcbx p{
+    /* 기본글자크기는 일반적으로 16px */
+    font-size: 15px;
+    line-height: 1.8;
+    
+}
