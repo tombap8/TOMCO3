@@ -64,6 +64,31 @@ h1#logo{
 
 }
 
+/* 내용보기 링크 타이틀 */
+.link{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    /* 부모는? 보이는화면! */
+}
+/* 링크 a요소 */
+.link a{
+    /* a요소에서 글자색,밑줄 처리함! */
+    color: lawngreen;
+    text-decoration: none;
+
+    /* 글자설정 한번에! */
+    font: 50px 'Black Ops One', cursive;
+    /* 글자그림자 */
+    text-shadow: 2px 2px 2px #000;
+}
+/* 마우스 오버시 */
+.link a:hover{
+    color: orangered;
+    text-decoration: overline;
+    /* overline 윗줄 */
+}
+
 /* 로봇머리 */
 #head {
     position: relative;
