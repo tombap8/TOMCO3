@@ -14,9 +14,9 @@ body {
 }
 
 /* 공사중표시 */
-body * {
+/* body * {
     outline: 2px dashed lime;
-}
+} */
 
 /* 로봇머리 */
 #head {
@@ -114,7 +114,7 @@ body * {
     margin: 0 auto;
     /* 마영오! */
     margin-top: 50px;
-    margin-bottom: 500px;
+    margin-bottom: 370px;
     background: url(../images/metal01.jpg) no-repeat center/cover;    
     border-bottom: 10px solid #222;
 }
@@ -279,4 +279,28 @@ body * {
 
     /* 아이프레임 기본보더 없앰 */
     border: none;
+}
+
+/* 로봇 설명박스 */
+#dcbx{
+    width: 800px;
+    /* 마영오! - 가로중앙 */
+    margin: 0 auto;
+    /* 하단공간 */
+    margin-bottom: 200px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    /* 글자그림자: x y 블러 색 */
+    text-shadow: 1px 1px 1px #000;
+    /* 박스그림자: (내부) x y 블러 (크기) 색
+    -> 박스그림자를 이용한 글로우효과주기!
+    그림자색을 밝은 형광계열색을 준다!
+    내부옵션 inset을 주면 안쪽그림자(글로우)효과 
+    -> 콤마로 그림자를 여러개 줄 수 있음*/
+    box-shadow: 
+    inset 0 0 20px blue,
+    inset 0 0 50px 10px cyan;
 }
