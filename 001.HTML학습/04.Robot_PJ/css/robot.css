@@ -41,10 +41,26 @@ h1#logo{
     /* 글자가로중앙 */
     text-align: center;
     /* 글자세로중앙 - 높이값과 동일! */
-    line-height: 200px;
+    /* line-height: 200px; 
+    -> 아래 font한번에 설정에서 함! */
 
     /* 글자색 */
     color: #00ffae;
+    /* 글자설정 한번에!
+    font: 스타일 두께 크기/줄간격 글자체
+    font: 스두크/줄체 */
+    font: 45px/200px 'Orbitron';
+    /* 글자그림자: x y 블러 색 */
+    text-shadow: 2px 2px 5px #000;
+    /* 박스그림자: (내부) x y 블러 (크기) 색 */
+    box-shadow: 
+    0 0 20px 5px pink,
+    inset 0 0 20px 5px #000;
+
+    /* 배경 */
+    background: pink url(../images/robot_03.png) no-repeat;
+    background-position: center 10px;
+    background-size: 160px;
 
 }
 
