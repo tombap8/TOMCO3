@@ -234,34 +234,51 @@
             - 순서는 나중에 그려진요소가 위에 온다
         */
         /* 2개의 이미지를 겹치게한다 */
-        
+        #trans10 img{
+            position: absolute;
+            /* 위치값을 주지않으면 젠틀앱솔루트!
+            -> 싸고있는 박스에 그대로 위치함! */
+            width: 200px;
+            /* 공통적용인 width:100% 이면 앱솔루트는
+            부모를 찾아서 그 크기를 설정하므로 부모가
+            보이는 화면이므로 특정크기를 주는 것이
+            더 편리하다! */
+        }
 
 
         /* 1. 보거미 처음상태(돌아옴) */
         /* Y축 0도로 돌아옴 - 0.4초 기다림 */
         #trans10 img:last-child {
-            
+           transform: rotateY(0deg);
+           transition: transform .4s ease-out .4s;
+           /* ease-out 정속도를 받아 끝날때 느려짐 */
         }
 
 
         /* 2. 보거미 오버상태 */
         /* Y축 90도회전 - 회전후 안보임*/
         #trans10:hover img:last-child {
-           
+           transform: rotateY(90deg);
+           transition: transform .4s ease-in;
+           /* ease-in 처음에 느리고 속도유지 */
         }
 
         /* 3. 유정이 처음상태(돌아옴) */
         /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
         #trans10 img:first-child {
-           
+           transform: rotateY(90deg);
+           transition: transform .4s ease-in;
+           /* ease-in 처음에 느리고 속도유지 */
         }
 
 
         /* 4. 유정이 오버상태 */
         /* Y축 0도로 회전 
-               - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
+        - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
         #trans10:hover img:first-child {
-            
+           transform: rotateY(0deg);
+           transition: transform .4s ease-out .4s;
+           /* ease-out 정속도를 받아 끝날때 느려짐 */
         }
 
 
