@@ -111,7 +111,29 @@ h1#logo{
     background-position: center 10px;
     background-size: 160px;
 
+    /* 애니메이션: 이시이지반방마 */
+    animation: logoAni 2s ease-in-out 2s forwards;
+
 }
+
+/* 로고 애니 키프레임 */
+@keyframes logoAni {
+    /* 시작값 - 초기설정값과 같으면 생략! */
+    /* from{
+        top: calc(50% - 102px);
+        left: calc(50% - 102px);
+        transform: scale(2);
+    } */
+    /* 끝값 */
+    to{
+        top: 50px;
+        left: 50px;
+        transform: scale(1);
+    }
+
+} /* 키프레임 */
+
+
 
 /*************************************************** 
     [ CSS로 애니메이션 하기 ]
