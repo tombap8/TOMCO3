@@ -241,13 +241,26 @@ h1#logo {
     position: absolute;
     top: 100px;
     right: 50px;
-    /* 부모는? 보이는화면! */
+    /* 부모는? 보이는화면! */    
+}
 
+/* 투명요소 보이게 키프레임 호출 클래스 */
+.opaAni{
     /* 처음에 안보임 - 투명 */
     opacity: 0;
-
+    
     /* 애니메이션: 이시이지반방마 */
-    animation: opaAni 1s 5s forwards;
+    animation: opaAni 1s forwards;
+}
+/* 딜레이셋팅 클래스 */
+.opaAni.delay1{
+    animation-delay: 5s;
+}
+.opaAni.delay2{
+    animation-delay: 6s;
+}
+.opaAni.delay3{
+    animation-delay: 7s;
 }
 
 /* 투명요소 보이게 애니 키프레임 */
@@ -311,9 +324,6 @@ h1#logo {
     background-color: #ccc;
     border-radius: 50%;
     border: 5px outset #fff;
-
-    /* 처음에 안보임 - 투명 */
-    opacity: 0;
 }
 
 /* TOP버튼 오버시 */
@@ -359,7 +369,9 @@ h1#logo {
     animation: backAni 1s ease-out 3s forwards;
 }
 /* 머리는 애니 딜레이 더줌 */
-.delay1{
+/* .backAni.delay1 
+-> .backAni에만 적용되는 .dalay1이라는 뜻 */
+.backAni.delay1{
     animation-delay: 4s;
 }
 
