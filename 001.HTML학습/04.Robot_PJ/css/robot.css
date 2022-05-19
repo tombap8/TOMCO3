@@ -40,12 +40,20 @@ body {
 
 /* 
     [ 요소 정중앙 정렬법 ]
+    : 포지션이 absolute 혹은 fixed일때 
+    기준에 따른 정중앙 정렬법
 
-    1. 50%로 밀고 자기크기의 절반만큼 빼기
+    1. top과 left를 50%로 밀고 
+        자기크기의 절반만큼 빼기
     예) calc(50% - 특정px)
     - calc() 메서드는 css전용 계산 메서드
     > 사칙연산이 모두 가능함
     여기서는 유동적인 %에서 특정px을 뺄때 사용함
+    > 주의: 마이너스 기호 앞뒤로 반드시 띄어쓰기!
+
+    ((CSS전용 메서드))
+    -> w3schools
+    https://www.w3schools.com/css/css_math_functions.asp
 */
 
 /* 로봇페이지 로고 */
