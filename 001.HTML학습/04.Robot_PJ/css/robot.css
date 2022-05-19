@@ -515,6 +515,12 @@ h1#logo {
     right: -65px;
     /* 트랜스폼 기준축 변경: 상단 */
     transform-origin: top;
+    /* 애니메이션: 이시이지반방마 */
+    animation: 
+    /* 팔올리기 애니호출 */
+    riseAni .6s ease-out 7s forwards,
+    /* 팔흔들기 애니호출 */
+    shakeAni .4s ease-in-out 7.6s infinite alternate;
 }
 /* 팔올리기 애니 키프레임 */
 @keyframes riseAni {
