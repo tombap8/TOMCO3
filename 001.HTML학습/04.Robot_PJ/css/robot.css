@@ -234,7 +234,32 @@ h1#logo {
 
   /* 처음에 안보임 - 투명 */
   opacity: 0;
+
+  /* 애니메이션: 이시이지반방마 */
+  animation: opaAni 1s 5s forwards;
 }
+
+/* 투명요소 보이게 애니 키프레임 */
+@keyframes opaAni {
+    10%{
+        opacity: 1;
+    }
+    30%{
+        opacity: .1;
+    }
+    60%{
+        opacity: 1;
+    }
+    80%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
+} /* 키프레임 */
+
+
+
 /* 링크 a요소 */
 .link a {
   /* a요소에서 글자색,밑줄 처리함! */
