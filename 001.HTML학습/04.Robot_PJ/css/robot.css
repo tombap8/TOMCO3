@@ -25,9 +25,13 @@ body {
 body {
     /* 배경: 색이반고윙/크 */
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
-    padding-top: 100px;
-    /* 가로스크롤바 숨기기 */
-    overflow-x: hidden;
+
+    /* 패딩탑은 .robx로 옮긴다! */
+    /* padding-top: 100px; */
+
+    /* 가로스크롤바 숨기기 -> .robx 에서처리!*/
+    /* overflow-x: hidden; */
+
     /* sticky포지션을 위한 주의사항!
     overflow-x숨기기 셋팅을 html과 동시에
     잡으면 sticky가 작동하지 않는다!
@@ -319,13 +323,26 @@ h1#logo {
     border-style: inset;
 }
 
+/* 로봇박스 */
+.robx{
+    /* body에 했던 설정을 여기에함! */
+    padding-top: 100px;
+    overflow: hidden;
+    /* 높이값 */
+    height: 980px;
+    /* 높이값을 지정한 이유!
+    -> 자식요소 #head의 relative포지션에서
+    top값을 %로 지정할 경우 부모박스의 크기가
+    정해져 있어야 %가 적용된다! */
+}
+
 /* 로봇머리 */
 #head {
     position: relative;
     /* 부모자격 */
 
-    /* 처음에 오른쪽에 나가있음 */
-    left: 100%;
+    /* 처음에 위로 나가있음 */
+    top: -50%;
 
     width: 250px;
     height: 250px;
@@ -341,11 +358,18 @@ h1#logo {
     /* 애니메이션: 이시이지반방마 */
     animation: backAni 1s ease-out 3s forwards;
 }
+/* 머리는 애니 딜레이 더줌 */
+.delay1{
+    animation-delay: 4s;
+}
 
 /* 로봇머리,로봇몸 제자리로 애니 키프레임 */
 @keyframes backAni {
     to {
+        top: 0;
         left: 0;
+        /* top, left값이 0이란 relative에서
+        원래 자기있던 위치를 말한다! */
     }
 }
 
