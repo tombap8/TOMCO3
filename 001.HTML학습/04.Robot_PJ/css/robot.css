@@ -719,3 +719,18 @@ h1#logo {
     /* 배경반투명 */
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* 가상요소로 아이콘넣기 */
+.info span::before {
+    content: '';
+    display: inline-block;
+    vertical-align: -5px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    /* 배경 */
+    background: pink url(../images/robot_03.png) no-repeat;
+    background-position: -11px -3px;
+    background-size: 60px;
+}
