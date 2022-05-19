@@ -112,7 +112,11 @@ h1#logo{
     background-size: 160px;
 
     /* 애니메이션: 이시이지반방마 */
-    animation: logoAni 2s ease-in-out 2s forwards;
+    animation: 
+    /* 애니1:이동하기(2초후 2초간) */
+    logoAni 2s ease-in-out 2s forwards,
+    /* 애니2:흔들기(4초후 1초간 영원히) */
+    logoAni2 1s ease-in-out 4s infinite alternate;
 
 }
 
@@ -124,13 +128,30 @@ h1#logo{
         left: calc(50% - 102px);
         transform: scale(2);
     } */
-    /* 끝값 */
-    to{
+
+    /* rotate적용을 위한 전단계 */
+    80%{
         top: 50px;
         left: 50px;
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
+    }
+    /* 끝값 */
+    100%{
+        top: 50px;
+        left: 50px;
+        transform: scale(1) rotate(20deg);
     }
 
+} /* 키프레임 */
+
+/* 로고 흔들기 키프레임 */
+@keyframes logoAni2 {
+    0%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    }
 } /* 키프레임 */
 
 
