@@ -51,6 +51,12 @@ body {
     여기서는 유동적인 %에서 특정px을 뺄때 사용함
     > 주의: 마이너스 기호 앞뒤로 반드시 띄어쓰기!
 
+    2. top과 left를 50%로 밀고 
+        자기크기의 절반만큼 이동하기
+        -> transform: translate(-50%,-50%) 사용!
+        -> -50%는 자기자신의 가로/세로 크기의 절반만큼
+        반대방향으로 이동함
+
     ((CSS전용 메서드))
     -> w3schools
     https://www.w3schools.com/css/css_math_functions.asp
@@ -59,10 +65,21 @@ body {
 /* 로봇페이지 로고 */
 h1#logo{
     position: fixed;
+
+    /* 정중앙배치 방법1 */
     top: calc(50% - 102px);
     left: calc(50% - 102px);
+
     /* 102px을 뺀것은 보더크기고려 */
     /* fixed의 부모는 보이는 화면(window)! */
+
+    /* 정중앙배치 방법2 */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+    /* 크기 2배확대 */
+    transform: scale(2);
 
     width: 200px;
     height: 200px;
