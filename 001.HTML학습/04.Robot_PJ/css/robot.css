@@ -437,7 +437,17 @@ h1#logo {
     width: 90px;
     height: 40px;
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: talkAni .07s linear 7s infinite alternate;
 }
+
+/* 말하기 애니 키프레임 */
+@keyframes talkAni {
+    to{
+        transform: scaleY(.4);
+    }
+} /* 키프레임 */
 
 /* 귀공통 */
 .ear {
