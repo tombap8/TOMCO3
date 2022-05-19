@@ -513,7 +513,25 @@ h1#logo {
 /* 팔2 */
 #arm2 {
     right: -65px;
+    /* 트랜스폼 기준축 변경: 상단 */
+    transform-origin: top;
 }
+/* 팔올리기 애니 키프레임 */
+@keyframes riseAni {
+    to{
+        transform: rotate(-160deg);
+    }
+} /* 키프레임 */
+
+/* 팔흔들기 애니 키프레임 */
+@keyframes shakeAni {
+    from{
+        transform: rotate(-160deg);
+    }
+    to{
+        transform: rotate(-140deg);
+    }
+} /* 키프레임 */
 
 /* 가상요소로 집게손 만들기 */
 .arm::before {
