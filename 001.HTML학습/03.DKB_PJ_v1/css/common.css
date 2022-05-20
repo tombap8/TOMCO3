@@ -39,7 +39,7 @@ body {
 }
 
 /* 1-2. 탑메뉴 */
-.tmenu{
+.tmenu {
   position: relative;
   /* 부모자격! */
 }
@@ -50,7 +50,6 @@ body {
   top: -50px;
   right: 0;
   /* 부모는? .tmenu */
-
 
   /* 하단의 코딩은 앱솔루트 이전 작업 - 모두 불필요! */
   /* 오른쪽 끝으로! */
@@ -153,8 +152,8 @@ body {
 
 /* li에 가상요소로 서브메뉴 꽉차는 배경 만들기 
 - ::after를 쓰는 이유는 a요소 다음위치 젠틀앱솔루트로 하려고*/
-.gnb > ul > li.bgbx::after{
-  content: '';
+.gnb > ul > li.bgbx::after {
+  content: "";
   display: block;
   position: absolute;
   left: 0;
@@ -172,19 +171,19 @@ body {
 }
 
 /* li에 마우스 오버시 가상요소배경 하단보더 */
-.gnb > ul > li.bgbx:hover::after{
+.gnb > ul > li.bgbx:hover::after {
   border-bottom: 2px solid red;
 }
 /* 첫번째 li오버시 가상요소배경 보이기 */
-.gnb > ul > li.m1:hover::after{
+.gnb > ul > li.m1:hover::after {
   height: 120px;
 }
 /* 세번째 li오버시 가상요소배경 보이기 */
-.gnb > ul > li.m2:hover::after{
+.gnb > ul > li.m2:hover::after {
   height: 160px;
 }
 /* 네번째 li오버시 가상요소배경 보이기 */
-.gnb > ul > li.m3:hover::after{
+.gnb > ul > li.m3:hover::after {
   height: 80px;
 }
 
@@ -354,7 +353,7 @@ body {
   text-decoration: underline;
 }
 /* 3-2. 브랜드 바로가기 */
-.brand{
+.brand {
   position: relative;
   /* 부모자격 */
 }
@@ -363,7 +362,7 @@ body {
   top: -37px;
   right: 0;
   /* 부모는? .brand */
-  
+
   /* 글자색 */
   color: #222;
   /* 글자두껍게 */
@@ -373,8 +372,8 @@ body {
   /* 줄간격 */
   line-height: 2.8;
   /* 패딩 */
-  padding: 5rem;
-  
+  padding: 0.5rem;
+
   /* 
   앱솔루트 변경 이전 사항 아래 변경 불필요!
 
