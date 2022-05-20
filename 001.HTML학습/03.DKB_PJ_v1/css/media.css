@@ -1,8 +1,8 @@
 @charset "utf-8";
 /* 도깨비 메인 페이지 미디어쿼리 - media.css */
 
-/* 1024px 이하 미디어쿼리 시작 */
-@media screen and (max-width:1024px) {
+/************** 1070px 이하 미디어쿼리 시작 **************/
+@media screen and (max-width:1070px) {
 
     /* 1. 전체 rem단위 글자 변경위한 
     root 글자크기 변경 */
@@ -27,27 +27,65 @@
 
     /* 5. 개별서브메뉴 오버시
     + 가상요소 서브배경 오버시 */
-    
+
     /* 첫번째메뉴 - 3개 */
     .gnb>ul>li:nth-child(1):hover .smenu,
-    .gnb > ul > li.m1:hover::after {
+    .gnb>ul>li.m1:hover::after {
         height: 96px;
         /* 32*3 */
     }
 
     /* 세번째메뉴 - 4개 */
     .gnb>ul>li:nth-child(3):hover .smenu,
-    .gnb > ul > li.m2:hover::after  {
+    .gnb>ul>li.m2:hover::after {
         height: 128px;
         /* 32*4 */
     }
 
     /* 네번째메뉴 - 2개 */
     .gnb>ul>li:nth-child(4):hover .smenu,
-    .gnb > ul > li.m3:hover::after {
+    .gnb>ul>li.m3:hover::after {
         height: 64px;
         /* 32*2 */
     }
+
+    /* 6. 하단링크 */
+    .blink ul {
+        width: 680px;
+    }
+
+    /* 7. 하단박스 */
+    .info {
+        /* 높이값 자동전환 */
+        height: auto;
+        padding-bottom: 15px;
+    }
+
+    /* 8. 브랜드 바로가기 */
+    .brand{
+        display: none;
+    }
 }
 
-/* 1024px 이하 미디어쿼리 끝   */
+/************** 1070px 이하 미디어쿼리 끝   **************/
+
+
+/************** 800px이하 미디어쿼리 시작 **************/
+@media screen and (max-width:800px) {
+    /* 1. 숨기기 */
+    /* GNB메뉴, 서브메뉴, 서브메뉴배경 가상요소, 
+    , 탑메뉴, 문구이미지, 하단링크 */
+    .gnb, .tmenu, #dtxt, .blink {
+        display: none;
+    }
+    /* 2. 상단영역 높이값 자동 */
+    .top{
+        height: auto;
+    }
+    /* 3. 햄버거버튼 보이게함 */
+    .ham{
+        /* 포지션이 앱솔루트이면 기본 block이다! */
+        display: block;
+    }
+}
+/************** 800px이하 미디어쿼리 끝   **************/

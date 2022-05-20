@@ -8,8 +8,11 @@ body {
 }
 
 /************** 1. 상단영역 **************/
+/* 겉박스 */
 #top {
-  /* 겉박스 */
+  position: relative;
+  z-index: 9999;
+  /* 포지션이 static이 아니어야 z-index가 적용됨! */
   /* 배경색 */
   background-color: #fff;
   /* 하단보더 */
@@ -303,6 +306,25 @@ body {
     background-color: #ececec;
     color: orangered;
 } */
+
+/* 모바일용 햄버거버튼 */
+.ham{
+  position: absolute;
+  top: 18px;
+  right: 20px;
+
+  font-size: 40px;
+  /* 트랜스폼 스케일X축 */
+  transform: scaleX(1.5);
+
+  /* 버튼 기본디자인없앰 : 배경색, 보더 */
+  background-color: transparent;
+  border: none;
+
+  /* 모바일 아닐때 안보임 */
+  display: none;
+}
+
 
 /************** 2. 메인영역 **************/
 .cont {
