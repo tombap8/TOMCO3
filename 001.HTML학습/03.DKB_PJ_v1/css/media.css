@@ -27,6 +27,7 @@
 
     /* 5. 개별서브메뉴 오버시
     + 가상요소 서브배경 오버시 */
+    
     /* 첫번째메뉴 - 3개 */
     .gnb>ul>li:nth-child(1):hover .smenu,
     .gnb > ul > li.m1:hover::after {
