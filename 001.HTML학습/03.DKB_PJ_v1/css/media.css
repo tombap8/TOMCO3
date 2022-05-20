@@ -2,99 +2,125 @@
 /* 도깨비 메인 페이지 미디어쿼리 - media.css */
 
 /************** 1070px 이하 미디어쿼리 시작 **************/
-@media screen and (max-width:1070px) {
-
-    /* 1. 전체 rem단위 글자 변경위한 
+@media screen and (max-width: 1070px) {
+  /* 1. 전체 rem단위 글자 변경위한 
     root 글자크기 변경 */
-    html {
-        font-size: 8px;
-    }
+  html {
+    font-size: 8px;
+  }
 
-    /* 2. 상단영역 중앙박스  */
-    .top {
-        height: 120px;
-    }
+  /* 2. 상단영역 중앙박스  */
+  .top {
+    height: 120px;
+  }
 
-    /* 3. GNB메뉴 */
-    .gnb ul {
-        width: 495px;
-    }
+  /* 3. GNB메뉴 */
+  .gnb ul {
+    width: 495px;
+  }
 
-    /* 4. 탑메뉴 */
-    .tmenu>ul>li>a {
-        line-height: 1.7;
-    }
+  /* 4. 탑메뉴 */
+  .tmenu > ul > li > a {
+    line-height: 1.7;
+  }
 
-    /* 5. 개별서브메뉴 오버시
+  /* 5. 개별서브메뉴 오버시
     + 가상요소 서브배경 오버시 */
 
-    /* 첫번째메뉴 - 3개 */
-    .gnb>ul>li:nth-child(1):hover .smenu,
-    .gnb>ul>li.m1:hover::after {
-        height: 96px;
-        /* 32*3 */
-    }
+  /* 첫번째메뉴 - 3개 */
+  .gnb > ul > li:nth-child(1):hover .smenu,
+  .gnb > ul > li.m1:hover::after {
+    height: 96px;
+    /* 32*3 */
+  }
 
-    /* 세번째메뉴 - 4개 */
-    .gnb>ul>li:nth-child(3):hover .smenu,
-    .gnb>ul>li.m2:hover::after {
-        height: 128px;
-        /* 32*4 */
-    }
+  /* 세번째메뉴 - 4개 */
+  .gnb > ul > li:nth-child(3):hover .smenu,
+  .gnb > ul > li.m2:hover::after {
+    height: 128px;
+    /* 32*4 */
+  }
 
-    /* 네번째메뉴 - 2개 */
-    .gnb>ul>li:nth-child(4):hover .smenu,
-    .gnb>ul>li.m3:hover::after {
-        height: 64px;
-        /* 32*2 */
-    }
+  /* 네번째메뉴 - 2개 */
+  .gnb > ul > li:nth-child(4):hover .smenu,
+  .gnb > ul > li.m3:hover::after {
+    height: 64px;
+    /* 32*2 */
+  }
 
-    /* 6. 하단링크 */
-    .blink ul {
-        width: 680px;
-    }
+  /* 6. 하단링크 */
+  .blink ul {
+    width: 680px;
+  }
 
-    /* 7. 하단박스 */
-    .info {
-        /* 높이값 자동전환 */
-        height: auto;
-        padding-bottom: 15px;
-    }
+  /* 7. 하단박스 */
+  .info {
+    /* 높이값 자동전환 */
+    height: auto;
+    padding-bottom: 15px;
+  }
 
-    /* 8. 브랜드 바로가기 */
-    .brand{
-        display: none;
-    }
+  /* 8. 브랜드 바로가기 */
+  .brand {
+    display: none;
+  }
 }
 
 /************** 1070px 이하 미디어쿼리 끝   **************/
 
-
 /************** 800px이하 미디어쿼리 시작 **************/
-@media screen and (max-width:800px) {
-
-    /* 1. 숨기기 */
-    /* GNB메뉴, 서브메뉴, 서브메뉴배경 가상요소, 
+@media screen and (max-width: 800px) {
+  /* 1. 숨기기 */
+  /* GNB메뉴, 서브메뉴, 서브메뉴배경 가상요소, 
     , 탑메뉴, 문구이미지, 하단링크 */
-    .gnb, .tmenu, #dtxt, .blink {
-        display: none;
-    }
+  .gnb,
+  .tmenu,
+  #dtxt,
+  .blink {
+    display: none;
+  }
 
-    /* 2. 높이값 자동 : 상단영역, 컨텐츠영역 */
-    .top, .cont {
-        height: auto;
-    }
+  /* 2. 높이값 자동 : 상단영역, 컨텐츠영역 */
+  .top,
+  .cont {
+    height: auto;
+  }
 
-    /* 3. 햄버거버튼 보이게함 */
-    .ham{
-        /* 포지션이 앱솔루트이면 기본 block이다! */
-        display: block;
-    }
+  /* 3. 햄버거버튼 보이게함 */
+  .ham {
+    /* 포지션이 앱솔루트이면 기본 block이다! */
+    display: block;
+  }
 
-    /* 4. 캐릭터박스 비율변경 */
-    .cat{
-        width: 99%;
-    }
-    /*  */
+  /* 4. 캐릭터박스 비율변경 */
+  .cat {
+    width: 99%;
+  }
+
+  /* 5. 컨텐츠 영역 */
+  .cont {
+    padding-top: 30px;
+  }
+
+  /* 6. 캐릭터박스 오버시 이미지박스 */
+  .cat:hover .ci {
+    margin-top: 0;
+  }
+
+  /* 7. 캐릭터 설명 타이틀 */
+  .cd h3 {
+    font-size: 3.5rem;
+    /* 패딩: 위아래 양쪽 */
+    padding: 1.5rem 2rem;
+  }
+
+  /* 8. 캐릭터 설명 문단 */
+  .cd p {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+    padding: 1.7rem;
+    margin: 0;
+  }
 }
+
 /************** 800px이하 미디어쿼리 끝   **************/
