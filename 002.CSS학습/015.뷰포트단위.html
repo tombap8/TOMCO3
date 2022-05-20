@@ -99,30 +99,108 @@
             /* 보더,패딩포함 크기유지 */
         }
         /* 1. vw단위 - 보이는 화면 가로폭기준 */
-        .vp1 {}
-        .vp1-2 {}
-        .vp1-3 {}
-        .vp1-4 {}
+        .vp1 {
+            width: 50vw;
+            font-size: 10vw;
+        }
+        .vp1-2 {
+            width: 50vw;
+            font-size: min(10vw,100px);
+            /* 둘중에 작은값을 선택하므로 
+            100px을 넘지않음! */
+
+            /* 
+                css함수 : min(값들) 
+                -> 최소값 선택함!
+
+                예)
+                min(유동적인값, 특정값) 
+                -> 특정값 보다 안커짐
+                -> 최대크기를 지정한것과 같다!
+            */
+        }
+        .vp1-3 {
+            width: 50vw;
+            font-size: max(10vw,70px);
+            /* 둘중에 큰값을 선택하므로
+            70px보다 더 작아지지 않는다! */
+
+            /* 
+                css함수 : max(값들) 
+                -> 최대값 선택함!
+
+                예)
+                max(유동적인값, 특정값) 
+                -> 특정값 보다 안작아짐
+                -> 최소크기를 지정한것과 같다!
+            */
+        }
+        .vp1-4 {
+            width: 50vw;
+            /* 사이범위 요구사항!
+            -> 최대100px, 최소70px, 
+            중간에 10vw유동사이즈 */
+            font-size: min(max(10vw,70px),100px);
+            /* 
+                min(max(유동적인px,최소px),최대px)
+            */
+        }
         
         /* 2. vh단위 - 보이는 화면 세로폭기준 */
-        .vp2{}
+        .vp2{
+            width: 50vh;
+            font-size: 10vh;
+        }
 
         /* 3. vmax단위 - 보이는 화면 가로,세로폭 중 큰것기준 */
-        .vp3{}
+        .vp3{
+            width: 50vmax;
+            font-size: 10vmax;
+        }
 
         /* 4. vmin단위 - 보이는 화면 가로,세로폭 중 작은것기준 */
-        .vp4{}
+        .vp4{
+            width: 50vmin;
+            font-size: 10vmin;
+        }
         
 
         /* 뷰포트 단위와 일반 %단위 비교 */
-        .vp5 {}
-        .vp5-1{}
-        .vp5-2{}
+        .vp5 {
+            width: 50%;
+            /* %를 쓰면 싸고있는 요소가 기준이 된다! */
+            font-size: 24px;
+        }
+        /* 뷰포트단위사용! */
+        .vp5-1{
+            width: 50vw;
+            /* 뷰포트단위를 쓰면 부모가 있어도 무조건
+            보이는 화면을 기준한다! */
+            border: 5px dotted red;
+        }
+        /* %단위사용! */
+        .vp5-2{
+            width: 50%;
+            /* %를 쓰면 싸고있는 요소가 기준이된다! */
+            border: 5px dotted green;
+        }
 
         /* 100vw */
-        .vp6{}
+        .vp6{
+            width: 100vw;
+            /* 100vw는 스크롤바트랙 무시! 
+            보이는화면 전체기준! */
+            background-color: #ffbdbd;
+            font-size: 24px;
+        }
         /* 100% */
-        .vp7{}
+        .vp7{
+            width: 100%;
+            /* 100%는 스크롤바트랙 존중!
+            이것을 뺀 화면전체! */
+            background-color: #c8cfff;
+            font-size: 24px;
+        }
         
 
 
