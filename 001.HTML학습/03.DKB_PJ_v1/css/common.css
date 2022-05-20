@@ -72,7 +72,7 @@ body {
 /* 탑메뉴 상위 a요소 */
 .tmenu > ul > li > a {
   /* 글자크기 */
-  font-size: 15px;
+  font-size: 1.5rem;
   /* 글자색 */
   color: #000;
   /* 밑줄없앰 */
@@ -206,13 +206,13 @@ body {
   /* 밑줄없앰 */
   text-decoration: none;
   /* 글자크기 */
-  font-size: 17px;
+  font-size: 1.7rem;
 
   /* 디자인적용위해 블록변경! */
   /* display: block; */
   /* width: 200px; */
   /* text-align: center; */
-  line-height: 44px;
+  line-height: 4.4rem;
   /* 트랜지션: 속시이지 */
   /* transition: all .3s; -> 트랜지션 불필요! */
 }
@@ -292,9 +292,9 @@ body {
   /* 글자중앙 */
   /* text-align: center; */
   /* 글자크기 */
-  font-size: 14px;
+  font-size: 1.4rem;
   /* 줄간격 */
-  line-height: 40px;
+  line-height: 4rem;
   /* 트랜지션: 속시이지 */
   transition: 0.3s;
 }
@@ -344,7 +344,7 @@ body {
   /* 글자두껍게 */
   font-weight: bold;
   /* 글자크기 */
-  font-size: 14px;
+  font-size: 1.4rem;
   /* 줄간격 */
   line-height: 2.8;
 }
@@ -369,11 +369,11 @@ body {
   /* 글자두껍게 */
   font-weight: bold;
   /* 글자크기 */
-  font-size: 14px;
+  font-size: 1.4rem;
   /* 줄간격 */
   line-height: 2.8;
   /* 패딩 */
-  padding: 5px;
+  padding: 5rem;
   
   /* 
   앱솔루트 변경 이전 사항 아래 변경 불필요!
@@ -397,12 +397,12 @@ body {
   max-width: 804px;
   margin: 0 auto;
   border: 4px double #222;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 2;
   text-align: center;
   /* address기본 이택릭체 해제 */
   font-style: normal;
-  padding: 10px;
+  padding: 1rem;
   /* 박스크기유지 */
   box-sizing: border-box;
 }

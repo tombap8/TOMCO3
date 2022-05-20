@@ -7,9 +7,9 @@
 @import url(common.css);
 
 /* 구현중 공사중 외곽선 표시 */
-body * {
+/* body * {
     outline: 1px dashed gray;
-}
+} */
 
 /* 
     별(*) 선택자는 모든요소를 선택함!
@@ -211,10 +211,10 @@ body {
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-family: 'Yeon Sung', cursive;
-    font-size: 26px;
+    font-size: 2.6rem;
     font-weight: normal;
     /* 패딩: 위 양쪽 아래 */
-    padding: 5px 10px 0;
+    padding: .5rem 1rem 0;
 }
 /* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
 .cd h3::before{
@@ -231,20 +231,30 @@ body {
 /* 캐릭터 설명 문단 */
 .cd p {
     font-family: 'East Sea Dokdo','ZCOOL QingKe HuangYou', cursive;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 2.4rem;
+    line-height: 3rem;
     /* 줄간격 배수단위로 쓰면 첫글자가 커서 첫줄 줄간격이
     커지므로 특정px로 설정함! */
-    padding: 10px;
+    padding: 1rem;
     text-align: justify;
 }
 
 /* 캐릭터 설명 첫번째 p요소의 첫글자 
 가상요소로 디자인변경하기 */
 .cd p:first-of-type::first-letter {
-    font-size: 50px;
+    font-size: 5rem;
     color: lightsalmon;
     /* 그림자 4개로 글자 테두리주기 */
     text-shadow: 1px 0 #000,
     -1px 0 #000,0 1px #000,0 -1px #000;
+}
+
+/* 도깨비문구 */
+#dtxt{
+    position: absolute;
+    top: 200px;
+    right: 50px;
+    /* 부모는? 보이는 화면 */
+    width: 23%;
+
 }
