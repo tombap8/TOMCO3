@@ -119,11 +119,28 @@
             font-size: 0.58em; -> 58%
 
           */
-          .pf1{}
-          .pf2{}
-          .pf3{}
+          .pf1{
+              font-size: 200%;
+          }
+          .pf2{
+              font-size: 75%;
+          }
+          .pf3{
+              font-size: 58%;
+          }
 
           /* 미디어쿼리 */
+          @media screen and (max-width:800px) {
+              /* 최상위 부모의 글자크기만 변경하면
+              상대단위는 모두 변경된다! */
+              /* body{ 
+                -> body를 변경하면 rem단위는 영향받지 않음! */
+              html{
+                  font-size: 14px;
+                  /* 기본글자크기는 16px */
+              }
+
+          } /* 미디어쿼리 800px 이하 */
           
 
 
