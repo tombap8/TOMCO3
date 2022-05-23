@@ -26,6 +26,8 @@
 
 /* 로그인 박스 */
 .scont{
+    position: relative;
+    /* 부모자격 */
     max-width: 700px;
     min-height: 275px;
     margin: 0 auto;
@@ -45,5 +47,50 @@
     color: #555;
     text-align: center;
     line-height: 36px;
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
+}
+/* 입력양식공통 */
+.minput input{
+    width: 320px;
+    height: 36px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    font-size: 18px;
+    padding-left: 5px;
+    /* 크기유지 */
+    box-sizing: border-box;
+    color: #666;
+}
+
+/* 비밀번호박스 */
+.scont div:nth-child(2){
+    margin-top: 20px;
+}
+
+/* 포커스 아웃라인 제거
+모든 브라우저에 기본 포커스 아웃라인 셋팅됨! */
+input:focus{
+    outline: none;
+}
+
+/* 버튼영역 */
+.btnbx{
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    /* 부모는? .scont */
+}
+/* 서브밋 버튼 */
+#sbtn{
+    width: 113px;
+    height: 92px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    /* 그라데이션
+    배경이미지에서 셋팅
+    linear-gradient(방향,색1,색2,...) */
+    background-image: linear-gradient(to bottom, #ddd, #555);
+    color: #fff;
+    text-shadow: 1px 1px #555;
+    font-size: 15px;
 }
