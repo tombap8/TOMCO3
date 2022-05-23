@@ -6,16 +6,17 @@
 @import url(core.css);
 @import url(common.css);
 
-#cont{
-    background-color: #dddddd;
+#cont {
+  background-color: #dddddd;
 }
 
-.cont{
-    text-align: center;
-    height: auto;
+.cont {
+  text-align: center;
+  min-height: auto;
+  padding: 0 !important;
 }
-.cont img{
-    max-width: 100%;
-    /* 최대크기 100%는 부모가 자신의 가로크기보다
+.cont img {
+  max-width: 100%;
+  /* 최대크기 100%는 부모가 자신의 가로크기보다
     작아지면 100%로 부모크기에 맞춘다! */
 }
