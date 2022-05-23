@@ -5,3 +5,34 @@
 @import url(reset.css);
 @import url(core.css);
 @import url(common.css);
+
+/* 컨텐츠 영역 겉박스 */
+#cont{
+    background-color: #ececec;
+}
+/* 컨텐츠 영역 최소높이 */
+.cont{
+    min-height: 600px;
+    padding: 0 15px;
+}
+/* 1. 로그인 타이틀 */
+.stit{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 50px;
+    padding: 40px 0 20px;
+    text-align: center;
+    font-weight: normal;
+}
+
+/* 로그인 박스 */
+.scont{
+    max-width: 700px;
+    min-height: 275px;
+    margin: 0 auto;
+    border: 2px solid #737373;
+    border-radius: 10px;
+    /* 크기유지 */
+    box-sizing: border-box;
+    padding: 60px 15px;
+    background-color: #fff;
+}
