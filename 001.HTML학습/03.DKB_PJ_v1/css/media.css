@@ -78,7 +78,9 @@
     .gnb,
     .tmenu,
     #dtxt,
-    .blink {
+    .blink,
+    .smenu,
+    .gnb > ul > li.bgbx::after {
         display: none;
     }
 
@@ -129,6 +131,42 @@
     .addr address {
         font-size: 1.7rem;
         padding: 1.1rem;
+    }
+
+    /* 10. 전체메뉴 GNB 변경 */
+    .gnb {
+        position: fixed;
+        top: 0;
+        display: block;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0 0 0 / 50%);
+    }
+
+    .gnb ul {
+        width: auto;
+        margin-top: 20vh;
+    }
+
+
+    .gnb>ul>li {
+        float: none;
+        height: 10vh;
+        padding: 0;
+        text-align: center;
+    }
+
+    /* li 하위 a요소 */
+    .gnb>ul>li>a {
+        color: #fff;
+        font-size: 4vh;
+        line-height: 10vh;
+    }
+
+    /* li마우스 오버시 밑줄 색변경 */
+    .gnb > ul > li:hover > a{
+        border-bottom-color: #fff;
     }
 }
 
