@@ -36,3 +36,14 @@
     padding: 60px 15px;
     background-color: #fff;
 }
+/* 입력창 공통라벨 */
+.minput label{
+    display: inline-block;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    line-height: 36px;
+    outline: 2px solid red;
+}
