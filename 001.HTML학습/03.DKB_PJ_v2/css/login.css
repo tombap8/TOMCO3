@@ -94,3 +94,24 @@ input:focus{
     text-shadow: 1px 1px #555;
     font-size: 15px;
 }
+/* 기타체크링크 박스 */
+.addbx{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+}
+/* 체크박스 영역 */
+.addbx span{
+    margin: 0 15px;
+    color: #555;
+}
+/* 체크박스 라벨과 세로정렬 */
+.addbx input{
+    vertical-align: -2px;
+}
+/* 기타링크 */
+.addbx a{
+    margin: 0 15px;
+    color: #222;
+    text-decoration: none;
+}
