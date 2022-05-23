@@ -219,7 +219,7 @@ body {
     /* min()으로 2vw와 26px중 작은쪽 적용 */
     font-weight: normal;
     /* 패딩: 위 양쪽 아래 */
-    padding: .5rem 1rem 0;
+    padding: .5vw .8vw 0;
 }
 /* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
 .cd h3::before{
@@ -237,7 +237,9 @@ body {
 .cd p {
     font-family: 'East Sea Dokdo','ZCOOL QingKe HuangYou', cursive;
     font-size: min(1.5vw,24px);
+    /* min()으로 1.5vw와 24px중 작은쪽 적용 */
     line-height: min(2vw,30px);
+    /* min()으로 2vw와 30px중 작은쪽 적용 */
     /* 줄간격 배수단위로 쓰면 첫글자가 커서 첫줄 줄간격이
     커지므로 특정px로 설정함! */
     padding: .5vw;
