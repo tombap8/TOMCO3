@@ -215,7 +215,8 @@ body {
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-family: 'Yeon Sung', cursive;
-    font-size: 2.6rem;
+    font-size: min(2vw,26px);
+    /* min()으로 2vw와 26px중 작은쪽 적용 */
     font-weight: normal;
     /* 패딩: 위 양쪽 아래 */
     padding: .5rem 1rem 0;
@@ -235,11 +236,11 @@ body {
 /* 캐릭터 설명 문단 */
 .cd p {
     font-family: 'East Sea Dokdo','ZCOOL QingKe HuangYou', cursive;
-    font-size: 2.4rem;
-    line-height: 3rem;
+    font-size: min(1.5vw,24px);
+    line-height: min(2vw,30px);
     /* 줄간격 배수단위로 쓰면 첫글자가 커서 첫줄 줄간격이
     커지므로 특정px로 설정함! */
-    padding: 1rem;
+    padding: .5vw;
     text-align: justify;
 }
 
