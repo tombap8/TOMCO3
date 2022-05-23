@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* 도깨비 서브 페이지 CSS - temp.css */
+
+/* 공통사용 외부CSS 파일합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
