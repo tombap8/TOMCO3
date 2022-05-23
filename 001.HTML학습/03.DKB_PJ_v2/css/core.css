@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* 도깨비 공통클래스 CSS - core.css */
+/* 공통클래스, 웹폰트 등 구현 */
+
+/* CDN 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=East+Sea+Dokdo&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&display=swap');
+/* 
+    1. 설명내용
+    font-family: 'East Sea Dokdo', cursive;
+    2. 설명타이틀
+    font-family: 'Yeon Sung', cursive;
+    3. 한자
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    4. 상단, 하단 글자
+    font-family: 'Nanum Gothic', sans-serif;
+*/
+
+/* 스크롤바 디자인 클래스 */
+/* -webkit- 벤더사명(크롬,사파리) 접두어
+(참고: -ms-(ie),-o-(오페라),-moz-(파이어폭스)) */
+.scbar::-webkit-scrollbar{
+    /* 전체 스크롤바 크기변경 */
+    width: 7px;
+}
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바 트랙 */
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+/* 중앙 속박스 */
+.inbox{
+    /* 가로크기를 고정하면 작은화면에선 가로스크롤 생김*/
+    /* width: 1200px;->안씀! */
+    /* 최대가로크기를 사용하여 크기가 작을때 auto로 전환됨 */
+    max-width: 1200px;
+    /* 1200px최크기를 유지하다가 이것보다 작아지면
+    기본설정인 auto로 화면에 붙어서 크기가 유동적으로 변함! */
+
+    /* 마진에 의한 블록박스 중앙정렬 -> 마영오! */
+    margin: 0 auto;
+}
+
+/* 가상요소로 float해제 셋팅 클래스 */
+.clb::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* IR(Image Replacement) 
+배경이미지 설명 숨기기 클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+/* IR기법 사용시 주의사항
+-> display:none사용금지! 왜? 스크린리더기가 못읽음! */

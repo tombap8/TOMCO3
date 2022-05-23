@@ -1,0 +1,264 @@
+@charset "utf-8";
+/* 도깨비 메인 페이지 CSS - main.css */
+
+/* 공통사용 외부CSS 파일합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+/* 구현중 공사중 외곽선 표시 */
+/* body * {
+    outline: 1px dashed gray;
+} */
+
+/* 
+    별(*) 선택자는 모든요소를 선택함!
+    outline 속성은 border와 달리 박스모델의 구성속성아님!
+    보더와 달리 아웃라인은 크기를 차지 하지않고 외곽선으로
+    표시만 된다! 사용법은 border와 유사함
+    ouline: 두께 종류 색상;
+*/
+
+/* 컨텐츠 영역 최상위 부모 */
+body {
+    /* 한번에 배경주기 */
+    /* background: 색이반고윙/크; */
+    background: url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+        url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+}
+
+/************ 2. 메인영역 ************/
+/* 컨텐츠 속박스 */
+.cont {
+    /* 상단패딩 설정 */
+    padding-top: 50vh;
+    /* 
+    -> 뷰포트 단위로 보이는 화면에서 50%
+    위치로 밀어주기로 설정변경함!
+    
+    기본height크기가 800px로 설정되어있으므로
+    그 높이값은 컨텐츠영역의 높이다!
+    따라서 패딩이나 보더는 그 크기에 더해진다!
+    그래서 높이값 크기를 800px로 유지하려면
+    계산해서 height값을 400px로 변경하거나
+    box-sizing:border-box로 설정하여 보더와 패딩이
+    지정한 크기 내부에 포함되도록 한다! */
+
+    /* 보더,패딩 포함설정 
+    - 기본값:content-box */
+    box-sizing: border-box;
+
+
+    /* .inbox 최대가로크기 해제! */
+    max-width: none;
+}
+
+/* 캐릭터 부모박스 */
+#cbx {
+    /* 부모박스 크기의 90% 가로크기 설정 */
+    width: 90%;
+    /* 마영오! - 블록요소 가로중앙 */
+    margin: 0 auto;
+    /* 높이값 - 자식요소 float으로 높이값 안주면 0됨! */
+    /* height: 300px; - 안씀! */
+
+    /* float된 자식의 높이값 인식을 위해 overflow:hidden */
+    /* overflow: hidden; - 여기서는 안씀 
+    -> 가상요소에 clear:both사용할 것임! */
+
+    /* 외곽선 */
+    /* outline: 4px dotted red; */
+}
+
+/* 가상요소로 clear설정하기! */
+/* ::after로 맨뒤에 가상요소추가 */
+#cbx::after{
+    content: '';
+    display: block;/* db */
+    /* div와 비슷 - 안쓰면 span과 비슷 */
+    clear: both;
+    /* 주의: block요소에만 적용됨! */
+}
+
+/* 캐릭터박스 공통ㄹ */
+.cat {
+    /* 4등분 가로크기는 몇%? 25% */
+    width: 24%;
+    /* 25% - 양쪽마진합(1%) = 24% */
+
+    /* 이미지 간격을 위해 양쪽 마진을 %값으로 셋팅 */
+    margin: 0 .5%;
+    /* 양쪽마진 한쪽씩 0.5% 
+    그런데 코딩시 앞에 0은 생략가능! */
+
+    /* 블록박스 옆으로 흐르게설정 */
+    float: left;
+    /* 
+        [ 블록요소를 옆으로 흘러가게하기! ]
+
+        float속성
+        -> left값은 "나는 왼쪽에 너는 오른쪽으로 올라와!"
+        -> right값은 "나는 오른쪽에 너는 왼쪽으로 올라와!"
+
+        float:left 는 왼쪽에서 오른쪽으로 흘러감
+        float:right 는 오른쪽에서 왼쪽으로 흘러감
+
+        [ 자식요소가 float된 경우 부모요소의 자동높이값은? ]
+        -> 결과적으로 자식요소가 float됨으로 부모의 높이값이 0
+        해결방법:
+        1. 부모요소에 overflow:hidden 설정
+        2. float 자식요소 중 float이 아닌 마지막 요소에
+        float해제 속성인 clear설정하기!
+    */
+}
+/* 이미지박스 */
+.ci{
+    /* 트랜지션: 속시이지 */
+    transition: margin-top .4s ease-out;
+}
+/* 캐릭터박스(.cat)에 마우스 오버시 
+이미지박스(.ci)위로 이동하기 */
+.cat:hover .ci{
+    /* 마진탑값 마이너스면 위쪽으로 올라감!
+    - 이미지 비율에 맞게 마진탑도 %로 설정! */
+    margin-top: -57%;
+}
+/* 이미지박스 이미지 */
+/* 직계이미지인 캐릭터 이미지만 변경! */
+.ci>img {
+    width: 100%;
+    /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
+    height크기를 안주면 비율을 유지함! */
+}
+
+/* 캐릭터 이름이미지 박스 */
+.ci span {
+    /* 블록으로 변경 - 부모박스 끝까지 차지 */
+    display: block;
+    /* 인라인요소 중앙정렬 */
+    text-align: center;
+    /* 상단마진 - 마이너스값을 주면 윗방향 겹쳐짐! */
+    margin-top: -16%;/* mt-16p */
+}
+
+/* 이름 이미지 사이즈 조정 */
+.ci span img {
+    /* 가로크기 */
+    width: 32%;
+}
+
+/* 이름이미지 중 첫번째 진한 이미지 숨기기 */
+/* 가상클래스로 첫번째 이미지 선택 */
+/* 첫번째 자식요소 선택 가상클래스 :first-child */
+.ci span img:first-child{
+    /* 화면출력 없앰 */
+    display: none;
+}
+/* .cat에 마우스 오버시 첫번째 이름이미지 보이기 */
+/* 마우스 오버시 가상클래스 :hover */
+.cat:hover .ci span img:first-child{
+    /* 원래 display로 복귀 */
+    display: inline;
+}
+/* .cat에 마우스 오버시 마지막째 이름이미지 숨기기 */
+/* 마지막째 자식요소 선택 가상클래스 :last-child */
+.cat:hover .ci span img:last-child{
+    /* 화면출력 없앰 */
+    display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd {
+    height: 0;/* 250px;-> 마우스 오버시 변경할 크기! */
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+    /* x축 스크롤바 트랙없는 
+    y축 스크롤 설정 */
+    overflow-y: scroll;
+    /* 상단마진 - 이미지 비율에 맞게 %로 설정 */
+    margin-top: 2%;
+    /* 둥근모서리 : 왼쪽위부터 시계방향 */
+    border-radius: 20px 5px 5px 20px;
+
+    /* 트랜지션 : 속시이지 */
+    transition: height .4s ease-out;
+    /* transition: 
+    height .4s ease-out 1s,
+    background-color 1s ease-in-out 1.4s; */
+}
+/**************************************************** 
+    [ 트랜지션(Transition) 애니메이션 효과주기 ]
+    -> 속성값의 변화과정을 보여주면서 애니메이션함
+    transition: 속성 시간 이징 지연 -> 속시이지!
+    1. 속성 - 변경 애니메이션 대상 속성
+        (속성을 안쓰면 기본값 all이 들어가서 모두적용됨)
+    2. 시간 - 애니메이션 시간 : 초단위(s)
+    3. 이징(easing) - 가속도
+        1) ease : 애니 앞뒤에 약간씩 느려짐(기본값)
+        2) ease-in : 애니 처음에 서서히 빨라짐 
+        3) ease-out : 애니 끝에 서서히 느려짐
+        4) ease-in-out : 애니 시작과 끝에 천천히
+        5) linear : 등속도
+        -> 베이지곡선으로 매우 다채롭게 가속도 조정가능
+        -> w3c 속도비교:
+        https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_speed
+    4. 지연 - 지연시간 즉, 애니 시작전 대기시간(초단위:s)
+    5. 적용법: 오버시와 원상복귀되는 애니가 똑같다면
+            오버설정 전인 원본에 한번만 주면 양방향이
+            동일하게 적용됨. 만약 오버시와 아웃시가 달라야
+            한다면 각각 트랜지션을 설정한다!
+****************************************************/
+/* 캐릭터박스(.cat)에 마우스 오버시 설명박스(.cd)보이기 */
+.cat:hover .cd{
+    height: 250px;
+    /* background: red; - 트랜지션 연습 */
+}
+/* 캐릭터 설명 타이틀 */
+.cd h3{
+    font-family: 'Yeon Sung', cursive;
+    font-size: 2.6rem;
+    font-weight: normal;
+    /* 패딩: 위 양쪽 아래 */
+    padding: .5rem 1rem 0;
+}
+/* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
+.cd h3::before{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    vertical-align: -6px;
+    margin-right: 5px;
+    background: url(../images/bg_logo_a_01.png) no-repeat right -184px;
+    /* background: 색이반고윙/크; */
+    /* outline: 1px solid red; */
+}
+/* 캐릭터 설명 문단 */
+.cd p {
+    font-family: 'East Sea Dokdo','ZCOOL QingKe HuangYou', cursive;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    /* 줄간격 배수단위로 쓰면 첫글자가 커서 첫줄 줄간격이
+    커지므로 특정px로 설정함! */
+    padding: 1rem;
+    text-align: justify;
+}
+
+/* 캐릭터 설명 첫번째 p요소의 첫글자 
+가상요소로 디자인변경하기 */
+.cd p:first-of-type::first-letter {
+    font-size: 5rem;
+    color: lightsalmon;
+    /* 그림자 4개로 글자 테두리주기 */
+    text-shadow: 1px 0 #000,
+    -1px 0 #000,0 1px #000,0 -1px #000;
+}
+
+/* 도깨비문구 */
+#dtxt{
+    position: absolute;
+    top: 200px;
+    right: 50px;
+    /* 부모는? 보이는 화면 */
+    width: 23%;
+
+}
