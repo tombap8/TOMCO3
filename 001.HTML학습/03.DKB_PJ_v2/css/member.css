@@ -82,6 +82,27 @@ select:focus {
     border-radius: 5px;
     padding-left: 5px;
 }
+/* 라디오버튼 */
+.scont input[type=radio]{
+    width: 20px;
+    height: 20px;
+    /* 인라인요소간 세로정렬 */
+    vertical-align: -4px;
+}
+/* 이메일 앞주소 */
+#email1{
+    width: 170px;
+}
+/* 이메일 선택박스
+(=드롭다운박스=콤보박스) */
+#seleml{
+    width: 146px;
+    height: 40px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
 
 
 /* 미디어쿼리 690px 이하 시작 */
