@@ -80,8 +80,16 @@ body {
     /* 주의: block요소에만 적용됨! */
 }
 
-/* 캐릭터박스 공통ㄹ */
+/* 캐릭터박스 공통 */
 .cat {
+    position: relative;
+    top: -100vh;
+    /* 포지션 relative를 사용하여
+    현재위치로부터 위로 이동시켜 등장애니메이션을
+    구현함 -> top값에 %를 사용하면 부모높이값이
+    확정값이 아닐경우 적용되지 않는다!
+    따라서 보이는 화면단위인 뷰포트단위를 사용함 */
+
     /* 4등분 가로크기는 몇%? 25% */
     width: 24%;
     /* 25% - 양쪽마진합(1%) = 24% */
@@ -110,7 +118,32 @@ body {
         2. float 자식요소 중 float이 아닌 마지막 요소에
         float해제 속성인 clear설정하기!
     */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: catAni 2s ease-out 1s forwards;
 }
+/* 지은탁 딜레이 */
+#cbx .cat:nth-child(2){
+    animation-delay: 1.5s;
+}
+/* 저승사자 딜레이 */
+#cbx .cat:nth-child(3){
+    animation-delay: 2s;
+}
+/* 써니 딜레이 */
+#cbx .cat:nth-child(4){
+    animation-delay: 2.5s;
+}
+
+/* .cat에 적용할 등장애니 키프레임 */
+@keyframes catAni {
+    to{
+        top: 0;
+    }
+} /* 키프레임 */
+
+
+
 /* 이미지박스 */
 .ci{
     /* 트랜지션: 속시이지 */
