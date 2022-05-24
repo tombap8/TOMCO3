@@ -71,6 +71,18 @@ select:focus {
     width: 200px;
 }
 
+/*  입력박스 공통 */
+/* []는 속성(attribute)선택자 */
+.scont input[type=text],
+.scont input[type=password]{
+    width: 340px;
+    height: 36px;
+    font-size: 2rem;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
 
 /* 미디어쿼리 690px 이하 시작 */
 @media screen and (max-width:690px) {
