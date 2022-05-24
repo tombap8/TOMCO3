@@ -61,6 +61,12 @@ display 하기전에 셋업하도록 명령한다!
 - 마지막 a는 alpha값 즉, 투명도 -> 없으면 생략!
 (0~1사이의 소숫점값들 사용)
 
+[ rgba 2가지 표기법 ]
+1. rgba(red색,green색,blue색,alpha값)
+- alpha값은 투명도 (0~1)
+2. rgb(red색 green색 blue색 / alpha값%)
+- alpha값은 투명도 (0%~100%)
+
 3. HSL 코드 : hsla(hue,saturation,lightness,알파값)
 - hue(색상), saturation(채도), lightness(명도)
 - hue는 색상번호, 채도와 명도는 0~100%값 범위로 사용

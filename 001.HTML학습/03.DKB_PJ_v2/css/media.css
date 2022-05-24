@@ -154,7 +154,14 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(0 0 0 / 50%);
+    background-color: rgb(0 0 0 / 70%);
+    /* 
+      rgba 2가지 표기법
+      1. rgba(red색,green색,blue색,alpha값)
+        - alpha값은 투명도 (0~1)
+      2. rgb(red색 green색 blue색 / alpha값%)
+        - alpha값은 투명도 (0%~100%)
+    */
   }
 
   .gnb ul {
