@@ -63,7 +63,7 @@ select:focus {
 .scont li{
     height: 50px;
     line-height: 50px;
-    outline: 2px dotted red;
+    /* outline: 2px dotted red; */
 }
 /* 라벨공통 타이틀(.itit) */
 .itit{
@@ -102,6 +102,32 @@ select:focus {
     border-radius: 5px;
     font-size: 2rem;
 }
+/* 이메일 뒷주소 */
+#email2{
+    width: 136px;
+    margin-left: 407px;
+    /* 처음에 안보임 */
+    display: none;
+}
+/* 가입하기 버튼 */
+#btnj{
+    width: 113px;
+    height: 40px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #ddd, #555);
+    /* 오른쪽 끝으로 보냄 */
+    float: right;
+    margin-right: 40px;
+    margin-top: 6px;
+
+    font-weight: bold;
+    font-size: 1.6rem;
+    /* 손가락모양 */
+    cursor: pointer;
+}
+
 
 
 
