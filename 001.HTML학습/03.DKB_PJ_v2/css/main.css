@@ -27,6 +27,21 @@ body {
         url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
 }
 
+/* #top 상단영역 메인페이지에서만 애니메이션 셋팅하기! */
+#top{
+    /* DT에서의 큰 높이값만큼 위로 올라가 있음! */
+    top: -128px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: topAni .8s ease-out 1s forwards;
+}
+/* 상단영역 등장애니 키프레임 */
+@keyframes topAni {
+    to{
+        top: 0;
+    }
+} /* 키프레임 */
+
 /************ 2. 메인영역 ************/
 /* 컨텐츠 속박스 */
 .cont {
@@ -133,22 +148,22 @@ body {
     */
 
     /* 애니메이션: 이시이지반방마 */
-    animation: catAni 2s ease-out 1s forwards;
+    animation: catAni 2s ease-out 1.5s forwards;
 }
 
 /* 지은탁 딜레이 */
 #cbx .cat:nth-child(2) {
-    animation-delay: 1.5s;
+    animation-delay: 2s;
 }
 
 /* 저승사자 딜레이 */
 #cbx .cat:nth-child(3) {
-    animation-delay: 2s;
+    animation-delay: 2.5s;
 }
 
 /* 써니 딜레이 */
 #cbx .cat:nth-child(4) {
-    animation-delay: 2.5s;
+    animation-delay: 3s;
 }
 
 /* .cat에 적용할 등장애니 키프레임 */
