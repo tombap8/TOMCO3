@@ -194,52 +194,55 @@
         .t2 li:nth-child(4){
            line-height: 30px;
         }
-        /* 타일틀3 */
+        /* 타이틀3 */
         .t3{
-            display: none;
+            /* display: none; */
             top: 350px;
             /* 플렉스박스 */
-           
+           display: flex;
+           align-items: center;
         }
         /* 3번째 li부터 오른쪽 끝으로 보내기! */
         /* 왼쪽마진 auto */
         .t3>li:nth-child(3){
-           
+           margin-left: auto;
         }
 
         /* 타이틀4 */
         .t4{
-            display: none;
+            /* display: none; */
             top: 200px;
             left: 50px;
             width: 150px;
             height: 500px;
 
             /* 플렉스박스 */
-            
+            display: flex;
+            flex-direction: column;
             /* 진행방향의 수직정렬 */
+            align-items: center;
         }
-        /* 4번째 li부터 맨끝으로 보내기 */
+        /* 4번째 li부터 맨아래 끝으로 보내기 */
         .t4>li:nth-child(4){
-            
+            margin-top: auto;
         }
 
         /* 타이틀5 */
         .t5{
-            display: none;
+            /* display: none; */
             top: 50px;
             left: 50px;
             width: 150px;
 
             /* 플렉스 박스 */
-            
+            display: flex;
         }
         /* 자식요소에 flex-shrink 설정으로 크기유지하기! */
         .t5>li{
             
             /* 부모박스가 줄어들때 
             같이 자동으로 줄어들래? 0 아니! */
-
+            flex-shrink: 0;
             /* 
                 flex속성을 자식요소에 셋팅하지 않으면
                 기본값은 아래와 같다!
