@@ -14,7 +14,7 @@
 /* 컨텐츠 영역 최소높이 */
 .cont {
     min-height: 600px;
-    padding: 15px !important;
+    padding: 15px 15px 100px !important;
     /* 800px이하 미디어쿼리보다 우선적용위해
     !important 사용해서 최우선적용함! */
 }

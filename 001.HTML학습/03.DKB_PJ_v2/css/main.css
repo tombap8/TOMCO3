@@ -27,13 +27,42 @@ body {
         url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
 }
 
+/* body의 가상요소로 인트로 애니동안 화면가리기 */
+body::after{
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(255, 0, 0, 0.515); */
+    z-index: 9999999;
+
+    /* 애니메이션: 이시이지반방마 - 일정시간뒤 없앰목적 */
+    animation: delCover .1s 5.8s forwards;
+    /* 5.8초후 사라지게함 */
+}
+/* 가림막 높이값 0으로 없앰 */
+@keyframes delCover {
+    to{
+        height: 0;
+    }
+} /* 키프레임 */
+
 /* #top 상단영역 메인페이지에서만 애니메이션 셋팅하기! */
 #top{
+    position: absolute;
+    width: 100%;
+    /* .cont영역이 맨위부터 시작하려면
+    상단영역이 겹칠수 있도록 앱솔루트설정함
+    width 100%는 판타롱스타킹 앱솔루트여서 줌! */
+    
     /* DT에서의 큰 높이값만큼 위로 올라가 있음! */
     top: -128px;
 
     /* 애니메이션: 이시이지반방마 */
-    animation: topAni .8s ease-out 1s forwards;
+    animation: topAni .8s ease-out 5s forwards;
 }
 /* 상단영역 등장애니 키프레임 */
 @keyframes topAni {
@@ -52,6 +81,10 @@ body {
 
     /* 화면채움! */
     width: 100%;
+
+    /* 높이값 변경 - 상단영역 겹치므로 뺄필요없음 */
+    height: 100vh;
+    /* 하단영역이 화면 아래 바깥쪽에 있음! */
 
 
     /* 상단패딩 설정 */
@@ -111,7 +144,7 @@ body {
 /* 캐릭터박스 공통 */
 .cat {
     position: relative;
-    top: -100vh;
+    top: -150vh;
     /* 포지션 relative를 사용하여
     현재위치로부터 위로 이동시켜 등장애니메이션을
     구현함 -> top값에 %를 사용하면 부모높이값이
@@ -335,8 +368,8 @@ body {
 /* 도깨비문구 */
 #dtxt {
     position: absolute;
-    top: 200px;
-    /* 원위치 100px; */
+    top: 300px;
+    /* 원위치 200px; */
     right: -200px;
     /* 원위치 50px; */
     /* 부모는? .cont */
@@ -353,7 +386,7 @@ body {
 /* 도깨비 문구 등장애니 키프레임 */
 @keyframes dtxtAni {
     to {
-        top: 100px;
+        top: 200px;
         right: 50px;
         opacity: 1;
     }
