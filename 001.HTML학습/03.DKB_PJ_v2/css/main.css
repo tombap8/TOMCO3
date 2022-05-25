@@ -30,6 +30,15 @@ body {
 /************ 2. 메인영역 ************/
 /* 컨텐츠 속박스 */
 .cont {
+    position: relative;
+    /* 부모자격 - .dtxt 
+    overflow:hidden도 
+    앱솔루트 자식의 부모자격박스에 적용됨!*/
+
+    /* 화면채움! */
+    width: 100%;
+
+
     /* 상단패딩 설정 */
     padding-top: 50vh;
     /* 
@@ -51,6 +60,9 @@ body {
 
     /* .inbox 최대가로크기 해제! */
     max-width: none;
+
+    /* 애니요소를 위해 넘치는 자식요소 숨기기  */
+    overflow: hidden;
 }
 
 /* 캐릭터 부모박스 */
@@ -72,9 +84,10 @@ body {
 
 /* 가상요소로 clear설정하기! */
 /* ::after로 맨뒤에 가상요소추가 */
-#cbx::after{
+#cbx::after {
     content: '';
-    display: block;/* db */
+    display: block;
+    /* db */
     /* div와 비슷 - 안쓰면 span과 비슷 */
     clear: both;
     /* 주의: block요소에만 적용됨! */
@@ -122,40 +135,47 @@ body {
     /* 애니메이션: 이시이지반방마 */
     animation: catAni 2s ease-out 1s forwards;
 }
+
 /* 지은탁 딜레이 */
-#cbx .cat:nth-child(2){
+#cbx .cat:nth-child(2) {
     animation-delay: 1.5s;
 }
+
 /* 저승사자 딜레이 */
-#cbx .cat:nth-child(3){
+#cbx .cat:nth-child(3) {
     animation-delay: 2s;
 }
+
 /* 써니 딜레이 */
-#cbx .cat:nth-child(4){
+#cbx .cat:nth-child(4) {
     animation-delay: 2.5s;
 }
 
 /* .cat에 적용할 등장애니 키프레임 */
 @keyframes catAni {
-    to{
+    to {
         top: 0;
     }
-} /* 키프레임 */
+}
+
+/* 키프레임 */
 
 
 
 /* 이미지박스 */
-.ci{
+.ci {
     /* 트랜지션: 속시이지 */
     transition: margin-top .4s ease-out;
 }
+
 /* 캐릭터박스(.cat)에 마우스 오버시 
 이미지박스(.ci)위로 이동하기 */
-.cat:hover .ci{
+.cat:hover .ci {
     /* 마진탑값 마이너스면 위쪽으로 올라감!
     - 이미지 비율에 맞게 마진탑도 %로 설정! */
     margin-top: -57%;
 }
+
 /* 이미지박스 이미지 */
 /* 직계이미지인 캐릭터 이미지만 변경! */
 .ci>img {
@@ -171,7 +191,8 @@ body {
     /* 인라인요소 중앙정렬 */
     text-align: center;
     /* 상단마진 - 마이너스값을 주면 윗방향 겹쳐짐! */
-    margin-top: -16%;/* mt-16p */
+    margin-top: -16%;
+    /* mt-16p */
 }
 
 /* 이름 이미지 사이즈 조정 */
@@ -183,26 +204,29 @@ body {
 /* 이름이미지 중 첫번째 진한 이미지 숨기기 */
 /* 가상클래스로 첫번째 이미지 선택 */
 /* 첫번째 자식요소 선택 가상클래스 :first-child */
-.ci span img:first-child{
+.ci span img:first-child {
     /* 화면출력 없앰 */
     display: none;
 }
+
 /* .cat에 마우스 오버시 첫번째 이름이미지 보이기 */
 /* 마우스 오버시 가상클래스 :hover */
-.cat:hover .ci span img:first-child{
+.cat:hover .ci span img:first-child {
     /* 원래 display로 복귀 */
     display: inline;
 }
+
 /* .cat에 마우스 오버시 마지막째 이름이미지 숨기기 */
 /* 마지막째 자식요소 선택 가상클래스 :last-child */
-.cat:hover .ci span img:last-child{
+.cat:hover .ci span img:last-child {
     /* 화면출력 없앰 */
     display: none;
 }
 
 /* 캐릭터 설명박스 */
 .cd {
-    height: 0;/* 250px;-> 마우스 오버시 변경할 크기! */
+    height: 0;
+    /* 250px;-> 마우스 오버시 변경할 크기! */
     background: url(../images/eachBG.jpg) no-repeat center/cover;
     /* x축 스크롤바 트랙없는 
     y축 스크롤 설정 */
@@ -218,6 +242,7 @@ body {
     height .4s ease-out 1s,
     background-color 1s ease-in-out 1.4s; */
 }
+
 /**************************************************** 
     [ 트랜지션(Transition) 애니메이션 효과주기 ]
     -> 속성값의 변화과정을 보여주면서 애니메이션함
@@ -241,21 +266,23 @@ body {
             한다면 각각 트랜지션을 설정한다!
 ****************************************************/
 /* 캐릭터박스(.cat)에 마우스 오버시 설명박스(.cd)보이기 */
-.cat:hover .cd{
+.cat:hover .cd {
     height: 250px;
     /* background: red; - 트랜지션 연습 */
 }
+
 /* 캐릭터 설명 타이틀 */
-.cd h3{
+.cd h3 {
     font-family: 'Yeon Sung', cursive;
-    font-size: min(2vw,26px);
+    font-size: min(2vw, 26px);
     /* min()으로 2vw와 26px중 작은쪽 적용 */
     font-weight: normal;
     /* 패딩: 위 양쪽 아래 */
     padding: .5vw .8vw 0;
 }
+
 /* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
-.cd h3::before{
+.cd h3::before {
     content: '';
     display: inline-block;
     width: 15px;
@@ -266,12 +293,13 @@ body {
     /* background: 색이반고윙/크; */
     /* outline: 1px solid red; */
 }
+
 /* 캐릭터 설명 문단 */
 .cd p {
-    font-family: 'East Sea Dokdo','ZCOOL QingKe HuangYou', cursive;
-    font-size: min(1.5vw,24px);
+    font-family: 'East Sea Dokdo', 'ZCOOL QingKe HuangYou', cursive;
+    font-size: min(1.5vw, 24px);
     /* min()으로 1.5vw와 24px중 작은쪽 적용 */
-    line-height: min(2vw,30px);
+    line-height: min(2vw, 30px);
     /* min()으로 2vw와 30px중 작은쪽 적용 */
     /* 줄간격 배수단위로 쓰면 첫글자가 커서 첫줄 줄간격이
     커지므로 특정px로 설정함! */
@@ -286,15 +314,34 @@ body {
     color: lightsalmon;
     /* 그림자 4개로 글자 테두리주기 */
     text-shadow: 1px 0 #000,
-    -1px 0 #000,0 1px #000,0 -1px #000;
+        -1px 0 #000, 0 1px #000, 0 -1px #000;
 }
 
 /* 도깨비문구 */
-#dtxt{
+#dtxt {
     position: absolute;
     top: 200px;
-    right: 50px;
-    /* 부모는? 보이는 화면 */
-    width: 23%;
+    /* 원위치 100px; */
+    right: -200px;
+    /* 원위치 50px; */
+    /* 부모는? .cont */
+    width: min(max(23%, 250px), 327px);
+    /* 최소 250px 최대 327px 사이 23%크기변동 */
 
+    /* 투명도: opacity (값:0~1) */
+    opacity: 0;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: dtxtAni 1.5s ease-out 1s forwards;
 }
+
+/* 도깨비 문구 등장애니 키프레임 */
+@keyframes dtxtAni {
+    to {
+        top: 100px;
+        right: 50px;
+        opacity: 1;
+    }
+}
+
+/* 키프레임 */
