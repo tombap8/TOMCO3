@@ -6,24 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flex 레이아웃 연습</title>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
             height: 100vh;
         }
-        ul,ol{
+
+        ul,
+        ol {
             margin: 0;
             padding: 0;
             list-style: none;
             /* 3無 */
         }
+
         /* 전체부모박스 */
         #wrap {
             height: 100%;
             /* 부모박스 높이값을 채움! */
         }
+
         /* 파티션박스 ul */
-        #wrap>ul{
+        #wrap>ul {
             display: flex;
             /**************************************** 
                 [ 플렉스 박스!!! ]
@@ -59,7 +64,8 @@
             */
             height: 100%;
         }
-        #wrap>ul>li{
+
+        #wrap>ul>li {
             flex: 1;
             /* 등분할 속성 */
 
@@ -101,24 +107,28 @@
         }
 
         /* 파티션별 배경이미지 */
-        #wrap>ul>li:nth-child(1){
+        #wrap>ul>li:nth-child(1) {
             background-image: url(./images/m01_bg.jpg);
         }
-        #wrap>ul>li:nth-child(2){
+
+        #wrap>ul>li:nth-child(2) {
             background-image: url(./images/m02_bg.jpg);
         }
-        #wrap>ul>li:nth-child(3){
+
+        #wrap>ul>li:nth-child(3) {
             background-image: url(./images/m03_bg.jpg);
         }
-        #wrap>ul>li:nth-child(4){
+
+        #wrap>ul>li:nth-child(4) {
             background-image: url(./images/m04_bg.jpg);
         }
-        #wrap>ul>li:nth-child(5){
+
+        #wrap>ul>li:nth-child(5) {
             background-image: url(./images/m05_bg.jpg);
         }
 
         /* 타이틀 공통 */
-        .tit{
+        .tit {
             /* display: none; */
             position: absolute;
             top: 100px;
@@ -130,7 +140,7 @@
         }
 
         /* 타이틀 하위 li 공통 */
-        .tit>li{
+        .tit>li {
             width: 50px;
             height: 50px;
             border: 3px solid #fff;
@@ -142,7 +152,7 @@
         }
 
         /* 타이틀1 */
-        .t1{
+        .t1 {
             top: 50px;
 
             /* 플렉스박스 */
@@ -178,38 +188,43 @@
                     (글자의 line-height를 변경해 보면됨!)
             */
         }
+
         /* 타이틀2 */
-        .t2{
+        .t2 {
             /* display: none; */
             top: 200px;
             /* 플렉스박스 */
-           display: flex;
-           justify-content: space-between;
-           align-items: baseline;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
         }
+
         /* 줄간격변경 */
-        .t2 li:nth-child(2){
-           line-height: 80px;
+        .t2 li:nth-child(2) {
+            line-height: 80px;
         }
-        .t2 li:nth-child(4){
-           line-height: 30px;
+
+        .t2 li:nth-child(4) {
+            line-height: 30px;
         }
+
         /* 타이틀3 */
-        .t3{
+        .t3 {
             /* display: none; */
             top: 350px;
             /* 플렉스박스 */
-           display: flex;
-           align-items: center;
+            display: flex;
+            align-items: center;
         }
+
         /* 3번째 li부터 오른쪽 끝으로 보내기! */
         /* 왼쪽마진 auto */
-        .t3>li:nth-child(3){
-           margin-left: auto;
+        .t3>li:nth-child(3) {
+            margin-left: auto;
         }
 
         /* 타이틀4 */
-        .t4{
+        .t4 {
             /* display: none; */
             top: 200px;
             left: 50px;
@@ -222,13 +237,14 @@
             /* 진행방향의 수직정렬 */
             align-items: center;
         }
+
         /* 4번째 li부터 맨아래 끝으로 보내기 */
-        .t4>li:nth-child(4){
+        .t4>li:nth-child(4) {
             margin-top: auto;
         }
 
         /* 타이틀5 */
-        .t5{
+        .t5 {
             /* display: none; */
             top: 50px;
             left: 50px;
@@ -237,9 +253,10 @@
             /* 플렉스 박스 */
             display: flex;
         }
+
         /* 자식요소에 flex-shrink 설정으로 크기유지하기! */
-        .t5>li{
-            
+        .t5>li {
+
             /* 부모박스가 줄어들때 
             같이 자동으로 줄어들래? 0 아니! */
             flex-shrink: 0;
@@ -257,15 +274,15 @@
         }
 
         /* 타이틀6 */
-        .t6{
-            display: none;
+        .t6 {
+            /* display: none; */
             top: 500px;
             height: 250px;
 
             /* 플렉스 박스 */
-            
+            display: flex;
             /* 플렉스 옵션 - 랩핑! */
-            
+            flex-wrap: wrap;
             /* 
                 flex-wrap 속성
                 - 박스 가로크기 보다 아이템 요소가 많을 경우
@@ -277,11 +294,11 @@
                 모두 나옴! 이유는 자식요소의 flex 속성값으로
                 flex-shrink가 1로 기본설정 되어 있기때문!
             */
-            
-            
-            /* 진행방향 수평정렬 */
 
-            
+
+            /* 진행방향 수평정렬 */
+            justify-content: center;
+
             /* 
                 align-content 속성:
                 - 여러줄일때 진행방향의 수직정렬
@@ -299,42 +316,46 @@
 
                 비교) 한줄 수직정렬은? align-items
             */
+            align-content: space-around;
         }
 
         /* 글자수 조정을 위해
         li에 마진 설정 */
-        .t6>li{
-           
+        .t6>li {
+            margin: 0 14px;
         }
 
         /* 타이틀7 */
-        .t7{    
-            display: none;        
+        .t7 {
+            /* display: none;         */
             top: 50px;
             right: 50px;
-            left: auto;
             /* 기존left해제 */
+            left: auto;
             width: 450px;
-            height: auto;
             /* 높이값 자동 */
+            height: auto;
 
             /* 플렉스박스 */
-            
-            /* 자동줄바꿈 */
-            
+            display: flex;
+            /* 자동줄바꿈 - 랩핑 */
+            flex-wrap: wrap;
+            /* 수평정렬 - 사이간격일정 */
+            justify-content: space-between;
         }
 
         /* 줄바꿈을 위한 li */
         /* 원리는 줄바꿈할 부분에서 
         가로크기를 100%차지하게 해서 줄바꿈함! */
-        .t7>li.brk{
-            
+        .t7>li.brk {
+
             /* flex-basis는 width임 */
-            
+            flex-basis: 100%;
             /* 기존디자인을 없애고
             안보이게 처리함! */
+            height: 0;
+            border: none;
         }
-
     </style>
 </head>
 
@@ -402,7 +423,7 @@
             <li>R</li>
             <li>L</li>
             <li>D</li>
-            
+
             <li>L</li>
             <li>O</li>
             <li>T</li>
