@@ -24,7 +24,7 @@
         }
         /* 파티션박스 ul */
         #wrap>ul{
-            
+            display: flex;
             /**************************************** 
                 [ 플렉스 박스!!! ]
                 flex란? - flexible(유연한-에서 나온말)
@@ -49,7 +49,7 @@
 
 
             ****************************************/
-            
+            flex-direction: row-reverse;
             /* 
                 flex-direction 속성 : 진행방향과 순서를 정함
                 1) row : 좌->우 (기본값)
@@ -60,7 +60,7 @@
             height: 100%;
         }
         #wrap>ul>li{
-            
+            flex: 1;
             /* 등분할 속성 */
 
             /* 
@@ -119,7 +119,7 @@
 
         /* 타이틀 공통 */
         .tit{
-            display: none;
+            /* display: none; */
             position: absolute;
             top: 100px;
             left: calc(50% - 250px);
@@ -146,7 +146,8 @@
             top: 50px;
 
             /* 플렉스박스 */
-            
+            display: flex;
+            justify-content: space-evenly;
             /* 
                 justify-content 속성:
                 - 수평정렬속성 (justify 양쪽정렬의 뜻)
@@ -162,7 +163,7 @@
                 6) space-evenly :
                     아이템 요소 양쪽과 사이간격 모두일정
             */
-            
+            align-items: center;
             /* 
                 align-items 속성:
                 - 한줄 수직정렬 속성
