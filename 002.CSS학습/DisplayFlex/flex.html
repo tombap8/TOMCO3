@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>flex 레이아웃 연습</title>
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
 
-        ul,
-        ol {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            /* 3無 */
-        }
+      ul,
+      ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        /* 3無 */
+      }
 
-        /* 전체부모박스 */
-        #wrap {
-            height: 100%;
-            /* 부모박스 높이값을 채움! */
-        }
+      /* 전체부모박스 */
+      #wrap {
+        height: 100%;
+        /* 부모박스 높이값을 채움! */
+      }
 
-        /* 파티션박스 ul */
-        #wrap>ul {
-            display: flex;
-            /**************************************** 
+      /* 파티션박스 ul */
+      #wrap > ul {
+        display: flex;
+        /**************************************** 
                 [ 플렉스 박스!!! ]
                 flex란? - flexible(유연한-에서 나온말)
 
@@ -54,22 +53,22 @@
 
 
             ****************************************/
-            flex-direction: row-reverse;
-            /* 
+        flex-direction: row-reverse;
+        /* 
                 flex-direction 속성 : 진행방향과 순서를 정함
                 1) row : 좌->우 (기본값)
                 2) row-reverse : 우 -> 좌
                 3) column : 위 -> 아래
                 4) column-reverse : 아래 -> 위
             */
-            height: 100%;
-        }
+        height: 100%;
+      }
 
-        #wrap>ul>li {
-            flex: 1;
-            /* 등분할 속성 */
+      #wrap > ul > li {
+        flex: 1;
+        /* 등분할 속성 */
 
-            /* 
+        /* 
                 [ flex : 플렉스 자식요소에 주는 속성 ]
                 -> flex : 한번에 아래 3가지 속성을 줌
                 flex: 1 숫자하나만 쓰면 flex: 1 1 0 과 동일
@@ -100,65 +99,65 @@
 
             */
 
-            /* 배경공통 */
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
+        /* 배경공통 */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
 
-        /* 파티션별 배경이미지 */
-        #wrap>ul>li:nth-child(1) {
-            background-image: url(./images/m01_bg.jpg);
-        }
+      /* 파티션별 배경이미지 */
+      #wrap > ul > li:nth-child(1) {
+        background-image: url(./images/m01_bg.jpg);
+      }
 
-        #wrap>ul>li:nth-child(2) {
-            background-image: url(./images/m02_bg.jpg);
-        }
+      #wrap > ul > li:nth-child(2) {
+        background-image: url(./images/m02_bg.jpg);
+      }
 
-        #wrap>ul>li:nth-child(3) {
-            background-image: url(./images/m03_bg.jpg);
-        }
+      #wrap > ul > li:nth-child(3) {
+        background-image: url(./images/m03_bg.jpg);
+      }
 
-        #wrap>ul>li:nth-child(4) {
-            background-image: url(./images/m04_bg.jpg);
-        }
+      #wrap > ul > li:nth-child(4) {
+        background-image: url(./images/m04_bg.jpg);
+      }
 
-        #wrap>ul>li:nth-child(5) {
-            background-image: url(./images/m05_bg.jpg);
-        }
+      #wrap > ul > li:nth-child(5) {
+        background-image: url(./images/m05_bg.jpg);
+      }
 
-        /* 타이틀 공통 */
-        .tit {
-            /* display: none; */
-            position: absolute;
-            top: 100px;
-            left: calc(50% - 250px);
-            /* 가로중앙계산 */
-            width: 500px;
-            height: 100px;
-            border: 5px double #fff;
-        }
+      /* 타이틀 공통 */
+      .tit {
+        /* display: none; */
+        position: absolute;
+        top: 100px;
+        left: calc(50% - 250px);
+        /* 가로중앙계산 */
+        width: 500px;
+        height: 100px;
+        border: 5px double #fff;
+      }
 
-        /* 타이틀 하위 li 공통 */
-        .tit>li {
-            width: 50px;
-            height: 50px;
-            border: 3px solid #fff;
-            border-radius: 50%;
-            font: bold 14px/50px Verdana;
-            text-align: center;
-            color: #fff;
-            background-color: #f00;
-        }
+      /* 타이틀 하위 li 공통 */
+      .tit > li {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        font: bold 14px/50px Verdana;
+        text-align: center;
+        color: #fff;
+        background-color: #f00;
+      }
 
-        /* 타이틀1 */
-        .t1 {
-            top: 50px;
+      /* 타이틀1 */
+      .t1 {
+        top: 50px;
 
-            /* 플렉스박스 */
-            display: flex;
-            justify-content: space-evenly;
-            /* 
+        /* 플렉스박스 */
+        display: flex;
+        justify-content: space-evenly;
+        /* 
                 justify-content 속성:
                 - 수평정렬속성 (justify 양쪽정렬의 뜻)
                 - content는 수평방향으로 여러개의 아이템요소
@@ -173,8 +172,8 @@
                 6) space-evenly :
                     아이템 요소 양쪽과 사이간격 모두일정
             */
-            align-items: center;
-            /* 
+        align-items: center;
+        /* 
                 align-items 속성:
                 - 한줄 수직정렬 속성
 
@@ -187,80 +186,79 @@
                     글자 아래쪽 기준선으로 정렬됨
                     (글자의 line-height를 변경해 보면됨!)
             */
-        }
+      }
 
-        /* 타이틀2 */
-        .t2 {
-            /* display: none; */
-            top: 200px;
-            /* 플렉스박스 */
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
+      /* 타이틀2 */
+      .t2 {
+        /* display: none; */
+        top: 200px;
+        /* 플렉스박스 */
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
 
-        /* 줄간격변경 */
-        .t2 li:nth-child(2) {
-            line-height: 80px;
-        }
+      /* 줄간격변경 */
+      .t2 li:nth-child(2) {
+        line-height: 80px;
+      }
 
-        .t2 li:nth-child(4) {
-            line-height: 30px;
-        }
+      .t2 li:nth-child(4) {
+        line-height: 30px;
+      }
 
-        /* 타이틀3 */
-        .t3 {
-            /* display: none; */
-            top: 350px;
-            /* 플렉스박스 */
-            display: flex;
-            align-items: center;
-        }
+      /* 타이틀3 */
+      .t3 {
+        /* display: none; */
+        top: 350px;
+        /* 플렉스박스 */
+        display: flex;
+        align-items: center;
+      }
 
-        /* 3번째 li부터 오른쪽 끝으로 보내기! */
-        /* 왼쪽마진 auto */
-        .t3>li:nth-child(3) {
-            margin-left: auto;
-        }
+      /* 3번째 li부터 오른쪽 끝으로 보내기! */
+      /* 왼쪽마진 auto */
+      .t3 > li:nth-child(3) {
+        margin-left: auto;
+      }
 
-        /* 타이틀4 */
-        .t4 {
-            /* display: none; */
-            top: 200px;
-            left: 50px;
-            width: 150px;
-            height: 500px;
+      /* 타이틀4 */
+      .t4 {
+        /* display: none; */
+        top: 200px;
+        left: 50px;
+        width: 150px;
+        height: 500px;
 
-            /* 플렉스박스 */
-            display: flex;
-            flex-direction: column;
-            /* 진행방향의 수직정렬 */
-            align-items: center;
-        }
+        /* 플렉스박스 */
+        display: flex;
+        flex-direction: column;
+        /* 진행방향의 수직정렬 */
+        align-items: center;
+      }
 
-        /* 4번째 li부터 맨아래 끝으로 보내기 */
-        .t4>li:nth-child(4) {
-            margin-top: auto;
-        }
+      /* 4번째 li부터 맨아래 끝으로 보내기 */
+      .t4 > li:nth-child(4) {
+        margin-top: auto;
+      }
 
-        /* 타이틀5 */
-        .t5 {
-            /* display: none; */
-            top: 50px;
-            left: 50px;
-            width: 150px;
+      /* 타이틀5 */
+      .t5 {
+        /* display: none; */
+        top: 50px;
+        left: 50px;
+        width: 150px;
 
-            /* 플렉스 박스 */
-            display: flex;
-        }
+        /* 플렉스 박스 */
+        display: flex;
+      }
 
-        /* 자식요소에 flex-shrink 설정으로 크기유지하기! */
-        .t5>li {
-
-            /* 부모박스가 줄어들때 
+      /* 자식요소에 flex-shrink 설정으로 크기유지하기! */
+      .t5 > li {
+        /* 부모박스가 줄어들때 
             같이 자동으로 줄어들래? 0 아니! */
-            flex-shrink: 0;
-            /* 
+        flex-shrink: 0;
+        /* 
                 flex속성을 자식요소에 셋팅하지 않으면
                 기본값은 아래와 같다!
                 flex: initial
@@ -271,19 +269,19 @@
                 자식요소도 가로크기를 줄이게 됨!
                 이 값을 0으로 하면 자기원래 크기유지함!
             */
-        }
+      }
 
-        /* 타이틀6 */
-        .t6 {
-            /* display: none; */
-            top: 500px;
-            height: 250px;
+      /* 타이틀6 */
+      .t6 {
+        /* display: none; */
+        top: 500px;
+        height: 250px;
 
-            /* 플렉스 박스 */
-            display: flex;
-            /* 플렉스 옵션 - 랩핑! */
-            flex-wrap: wrap;
-            /* 
+        /* 플렉스 박스 */
+        display: flex;
+        /* 플렉스 옵션 - 랩핑! */
+        flex-wrap: wrap;
+        /* 
                 flex-wrap 속성
                 - 박스 가로크기 보다 아이템 요소가 많을 경우
                 아랫줄로 줄바꿈하려면 wrap으로 설정함!
@@ -295,11 +293,10 @@
                 flex-shrink가 1로 기본설정 되어 있기때문!
             */
 
+        /* 진행방향 수평정렬 */
+        justify-content: center;
 
-            /* 진행방향 수평정렬 */
-            justify-content: center;
-
-            /* 
+        /* 
                 align-content 속성:
                 - 여러줄일때 진행방향의 수직정렬
                 - 여러줄이니까 content!
@@ -316,143 +313,136 @@
 
                 비교) 한줄 수직정렬은? align-items
             */
-            align-content: space-around;
-        }
+        align-content: space-around;
+      }
 
-        /* 글자수 조정을 위해
+      /* 글자수 조정을 위해
         li에 마진 설정 */
-        .t6>li {
-            margin: 0 14px;
-        }
+      .t6 > li {
+        margin: 0 14px;
+      }
 
-        /* 타이틀7 */
-        .t7 {
-            /* display: none;         */
-            top: 50px;
-            right: 50px;
-            /* 기존left해제 */
-            left: auto;
-            width: 450px;
-            /* 높이값 자동 */
-            height: auto;
+      /* 타이틀7 */
+      .t7 {
+        /* display: none;         */
+        top: 50px;
+        right: 50px;
+        /* 기존left해제 */
+        left: auto;
+        width: 450px;
+        /* 높이값 자동 */
+        height: auto;
 
-            /* 플렉스박스 */
-            display: flex;
-            /* 자동줄바꿈 - 랩핑 */
-            flex-wrap: wrap;
-            /* 수평정렬 - 사이간격일정 */
-            justify-content: space-between;
-        }
+        /* 플렉스박스 */
+        display: flex;
+        /* 자동줄바꿈 - 랩핑 */
+        flex-wrap: wrap;
+        /* 수평정렬 - 사이간격일정 */
+        justify-content: space-between;
+      }
 
-        /* 줄바꿈을 위한 li */
-        /* 원리는 줄바꿈할 부분에서 
+      /* 줄바꿈을 위한 li */
+      /* 원리는 줄바꿈할 부분에서 
         가로크기를 100%차지하게 해서 줄바꿈함! */
-        .t7>li.brk {
-
-            /* flex-basis는 width임 */
-            flex-basis: 100%;
-            /* 기존디자인을 없애고
+      .t7 > li.brk {
+        /* flex-basis는 width임 */
+        flex-basis: 100%;
+        /* 기존디자인을 없애고
             안보이게 처리함! */
-            height: 0;
-            border: none;
-        }
+        height: 0;
+        border: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="wrap">
-        <!-- 파티션박스 -->
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <!-- 타이틀 박스1 -->
-        <ol class="tit t1">
-            <li>L</li>
-            <li>O</li>
-            <li>T</li>
-            <li>T</li>
-            <li>E</li>
-        </ol>
-        <!-- 타이틀 박스2 -->
-        <ol class="tit t2">
-            <li>W</li>
-            <li>O</li>
-            <li>R</li>
-            <li>L</li>
-            <li>D</li>
-        </ol>
-        <!-- 타이틀 박스3 -->
-        <ol class="tit t3">
-            <li>W</li>
-            <li>O</li>
-            <li>R</li>
-            <li>L</li>
-            <li>D</li>
-        </ol>
-        <!-- 타이틀 박스4 -->
-        <ol class="tit t4">
-            <li>W</li>
-            <li>O</li>
-            <li>R</li>
-            <li>L</li>
-            <li>D</li>
-        </ol>
-        <!-- 타이틀 박스5 -->
-        <ol class="tit t5">
-            <li>W</li>
-            <li>O</li>
-            <li>R</li>
-            <li>L</li>
-            <li>D</li>
-        </ol>
+      <!-- 파티션박스 -->
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <!-- 타이틀 박스1 -->
+      <ol class="tit t1">
+        <li>L</li>
+        <li>O</li>
+        <li>T</li>
+        <li>T</li>
+        <li>E</li>
+      </ol>
+      <!-- 타이틀 박스2 -->
+      <ol class="tit t2">
+        <li>W</li>
+        <li>O</li>
+        <li>R</li>
+        <li>L</li>
+        <li>D</li>
+      </ol>
+      <!-- 타이틀 박스3 -->
+      <ol class="tit t3">
+        <li>W</li>
+        <li>O</li>
+        <li>R</li>
+        <li>L</li>
+        <li>D</li>
+      </ol>
+      <!-- 타이틀 박스4 -->
+      <ol class="tit t4">
+        <li>W</li>
+        <li>O</li>
+        <li>R</li>
+        <li>L</li>
+        <li>D</li>
+      </ol>
+      <!-- 타이틀 박스5 -->
+      <ol class="tit t5">
+        <li>W</li>
+        <li>O</li>
+        <li>R</li>
+        <li>L</li>
+        <li>D</li>
+      </ol>
 
-        <!-- 타이틀 박스6 -->
-        <ol class="tit t6">
-            <li>L</li>
-            <li>O</li>
-            <li>T</li>
-            <li>T</li>
-            <li>E</li>
+      <!-- 타이틀 박스6 -->
+      <ol class="tit t6">
+        <li>L</li>
+        <li>O</li>
+        <li>T</li>
+        <li>T</li>
+        <li>E</li>
 
-            <li>W</li>
-            <li>O</li>
-            <li>R</li>
-            <li>L</li>
-            <li>D</li>
+        <li>W</li>
+        <li>O</li>
+        <li>R</li>
+        <li>L</li>
+        <li>D</li>
 
-            <li>L</li>
-            <li>O</li>
-            <li>T</li>
-            <li>T</li>
-            <li>E</li>
-        </ol>
+        <li>L</li>
+        <li>O</li>
+        <li>T</li>
+        <li>T</li>
+        <li>E</li>
+      </ol>
 
-        <!-- 타이틀 박스7 -->
-        <ol class="tit t7">
-            <li>L</li>
-            <li>O</li>
-            <li>T</li>
-            <li>T</li>
-            <li>E</li>
+      <!-- 타이틀 박스7 -->
+      <ol class="tit t7">
+        <li>L</li>
+        <li>O</li>
+        <li>T</li>
+        <li>T</li>
+        <li>E</li>
 
-            <li class="brk"></li>
+        <li class="brk"></li>
 
-            <li>W</li>
-            <li>O</li>
-            <li>R</li>
-            <li>L</li>
-            <li>D</li>
-        </ol>
-
-
-
-
+        <li>W</li>
+        <li>O</li>
+        <li>R</li>
+        <li>L</li>
+        <li>D</li>
+      </ol>
     </div>
-
-</body>
-
+  </body>
 </html>
