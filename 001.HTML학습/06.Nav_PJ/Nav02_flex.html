@@ -93,6 +93,21 @@
         height: 50px;
       }
 
+      /* 상위메뉴 li에 가상요소로 서브 배경바 만들기 */
+      /* .sm은 서브메뉴가 있는 li임! */
+      .gnb>ul>li.sm::after{
+        content: '';
+        display: block;
+        position: absolute;
+        /* top에 대하여 젠틀! */
+        left: 0;
+        /* left의 부모는? 보이는화면 */
+        width: 100%;
+        /* width %단위의 부모는? 보이는화면 */
+        height: 0;
+        background-color: #c3e3ff;
+      }
+
       /* 서브메뉴 ol요소
         - 안쪽 박스에 패딩을 준 이유는?
         .smenu박스는 높이값을 0으로 자식요소
@@ -103,7 +118,7 @@
         /* 플렉스박스 */
         display: flex;
         /* 안쪽여백 */
-        padding: 10px;
+        padding: 5px;
       }
       /* 서브메뉴 a요소 */
       .smenu a {
@@ -111,8 +126,10 @@
         color: #000;
         /* 밑줄없앰 */
         text-decoration: none;
-        /* 블록변경 */
-        display: block;
+        /* 블록변경 -> 아님! */
+        /* display: block; */
+        /* 패딩 */
+        padding: 5px 10px;
         /* 글자중앙 */
         text-align: center;
         /* 글자크기 */
@@ -144,7 +161,7 @@
         <li>
           <a href="#">Home</a>
         </li>
-        <li>
+        <li class="sm">
           <a href="#">웹개발</a>
           <!-- 서브메뉴 -->
           <div class="smenu">
@@ -164,7 +181,7 @@
             </ol>
           </div>
         </li>
-        <li>
+        <li class="">
           <a href="#">게시판</a>
           <!-- 서브메뉴 -->
           <div class="smenu">
