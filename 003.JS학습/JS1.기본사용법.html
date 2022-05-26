@@ -131,13 +131,20 @@
             // 3. CSS변경하기 /////////////////
             // 대상: .pbox
 
+            // 대상을 재사용하도록 변수에 할당한다!
+            // 변수는 값을 저장하는 메모리공간
+            // 변수명은 따옴표로 싸지 않은 문자
+            // 변수명은 메모리공간의 호출주소
+            // 변수명을 사용하면 값이 호출됨!
+            // 변수선언은 var 키워드로 선언함
+            var 목표 = document
+            .getElementsByClassName('pbox').item(0);
+
             // 3-1. 글자색변경하기
-            document.getElementsByClassName('pbox').item(0)
-            .style.color = 'lime';
+            목표.style.color = 'lime';
 
             // 3-2. 글자크기변경하기
-            document.getElementsByClassName('pbox').item(0)
-            .style.fontSize = '3vw';
+            목표.style.fontSize = '3vw';
 
 
 
