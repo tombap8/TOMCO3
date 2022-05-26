@@ -400,6 +400,32 @@
             width: 30%;
             vertical-align: middle;
         }
+
+        /* 원모양 */
+        .원이야{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* 원모양 개별셋팅 */
+        .원이야:nth-child(1){
+            right: 400px;
+            background-image: url(./images/01.png);
+        }
+        .원이야:nth-child(2){
+            right: 200px;
+            background-image: url(./images/02.png);
+        }
+        .원이야:nth-child(3){
+            background-image: url(./images/03.png);
+        }
     </style>
 </head>
 
