@@ -37,6 +37,16 @@
         background-color: #c3e3ff;
       }
 
+      /* .gnb에 가상요소로 전체 서브메뉴 100%배경 만들기 */
+      .gnb::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 180px;
+        background-color: #f00;
+      }
+
       /* ul 초기화 */
       .gnb ul {
         /* 플렉스박스 */
@@ -79,7 +89,7 @@
 
       /* .gnb에 마우스 오버시 상위메뉴 a요소 변경 */
       .gnb:hover > ul > li > a {
-        background-color: #c3e3ff;
+        /* background-color: #c3e3ff; */
         color: #000;
       }
 
