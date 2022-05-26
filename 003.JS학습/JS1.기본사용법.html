@@ -113,17 +113,17 @@
             함수명: 보여줘
             기능: .pbox의 디자인을 변경한다!
         *****************************************************/
-       function 보여줘(){
+        function 보여줘() {
             // 1. 함수호출확인
             console.log("나야나!");
 
             // 2. HTML 변경하기! /////////////
             // 변경대상: #name
             document
-            // html 문서전체객체
-            .getElementById('name')
-            // 가져와요소아이디로(아이디명)
-            .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까?">';
+                // html 문서전체객체
+                .getElementById('name')
+                // 가져와요소아이디로(아이디명)
+                .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까?">';
             // innerHTML = 값
             // innerHTML 은 HTML태그 코드를 넣는 메서드
             // 이퀄 오른쪽값이 왼쪽으로 들어감!(할당)
@@ -138,7 +138,7 @@
             // 변수명을 사용하면 값이 호출됨!
             // 변수선언은 var 키워드로 선언함
             var 목표 = document
-            .getElementsByClassName('pbox').item(0);
+                .getElementsByClassName('pbox').item(0);
 
             // 3-1. 글자색변경하기
             목표.style.color = 'lime';
@@ -146,12 +146,39 @@
             // 3-2. 글자크기변경하기
             목표.style.fontSize = '3vw';
 
+            // 3-3. 트랜지션 주기
+            목표.style.transition = 
+            '2s,transform 1s 2s,top 3s 2s,left 3s 2s';
+            /* 전체 2초,트랜스폼 1초동안 2초후,
+            top과 left는 3초간 2초후 */
+
+            // 3-4. 배경이미지 넣기
+            목표.style.background = 'url(./images/kimbs.jpg) no-repeat top/cover';
+
+            // 3-5. 원모양 만들기
+            목표.style.borderRadius = '50%';
+
+            // 3-6. 위치이동
+            목표.style.top = '50%';
+            목표.style.left = '50%';
+
+            // 3-7. 트랜스폼 적용(중앙이동,회전,축소)
+            목표.style.transform = 
+            'translate(-50%,-50%) rotate(360deg) scale(.7)';
+
+            // 3-8. 전체배경색 변경
+            // 대상: body
+            // JS에서 body는 특별히 취급해서
+            // document.body 라고 선택함
+            var 바디 = document.body;
+            바디.style.backgroundColor = 'lightgreen';
+            바디.style.transition = '5s 3s';
 
 
 
-       } ///////////////// 보여줘 함수 ////////////////////////
-       ///////////////////////////////////////////////////////
 
+        } ///////////////// 보여줘 함수 ////////////////////////
+        ///////////////////////////////////////////////////////
     </script>
     <style>
         .pbox {
@@ -161,7 +188,7 @@
             margin: 0;
             padding: 0;
             font-size: 2vw;
-            line-height: 7vw;
+            line-height: 8vw;
             width: 35vw;
             border: 4px solid purple;
             padding: 10vw 5vw;
@@ -172,6 +199,12 @@
                 0 1px #000, 0 -1px #000;
             /* 줄바꿈방지 */
             white-space: nowrap;
+            text-align: center;
+        }
+
+        .pbox span img {
+            width: 30%;
+            vertical-align: middle;
         }
     </style>
 </head>
