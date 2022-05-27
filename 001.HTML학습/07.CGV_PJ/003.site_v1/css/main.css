@@ -11,7 +11,7 @@ body{
 
 /* 공사중표시 */
 body *{
-    outline: 2px dotted lime;
+    outline: 1px dotted lime;
 }
 
 /* 공통 클래스 */
@@ -23,10 +23,12 @@ body *{
 /****************** 1. 상단영역 ******************/
 .top{
     height: 80px;
+    background: url(../images/curtain.jpg) repeat-x;
 }
 /****************** 2. 메인영역 ******************/
 .cont{
     height: 788px;
+    background: url(../images/bg.jpg) no-repeat;
 }
 /****************** 3. 하단영역 ******************/
 .info{
