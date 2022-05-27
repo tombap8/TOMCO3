@@ -10,6 +10,6 @@ body{
 }
 
 /* 공사중표시 */
-/* body *{
+body *{
     outline: 2px dotted lime;
-} */
+}
