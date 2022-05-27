@@ -15,6 +15,67 @@
             -> 자식요소 중 높이값이 %일 경우에 기준이됨! */
         }
 
+        /* 비율유지박스 */
+        .rbx {
+            position: relative;
+            /* 부모자격 필수! - .rbxIn */
+            width: 50%;
+            /* padding-top: 30%; */
+            /* height: 450px; */
+            /* height: 50%; */
+
+            background: url(./images/mobum.jpg) no-repeat center/cover;
+
+            /* 마영오! */
+            margin: 0 auto;
+        }
+
+        /* 비율유지 가상요소 */
+        .rbx::before {
+            content: '';
+            display: block;
+            /* div처럼됨! */
+            padding-top: 52.47%;
+            /* 
+                [ 내가 원하는 비율 계산하기 ]
+                패딩탑 100%가 부모박스 가로크기의 1:1비율이므로
+                이미지비를 식으로쓰면...
+                가로 : 세로 = 100% : x
+                1170 : 614 = 100 : x
+                내항의 곱은 외항의 곱과 같다! 비례식!!!
+                614*100 = 1170*x
+                x = 614*100/1170
+                  = 52.47
+                이 x값이 패딩탑 %값이다!!!
+            */
+        }
+
+        /* 비율유지 속박스 */
+        .rbxIn{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            /* 부모는 반드시 .rbx여여함! */
+        }
+
+        /* 내용셋팅 */
+        .cat{
+            position: absolute;
+            bottom: 2%;
+            left: 5%;
+            /* 부모는? .rbxIn */
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 1.5vw;
+            font-weight: bold;
+            line-height: 2;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+
         /* 
 
             [ 패딩탑에 의한 비율높이값 원리 ]
@@ -53,7 +114,7 @@
 
 
         /* 800px이하 미디어쿼리 */
-        
+
 
         /* 미디어쿼리 */
     </style>
@@ -62,16 +123,19 @@
 <body>
     <!-- 비율유지박스 -->
     <div class="rbx">
-        
+        <div class="rbxIn">
+            <dl class="cat">
+                <dt>출연진</dt>
+                <dd>이제훈(김도기역)</dd>
+                <dd>이솜(강하나역)</dd>
+                <dd>김의성(장성철역)</dd>
+            </dl>
+        </div>
+        <!-- <div style="padding-top: 100%;"></div> -->
     </div>
 
 
-    <!-- <dl class="cat">
-        <dt>출연진</dt>
-        <dd>이제훈(김도기역)</dd>
-        <dd>이솜(강하나역)</dd>
-        <dd>김의성(장성철역)</dd>
-    </dl> -->
+
 
 
 </body>
