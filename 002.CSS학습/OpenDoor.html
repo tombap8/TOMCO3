@@ -91,6 +91,16 @@
             openFirst 1s ease-in-out forwards,
             openDoor 2s ease-in-out 1s infinite alternate;
 
+            /* 애니메이션 상태관리하기! */
+            animation-play-state: paused;
+            /* paused - 멈춤상태
+            running - 진행상태 */
+
+        }
+
+        /* 오버시 애니메이션 작동! */
+        .cont:hover .door{
+            animation-play-state: running;
         }
 
         /* 문짝 처음열기 키프레임 */
