@@ -24,14 +24,25 @@
         text-align: center;
       }
 
+      /* GNB와 본문div 랩핑박스 */
+      .wrap{
+        /* 플렉스박스 */
+        display: flex;
+      }
+
       /* GNB메뉴박스 */
       .gnb {
+        /* 사이드 메뉴 가로크기 지정 */
+        width: 200px;
+
         background-color: #218cff;
       }
       /* ul 초기화 */
       .gnb ul {
         /* 플렉스박스 */
         display: flex;
+        /* 진행방향 - 세로방향(위->아래) */
+        flex-direction: column;
         /* 수평방향 중앙정렬 */
         justify-content: center;
         /* 특정가로크기,마영오 등 설정 불필요! */
@@ -42,12 +53,15 @@
         display: block;
         clear: both;
       } */
+      
       /* li 리스트요소 */
-      .gnb > ul > li {
+      /* .gnb > ul > li { */
         /* 블록요소 옆으로 흐르게 */
         /* float: left; - 사용안함! */
-        height: 50px;
-      }
+        /* height: 50px; -> li에 높이값이 없어야
+         서브메뉴가 자리를 차지하면서 밀고나감! */
+      /* } */
+
       /* li 하위 a요소 */
       .gnb > ul > li > a {
         /* 글자색 */
@@ -73,7 +87,7 @@
 
       /* 서브메뉴 */
       .smenu {
-        position: absolute;
+        /* position: absolute; -> 자리차지위해 앱솔안함! */
         /* 젠틀앱솔루트 - a요소를 존중하여 아래 위치 */
         width: 200px;
         /* 판타롱스타킹 앱솔루트 
@@ -134,8 +148,14 @@
         color: orangered;
       }
 
-      /* 본문내용 */
+      /* 본문내용박스 - .wrap의 flex 자식요소 */
       .cont {
+        width: 100%;
+        /* 일반적인 박스라면 앞의 .gnb박스의 200px이 더해져
+        가로스크롤이 생기지만 flex자식요소는 부모박스의
+        한계크기보다 강제로 크기를 줄여서 조절해 준다!
+        flex-shrink:1 
+        -> 기본설정(부모박스에 맞춰 줄어들래? 1 응, 0 아니) */
         background-color: #fdfccf;
         text-align: center;
         line-height: 50;
@@ -144,58 +164,60 @@
   </head>
   <body>
     <h1>유형4. 세로네비 서브별 드롭다운 세로형 - flex적용</h1>
-    <!-- GNB 네비게이션 -->
-    <nav class="gnb">
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">웹개발</a>
-          <!-- 서브메뉴 -->
-          <div class="smenu">
-            <ol>
-              <li>
-                <a href="#">웹디자인</a>
-              </li>
-              <li>
-                <a href="#">HTML5+CSS3</a>
-              </li>
-              <li>
-                <a href="#">jQuery</a>
-              </li>
-              <li>
-                <a href="#">웹+모바일</a>
-              </li>
-            </ol>
-          </div>
-        </li>
-        <li>
-          <a href="#">게시판</a>
-          <!-- 서브메뉴 -->
-          <div class="smenu">
-            <ol>
-              <li>
-                <a href="#">Q&amp;A</a>
-                <!-- HTML 특수문자처리
-                                엔퍼센드(&) &amp; 
-                                여는꺽쇠(<) &lt;
-                                닫는꺽쇠(>) &gt;
-                            -->
-              </li>
-              <li>
-                <a href="#">방명록</a>
-              </li>
-            </ol>
-          </div>
-        </li>
-        <li>
-          <a href="#">프로필</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- 내용박스 -->
-    <div class="cont">본문내용</div>
+    <!-- GNB와 본문div 랩핑박스 -->
+    <div class="wrap">
+      <!-- GNB 네비게이션 -->
+      <nav class="gnb">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">웹개발</a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
+                <li>
+                  <a href="#">웹디자인</a>
+                </li>
+                <li>
+                  <a href="#">HTML5+CSS3</a>
+                </li>
+                <li>
+                  <a href="#">jQuery</a>
+                </li>
+                <li>
+                  <a href="#">웹+모바일</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <a href="#">게시판</a>
+            <!-- 서브메뉴 -->
+            <div class="smenu">
+              <ol>
+                <li>
+                  <a href="#">Q&amp;A</a>
+                  <!-- HTML 특수문자처리
+                                  엔퍼센드(&) &amp;
+                                  여는꺽쇠(<) &lt;
+                                  닫는꺽쇠(>) &gt;
+                              -->
+                </li>
+                <li>
+                  <a href="#">방명록</a>
+                </li>
+              </ol>
+            </div>
+          </li>
+          <li>
+            <a href="#">프로필</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- 내용박스 -->
+      <div class="cont">본문내용</div>
+    </div>
   </body>
 </html>
