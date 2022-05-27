@@ -92,11 +92,11 @@
   .ham {
     /* 포지션이 앱솔루트이면 기본 block이다! */
     display: block;
+    z-index: 1; /* 로고보다위 */
   }
   /* 햄버거 버튼 변경 
     (전체메뉴 보일때만->.top.on일때만) */
   .top.on .ham {
-    z-index: 1; /* 로고보다위 */
     color: #fff;
     transform: scale(1.5);
   }
