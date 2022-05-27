@@ -14,7 +14,7 @@
 - width: 특정px/특정% 그리고 margin: 0 auto 로 중앙위치함
 - 일반적으로 html5 레이아웃 태그를 사용(header,footer, section등)
 - 속박스 공통 클래스를 주고 크기와 중앙정렬 코딩을 공통으로 적용한다
-예) .ibx{width:1200px; margin:0 auto;}
+예) .ibx{max-width:1200px; margin:0 auto;}
 - 박스별 개별설정은 아이디 혹은 클래스를 추가하여 설정한다
 
 3. 대분류 박스 내부에 중(소)분류박스로 파티션 구분을 한다
