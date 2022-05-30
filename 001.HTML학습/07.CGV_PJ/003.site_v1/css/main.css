@@ -87,6 +87,13 @@ h1.tit{
 }
 /* 영화정보박스 */
 .movtxt{
+    /* 플렉스박스 */
+    display: flex;
+    /* 플렉스 진행방향 세로 */
+    flex-direction: column;
+    /* 진행방향 수평 중앙 */
+    justify-content: center;
+
     position: absolute;
     top: 0;
     width: 99px;
@@ -101,6 +108,12 @@ h1.tit{
     text-align: center;
     /* 줄바꿈 방지 */
     white-space: nowrap;
+}
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child{
+    color: aqua;
+    font-size: 17px;
+    letter-spacing: -1px;
 }
 
 /****************** 3. 하단영역 ******************/
