@@ -70,6 +70,9 @@ h1.tit{
     /* X축으로 내크기의 절반왼쪽이동 
     - x축 정중앙이동 */
     transform: translateX(-50%);
+
+    /* .movtxt의 부모에 숨기기적용! */
+    overflow: hidden;
 }
 /* ul 플렉스박스 */
 .mlist ul{
@@ -95,7 +98,8 @@ h1.tit{
     justify-content: center;
 
     position: absolute;
-    top: 0;
+    /* 부모사이즈 만큼 아래로 밀기 */
+    top: 100%;
     width: 99px;
     height: 140px;
 
@@ -108,7 +112,15 @@ h1.tit{
     text-align: center;
     /* 줄바꿈 방지 */
     white-space: nowrap;
+
+    /* 트랜지션: 속시이지 */
+    transition: top .3s ease-out;
 }
+/* li에 오버시 영화정보 올라오기 */
+.mlist ul>li:hover .movtxt{
+    top: 0;
+}
+
 /* 첫번째 li 영화제목 */
 .movtxt li:first-child{
     color: aqua;
