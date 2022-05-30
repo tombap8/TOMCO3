@@ -4,7 +4,7 @@
     함수명: chgMV
     기능: 영화 예고편 선택하여 플레이하기
 ********************************************/
-function chgMV(vid){ // vid - 동영아이디
+function chgMV(vid){ // vid - 동영상아이디
 
     // 1. 함수호출확인+전달값 확인
     console.log("바꿔!",vid);
