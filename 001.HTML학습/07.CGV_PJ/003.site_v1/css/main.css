@@ -48,6 +48,7 @@ h1.tit{
     position: absolute;
     top: 136px;
     left: 257px;
+    /* 부모는? .cont */
     width: 701px;
     height: 397px;
     background-color: #000;
@@ -59,6 +60,49 @@ h1.tit{
     /* 아이프레임 기본보더 없앰 */
     border: none;
 }
+/* 2-2. 예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 58px;
+    left: 50%;
+    /* 부모는? .cont */
+
+    /* X축으로 내크기의 절반왼쪽이동 
+    - x축 정중앙이동 */
+    transform: translateX(-50%);
+}
+/* ul 플렉스박스 */
+.mlist ul{
+    display: flex;
+}
+/* 각 li리스트 */
+.mlist ul>li{
+    margin: 0 9px;
+}
+
+/* 메뉴 포스터 이미지 */
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
+/* 영화정보박스 */
+.movtxt{
+    position: absolute;
+    top: 0;
+    width: 99px;
+    height: 140px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+}
+
 /****************** 3. 하단영역 ******************/
 .info{
     height: 100px;
