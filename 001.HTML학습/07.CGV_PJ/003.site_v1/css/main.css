@@ -44,7 +44,7 @@ h1.tit{
 /* 1-2. 전체메뉴(GNB) */
 .gnb{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 15px;
     /* 부모는? .top */
 }
@@ -61,6 +61,9 @@ h1.tit{
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
+    /* 아래쪽 영역을 넓혀서 서브메뉴와 닿게함!
+    오버시 떨어지면 서브메뉴가 닫힘문제발생! */
+    padding-bottom: 5px;
 }
 /* GNB 서브메뉴 */
 .smenu{
@@ -68,8 +71,9 @@ h1.tit{
     left: 50%;
     /* 부모는? 싸고있는 li */
 
-    /* 자기크기의 절반 왼쪽이동(가로중앙) */
-    transform: translateX(-50%);
+    /* 자기크기의 절반 왼쪽이동(가로중앙)
+    + 세로방향 위치조정 */
+    transform: translate(-50%,5px);
 
     width: 140px;
 
@@ -77,6 +81,13 @@ h1.tit{
     padding: 3px;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff;
+
+    /* 처음에 안보임 - 오버시 보임! */
+    display: none;
+}
+/* 상위메뉴 li에 오버시 하위메뉴 보임 */
+.glist>li:hover .smenu{
+    display: block;
 }
 
 /* 가상요소로 서브메뉴 삼각형 만들기 */
@@ -127,8 +138,26 @@ h1.tit{
 /* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
 /* 이모지는 윈도우키+세미콜론(;) 단축키임 */
 /* "영화" 하위메뉴 이모지 */
-.glist>li:nth-child(1) .smenu li a::after{
-    content: '🍖';
+.glist>li:nth-child(1) .smenu li a:hover::after{
+    content: '😍';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
+}
+/* "예매" 하위메뉴 이모지 */
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '🎬';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
+}
+/* "극장" 하위메뉴 이모지 */
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '🔔';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
+}
+/* "이벤트&컬처" 하위메뉴 이모지 */
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '📣';
     /* 인라인요소 오른쪽 끝으로 보냄! */
     float: right;
 }
