@@ -162,6 +162,34 @@ h1.tit{
     float: right;
 }
 
+/* 영사기 박스 */
+#cam{
+    position: absolute;
+    bottom: -14px;
+    right: -51px;
+    /* 부모는? .gnb */
+}
+/* 영사기 이미지 */
+#cam img{
+    position: relative;
+    z-index: 1;
+    /* 포지션이 있고 z-index로 빔보다 위 */
+    width: 50px;
+}
+/* 빔박스 */
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 8px;
+    /* 부모는? #cam */
+    width: 0;/* 200px; */
+    height: 70px;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    /* outline: 2px dotted yellow; */
+}
+
 /****************** 2. 메인영역 ******************/
 .cont{
     position: relative;
