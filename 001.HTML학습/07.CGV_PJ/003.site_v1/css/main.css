@@ -10,9 +10,9 @@ body{
 }
 
 /* 공사중표시 */
-body *{
+/* body *{
     outline: 1px dotted lime;
-}
+} */
 
 /* 공통 클래스 */
 .ibx{
@@ -24,6 +24,9 @@ body *{
 .top{
     position: relative;
     /* 부모자격 - .gnb */
+    /* GNB 하위메뉴가 위에 오도록
+    아래쪽 .cont박스 보다 위! */
+    z-index: 999;
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
@@ -53,9 +56,81 @@ h1.tit{
 }
 /* GNB li 리스트 */
 .glist>li{
+    position: relative;
+    /* 부모자격 - .smenu */
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
+}
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
+    left: 50%;
+    /* 부모는? 싸고있는 li */
+
+    /* 자기크기의 절반 왼쪽이동(가로중앙) */
+    transform: translateX(-50%);
+
+    width: 140px;
+
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+}
+
+/* 가상요소로 서브메뉴 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 삼각형만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    /* 양쪽보더는 투명색(transpareant)
+    border-top으로 하면 역삼각형이 나옴 */
+}
+
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* 서브메뉴 중 li 보더탑 구분선 class */
+.bdt{
+    border-top: 1px solid #ccc;
+}
+
+/* 서브메뉴 a요소 확장 */
+.smenu a{
+    display: block;
+    /* li부모요소 가로 끝까지 차지함! */
+}
+/* 서브메뉴 a에 마우스 오버시 글자색 빨강 */
+.smenu a:hover{
+    color: red;
+}
+/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+/* 이모지는 윈도우키+세미콜론(;) 단축키임 */
+/* "영화" 하위메뉴 이모지 */
+.glist>li:nth-child(1) .smenu li a::after{
+    content: '🍖';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
 }
 
 /****************** 2. 메인영역 ******************/
