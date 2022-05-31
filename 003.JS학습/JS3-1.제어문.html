@@ -212,6 +212,21 @@
         // input요소에 입력된 값을 읽어옴(value)
         console.log("지역명:", txt);
 
+        // 메시지 변수
+        var msg; 
+
+        // 3. 지역명을 switch case문으로 분류하여 메시지 넣기!
+        switch(txt){
+            case "서울": msg = "02"; break;
+            case "경기": msg = "031"; break;
+            case "인천": msg = "032"; break;
+            default: msg = "esc";
+        } ///////// switch case ///////////
+
+        console.log("메시지:",msg);
+
+        // 4. 메시지 만들기
+
       } ////////////////// local 함수 ///////////////////////
       ///////////////////////////////////////////////////////
 
