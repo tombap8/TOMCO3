@@ -22,6 +22,8 @@ body *{
 
 /****************** 1. 상단영역 ******************/
 .top{
+    position: relative;
+    /* 부모자격 - .gnb */
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
@@ -36,6 +38,26 @@ h1.tit{
     /* 그림자를 이용한 Glow효과 */
     text-shadow: 0 0 12px aquamarine;
 }
+/* 1-2. 전체메뉴(GNB) */
+.gnb{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    /* 부모는? .top */
+}
+
+/* GNB ul */
+.glist{
+    /* 플렉스박스 */
+    display: flex;
+}
+/* GNB li 리스트 */
+.glist>li{
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
 /****************** 2. 메인영역 ******************/
 .cont{
     position: relative;
