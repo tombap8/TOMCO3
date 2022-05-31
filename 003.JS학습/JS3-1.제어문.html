@@ -25,6 +25,57 @@
             // value는 값을 읽어오는 속성
             console.log("입력값:",score);
 
+            // 2-3. 출력대상: #jexp
+            var jexp = document.querySelector("#jexp");
+
+            // 점수에 따른 메시지변수
+            var msg;
+            // 점수별 글자색 변수
+            var fc;
+
+            // 3. 점수환산하기 ///////////
+            // 셋팅내용:
+            // msg - 메시지
+            if(score >= 90){
+                msg = "매우잘함";
+                fc = "blue";
+            }
+            else if(score >= 80){
+                msg = "잘함";
+                fc = "green";
+            }
+            else if(score >= 70){
+                msg = "보통";
+                fc = "purple";
+            }
+            else if(score >= 60){
+                msg = "노력요함";
+                fc = "orange";
+            }
+            else{
+                msg = "재시험";
+                fc = "red";
+            }
+
+            // if, else if로된 셋트 if문은
+            // 하나의 조건에 들어가면 다른 조건문은
+            // 들어가지 않으므로 범위구간을 만든것과 같다!
+            // 만약 if문으로만 구성하면 각 점수별
+            // 점수구역을 조건문으로 만들어야한다!
+            // 예) 80점대 -> if(score>=80 && score<90){}
+
+            // 할당된 변수값 확인! (\n은 엔터기호)
+            console.log("msg:",msg,"\nfc:",fc);
+
+            // 4. 출력하기 /////////////
+            jexp.innerText = "평가결과는 "+ msg;
+
+            // 5. 글자색 변경하기 //////////
+            // -> fc라는 변수에 각 조건별 색상명이 할당됨!
+            // 선택자.style.color = 값
+            jexp.style.color = fc;
+
+
         } /////////////// jumsu 함수 /////////////////
         //////////////////////////////////////////////
 
