@@ -62,6 +62,9 @@ function linkFn() {
             var url;
 
             switch (txt) {
+                case "메인":
+                    url = "index.html";
+                    break;
                 case "로그인":
                     url = "login.html";
                     break;
@@ -71,16 +74,39 @@ function linkFn() {
                 case "인물관계도":
                     url = "cat.html";
                     break;
+                case "페이스북 바로가기":
+                    url = "https://www.facebook.com/tvNdokebi/";
+                    break;
+                case "인스타그램 바로가기":
+                    url = "https://www.instagram.com/tvn_joy&cr=2";
+                    break;
+                case "트위터 바로가기":
+                    url = "https://twitter.com/chtvn";
+                    break;
                 default:
                     url = "etc";
             } /////// switch case //////
 
             // 페이지별 이동!
-            if (txt === "etc")
-                alert(`${txt} 페이지는 오픈 준비중입니다~!`);
+            if (url === "etc")
+                alert(`${txt} 페이지는 오픈 준비중입니다~!\n현재는 인물관계도, 로그인, 회원가입 페이지만 운영되고 있습니다!`);
+                // \n은 줄바꿈표시(시스템 출력에만 적용됨)
+            else if(txt==="페이스북 바로가기"||
+            txt==="인스타그램 바로가기"||
+            txt==="트위터 바로가기")
+                window.open().location.href = url;
+                // window.open() 새창열기
             else
                 location.href = url;
             // location.href = 주소 -> 현재창 주소이동
+
+            // a요소는 기본적으로 이동하는 특성이 있다!
+            // 이것을 막기 위해서 본 함수를 나갈때
+            // 모든 기본 기능을 못하게 막는 것이
+            // return false 설정이다!
+            return false;
+            // 본 코드 맨끝에 해야함!
+            // 위에서 하면 만나는 순간 빠져나감!
 
         }; //////// click ////////////
 
