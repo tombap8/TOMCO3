@@ -30,6 +30,8 @@ function linkFn(){
     var alink = document.querySelectorAll(".top a");
     console.log("a링크 개수:",alink.length,alink);
     // length는 컬렉션 집합의 개수
+    // html 요소가 여러개 담긴 메모리공간을 컬렉션이라고함
+    // 구체적인 요소는 컬렉션[순번] / 컬렉션.item(순번)
 
     // 3. 각 a요소에 클릭설정하기!
     // a요소 컬렉션 개수만큼 돌면서 클릭이벤트 설정하기
@@ -39,14 +41,17 @@ function linkFn(){
     // 증감은 i++로 1씩증가하여 한계값에 접근함!
     for(var i=0;i<alink.length;i++){
         // alink[순번] -> 구체적인 a요소
-        // function(){} -> 이름없는 함수
+        // alink.item(순번) -> 위와 같음!
+        // function(){코드} -> 이름없는 함수
         // 이름없는 함수를 이벤트속성에
         // 할당해야 코드가 바로실행되지 않고
         // 이벤트가 발생할때 실행된다!
+        // alink.item(i).onclick = function(){
         alink[i].onclick = function(){
             // 클릭된 a요소 자신 -> this
             // this.innerText 는 a요소 글자
-            console.log(this.innerText);
+            var txt = this.innerText;
+            console.log(txt);
         }; //////// click ////////////
 
     } //////////// for ///////////////
