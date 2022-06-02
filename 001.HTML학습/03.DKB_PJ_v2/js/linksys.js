@@ -78,7 +78,7 @@ function linkFn() {
                     url = "https://www.facebook.com/tvNdokebi/";
                     break;
                 case "인스타그램 바로가기":
-                    url = "https://www.instagram.com/tvn_joy&cr=2";
+                    url = "https://tv.naver.com/cjenm.tvndokebi";
                     break;
                 case "트위터 바로가기":
                     url = "https://twitter.com/chtvn";
