@@ -295,8 +295,13 @@
 
     </nav>
 
-    <!-- 햄버거버튼 
-    클릭시 .gnb에 .on을 넣기! -->
+    <!-- 햄버거버튼 클릭시 .gnb에 .on을 넣기! 
+        [ JS코드에 classList 객체사용! ]
+        (( classList 메서드 3가지 ))
+        1. add(클래스명) - 클래스넣기
+        2. remove(클래스명) - 클래스빼기
+        3. toggle(클래스명) - 클래스넣기/빼기
+    -->
     <button id="ham" class="btns" onclick="document.querySelector('.gnb').classList.add('on')">
         <span>＝</span>
     </button>
