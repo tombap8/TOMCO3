@@ -7,7 +7,7 @@
 // window 윈도우객체 - html문서 최상위 객체다!
 // window객체에 load이벤트를 설정하면 된다!
 // load이벤트는 html요소를 모두 로딩후 발생함!
-window.addEventListener("load",linkFn);
+window.addEventListener("load", linkFn);
 // 선택요소/객체.addEventListener(이벤트명,함수)
 // -> 선택요소 또는 객체에 이벤트발생시 함수를 실행함!
 // 원래 함수호출은 함수명() -> 소괄호가 있어야 하지만
@@ -21,14 +21,14 @@ window.addEventListener("load",linkFn);
     주의사항: 본 함수는 반드시 html이 모두
             로딩된 후에 호출해야 함!
 *******************************************/
-function linkFn(){
+function linkFn() {
 
     // 1. 호출확인
     console.log("고고씽~!");
 
     // 2. 대상선정 : .top a -> 상단영역의 모든a
     var alink = document.querySelectorAll(".top a");
-    console.log("a링크 개수:",alink.length,alink);
+    console.log("a링크 개수:", alink.length, alink);
     // length는 컬렉션 집합의 개수
     // html 요소가 여러개 담긴 메모리공간을 컬렉션이라고함
     // 구체적인 요소는 컬렉션[순번] / 컬렉션.item(순번)
@@ -39,7 +39,7 @@ function linkFn(){
     // 시작값은 컬렉션 첫번호인 0부터 시작함!
     // 한계값은 컬렉션 개수보다 작을때까지임!
     // 증감은 i++로 1씩증가하여 한계값에 접근함!
-    for(var i=0;i<alink.length;i++){
+    for (var i = 0; i < alink.length; i++) {
         // alink[순번] -> 구체적인 a요소
         // alink.item(순번) -> 위와 같음!
         // function(){코드} -> 이름없는 함수
@@ -47,11 +47,41 @@ function linkFn(){
         // 할당해야 코드가 바로실행되지 않고
         // 이벤트가 발생할때 실행된다!
         // alink.item(i).onclick = function(){
-        alink[i].onclick = function(){
+        alink[i].onclick = function () {
             // 클릭된 a요소 자신 -> this
             // this.innerText 는 a요소 글자
+
+            // 1. a요소 텍스트 읽어오기
             var txt = this.innerText;
             console.log(txt);
+
+            // 2. 텍스트에 따라 이동할 페이지 분기하기
+            // switch case 사용!
+
+            // 이동주소변수
+            var url;
+
+            switch (txt) {
+                case "로그인":
+                    url = "login.html";
+                    break;
+                case "회원가입":
+                    url = "member.html";
+                    break;
+                case "인물관계도":
+                    url = "cat.html";
+                    break;
+                default:
+                    url = "etc";
+            } /////// switch case //////
+
+            // 페이지별 이동!
+            if (txt === "etc")
+                alert(`${txt} 페이지는 오픈 준비중입니다~!`);
+            else
+                location.href = url;
+            // location.href = 주소 -> 현재창 주소이동
+
         }; //////// click ////////////
 
     } //////////// for ///////////////
