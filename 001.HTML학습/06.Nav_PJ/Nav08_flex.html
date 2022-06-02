@@ -32,7 +32,9 @@
 
         h1 {
             position: absolute;
-            color: #ccc;
+            color: gray;
+            width: 100%;
+            text-align: center;
         }
 
         /* flex 설정 클래스 */
@@ -287,14 +289,15 @@
         </ul>
 
         <!-- 닫기버튼 -->
-        <button id="cbtn" class="btns">
+        <button id="cbtn" class="btns" onclick="document.querySelector('.gnb').classList.remove('on')">
             <span>×</span>
         </button>
 
     </nav>
 
-    <!-- 햄버거버튼 -->
-    <button id="ham" class="btns">
+    <!-- 햄버거버튼 
+    클릭시 .gnb에 .on을 넣기! -->
+    <button id="ham" class="btns" onclick="document.querySelector('.gnb').classList.add('on')">
         <span>＝</span>
     </button>
 
