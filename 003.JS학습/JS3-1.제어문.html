@@ -335,10 +335,10 @@
                     -> 선택박스(select)의 option선택이
                     변경될때 발생하는 이벤트
         *******************************************************/
-       function gugu(){
+       function gugu(U){ // U 는 this키워드로 보낸 값을 받음
 
             // 1. 함수호출확인
-            console.log("구구단을 외자!");
+            console.log("구구단을 외자!", U.value);
 
        } //////////////////// gugu함수 //////////////////////////
        //////////////////////////////////////////////////////////
@@ -424,7 +424,8 @@
     <!-- for문 연습 -->
     <h2>for문 연습</h2>
     <h3>구구단 출력하기</h3>
-    <select name="sel" id="sel">
+    <select name="sel" id="sel" onchange="gugu(this)">
+        <!-- this 키워드 : select박스 자신의 정보를 보냄 -->
         <!-- option[value=$]{$단}*20 -->
         <option value="1">구구단을 선택하세요!</option>
         <option value="2">2단</option>
