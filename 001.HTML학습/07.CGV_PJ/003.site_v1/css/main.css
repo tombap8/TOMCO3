@@ -64,6 +64,10 @@ h1.tit{
 
 /* GNB ul */
 .glist{
+    position: relative;
+    /* 영사기보다 위! */
+    z-index: 1;
+
     /* 플렉스박스 */
     display: flex;
 }
@@ -225,7 +229,20 @@ h1.tit{
     width: 200px;
     /* 오버시에만 트랜지션 0.5초 기다림 */
     transition-delay: .5s;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: beamAni .04s linear infinite alternate;
 }
+
+/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
+@keyframes beamAni {
+    from{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.5;
+    }
+} /* 키프레임 */
 
 /****************** 2. 메인영역 ******************/
 .cont{
