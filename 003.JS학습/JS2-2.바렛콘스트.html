@@ -155,6 +155,13 @@
             // let으로 블록영역에서 선언하여 할당하면?
             // 블록 영역의 지역변수가 된다!(jeju와 같음)
 
+            // var sport = "배구"; 에러남!
+            // let으로 이미 전역변수에 선언된 변수는
+            // 블록영역에서 var로 재선언할 수 없다!
+            // 왜? var는 전역변수로 선언하는 것과 같기 때문!
+            // let은 같은 영역에 같은 이름의 변수가 다시 선언
+            // 되는 것을 철처히 관리하여 막아준다!!!
+
 
             // 블록내부에서 전역변수 찍기! 뒤
             console.log("블록내부에서 전역변수 찍기! 뒤");
@@ -167,9 +174,9 @@
 
         // 블록내부에서 전역변수 찍기!
         console.log("전역에서 전역변수 찍기!");
-        console.log("seoul:", seoul);
-        console.log("jeju:", jeju);
-        console.log("toktok:", toktok);
+        console.log("seoul:", seoul); // 강남구 <- 서울이 아님!
+        console.log("jeju:", jeju); // 제주도
+        console.log("toktok:", toktok); // 카톡
 
     </script>
 </head>
