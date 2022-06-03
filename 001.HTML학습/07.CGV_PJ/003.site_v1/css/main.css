@@ -188,6 +188,17 @@ h1.tit{
     z-index: 1;
     /* 포지션이 있고 z-index로 빔보다 위 */
     width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 양수값은 시계방향 */
+
+    /* 트랜지션: 속시이지 */
+    transition: .5s ease-out;
+}
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
 }
 /* 빔박스 */
 .beam{
@@ -201,6 +212,16 @@ h1.tit{
     background-position: right center;
     background-size: auto 100%;
     /* outline: 2px dotted yellow; */
+
+    /* 트랜지션: 속시이지 */
+    transition: width .3s linear;
+    /* linear 등속도 */
+}
+/* GNB에 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam{
+    width: 200px;
+    /* 오버시에만 트랜지션 0.5초 기다림 */
+    transition-delay: .5s;
 }
 
 /****************** 2. 메인영역 ******************/
