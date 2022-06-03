@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>JS2-2. 바(var),렛(let),콘스트(const)</title>
@@ -46,7 +47,7 @@
         // JS에서 중괄호{}란? -> 코드를 묶어주는 영역
 
         // 1. 함수 중괄호에서 var //////
-        function callMe(){
+        function callMe() {
 
             // 함수내 변수는 지역변수
             var usa = "미국";
@@ -55,7 +56,7 @@
             korea = "코리아";
 
             // 함수내에서 korea 값 변경 후
-            console.log("함수내에서 korea변수 값 변경 후:",korea);
+            console.log("함수내에서 korea변수 값 변경 후:", korea);
 
 
             // 전역변수 uk와 같은 이름의 지역변수를 선언하고 할당하면?
@@ -65,7 +66,7 @@
 
 
             // 함수내에서 전역변수uk
-            console.log("함수내에서 전역변수uk변수:",uk);
+            console.log("함수내에서 전역변수uk변수:", uk);
 
 
         } ////// callMe 함수 /////
@@ -75,44 +76,44 @@
         var uk = "영국";
 
         // 바깥에서 korea - 함수호출전
-        console.log("바깥에서 korea변수 함수호출전:",korea);
+        console.log("바깥에서 korea변수 함수호출전:", korea);
 
         // 바깥에서 usa - 함수호출전 -> 에러!
         // console.log("바깥에서 usa변수 함수호출전:",usa);
 
         // 바깥에서 함수호출전 전역변수uk
-        console.log("바깥에서 함수호출전 전역변수uk변수:",uk);
+        console.log("바깥에서 함수호출전 전역변수uk변수:", uk);
 
 
         // callMe() 함수호출!
         callMe();
 
         // 바깥에서 함수호출후 전역변수uk
-        console.log("바깥에서 함수호출후 전역변수uk변수:",uk);
+        console.log("바깥에서 함수호출후 전역변수uk변수:", uk);
 
 
         // 바깥에서 usa - 함수호출후 -> 에러!
         // console.log("바깥에서 usa변수 함수호출후:",usa);
 
         // 바깥에서 korea - 함수호출후
-        console.log("바깥에서 korea변수 함수호출후:",korea);
+        console.log("바깥에서 korea변수 함수호출후:", korea);
 
         /// 2. if문에서 중괄호 var ////////
-        if(true){
+        if (true) {
             var who = "누구?";
-            console.log("if문안 who:",who);
+            console.log("if문안 who:", who);
         } /////// if ////////
-        
-        console.log("if문밖 who:",who);
+
+        console.log("if문밖 who:", who);
         // if문 중괄호안에서 변수를 선언하면
         // 전역변수와 같다!
 
         /// 3. for문 중괄호 var /////////////
-        for(var i = 3; i > 0; i--){
-            console.log("for문안 i:",i);
+        for (var i = 3; i > 0; i--) {
+            console.log("for문안 i:", i);
         } ////////// for /////////////
-        
-        console.log("for문밖 i:",i);
+
+        console.log("for문밖 i:", i);
         // for문에서 선언한 변수를 바깥에서 참조할 수 있다
         // 전역변수와 같다!
 
@@ -133,18 +134,48 @@
         {
             // 블록내부에서 전역변수 찍기! 앞
             console.log("블록내부에서 전역변수 찍기! 앞");
-            console.log("seoul:",seoul);
-            console.log("jeju:",jeju);
-            console.log("toktok:",toktok);
-            console.log("sport:",sport);
+            console.log("seoul:", seoul);
+            // console.log("jeju:", jeju); 에러남!
+            // console.log("toktok:", toktok); 에러남!
+            console.log("sport:", sport);
+
+            // 블록에서 변수 재선언하기! //////////
+            var seoul = "강남구";
+            // 전역변수가 다시 선언되어 할당된 결과임!
+
+            let jeju = "마라도";
+            // 전역변수 var로 선언된 같은 이름의 변수를
+            // let으로 블록영역에서 선언하여 할당하면?
+            // 블록영역의 지역변수가 된다!
+            // 이 변수보다 위에서 미리 찍을 수 없다!(에러발생)
+            // -> 전역변수 jeju와의 연결이 끊어짐!
+
+            let toktok = "라인";
+            // 전역변수 let으로 선언된 같은 이름의 변수를
+            // let으로 블록영역에서 선언하여 할당하면?
+            // 블록 영역의 지역변수가 된다!(jeju와 같음)
+
+
+            // 블록내부에서 전역변수 찍기! 뒤
+            console.log("블록내부에서 전역변수 찍기! 뒤");
+            console.log("seoul:", seoul); // 강남구
+            console.log("jeju:", jeju); // 마라도
+            console.log("toktok:", toktok); // 라인
 
         }
         /***********************************************/
 
+        // 블록내부에서 전역변수 찍기!
+        console.log("전역에서 전역변수 찍기!");
+        console.log("seoul:", seoul);
+        console.log("jeju:", jeju);
+        console.log("toktok:", toktok);
 
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
