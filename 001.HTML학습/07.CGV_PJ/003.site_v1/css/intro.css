@@ -54,5 +54,39 @@ html,body{
     transform: translate(-50%, -50%);
     /* 트랜스폼 정중앙 이동하기 */
 
-    outline: 4px dotted lime;
+    /* outline: 4px dotted lime; */
+}
+
+/* Click Here! 글자박스 */
+#enter span{
+    /* 옆에 아무도 못오고 
+    width 끝까지 감! */
+    display: block;
+    /* 글자중앙 */
+    text-align: center;
+
+    /* 글자설정 한번에!
+    font:스두크/줄체 */
+    font: bold 34px/1.8 'Audiowide';
+
+    /* 트랜지션: 속시이지 */
+    transition: all .4s ease-out .2s;
+    /* 글자는 지연시간 0.2초 */
+}
+/* 엔터박스 오버시 글자박스 변경 */
+/* 크기 2배, 글자색 chartreuse */
+#enter:hover span{
+    transform: scale(2);
+    color: chartreuse;
+}
+
+/* 엔터박스 로고 이미지 */
+#enter img{
+    /* 트랜지션: 속시이지 */
+    transition: all .4s ease-out;
+}
+/* 엔터박스에 마우스 오버시 로고 이미지 */
+/* 반시계 15도, 1.5배 확대 */
+#enter:hover img{
+    transform: rotate(-15deg) scale(1.5);
 }
