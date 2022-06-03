@@ -280,15 +280,44 @@ h1.tit{
     transform: translateX(-50%);
 
     /* .movtxt의 부모에 숨기기적용! */
-    overflow: hidden;
+    /* overflow: hidden; 
+    -> 부모가 하위li로 바뀜! 주석처리! */
 }
 /* ul 플렉스박스 */
 .mlist ul{
     display: flex;
+    /* 원근설정(대상의 부모에 준다!) */
+    perspective: 480px;
 }
 /* 각 li리스트 */
 .mlist ul>li{
+    position: relative;
+    /* 부모자격 */
+    overflow: hidden;
+
     margin: 0 9px;
+    /* x축회전 */
+    transform: rotateX(40deg);
+    /* 회전축 하단변경 */
+    transform-origin: bottom;
+
+    /* 트랜지션: 속시이지 */
+    transition: transform .4s ease-out;
+}
+/* li에 마우스 오버시 li자신 x축회전 일어남! */
+.mlist ul>li:hover{
+    transform: rotateX(0deg);
+    /* 마우스 오버해서 일어난 li가 위에와야
+    옆에 이전 li가 안겹쳐짐! */
+    z-index: 1;
+    /* static이 아니니까 z-index적용됨! */
+    outline: 1px solid aquamarine;
+}
+
+/* 마지막 li겹침 어색한 부분 처리 */
+.mlist ul>li:last-child{
+    z-index: -1;
+    /* 기본상태로 5번째 보다 아래로 처리 */
 }
 
 /* 메뉴 포스터 이미지 */
