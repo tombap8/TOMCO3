@@ -64,22 +64,55 @@
 
             // 이벤트 대상: .btns
             let btns = document.querySelectorAll(".btns");
-            console.log("버튼개수:",btns.length);
+            console.log("버튼개수:", btns.length);
 
-        }); //////////// 로딩구역 끝 ///////////////
+            // 이벤트 종류: click
+            // 클릭 이벤트 속성 -> onclick
+            // 여러개 이므로 for문 사용!
+            // for(시;한;증){}
+            for (let i = 0; i < btns.length; i++) {
+
+                // btns[순번] -> 각 버튼 돌아줌!
+                btns[i].onclick = function () {
+                    // this는 버튼 자신!
+                    // innerText 내부 글자데이터
+
+                    // 1. 버튼 글자 읽어오기
+                    let txt = this.innerText;
+                    console.log(txt);
+
+                    // 2. 변경대상: img#scene
+                    let tg = document.querySelector("#scene");
+
+                    // 3. 변경내용: 이미지 src 정보 셋팅
+                    // 이미지경로 변수
+                    let isrc;
+                    if (txt === "포스터") isrc = "ala1";
+                    else if (txt === "장면1") isrc = "ala4";
+                    else if (txt === "장면2") isrc = "ala3";
+                    else if (txt === "장면3") isrc = "ala2";
+
+                    // 4. 이미지 src변경하기
+                    tg.setAttribute("src",
+                        `./images/${isrc}.jpg`);
+                    // tg.src = `./images/${isrc}.jpg`;
+                    
+                    /**************************************** 
+                        [속성(attribute)값 변경하기 2가지]
+                        1. 선택요소.속성명 = 값
+                        2. 선택요소.setAttribute(속성명,값)
+
+                        ※ 참고: getAttribute(속성명) 
+                                -> 속성값 읽어오기
+                    ****************************************/
+
+                }; /////////////// click ///////////////
 
 
-        // 함수는 코드 저장소다!
-        /*/////////////////////////////////////////
-            함수명: chgImg
-            기능: 버튼 클릭시 해당 이미지변경하기
-        */ /////////////////////////////////////////
-        function chgImg(U) { // U는 this를 받는 전달변수
 
+            } /////////////////// for ///////////////////
 
-
-        } //////// chgImg 함수 ////////////////////
-        ///////////////////////////////////////////
+        }); ////////////////// 로딩구역 끝 ///////////////////
     </script>
 </head>
 
