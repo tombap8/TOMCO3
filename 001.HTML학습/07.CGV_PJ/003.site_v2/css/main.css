@@ -248,17 +248,36 @@ h1.tit{
 .cont{
     position: relative;
     /* 부모자격 - #screen, .mlist */
-    height: 788px;
+    /* height: 788px; 
+    -> 비율박스를 위해 높이값 없앰! */
     background: url(../images/bg.jpg) no-repeat;
+    /* 배경크기: 가로100% 세로auto */
+    background-size: 100%;
+    /* 수치를 하나만쓰면 가로만 셋팅 세로는 auto임! */
 }
-/* 2-1. 스크린박스 */
+/* 가상요소로 패팅탑 비율높이값 생성 */
+.cont::before{
+    content: '';
+    display: block;
+    padding-top: 65.66%;
+    /* 
+        비율계산하기
+        1200 : 788 = 100 : x
+        x = 788 * 100 / 1200
+        x = 65.66%
+    */
+}
+/* 2-1. 스크린박스
+-> 부모박스 .cont가 비율유지박스 이므로
+스크린의 top,let,width,height를 모두 %로
+설정해도 비율을 유지한다! */
 #screen{
     position: absolute;
-    top: 136px;
-    left: 257px;
+    top: 17.2%;
+    left: 21.4%;
     /* 부모는? .cont */
-    width: 701px;
-    height: 397px;
+    width: 58.5%;
+    height: 50.5%;
     background-color: #000;
 }
 /* 스크린 아이프레임 */
