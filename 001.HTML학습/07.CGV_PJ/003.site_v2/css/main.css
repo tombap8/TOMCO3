@@ -306,7 +306,8 @@ h1.tit{
 .mlist ul{
     display: flex;
     /* 원근설정(대상의 부모에 준다!) */
-    perspective: 480px;
+    perspective: min(30vw,480px);
+    /* 최대 480px, 보이는 가로화면에 30%크기 */
 }
 /* 각 li리스트 */
 .mlist ul>li{
@@ -314,7 +315,8 @@ h1.tit{
     /* 부모자격 */
     overflow: hidden;
 
-    margin: 0 9px;
+    /* 양쪽마진 최대 9px, 보이는 가로화면에 0.8% */
+    margin: 0 min(0.8vw,9px);
     /* x축회전 */
     transform: rotateX(40deg);
     /* 회전축 하단변경 */
@@ -341,7 +343,8 @@ h1.tit{
 
 /* 메뉴 포스터 이미지 */
 .mlist img{
-    width: 99px;
+    width: min(8.3vw,99px);
+    /* 최대 99px, 보이는 가로화면에 8.3% */
     /* height: 140px; ->이미지 자동비율! 주석! */
 }
 /* 영화정보박스 */
@@ -364,7 +367,8 @@ h1.tit{
 
     /* 글자셋팅 */
     font-family: 'Cute Font', cursive;
-    font-size: 14px;
+    font-size: min(1.3vw,14px);
+    /* 글자크기 최대 14px, 보이는 가로화면에 1.3% */
     line-height: 2;
     text-align: center;
     /* 줄바꿈 방지 */
@@ -381,7 +385,8 @@ h1.tit{
 /* 첫번째 li 영화제목 */
 .movtxt li:first-child{
     color: aqua;
-    font-size: 17px;
+    font-size: min(1.5vw,17px);
+    /* 글자크기 최대 17px, 보이는 가로화면에 1.5% */
     letter-spacing: -1px;
 }
 
