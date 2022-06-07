@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>JS4-1. 배열변수와 객체</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        /* 정보출력박스 */
+        body>div{
+            width: 1000px;
+            height: 80px;
+            border: 2px solid #000;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 84;
+            margin: 5px auto;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+
+        
+
+        /****************************************** 
+            함수명: loadFn
+            기능: 로딩후 실행함수
+        ******************************************/
+       // 상수 const 로 선언하여 익명함수를 할당해서
+       // 함수를 만드는 경우가 아주많다!!!
+       const loadFn = function(){
+
+            // 1. 함수호출 확인!
+            console.log("로딩완료!");
+
+       }; //////////// loadFn 함수 /////////////////
+       /////////////////////////////////////////////
+
+        // 윈도우 컨텐츠 로딩 후 loadFn함수 호출하기!
+        // window.addEventListener(이벤트명,함수)
+        window.addEventListener("DOMContentLoaded",loadFn);
+        /************************************************* 
+            [ 로딩관련 이벤트 2가지 ]
+            1. load 이벤트 : 이미지, 동영상 등 모든
+            컨텐츠가 로딩되고 나면 발생하는 로드이벤트
+            2. DOMContentLoaded 이벤트 : html태그만
+            페이지로 그려지면 바로 발생하는 로드이벤트
+        *************************************************/
+    </script>
 </head>
 <body>
-    
+    <h1>JS4-1. 배열변수와 객체</h1>
+
+    <div id="txt1"></div>
+    <div id="txt2"></div>
+    <div id="txt3"></div>
+    <div id="txt4"></div>
+    <div id="txt5"></div>
+    <div id="txt6"></div>
 </body>
 </html>
