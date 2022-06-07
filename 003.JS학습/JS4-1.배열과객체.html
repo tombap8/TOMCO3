@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>JS4-1. 배열변수와 객체</title>
     <style>
-        h1{
+        h1 {
             text-align: center;
         }
+
         /* 정보출력박스 */
-        body>div{
+        body>div {
             width: 1000px;
             height: 80px;
             border: 2px solid #000;
@@ -20,23 +22,20 @@
         }
     </style>
     <script>
-
-        
-
         /****************************************** 
             함수명: loadFn
             기능: 로딩후 실행함수
         ******************************************/
-       // 상수 const 로 선언하여 익명함수를 할당해서
-       // 함수를 만드는 경우가 아주많다!!!
-       const loadFn = function(){
+        // 상수 const 로 선언하여 익명함수를 할당해서
+        // 함수를 만드는 경우가 아주많다!!!
+        const loadFn = function () {
 
             // 1. 함수호출 확인!
             console.log("로딩완료!");
 
             // 2. 출력대상 : .tbx
             let tbx = document.querySelectorAll(".tbx");
-            console.log("출력박스:",tbx);
+            console.log("출력박스:", tbx);
 
             // 3. 내용출력하기 : 배열과 객체를 활용!
 
@@ -61,7 +60,7 @@
             ***********************************************/
 
             // 배열의 선언과 할당!
-            let arr1 = new Array("1993년 10월 12일", "183cm", "65kg","너도 인간이니?", 4568,"서강준");
+            let arr1 = new Array("1993년 10월 12일", "183cm", "65kg", "너도 인간이니?", 4568, "서강준");
             // new 키워드로 선언과 할당을 동시에 할 수 있다!
             // 소괄호안에 콤마로 구분하여 값을 할당할 수 있다!
 
@@ -74,13 +73,34 @@
             tbx[0].innerText += ` / 몸무게:${arr1[2]}`;
             tbx[0].innerText += ` / 대표작:${arr1[3]}`;
 
+            // 2. 배열의 선언과 할당의 다른방식
+            // 배열변수명 = [값1,값2,...]
+            // 이 방식이 가장 많이 쓰이는 보편적인 방식임
+            // new Array() 라고 객체를 생성하지 않아도 자동생성됨!
+            // -> 이런 객체를 정적객체(Static Object)라고함
 
-       }; //////////// loadFn 함수 /////////////////
-       /////////////////////////////////////////////
+            let arr2 = [
+                "삼일절", 
+                "태극기", 
+                1919, 
+                function () {
+                    alert("대한독립만세!");
+                }
+            ];
+
+            // function(){} 익명함수 - 이름없는 함수
+            // -> 배열값으로 익명함수도 넣을 수 있다!
+
+            // 배열확인하기!
+            console.log("arr2배열:",arr2);
+
+
+        }; //////////// loadFn 함수 /////////////////
+        /////////////////////////////////////////////
 
         // 윈도우 컨텐츠 로딩 후 loadFn함수 호출하기!
         // window.addEventListener(이벤트명,함수)
-        window.addEventListener("DOMContentLoaded",loadFn);
+        window.addEventListener("DOMContentLoaded", loadFn);
         /************************************************* 
             [ 로딩관련 이벤트 2가지 ]
             1. load 이벤트 : 이미지, 동영상 등 모든
@@ -90,6 +110,7 @@
         *************************************************/
     </script>
 </head>
+
 <body>
     <h1>JS4-1. 배열변수와 객체</h1>
 
@@ -100,4 +121,5 @@
     <div class="tbx"></div>
     <div class="tbx"></div>
 </body>
+
 </html>
