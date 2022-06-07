@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my{
+            position: relative;
+            width: 500px;
+            margin: 0 auto;
+            font-size: 24px;
+            text-align: center;
+            line-height: 80px;
+            outline: 2px dashed red;
+
+        }
+        .my::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+        }
+        .my .cen{
+            position: relative;
+            padding: 0 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="my">
+        <span class="cen">OR</span>
+    </div>
+    
+</body>
+</html>
