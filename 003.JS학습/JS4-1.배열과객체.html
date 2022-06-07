@@ -224,12 +224,43 @@
                     // 1. 메시지 띄우기
                     alert("상남자 오빠! 지금뭐해?");
                     // 2. 배경이미지 넣기
-                    
+                    tbx[3].style.background = "url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) repeat-x top/auto 100%";
+                    // 3. 글자색
+                    tbx[3].style.color = "#fff";
+                    // 4. 글자그림자
+                    tbx[3].style.textShadow = "0 0 5px #000";
+                    // 5. 글자내용변경
+                    tbx[3].innerText = "손석구 최고 멋쨍이! 승승장구! 화이팅!!!";
+                    // 6. 트랜지션
+                    tbx[3].style.transition = "1s ease-out 1s";
+                    // 7. 박스크게하기
+                    tbx[3].style.transform = "scale(1.2)";
+                    // 8. 줄간격
+                    tbx[3].style.lineHeight = "84px";
+
                 } //// 팬레터 메서드 ///
 
             }); ///////// SSG 객체 ///////////
 
+            // 객체 출력하기 : 대상 - tbx[3]
+            tbx[3].innerHTML = `
+            당신이 좋아하는 남자배우는? ${SSG["너의 이름은?"]}
+             / 몸무게를 아세요? ${SSG["몸무게"]} <br>
+             생년월일은? ${SSG["생일"]} / 대표작은? ${SSG["대표작"]}
+            `;
 
+            // 2줄이니까 줄간격 변경
+            tbx[3].style.lineHeight = "40px";
+
+            // 객체에 셋팅된 함수를 보통 "메서드"라고 부른다!
+            // 이 메서드를 호출해 보자!
+            tbx[3].onclick = SSG["팬레터"];
+
+            // title속성 넣기
+            tbx[3].title = `여기를 클릭하여 ${SSG["너의 이름은?"]}팬레터를 확인하세요!`;
+
+            // 손가락표시
+            tbx[3].style.cursor = "pointer";
 
 
 
