@@ -14,8 +14,26 @@
             함수명: addNum
             기능: for문으로 숫자이미지를 추가한다
         */ ///////////////////////////////////////
-        function addNum(num) { // num - 전달변수
+        function addNum(num) { // num - 전달변수(순번)
 
+            // 1. 호출 및 전달값 확인
+            console.log("나야나!",num);
+
+            // 2. 변경대상: .forCls -> 3개있음
+            let tg = document.querySelectorAll(".forCls");
+            console.log("변경대상:",tg);
+            // tg에는 .forCls 요소가 컬렉션으로 담긴다!
+
+            // 3. 대상요소에 출력하기
+            // 대상[순번] / 대상.item(순번)
+            // 순번은 0부터!
+            // for(시;한;증){코드}
+            // += 대입연산자 사용(기존 데이터에 더하기!)
+            for(let i=1;i<=10;i++){
+
+                tg[num].innerHTML += `<img src="./images/num/num_01.png" alt="숫자">`;
+
+            } ////////// for문 //////////////
            
 
         } ///////// addNum함수 ///////////////////
@@ -24,7 +42,6 @@
 </head>
 
 <body>
-
     <h1>for문 옵션</h1>
 
     <hr>
