@@ -1,0 +1,433 @@
+@charset "utf-8";
+/* CGV PJ 메인 페이지 CSS - main.css */
+
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+body{
+    background-color: #000;
+}
+
+/* 공사중표시 */
+/* body *{
+    outline: 1px dotted lime;
+} */
+
+/* 공통 클래스 */
+.ibx{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/****************** 1. 상단영역 ******************/
+.top{
+    position: relative;
+    /* 부모자격 - .gnb */
+    /* GNB 하위메뉴가 위에 오도록
+    아래쪽 .cont박스 보다 위! */
+    z-index: 999;
+    height: 80px;
+    background: url(../images/curtain.jpg) repeat-x;
+}
+/* 1-1. 페이지 타이틀 */
+h1.tit{
+    font-family: 'Jua', sans-serif;
+    color: aquamarine;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+
+    /* 그림자를 이용한 Glow효과 */
+    text-shadow: 0 0 4px aquamarine;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni .5s ease-in infinite alternate;
+    /* infinite 영원히(계속), alternate 번갈아 */
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni {
+    to{
+        text-shadow: 0 0 12px aquamarine;
+    }
+} /* 키프레임 */
+
+
+/* 1-2. 전체메뉴(GNB) */
+.gnb{
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    /* 부모는? .top */
+}
+
+/* GNB ul */
+.glist{
+    position: relative;
+    /* 영사기보다 위! */
+    z-index: 1;
+
+    /* 플렉스박스 */
+    display: flex;
+}
+/* GNB li 리스트 */
+.glist>li{
+    position: relative;
+    /* 부모자격 - .smenu */
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+    padding: 0 10px;
+    /* 아래쪽 영역을 넓혀서 서브메뉴와 닿게함!
+    오버시 떨어지면 서브메뉴가 닫힘문제발생! */
+    padding-bottom: 5px;
+}
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
+    left: 50%;
+    /* 부모는? 싸고있는 li */
+
+    /* 자기크기의 절반 왼쪽이동(가로중앙)
+    + 세로방향 위치조정 */
+    transform: translate(-50%,5px);
+
+    width: 140px;
+
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+
+    /* 처음에 안보임 - 오버시 보임! */
+    display: none;
+}
+/* 상위메뉴 li에 오버시 하위메뉴 보임 */
+.glist>li:hover .smenu{
+    display: block;
+}
+
+/* 가상요소로 서브메뉴 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 삼각형만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    /* 양쪽보더는 투명색(transpareant)
+    border-top으로 하면 역삼각형이 나옴 */
+}
+
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* 서브메뉴 중 li 보더탑 구분선 class */
+.bdt{
+    border-top: 1px solid #ccc;
+}
+
+/* 서브메뉴 a요소 확장 */
+.smenu a{
+    display: block;
+    /* li부모요소 가로 끝까지 차지함! */
+}
+/* 서브메뉴 a에 마우스 오버시 글자색 빨강 */
+.smenu a:hover{
+    color: red;
+}
+/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+/* 이모지는 윈도우키+세미콜론(;) 단축키임 */
+/* "영화" 하위메뉴 이모지 */
+.glist>li:nth-child(1) .smenu li a:hover::after{
+    content: '😍';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
+}
+/* "예매" 하위메뉴 이모지 */
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '🎬';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
+}
+/* "극장" 하위메뉴 이모지 */
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '🔔';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
+}
+/* "이벤트&컬처" 하위메뉴 이모지 */
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '📣';
+    /* 인라인요소 오른쪽 끝으로 보냄! */
+    float: right;
+}
+
+/* 영사기 박스 */
+#cam{
+    position: absolute;
+    bottom: -14px;
+    right: -51px;
+    /* 부모는? .gnb */
+}
+/* 영사기 이미지 */
+#cam img{
+    position: relative;
+    z-index: 1;
+    /* 포지션이 있고 z-index로 빔보다 위 */
+    width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 양수값은 시계방향 */
+
+    /* 트랜지션: 속시이지 */
+    transition: .5s ease-out .3s;
+    /* 돌아올때(마우스아웃시) 0.3초 지연함! */
+}
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    /* 오버시엔 트랜지션 지연시간 없음! */
+    transition-delay: 0s;
+}
+/* 빔박스 */
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 8px;
+    /* 부모는? #cam */
+    width: 0;/* 200px; */
+    height: 70px;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    /* outline: 2px dotted yellow; */
+
+    /* 트랜지션: 속시이지 */
+    transition: width .3s linear;
+    /* linear 등속도 */
+}
+/* GNB에 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam{
+    width: 200px;
+    /* 오버시에만 트랜지션 0.5초 기다림 */
+    transition-delay: .5s;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: beamAni .04s linear infinite alternate;
+}
+
+/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
+@keyframes beamAni {
+    from{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.5;
+    }
+} /* 키프레임 */
+
+/****************** 2. 메인영역 ******************/
+.cont{
+    position: relative;
+    /* 부모자격 - #screen, .mlist */
+    height: 788px;
+    background: url(../images/bg.jpg) no-repeat;
+}
+/* 2-1. 스크린박스 */
+#screen{
+    position: absolute;
+    top: 136px;
+    left: 257px;
+    /* 부모는? .cont */
+    width: 701px;
+    height: 397px;
+    background-color: #000;
+}
+/* 스크린 아이프레임 */
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    /* 아이프레임 기본보더 없앰 */
+    border: none;
+}
+/* 2-2. 예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 58px;
+    left: 50%;
+    /* 부모는? .cont */
+
+    /* X축으로 내크기의 절반왼쪽이동 
+    - x축 정중앙이동 */
+    transform: translateX(-50%);
+
+    /* .movtxt의 부모에 숨기기적용! */
+    /* overflow: hidden; 
+    -> 부모가 하위li로 바뀜! 주석처리! */
+}
+/* ul 플렉스박스 */
+.mlist ul{
+    display: flex;
+    /* 원근설정(대상의 부모에 준다!) */
+    perspective: 480px;
+}
+/* 각 li리스트 */
+.mlist ul>li{
+    position: relative;
+    /* 부모자격 */
+    overflow: hidden;
+
+    margin: 0 9px;
+    /* x축회전 */
+    transform: rotateX(40deg);
+    /* 회전축 하단변경 */
+    transform-origin: bottom;
+
+    /* 트랜지션: 속시이지 */
+    transition: transform .4s ease-out;
+}
+/* li에 마우스 오버시 li자신 x축회전 일어남! */
+.mlist ul>li:hover{
+    transform: rotateX(0deg);
+    /* 마우스 오버해서 일어난 li가 위에와야
+    옆에 이전 li가 안겹쳐짐! */
+    z-index: 1;
+    /* static이 아니니까 z-index적용됨! */
+    outline: 1px solid aquamarine;
+}
+
+/* 마지막 li겹침 어색한 부분 처리 */
+.mlist ul>li:last-child{
+    z-index: -1;
+    /* 기본상태로 5번째 보다 아래로 처리 */
+}
+
+/* 메뉴 포스터 이미지 */
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
+/* 영화정보박스 */
+.movtxt{
+    /* 플렉스박스 */
+    display: flex;
+    /* 플렉스 진행방향 세로 */
+    flex-direction: column;
+    /* 진행방향 수평 중앙 */
+    justify-content: center;
+
+    position: absolute;
+    /* 부모사이즈 만큼 아래로 밀기 */
+    top: 100%;
+    width: 99px;
+    height: 140px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+
+    /* 트랜지션: 속시이지 */
+    transition: top .3s ease-out;
+}
+/* li에 오버시 영화정보 올라오기 */
+.mlist ul>li:hover .movtxt{
+    top: 0;
+}
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child{
+    color: aqua;
+    font-size: 17px;
+    letter-spacing: -1px;
+}
+
+/****************** 3. 하단영역 ******************/
+.info{
+    position: relative;
+    /* 부모자격 - .sns */
+    height: 100px;
+}
+/* 3-1. 회사정보 */
+#info address{
+    color: #c3c3c3;
+    /* address기본 이탤릭체 해제 */
+    font-style: normal;
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+    line-height: 20px;
+    /* 안쪽여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+/* 하단로고 이미지 */
+#info img{
+    /* 이미지 자신은 왼쪽, 
+    글자는 오른쪽에 흐르게함 */
+    float: left;
+    margin-right: 20px;
+}
+
+/* 3-2. sns 박스 */
+ul.sns{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    /* 플렉스박스 */
+    display: flex;
+}
+.sns li{
+    width: 34px;
+    height: 34px;
+    background: url(../images/sprites_logo.png) no-repeat;
+    margin: 0 2px;
+    /* 필터: 흑백적용 */
+    filter: grayscale(100%);
+}
+/* 오버시 칼라 */
+.sns li:hover{
+    filter: grayscale(0%);
+}
+
+/* 페이스북 */
+.sns li:nth-child(1){
+    background-position: -508px -429px;
+}
+/* 트위터 */
+.sns li:nth-child(2){
+    background-position: -550px -429px;
+}
+/* 인스타그램 */
+.sns li:nth-child(3){
+    background-position: -593px -429px;
+}
+
+/* sns a링크 확장 */
+.sns a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
