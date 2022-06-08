@@ -384,7 +384,13 @@
                 // 5. 관람가
                 ratings: "12세 관람가",
                 // 6. 예고편
-                trailer: () => {}
+                trailer: () => {
+
+                    // 1. 호출확인
+                    console.log("예고편");
+
+                } ///// trailer 메서드 ////
+
             }; //////// myMV 객체 //////////
 
             // 줄간격 조정
@@ -399,8 +405,15 @@
                 ♣ 등급 : ${myMV.ratings}
             `;
 
+            // 툴팁 보이기
+            tbx[5].title = 
+            `클릭하시면 ${myMV.title}예고편을 보실 수 있습니다!`;
 
+            // 손가락 모양
+            tbx[5].style.cursor = "pointer";
 
+            // 트레일러 메서드 호출 셋팅
+            tbx[5].onclick = myMV.trailer;
 
 
 
@@ -429,6 +442,9 @@
     <div class="tbx"></div>
     <div class="tbx"></div>
     <div class="tbx"></div>
+
+    <!-- 예고편 동영상용 박스 -->
+    <aside id="mvbx"></aside>
 </body>
 
 </html>
