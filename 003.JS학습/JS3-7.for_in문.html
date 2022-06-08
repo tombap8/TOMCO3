@@ -114,6 +114,25 @@
 
                     // 3. 해당요소에 데이터 넣어주기
                     // for in문 사용!!!
+                    // for(변수 in 객체){코드}
+                    for(let z in data){
+                        // z변수는 객체의 속성명이다!
+                        // console.log("변수z:",z);
+                        // 속성값은 객체변수[속성명] -> data[z]
+                        // console.log("객체값:",data[z]);
+
+                        // 각 속성명에 해당하는 데이터 셋팅
+                        switch(z){
+                            // 1. 포스터 넣기
+                            case "포스터":
+                                document
+                                .querySelector(".photo")
+                                .innerHTML =
+                                `<img src="${data[z]}" alt="${btxt} 포스터">`;
+                                break;
+                        } ///////// switch case ///////
+
+                    } ///////// for in //////////
 
                 }; ////////// click ////////
 
