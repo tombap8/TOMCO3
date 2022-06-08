@@ -3,20 +3,55 @@
 
 /*************** 1300px 이하 시작 ***************/
 @media screen and (max-width: 1300px) {
+
   /* GNB 메뉴 */
   .gnb {
     right: 60px;
   }
 }
+
 /*************** 1300px 이하 끝 ***************/
 
 /*************** 1050px 이하 시작 ***************/
 @media screen and (max-width: 1050px) {
-    
+
+  /* 1. gnb메뉴 */
+  .gnb {
+    right: 3px;
+    bottom: auto;
+    top: 76px;
+    text-align: right;
+  }
+
+
+  /* 2. 하위 ul */
+  .glist {
+    flex-direction: column;
+    display: none;/* 처음에 안보임 */
+  }
+  /* .gnb에 마우스 오버시 .glist보이기 */
+  .gnb:hover .glist{
+    display: flex;
+    /* 반드시 보이게할 경우 원래 display씀! */
+  }
+
+
+  /* 3. 영사기박스 */
+  #cam {
+    bottom: auto;
+    top: -54px;
+    right: 0;
+  }
+
+  /* 4. 마우스 오버시 서브메뉴 숨기기 */
+  .glist>li:hover .smenu {
+    display: none;
+  }
 }
+
 /*************** 1050px 이하 끝 ***************/
 
 /*************** 780px 이하 시작 ***************/
-@media screen and (max-width: 780px) {
-}
+@media screen and (max-width: 780px) {}
+
 /*************** 780px 이하 끝 ***************/
