@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>JS4-1. 배열변수와 객체</title>
     <style>
-        h1 {
-            text-align: center;
-        }
+      h1 {
+        text-align: center;
+      }
 
-        /* 정보출력박스 */
-        body>div {
-            width: 1000px;
-            height: 80px;
-            border: 2px solid #000;
-            text-align: center;
-            white-space: nowrap;
-            line-height: 84px;
-            margin: 5px auto;
-            font-size: 24px;
-        }
+      /* 정보출력박스 */
+      body > div {
+        width: 1000px;
+        height: 80px;
+        border: 2px solid #000;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 84px;
+        margin: 5px auto;
+        font-size: 24px;
+      }
     </style>
     <script>
-        /****************************************** 
+      /****************************************** 
             함수명: loadFn
             기능: 로딩후 실행함수
         ******************************************/
-        // 상수 const 로 선언하여 익명함수를 할당해서
-        // 함수를 만드는 경우가 아주많다!!!
-        const loadFn = function () {
+      // 상수 const 로 선언하여 익명함수를 할당해서
+      // 함수를 만드는 경우가 아주많다!!!
+      const loadFn = function () {
+        // 1. 함수호출 확인!
+        console.log("로딩완료!");
 
-            // 1. 함수호출 확인!
-            console.log("로딩완료!");
+        // 2. 출력대상 : .tbx
+        let tbx = document.querySelectorAll(".tbx");
+        console.log("출력박스:", tbx);
 
-            // 2. 출력대상 : .tbx
-            let tbx = document.querySelectorAll(".tbx");
-            console.log("출력박스:", tbx);
+        // 3. 내용출력하기 : 배열과 객체를 활용!
 
-            // 3. 내용출력하기 : 배열과 객체를 활용!
-
-            /*********************************************** 
+        /*********************************************** 
                 [ 배열(Array) 변수란? ]
                 - 여러개의 데이터를 묶음으로 변수하나에 저장함
                 - 각 데이터를 하나의 이름으로 호출할 수 있는
@@ -59,107 +57,113 @@
 
             ***********************************************/
 
-            // 배열의 선언과 할당!
-            let arr1 = new Array("1993년 10월 12일", "183cm", "65kg", "너도 인간이니?", 4568, "서강준");
-            // new 키워드로 선언과 할당을 동시에 할 수 있다!
-            // 소괄호안에 콤마로 구분하여 값을 할당할 수 있다!
+        // 배열의 선언과 할당!
+        let arr1 = new Array(
+          "1993년 10월 12일",
+          "183cm",
+          "65kg",
+          "너도 인간이니?",
+          4568,
+          "서강준"
+        );
+        // new 키워드로 선언과 할당을 동시에 할 수 있다!
+        // 소괄호안에 콤마로 구분하여 값을 할당할 수 있다!
 
-            // 배열변수에 할당한 데이터 불러오기
-            // 호출방법: 배열변수명[순번] -> 순번은 0부터
+        // 배열변수에 할당한 데이터 불러오기
+        // 호출방법: 배열변수명[순번] -> 순번은 0부터
 
-            // 출력대상: 첫번째 박스 tbx[0]
-            tbx[0].innerText = `이름:${arr1[5]}`;
-            tbx[0].innerText += ` / 키:${arr1[1]}`;
-            tbx[0].innerText += ` / 몸무게:${arr1[2]}`;
-            tbx[0].innerText += ` / 대표작:${arr1[3]}`;
+        // 출력대상: 첫번째 박스 tbx[0]
+        tbx[0].innerText = `이름:${arr1[5]}`;
+        tbx[0].innerText += ` / 키:${arr1[1]}`;
+        tbx[0].innerText += ` / 몸무게:${arr1[2]}`;
+        tbx[0].innerText += ` / 대표작:${arr1[3]}`;
 
-            // 2. 배열의 선언과 할당의 다른방식
-            // 배열변수명 = [값1,값2,...]
-            // 이 방식이 가장 많이 쓰이는 보편적인 방식임
-            // new Array() 라고 객체를 생성하지 않아도 자동생성됨!
-            // -> 이런 객체를 정적객체(Static Object)라고함
+        // 2. 배열의 선언과 할당의 다른방식
+        // 배열변수명 = [값1,값2,...]
+        // 이 방식이 가장 많이 쓰이는 보편적인 방식임
+        // new Array() 라고 객체를 생성하지 않아도 자동생성됨!
+        // -> 이런 객체를 정적객체(Static Object)라고함
 
-            let arr2 = [
-                "삼일절",
-                "태극기",
-                1919,
-                function () {
-                    alert("대한독립만세!");
-                }
-            ];
+        let arr2 = [
+          "삼일절",
+          "태극기",
+          1919,
+          function () {
+            alert("대한독립만세!");
+          },
+        ];
 
-            // function(){} 익명함수 - 이름없는 함수
-            // -> 배열값으로 익명함수도 넣을 수 있다!
+        // function(){} 익명함수 - 이름없는 함수
+        // -> 배열값으로 익명함수도 넣을 수 있다!
 
-            // 배열확인하기!
-            console.log("arr2배열:", arr2);
+        // 배열확인하기!
+        console.log("arr2배열:", arr2);
 
-            // 출력대상: tbx[1]
-            // 출력할 문자: 삼일절은 1919년에 일제에 항거하여 태극기를 들고 일어난 민중봉기를 기념하는 날이다
-            tbx[1].innerText = `${arr2[0]}은 ${arr2[2]}년에 일제에 항거하여 ${arr2[1]}를 들고 일어난 민중봉기를 기념하는 날이다`;
+        // 출력대상: tbx[1]
+        // 출력할 문자: 삼일절은 1919년에 일제에 항거하여 태극기를 들고 일어난 민중봉기를 기념하는 날이다
+        tbx[1].innerText = `${arr2[0]}은 ${arr2[2]}년에 일제에 항거하여 ${arr2[1]}를 들고 일어난 민중봉기를 기념하는 날이다`;
 
-            // 두번째 텍스트 박스에 오버시 툴팁 띄우기
-            tbx[1].title = "여기를 클릭하세요!";
+        // 두번째 텍스트 박스에 오버시 툴팁 띄우기
+        tbx[1].title = "여기를 클릭하세요!";
 
-            // 손가락모양
-            tbx[1].style.cursor = "pointer";
+        // 손가락모양
+        tbx[1].style.cursor = "pointer";
 
-            // 이벤트 속성을 JS에서 설정하기!!!
-            // 기본엔 html 요소에 직접 이벤트속성을 썼으나
-            // JS 코드블록 안에서 요소의 이벤트를 직접 할당함!
+        // 이벤트 속성을 JS에서 설정하기!!!
+        // 기본엔 html 요소에 직접 이벤트속성을 썼으나
+        // JS 코드블록 안에서 요소의 이벤트를 직접 할당함!
 
-            //tbx[1].onclick = function(){
-            // arr2배열의 함수를 호출!
-            //arr2[3]();
-            // 함수호출시 소괄호 필수!
-            //}; //////// click //////////
+        //tbx[1].onclick = function(){
+        // arr2배열의 함수를 호출!
+        //arr2[3]();
+        // 함수호출시 소괄호 필수!
+        //}; //////// click //////////
 
-            // 선택요소.on이벤트명 = 익명함수
-            // -> 선택요소에 이벤트가 발생하면 익명함수의 코드가 실행된다!
+        // 선택요소.on이벤트명 = 익명함수
+        // -> 선택요소에 이벤트가 발생하면 익명함수의 코드가 실행된다!
 
-            // 간단히 (보낼값이 없으므로)
-            tbx[1].onclick = arr2[3];
-            // 클릭이벤트 발생시 arr2[3] 안의 함수가 실행됨!
+        // 간단히 (보낼값이 없으므로)
+        tbx[1].onclick = arr2[3];
+        // 클릭이벤트 발생시 arr2[3] 안의 함수가 실행됨!
 
-            // 3. 배열을 미리 생성하여 각각 할당하는 방법
-            // 배열변수명 = [] -> 이 변수가 배열변수로 설정됨!
-            // 배열변수명.length = 숫자 -> 숫자만큼 배열이 생성됨!
-            // 배열변수명.length 는 배열개수도 읽고 설정도 함!
+        // 3. 배열을 미리 생성하여 각각 할당하는 방법
+        // 배열변수명 = [] -> 이 변수가 배열변수로 설정됨!
+        // 배열변수명.length = 숫자 -> 숫자만큼 배열이 생성됨!
+        // 배열변수명.length 는 배열개수도 읽고 설정도 함!
 
-            const arr3 = []; // arr3가 배열변수로 설정!
-            // const로 선언했으므로 배열형식을 바꿀 수 없다!
-            // 그.러.나... 배열의 값은 변경할 수 있다!
-            arr3.length = 8; // arr3가 8개의 공간을 설정함!
-            // 각 배열주소에 값을 할당함!
-            arr3[0] = "산";
-            arr3[1] = "할아버지";
-            arr3[2] = "구름모자";
-            arr3[3] = "썻네~!";
-            arr3[4] = "나비같이";
-            arr3[5] = "훨훨";
-            arr3[6] = "훠얼훨";
-            arr3[7] = "날아서~!";
+        const arr3 = []; // arr3가 배열변수로 설정!
+        // const로 선언했으므로 배열형식을 바꿀 수 없다!
+        // 그.러.나... 배열의 값은 변경할 수 있다!
+        arr3.length = 8; // arr3가 8개의 공간을 설정함!
+        // 각 배열주소에 값을 할당함!
+        arr3[0] = "산";
+        arr3[1] = "할아버지";
+        arr3[2] = "구름모자";
+        arr3[3] = "썻네~!";
+        arr3[4] = "나비같이";
+        arr3[5] = "훨훨";
+        arr3[6] = "훠얼훨";
+        arr3[7] = "날아서~!";
 
-            // 배열값 전체찍기: valueOf()
-            // -> 배열값 전체를 콤마로 구분하여 출력함
-            console.log("arr3 배열전체값:", arr3.valueOf());
-            // 참고로 변수만 찍어도 브라우저가 valueOf()를 찍어줌!^^
+        // 배열값 전체찍기: valueOf()
+        // -> 배열값 전체를 콤마로 구분하여 출력함
+        console.log("arr3 배열전체값:", arr3.valueOf());
+        // 참고로 변수만 찍어도 브라우저가 valueOf()를 찍어줌!^^
 
-            // 변수 전체찍기에서 사이에 구분자 변경하기
-            // join(구분자) -> 구분자는 특수문자 등 구분하는 문자
-            console.log("arr3 배열 구분자로 문자찍기:",
-                arr3.join("^"));
-            // join()은 구분자를 넣은 문자데이터다!!!
+        // 변수 전체찍기에서 사이에 구분자 변경하기
+        // join(구분자) -> 구분자는 특수문자 등 구분하는 문자
+        console.log("arr3 배열 구분자로 문자찍기:", arr3.join("^"));
+        // join()은 구분자를 넣은 문자데이터다!!!
 
-            // 배열값 뒤에 동적으로 배열값 추가하기!
-            // push(값) -> 배열 맨뒤에 값을 추가
-            arr3.push("김창완작사");
+        // 배열값 뒤에 동적으로 배열값 추가하기!
+        // push(값) -> 배열 맨뒤에 값을 추가
+        arr3.push("김창완작사");
 
-            // 배열사이에 별(★)을 넣어서 출력할 것!
-            // 화면출력대상: tbx[2]
-            tbx[2].innerText = arr3.join("★");
+        // 배열사이에 별(★)을 넣어서 출력할 것!
+        // 화면출력대상: tbx[2]
+        tbx[2].innerText = arr3.join("★");
 
-            /************************************************** 
+        /************************************************** 
             
                 [ 객체(Object) 란? ]
 
@@ -209,61 +213,59 @@
             
             **************************************************/
 
-            const SSG = new Object({
-                "너의 이름은?": "손석구",
-                "생일": "1983년 2월 7일",
-                "출생지": "대전광역시 유성구 전민동",
-                "키": "178cm",
-                "몸무게": "80kg",
-                "혈액형": "B형",
-                "성별": "남성",
-                "대표작": "나의 해방일지,범죄도시2",
-                "소속사": "셋별당엔터",
-                "비밀번호": 7777,
-                "팬레터": function () {
-                    // 1. 메시지 띄우기
-                    alert("상남자 오빠! 지금뭐해?");
-                    // 2. 배경이미지 넣기
-                    tbx[3].style.background =
-                        "url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) repeat-x top/auto 100%";
-                    // 3. 글자색
-                    tbx[3].style.color = "#fff";
-                    // 4. 글자그림자
-                    tbx[3].style.textShadow = "0 0 5px #000";
-                    // 5. 글자내용변경
-                    tbx[3].innerText = "손석구 최고 멋쨍이! 승승장구! 화이팅!!!";
-                    // 6. 트랜지션
-                    tbx[3].style.transition = "1s ease-out 1s";
-                    // 7. 박스크게하기
-                    tbx[3].style.transform = "scale(1.2)";
-                    // 8. 줄간격
-                    tbx[3].style.lineHeight = "84px";
+        const SSG = new Object({
+          "너의 이름은?": "손석구",
+          생일: "1983년 2월 7일",
+          출생지: "대전광역시 유성구 전민동",
+          키: "178cm",
+          몸무게: "80kg",
+          혈액형: "B형",
+          성별: "남성",
+          대표작: "나의 해방일지,범죄도시2",
+          소속사: "셋별당엔터",
+          비밀번호: 7777,
+          팬레터: function () {
+            // 1. 메시지 띄우기
+            alert("상남자 오빠! 지금뭐해?");
+            // 2. 배경이미지 넣기
+            tbx[3].style.background =
+              "url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) repeat-x top/auto 100%";
+            // 3. 글자색
+            tbx[3].style.color = "#fff";
+            // 4. 글자그림자
+            tbx[3].style.textShadow = "0 0 5px #000";
+            // 5. 글자내용변경
+            tbx[3].innerText = "손석구 최고 멋쨍이! 승승장구! 화이팅!!!";
+            // 6. 트랜지션
+            tbx[3].style.transition = "1s ease-out 1s";
+            // 7. 박스크게하기
+            tbx[3].style.transform = "scale(1.2)";
+            // 8. 줄간격
+            tbx[3].style.lineHeight = "84px";
+          }, //// 팬레터 메서드 ///
+        }); ///////// SSG 객체 ///////////
 
-                } //// 팬레터 메서드 ///
-
-            }); ///////// SSG 객체 ///////////
-
-            // 객체 출력하기 : 대상 - tbx[3]
-            tbx[3].innerHTML = `
+        // 객체 출력하기 : 대상 - tbx[3]
+        tbx[3].innerHTML = `
             당신이 좋아하는 남자배우는? ${SSG["너의 이름은?"]}
              / 몸무게를 아세요? ${SSG["몸무게"]} <br>
              생년월일은? ${SSG["생일"]} / 대표작은? ${SSG["대표작"]}
             `;
 
-            // 2줄이니까 줄간격 변경
-            tbx[3].style.lineHeight = "40px";
+        // 2줄이니까 줄간격 변경
+        tbx[3].style.lineHeight = "40px";
 
-            // 객체에 셋팅된 함수를 보통 "메서드"라고 부른다!
-            // 이 메서드를 호출해 보자!
-            tbx[3].onclick = SSG["팬레터"];
+        // 객체에 셋팅된 함수를 보통 "메서드"라고 부른다!
+        // 이 메서드를 호출해 보자!
+        tbx[3].onclick = SSG["팬레터"];
 
-            // title속성 넣기
-            tbx[3].title = `여기를 클릭하여 ${SSG["너의 이름은?"]}팬레터를 확인하세요!`;
+        // title속성 넣기
+        tbx[3].title = `여기를 클릭하여 ${SSG["너의 이름은?"]}팬레터를 확인하세요!`;
 
-            // 손가락표시
-            tbx[3].style.cursor = "pointer";
+        // 손가락표시
+        tbx[3].style.cursor = "pointer";
 
-            /************************************************** 
+        /************************************************** 
              * 
                 [ new 키워드 없이 바로 객체를 생성하기! ]
 
@@ -295,54 +297,53 @@
 
             **************************************************/
 
-            // 객체 생성하기
-            const GU = {
-                name: "공유",
-                tall: "184cm",
-                weight: "74kg",
-                com: "매이지먼트 숲",
-                work: "도깨비,부산행",
-                // function(){} 대신 ()=>{} 화살표함수
-                msg: (txt) => { // txt전달변수
+        // 객체 생성하기
+        const GU = {
+          name: "공유",
+          tall: "184cm",
+          weight: "74kg",
+          com: "매이지먼트 숲",
+          work: "도깨비,부산행",
+          // function(){} 대신 ()=>{} 화살표함수
+          msg: (txt) => {
+            // txt전달변수
 
-                    // 1. 메시지 띄우기
-                    alert("팬레터:" + txt);
+            // 1. 메시지 띄우기
+            alert("팬레터:" + txt);
 
-                    // 2. 공유 이미지 배경에 넣기
-                    tbx[4].style.background =
-                        "url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%";
+            // 2. 공유 이미지 배경에 넣기
+            tbx[4].style.background =
+              "url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%";
 
-                    // 3. 글자색 변경
-                    tbx[4].style.color = "#fff";
+            // 3. 글자색 변경
+            tbx[4].style.color = "#fff";
 
-                    // 4. 글자 테두리
-                    tbx[4].style.textShadow =
-                        "1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000";
+            // 4. 글자 테두리
+            tbx[4].style.textShadow =
+              "1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000";
 
-                    // 5. 높이값 변경
-                    tbx[4].style.height = "100px";
+            // 5. 높이값 변경
+            tbx[4].style.height = "100px";
 
-                    // 6. 트랜지션
-                    tbx[4].style.transition =
-                        "2s ease-in-out .5s";
+            // 6. 트랜지션
+            tbx[4].style.transition = "2s ease-in-out .5s";
 
-                    // 7. 줄간격
-                    tbx[4].style.lineHeight = "30px";
+            // 7. 줄간격
+            tbx[4].style.lineHeight = "30px";
 
-                    // 8. 상단패딩
-                    tbx[4].style.paddingTop = "100px";
+            // 8. 상단패딩
+            tbx[4].style.paddingTop = "100px";
+          }, //// msg 메서드 ///
+        }; /////// GU 객체 ////////
 
-                } //// msg 메서드 ///
-            }; /////// GU 객체 ////////
+        // GU객체 출력하기 /////
+        // 출력대상: tbx[4]
 
-            // GU객체 출력하기 /////
-            // 출력대상: tbx[4]
+        // 줄간격 조정
+        tbx[4].style.lineHeight = "24px";
 
-            // 줄간격 조정
-            tbx[4].style.lineHeight = "24px";
-
-            // 내용출력
-            tbx[4].innerHTML = `
+        // 내용출력
+        tbx[4].innerHTML = `
                 저는 ${GU.name}입니다.
                 몸무게는 비밀인데요 그래도 말씀드리자면
                 ${GU.weight}입니다. ㅎㅎㅎ <br>
@@ -351,53 +352,72 @@
                 ${GU.com}입니다. 빠이빠이~!
             `;
 
-            // 툴팁 띄우기
-            // setAttribute(속성명,값)
-            tbx[4].setAttribute("title",
-                GU.name + "의 펜레터를 확인하세요! 바로클릭!");
+        // 툴팁 띄우기
+        // setAttribute(속성명,값)
+        tbx[4].setAttribute(
+          "title",
+          GU.name + "의 펜레터를 확인하세요! 바로클릭!"
+        );
 
-            // 손가락모양
-            tbx[4].style.cursor = "pointer";
+        // 손가락모양
+        tbx[4].style.cursor = "pointer";
 
-            // 공유박스 클릭시 GU객체 메서드 호출하기
-            tbx[4].onclick = () => {
-                GU.msg("\n공유오빠, 오징어게임 싸다구 멋쪘어요! \n차기작도 기대해요! 화이팅!!!");
-                // \n은 alert창에서 줄바꿈해줌!
-            }; /////// click ////////
+        // 공유박스 클릭시 GU객체 메서드 호출하기
+        tbx[4].onclick = () => {
+          GU.msg(
+            "\n공유오빠, 오징어게임 싸다구 멋쪘어요! \n차기작도 기대해요! 화이팅!!!"
+          );
+          // \n은 alert창에서 줄바꿈해줌!
+        }; /////// click ////////
 
-            ///////////////////////////////////////
+        ///////////////////////////////////////
 
-            // 미션: tbx[5]에 자신이 만든 객체의 정보를 출력하시오
-            // 주제는 영화정보
-            // 변수명도 자신이 지어본다!
-            // 객체의 속성명도 변수형으로 자신이 지어본다!
+        // 미션: tbx[5]에 자신이 만든 객체의 정보를 출력하시오
+        // 주제는 영화정보
+        // 변수명도 자신이 지어본다!
+        // 객체의 속성명도 변수형으로 자신이 지어본다!
 
-            const myMV = {
-                // 1. 영화제목
-                title: "쥬라기 월드: 도미니언",
-                // 2. 감독
-                director: "콜린 트레보로우",
-                // 3. 배우
-                actor: "크리스 프랫, 브라이스 달라스 하워드",
-                // 4. 장르
-                genre: "액션, 모험",
-                // 5. 관람가
-                ratings: "12세 관람가",
-                // 6. 예고편
-                trailer: () => {
+        const myMV = {
+          // 1. 영화제목
+          title: "쥬라기 월드: 도미니언",
+          // 2. 감독
+          director: "콜린 트레보로우",
+          // 3. 배우
+          actor: "크리스 프랫, 브라이스 달라스 하워드",
+          // 4. 장르
+          genre: "액션, 모험",
+          // 5. 관람가
+          ratings: "12세 관람가",
+          // 6. 예고편
+          trailer: () => {
 
-                    // 1. 호출확인
-                    console.log("예고편");
+            // 1. 호출확인
+            console.log("예고편");
 
-                } ///// trailer 메서드 ////
+            // 2. 영화박스 만들고 iframe 넣기
+            // 대상: #mvbx
+            const mvbx = document.querySelector("#mvbx");
 
-            }; //////// myMV 객체 //////////
+            // 영화박스에 아이프레임용 박스넣기
+            mvbx.innerHTML = `
+                <div id="mv">
+                    <!--유튜브 아이프레임-->
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sotCKQl2iQY?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            // 줄간격 조정
-            tbx[5].style.lineHeight = "34px";
+                    <!--닫기버튼-->
+                    <button class="cbtn">×</button>
+                </div>
+            `;
 
-            // 내용 출력하기
-            tbx[5].innerHTML = `
+          }, ///// trailer 메서드 ////
+
+        }; //////// myMV 객체 //////////
+
+        // 줄간격 조정
+        tbx[5].style.lineHeight = "34px";
+
+        // 내용 출력하기
+        tbx[5].innerHTML = `
                 ♣ 영화명 : ${myMV.title}
                 ♣ 감독 : ${myMV.director} <br>
                 ♣ 배우 : ${myMV.actor}
@@ -405,25 +425,22 @@
                 ♣ 등급 : ${myMV.ratings}
             `;
 
-            // 툴팁 보이기
-            tbx[5].title = 
-            `클릭하시면 ${myMV.title}예고편을 보실 수 있습니다!`;
+        // 툴팁 보이기
+        tbx[5].title = 
+        `클릭하시면 ${myMV.title} 예고편을 보실 수 있습니다!`;
 
-            // 손가락 모양
-            tbx[5].style.cursor = "pointer";
+        // 손가락 모양
+        tbx[5].style.cursor = "pointer";
 
-            // 트레일러 메서드 호출 셋팅
-            tbx[5].onclick = myMV.trailer;
+        // 트레일러 메서드 호출 셋팅
+        tbx[5].onclick = myMV.trailer;
+      }; //////////// loadFn 함수 /////////////////
+      /////////////////////////////////////////////
 
-
-
-        }; //////////// loadFn 함수 /////////////////
-        /////////////////////////////////////////////
-
-        // 윈도우 컨텐츠 로딩 후 loadFn함수 호출하기!
-        // window.addEventListener(이벤트명,함수)
-        window.addEventListener("DOMContentLoaded", loadFn);
-        /************************************************* 
+      // 윈도우 컨텐츠 로딩 후 loadFn함수 호출하기!
+      // window.addEventListener(이벤트명,함수)
+      window.addEventListener("DOMContentLoaded", loadFn);
+      /************************************************* 
             [ 로딩관련 이벤트 2가지 ]
             1. load 이벤트 : 이미지, 동영상 등 모든
             컨텐츠가 로딩되고 나면 발생하는 로드이벤트
@@ -431,9 +448,9 @@
             페이지로 그려지면 바로 발생하는 로드이벤트
         *************************************************/
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>JS4-1. 배열변수와 객체</h1>
 
     <div class="tbx"></div>
@@ -445,6 +462,5 @@
 
     <!-- 예고편 동영상용 박스 -->
     <aside id="mvbx"></aside>
-</body>
-
+  </body>
 </html>
