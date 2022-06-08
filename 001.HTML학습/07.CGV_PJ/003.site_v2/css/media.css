@@ -27,10 +27,12 @@
   /* 2. 하위 ul */
   .glist {
     flex-direction: column;
-    display: none;/* 처음에 안보임 */
+    display: none;
+    /* 처음에 안보임 */
   }
+
   /* .gnb에 마우스 오버시 .glist보이기 */
-  .gnb:hover .glist{
+  .gnb:hover .glist {
     display: flex;
     /* 반드시 보이게할 경우 원래 display씀! */
   }
@@ -52,6 +54,37 @@
 /*************** 1050px 이하 끝 ***************/
 
 /*************** 780px 이하 시작 ***************/
-@media screen and (max-width: 780px) {}
+@media screen and (max-width: 780px) {
+  
+  .info {
+    height: auto;
+  }
+
+  #info address {
+    text-align: center;
+    padding: 0;
+  }
+
+  #info img {
+    float: none;
+    margin-right: 0;
+  }
+
+  #info address span {
+    display: block;
+  }
+
+  ul.sns {
+    position: static;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+}
 
 /*************** 780px 이하 끝 ***************/
+
+/*************** 600px 이하 시작 ***************/
+@media screen and (max-width: 600px) {}
+
+/*************** 600px 이하 끝 ***************/
