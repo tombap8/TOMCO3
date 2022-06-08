@@ -374,18 +374,30 @@
 
             const myMV = {
                 // 1. 영화제목
-                title: "",
+                title: "쥬라기 월드: 도미니언",
                 // 2. 감독
-                director: "",
+                director: "콜린 트레보로우",
                 // 3. 배우
-                actor: "",
+                actor: "크리스 프랫, 브라이스 달라스 하워드",
                 // 4. 장르
-                genre: "",
+                genre: "액션, 모험",
                 // 5. 관람가
-                ratings: "",
+                ratings: "12세 관람가",
                 // 6. 예고편
                 trailer: () => {}
             }; //////// myMV 객체 //////////
+
+            // 줄간격 조정
+            tbx[5].style.lineHeight = "34px";
+
+            // 내용 출력하기
+            tbx[5].innerHTML = `
+                ♣ 영화명 : ${myMV.title}
+                ♣ 감독 : ${myMV.director} <br>
+                ♣ 배우 : ${myMV.actor}
+                ♣ 장르 : ${myMV.genre}
+                ♣ 등급 : ${myMV.ratings}
+            `;
 
 
 
