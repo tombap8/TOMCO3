@@ -409,6 +409,18 @@
                 </div>
             `;
 
+            // 삽입된 동영상박스(#mv) CSS설정하기
+            const mv = document.querySelector("#mv");
+
+            mv.style.position = "fixed";
+            mv.style.top = "50%";
+            mv.style.left = "50%";
+            mv.style.transform = "translate(-50%,-50%)";
+            mv.style.width = "700px";
+            mv.style.height = "450px";
+            mv.style.backgroundColor = "#000";
+
+
           }, ///// trailer 메서드 ////
 
         }; //////// myMV 객체 //////////
