@@ -130,6 +130,34 @@
                                 .innerHTML =
                                 `<img src="${data[z]}" alt="${btxt} 포스터">`;
                                 break;
+                            // 2. 제목 넣기
+                            case "제목":
+                                document
+                                .querySelector(".tit")
+                                .innerText =
+                                `영화명: ${data[z]}`;
+                                break;
+                            // 3. 장르 넣기
+                            case "개요":
+                                document
+                                .querySelector(".sum")
+                                .innerText =
+                                `장르: ${data[z]}`;
+                                break;
+                            // 4. 감독 넣기
+                            case "감독":
+                                document
+                                .querySelector(".dir")
+                                .innerText =
+                                `감독: ${data[z]}`;
+                                break;
+                            // 5. 배우 넣기
+                            case "출연":
+                                document
+                                .querySelector(".act")
+                                .innerText =
+                                `배우: ${data[z]}`;
+                                break;
                         } ///////// switch case ///////
 
                     } ///////// for in //////////
@@ -171,17 +199,23 @@
     <hr>
 
     <div class="minfo">
+        <!-- 1. 포스터 -->
         <div class="photo"></div>
         <div class="cont">
+            <!-- 2. 제목 -->
             <h2 class="tit"></h2>
+            <!-- 3. 개요 -->
             <h3 class="sum"></h3>
+            <!-- 4. 감독 -->
             <h3 class="dir"></h3>
+            <!-- 5. 출연 -->
             <h3 class="act"></h3>
         </div>
     </div>
 
     <!-- 영화 한마디 -->
     <h2 class="showtit">♥ 영화한마디!</h2>
+    <!-- 6. 문구 -->
     <div class="show"></div>
 
 </body>
