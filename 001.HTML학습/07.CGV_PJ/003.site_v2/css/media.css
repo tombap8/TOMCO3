@@ -55,7 +55,7 @@
 
 /*************** 780px 이하 시작 ***************/
 @media screen and (max-width: 780px) {
-  
+
   /* 하단박스 */
   .info {
     height: auto;
@@ -91,6 +91,38 @@
 /*************** 780px 이하 끝 ***************/
 
 /*************** 600px 이하 시작 ***************/
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+
+  /* 타이틀 */
+  h1.tit {
+    font-size: 9vw;
+  }
+
+  /* 영사기 */
+  #cam {
+    transform: scale(0.7);
+  }
+
+  /* 메인영역 비율변경 */
+  .cont::before {
+    padding-top: 150%;
+  }
+
+  /* 메인 배경 속성변경 */
+  .cont {
+    background-size: 130%;
+    background-position: top;
+    /* 배경 위치 가로는 안써도 자동 center */
+  }
+
+  /* 스크린 위치,크기변경 */
+  #screen {
+    top: 9.8%;
+    left: 12.6%;
+    width: 76.3%;
+    height: 28.8%;
+  }
+
+}
 
 /*************** 600px 이하 끝 ***************/
