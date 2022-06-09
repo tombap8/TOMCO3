@@ -56,24 +56,30 @@
 /*************** 780px 이하 시작 ***************/
 @media screen and (max-width: 780px) {
   
+  /* 하단박스 */
   .info {
     height: auto;
   }
 
+  /* 하단 주소박스 */
   #info address {
     text-align: center;
     padding: 0;
   }
 
+  /* 하단로고 */
   #info img {
     float: none;
     margin-right: 0;
   }
 
+  /* 하단 주소만 싼 박스 */
   #info address span {
     display: block;
+    padding: 5vw;
   }
 
+  /* 하단 sns 박스 */
   ul.sns {
     position: static;
     justify-content: center;
