@@ -126,16 +126,33 @@
   /* 예고편 선택메뉴박스 */
   .mlist {
     width: 90vw;
+    bottom: 0;
   }
 
   /* 예고편 메뉴 플렉스박스 */
   .mlist ul {
     flex-wrap: wrap;
+    perspective: 78vw;
+  }
+
+  /* 예고편 li 리스트 */
+  .mlist ul>li{    
+    margin-bottom: 2vh;
   }
 
   /* 예고편 포스터 이미지 */
   .mlist img {
     width: 28vw;
+  }
+
+  /* 예고편 영화정보 */
+  .movtxt {
+    font-size: 4.7vw;
+  }
+
+  /* 예고편 영화정보 타이틀  */
+  .movtxt li:first-child {
+    font-size: 5.3vw;
   }
 
 }
