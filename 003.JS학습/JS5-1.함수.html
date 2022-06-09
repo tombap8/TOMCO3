@@ -288,14 +288,51 @@
         // 전달변수없이 전달값을 arguments배열로 받기!
         // arguments 전달값 배열변수는 화살표함수에서는 못씀!(주의!)
         const setFirst = function(){
-            // 함수호출확인
+            // 1. 함수호출확인
             console.log("초기셋팅함수");
+
+            // 2. 전달값 확인 : arguments 키워드 사용!
+            // for of문으로 배열값을 돌린다!
+            for(let args of arguments){ // args - 각 전달값
+                console.log(args);
+                // 화면에 h2요소로 글자 넣기
+                // 기존값에 추가이므로 += 대입연산자 사용!
+                document.body.innerHTML += 
+                `<h2>${args}</h2>`;
+            } ////////// for of ////////////////
+
         }; /////////// setFirst 함수 //////////////////
 
         ///// 로드후 초기셋팅함수 호출함! ///////////
         window.addEventListener("load",()=>{
-            setFirst();
+            // 함수호출시 파라미터변수가 없는 함수에
+            // 여러개의 값들을 전달한다! 받을 수 있을까 함수가?
+            setFirst("동해물과","백두산이","마르고 닳도록","하느님이 보우하사","우리나라","만세!!!");
         }); /////////// load ///////////////////////
+
+        ///// 일정시간 간격으로 배경이미지 변경하기 ///////
+        // setInterval(함수,시간)
+        // -> 일정시간 간격으로 함수를 실행함!
+        // -> 함수는 외부함수 또는 익명함수 사용
+        // -> 시간은 1/1000초로 단위없는 숫자 사용
+        // 예) 1초는 1000이라고 쓰면됨!
+
+        // 배열순번변수
+        let seq = 0;
+
+        setInterval(() => {
+            console.log("배열순번:",seq);
+
+            // body의 배경이미지 변경하기
+            document.body.style.backgroundImage =
+            `url(${scene[seq]})`;
+
+            seq++; // 1씩증가
+            
+            // 조건: 배경배열개수와 같으면 처음으로!
+            if(seq===scene.length) seq=0;
+
+        }, 1500); // 1.5초간격
 
     </script>
 </head>
