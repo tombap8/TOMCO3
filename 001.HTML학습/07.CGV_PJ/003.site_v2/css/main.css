@@ -325,8 +325,11 @@ h1.tit{
     /* 트랜지션: 속시이지 */
     transition: transform .4s ease-out;
 }
-/* li에 마우스 오버시 li자신 x축회전 일어남! */
-.mlist ul>li:hover{
+/* li에 마우스 오버시 li자신 x축회전 일어남!
++ li에 클래스 "on"적용시 동일!
+JS로 클릭시 선택메뉴에 클래스넣기! */
+.mlist ul>li:hover,
+.mlist ul>li.on{
     transform: rotateX(0deg);
     /* 마우스 오버해서 일어난 li가 위에와야
     옆에 이전 li가 안겹쳐짐! */
