@@ -112,8 +112,81 @@
             }
         } /* 키프레임 */
 
+        /* 흘러가는 글자박스 */
+        .fbx{
+            position: absolute;
+            width: 100vw;
+        }
 
-       
+        /* 텍스트박스(움직일 박스) */
+        .tbx{
+            position: relative;
+            left: 0;/* 초기값 필수! */
+            width: 200vw;
+            display: flex;
+            /* 직계자식 ul이 옆으로 흐름! */
+        }
+
+        /* 텍스트박스 하위 ul */
+        .tbx ul{
+            display: flex;
+            /* 직계자식 li가 옆으로 흐름! */
+            flex: 1;
+            /* 등분할 설정 */
+
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /* 하위 li */
+        .tbx li{
+            flex: 1;
+            text-align: center;
+            font-family: 'Anton', sans-serif;
+            font-size: 4vw; 
+            color: #d3d3d3;
+            /* outline: 1px dashed red; */
+        }
+
+        /* 첫번째 박스 위치 */
+        .f1{
+            bottom: 5vh;
+        }
+
+        /* 애니메이션 호출1 */
+        .f1 .tbx{
+            /* 애니메이션: 이시이지반방마 */
+            animation: txtFlow1 7s linear infinite;
+        }
+
+        /* 글자 흐르기 키프레임1 */
+        @keyframes txtFlow1 {
+            to{
+                left: -100%;
+            }
+        } /* 키프레임 */
+
+        /* 반대방향으로 흐르는 박스 설정 */
+        .f2{
+            top: 5vh;
+        }
+        /* 흐르는 박스 위치 */
+        .f2 .tbx{
+            left: -100%;
+        }
+
+       /* 애니메이션 호출2 */
+       .f2 .tbx{
+            /* 애니메이션: 이시이지반방마 */
+            animation: txtFlow2 7s linear infinite;
+        }
+
+        /* 글자 흐르기 키프레임2 */
+        @keyframes txtFlow2 {
+            to{
+                left: 0;
+            }
+        } /* 키프레임 */
 
         
 
@@ -124,6 +197,24 @@
 
     <!-- 흘러가는 글자박스1 -->
     <div class="fbx f1">
+        <div class="tbx">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 흘러가는 글자박스2 -->
+    <div class="fbx f2">
         <div class="tbx">
             <ul>
                 <li>iPhone 2022</li>
