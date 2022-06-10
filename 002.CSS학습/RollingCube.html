@@ -88,6 +88,28 @@
             /* 먼저 y축회전 후 화면방향 이동*/
         }
 
+        /* 애니메이션 클래스 */
+        .cube-ani{
+            /* 애니메이션: 이시이지반방마 */
+            animation: cubeAni 5s linear infinite;
+        }
+
+        /* 회전키프레임 */
+        @keyframes cubeAni {
+            to{
+                transform: rotateX(370deg) rotateY(-330deg);
+                /* 
+                    X축 양의 방향 10도에서 출발
+                    양의 방향 360도+10도=370도
+                    음의 방향 -360도+10도=-350도
+
+                    Y축 양의 방향 30도에서 출발
+                    양의 방향 360도+30도=390도
+                    음의 방향 -360도+30도=-330도
+                */
+            }
+        } /* 키프레임 */
+
     </style>
 </head>
 <body>
