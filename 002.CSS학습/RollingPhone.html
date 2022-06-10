@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회전하는 아이폰</title>
+    <style>
+        /* 웹폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+        /* font-family: 'Anton', sans-serif; */
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 높이값 기준 보이는 화면채우기! */
+        }
+
+        body {
+            background-image:
+                linear-gradient(to bottom, #fff 20%, #c1e1ff 40%, #fff);
+            overflow: hidden;
+        }
+
+        /* 폰박스 부모 */
+        .phone{
+            position: absolute;
+            top: calc(50% - 200px);
+            left: calc(50% - 100px);
+            /* 중앙이동 계산! 
+            calc(50% - 크기절반) */
+            width: 200px;
+            height: 400px;
+            /* outline: 2px solid #000; */
+
+            transform-style: preserve-3d;
+            /* 입체 변형설정하기! */
+            transform: rotateX(10deg) rotateY(30deg);
+            /* 입체를 잘보이게 약간회전함 */
+        }
+
+        /* 폰 각면 공통 */
+        .phone>span{
+            position: absolute;
+            width: 200px;
+            height: 400px;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            outline: 1px solid #ffda7b;
+        }
+
+        /* 1. 앞면 */
+        .phone>span:nth-child(1){
+            background-image: url(images/ip01.png);
+            transform: translateZ(10px);
+        }
+        /* 2. 오른쪽면 */
+        .phone>span:nth-child(2){
+            background-image: url(images/ip03.png);
+            width: 20px;
+            right: -10px;
+            transform: rotateY(90deg);
+        }
+        /* 3. 왼쪽면 */
+        .phone>span:nth-child(3){
+            background-image: url(images/ip04.png);
+            width: 20px;
+            left: -10px;
+            transform: rotateY(-90deg);
+        }
+        /* 4. 아랫면 */
+        .phone>span:nth-child(4){
+            background-image: url(images/ip05.png);
+            height: 20px;
+            bottom: -10px;
+            transform: rotateX(90deg);
+        }
+        /* 5. 윗면 */
+        .phone>span:nth-child(5){
+            background-image: url(images/ip06.png);
+            height: 20px;
+            top: -10px;
+            transform: rotateX(90deg);
+        }
+        /* 6. 뒷면 */
+        .phone>span:nth-child(6){
+            background-image: url(images/ip02.png);
+            transform: translateZ(-10px) rotateY(180deg);
+            /* 뒤쪽으로 밀고 뒤집는다! */
+        }
+
+        /* 폰 회전 애니메이션 클래스 */
+        .phone-ani{
+            /* 애니메이션: 이시이지반방마 */
+            animation: rolling 2s ease-in-out 1s 2 alternate;
+            /* 2회반복, 반대경로애니(alternate) */
+        }
+
+        /* 폰 회전 키프레임 */
+        @keyframes rolling {
+            to{
+                transform: rotateX(370deg) rotateY(-330deg);
+                /* 
+                    x축 : 360도 + 10도 = 370도
+                    y축 : -360도 + 30도 = -330도
+                */
+            }
+        } /* 키프레임 */
+
+
+       
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 흘러가는 글자박스1 -->
+    <div class="fbx f1">
+        <div class="tbx">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- 폰박스 -->
+    <div class="phone phone-ani">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</body>
+
+</html>
