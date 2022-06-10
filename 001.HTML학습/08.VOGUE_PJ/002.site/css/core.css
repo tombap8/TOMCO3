@@ -4,21 +4,79 @@
 
 /*********** 1. 웹폰트 ***********/
 /* Roboto체 + Roboto Condensed체 - CDN */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap");
 /* 
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
 */
 /* 나눔바른고딕 */
 @font-face {
-    font-family: nbg;
-    src: url(../fonts/NanumBarunGothicLightSubset.woff) format("woff");
+  font-family: nbg;
+  src: url(../fonts/NanumBarunGothicLightSubset.woff) format("woff");
 }
 /* Pistilli체 */
 @font-face {
-    font-family: pist;
-    src: url(../fonts/Pistilli-Roman.woff) format("woff");
+  font-family: pist;
+  src: url(../fonts/Pistilli-Roman.woff) format("woff");
 }
 
-
 /************* 2. 공통 class *************/
+/* 중앙 속박스 */
+.ibx {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* 플렉스박스 클래스 */
+.fbx{
+    display: flex;
+}
+.fbx>div{
+    flex: 1;
+    /* 동일비율 + 높이값 자동채움 */
+}
+
+/* 비율유지 박스 클래스 */
+.rbx{
+    position: relative;
+    /* 비율유지 앱솔루트 속박스의 부모자격 */
+}
+/* 가상요소 비율밀기 */
+.rbx::before{
+    content: '';
+    display: block;
+    /* 패딩탑 설정은 각 .pt1, .pt2에서 따로함! */
+}
+
+/* 컨텐츠박스 유형1 - 1개구성 비율밀기 */
+.pt1.rbx::before {
+  padding-top: 55.69%;
+  /* 
+    비율계산
+    1300 : 724 = 100 : x
+    x = 724 * 100 / 1300
+    x = 55.69%
+  */
+}
+
+/* 컨텐츠박스 유형2 - 3개구성 비율밀기 */
+.pt2.rbx::before {
+    padding-top: 50%;
+    /* 
+      비율계산
+      1300 : 650 = 100 : x
+      x = 650 * 100 / 1300
+      x = 50%
+    */
+}
+
+/* 비율유지 속박스
+- 가상요소 속박스가 패딩탑으로
+밀기때문에 내부 컨텐츠 영역을 잡는다! */
+.rbxIn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
