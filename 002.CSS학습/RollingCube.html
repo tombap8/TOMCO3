@@ -106,6 +106,11 @@
                     Y축 양의 방향 30도에서 출발
                     양의 방향 360도+30도=390도
                     음의 방향 -360도+30도=-330도
+
+                    (필요시적용)
+                    Z축은 기본값 0도에서 출발
+                    양의 방향 360도
+                    음의 방향 -360도
                 */
             }
         } /* 키프레임 */
@@ -113,8 +118,15 @@
     </style>
 </head>
 <body>
+
+    <!-- 버튼박스 -->
+    <div class="btns">
+        <button>돌아!</button>
+        <button>멈춰!</button>
+    </div>
+
     <!-- 큐브 -->
-    <div class="cube">
+    <div class="cube cube-ani">
         <span></span>
         <span></span>
         <span></span>
