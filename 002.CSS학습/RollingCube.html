@@ -15,6 +15,19 @@
             background-image: 
             linear-gradient(to bottom, #777 30%, #ccc 70%);
         }
+
+        /* 버튼박스 */
+        .btns{
+            text-align: center;
+            padding: 50px;
+        }
+        .btns button{
+            font-size: 40px;
+            border-radius: 10px;
+        }
+
+
+
         /* 큐브 */
         .cube{
             position: absolute;
@@ -92,6 +105,12 @@
         .cube-ani{
             /* 애니메이션: 이시이지반방마 */
             animation: cubeAni 5s linear infinite;
+            /* 처음에 애니메이션 멈춰있기 */
+            animation-play-state: paused;
+        }
+        /* 클래스on추가시 애니메이션 작동하기 */
+        .cube-ani.on{
+            animation-play-state: running;
         }
 
         /* 회전키프레임 */
@@ -116,6 +135,19 @@
         } /* 키프레임 */
 
     </style>
+    <script>
+        window.addEventListener("load",()=>{
+            console.log("로딩완료!");
+
+            // 버튼 클릭시 클래스 넣기/빼기
+            // 대상: 버튼 .btns button
+            let btns = document
+            .querySelectorAll(".btns button");
+            console.log("버튼들:",btns)
+
+        }); /////////// 로드구역 ////////////////
+
+    </script>
 </head>
 <body>
 
