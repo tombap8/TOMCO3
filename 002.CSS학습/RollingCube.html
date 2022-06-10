@@ -73,6 +73,20 @@
             transform: rotateY(-90deg) translateZ(150px);
             /* 먼저 y축회전 후 화면방향 이동*/
         }
+        /* 5. 윗면 */
+        .cube>span:nth-child(5){
+            background: url(images/citys.jpg) no-repeat center/cover;
+            /* 화면방향(Z축) */
+            transform: rotateX(90deg) translateZ(150px);
+            /* 먼저 y축회전 후 화면방향 이동*/
+        }
+        /* 6. 아랫면 */
+        .cube>span:last-child{
+            background: url(images/img2.jpg) no-repeat center/cover;
+            /* 화면방향(Z축) */
+            transform: rotateX(-90deg) translateZ(150px);
+            /* 먼저 y축회전 후 화면방향 이동*/
+        }
 
     </style>
 </head>
