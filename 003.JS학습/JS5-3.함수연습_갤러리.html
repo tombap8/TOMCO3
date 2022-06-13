@@ -93,9 +93,8 @@
     </style>
     <!-- JS코딩구역 -->
     <script>
-
         /////////////// 로드구역 //////////////////
-        window.addEventListener("load",()=>{
+        window.addEventListener("load", () => {
 
             console.log("로딩완료!");
 
@@ -134,47 +133,68 @@
             // 1. 이미지 번호 변수
             let inum = 1;
 
+            // 2. 이미지설명 배열변수
+            const itxt = [
+                "노랑잉꼬가 먹이를 꼭꼭 찍어먹어요~",
+                "분홍장미가 머리칼을 너풀너풀 날려요~",
+                "백조같은 거위가 뚱하니 바라보아요~",
+                "바이킹이 너무 어지러워 토가 나와요~",
+                "눈사람이 가짜인데 진짜같아 보여요~",
+                "이 양은 보통양이 아니고 복제양 돌리예요~",
+                "잉꼬 한쌍이 영화를 찍어요~"
+            ];
 
-            // 변경대상: #mbox img
+            // 3. 이미지 설명 글자색 배열변수
+            const tcolor = ["red","orange","yellow","green","blue","navy","purple"];
+
+
+            // 변경대상1: 메인이미지 - #mbox img
             let mimg = document.querySelector("#mbox img");
 
-           // 이벤트 대상: 이동버튼
-           // 오른쪽버튼 - .rb 
-           document.querySelector(".rb")
-           .onclick = () => {
-               // 1. 호출확인
-                console.log("오버!");
+            // 변경대상2: 글자박스 - .imgtxt
+            let imgtxt = document.querySelector(".imgtxt");
 
-                // 2. 이미지 전역변수 1씩증가
-                inum++;
-                if(inum===8) inum = 1; //한계수체크
-
-                // 2. 변경대상 : #mbox img -> mimg변수
-                // 3. 변경내용 : 이미지의 src속성변경
-                mimg.src = `./images/img${inum}.jpg`;
-
-           }; ///////// click ////////////
+            // 처음글자 넣기 : 각 배너 데이터의 첫번째!
+            imgtxt.innerText = itxt[0];
+            imgtxt.style.color = tcolor[0];
 
 
-           // 왼쪽버튼 - .lb 
-           document.querySelector(".lb")
-           .onclick = () => {
-               // 1. 호출확인
-                console.log("왼버!");
+            // 이벤트 대상: 이동버튼
+            // 오른쪽버튼 - .rb 
+            document.querySelector(".rb")
+                .onclick = () => {
+                    // 1. 호출확인
+                    console.log("오버!");
 
-                // 2. 이미지 전역변수 1씩감소
-                inum--;
-                if(inum===0) inum = 7; //한계수체크
+                    // 2. 이미지 전역변수 1씩증가
+                    inum++;
+                    if (inum === 8) inum = 1; //한계수체크
 
-                // 2. 변경대상 : #mbox img -> mimg변수
-                // 3. 변경내용 : 이미지의 src속성변경
-                mimg.src = `./images/img${inum}.jpg`;
+                    // 2. 변경대상 : #mbox img -> mimg변수
+                    // 3. 변경내용 : 이미지의 src속성변경
+                    mimg.src = `./images/img${inum}.jpg`;
 
-           }; ///////// click ////////////
+                }; ///////// click ////////////
+
+
+            // 왼쪽버튼 - .lb 
+            document.querySelector(".lb")
+                .onclick = () => {
+                    // 1. 호출확인
+                    console.log("왼버!");
+
+                    // 2. 이미지 전역변수 1씩감소
+                    inum--;
+                    if (inum === 0) inum = 7; //한계수체크
+
+                    // 2. 변경대상 : #mbox img -> mimg변수
+                    // 3. 변경내용 : 이미지의 src속성변경
+                    mimg.src = `./images/img${inum}.jpg`;
+
+                }; ///////// click ////////////
 
 
         }); /////////// 로드구역 ///////////////////
-       
     </script>
 </head>
 
