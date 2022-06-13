@@ -20,6 +20,17 @@ font-family: 'Roboto Condensed', sans-serif;
   src: url(../fonts/Pistilli-Roman.woff) format("woff");
 }
 
+/* 
+  [ 공통 클래스 이름정의 ]
+  1. ibx - inside box 속박스
+  2. rbx - ratio box 비율박스
+  3. rbxIn - box in ratio box 비율유지 속박스
+  4. fbx - flex box 플렉스 디스플레이 박스
+  5. pt1, pt2 - part1, part2 각 부분박스
+  6. cbx - content box 내용박스
+  7. bgi - background image 관련 속성
+*/
+
 /************* 2. 공통 class *************/
 /* 중앙 속박스 */
 .ibx {
@@ -27,11 +38,16 @@ font-family: 'Roboto Condensed', sans-serif;
   margin: 0 auto;
 }
 
+/* 한개짜리 파티션 박스의 높이값 100% */
+.pt1 .cbx{
+  height: 100%;
+}
+
 /* 플렉스박스 클래스 */
 .fbx{
     display: flex;
 }
-.fbx>div{
+.fbx .cbx{
     flex: 1;
     /* 동일비율 + 높이값 자동채움 */
 }
@@ -79,4 +95,10 @@ font-family: 'Roboto Condensed', sans-serif;
     left: 0;
     bottom: 0;
     right: 0;
+}
+
+/* 배경이미지 공통 class */
+.bgi{
+  background-repeat: no-repeat;
+  background-size: cover;
 }
