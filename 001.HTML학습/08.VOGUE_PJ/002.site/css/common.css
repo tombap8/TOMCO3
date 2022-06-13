@@ -29,6 +29,91 @@
     font-size: 16px;
     text-align: center;
     line-height: 16px;
+    vertical-align: top;
+
+    /* 위치조정 */
+    margin-top: 14px;
+    margin-right: 17px;
+}
+/* 트위터 아이콘 조정 */
+.sns a.fi-twitter{
+    font-size: 13px;
+}
+
+/* 유튜브 아이콘 조정 */
+.sns a.fi-youtube-play{
+    font-size: 11px;
+}
+
+/* 유튜브 가상요소 크기조정(Y축만) */
+.sns a.fi-youtube-play::before{
+    transform: scaleY(1.2);
+    display: inline-block;
+    /* inline은 트랜스폼이 적용안됨! */
+}
+
+/* sns 마지막 a요소에 카스이미지 배경이미지로 넣기 */
+.sns a:last-child{
+    background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
+}
+
+/* 1-1-2. 사이드메뉴 */
+.smbx{
+    /* 플렉스박스 */
+    display: flex;
+    /* 플렉스박스 수평방향 오른쪽 끝 정렬 */
+    justify-content: flex-end;
+
+    font-family: 'Roboto', nbg, sans-serif;
+    font-size: 12px;
+}
+/* 사이트 메뉴 상위 a요소 */
+.smbx>li>a{
+    display: block;
+    padding: 0 13px;
+    line-height: 44px;
+    color: #747474;
+}
+/* 메뉴 사이 구분선 넣기 */
+.smbx>li:first-child{
+    border-right: 1px solid #e5e5e5;
+}
+
+/* 사이드 메뉴 서브박스 */
+.smsub{
+    position: absolute;
+    /* 젠틀앱솔루트! */
+
+    border: 1px solid #e5e5e5;
+
+    /* 숨기기 */
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+/* 상위메뉴 li에 오버시 하위메뉴 보이기 */
+.smbx>li:hover .smsub{
+    opacity: 1;
+    /* 원래 자기 크기의 높이값 복원! */
+    height: auto;
+    /* 트랜지션 */
+    transition: opacity .4s ease-in-out;
+}
+/* 서브메뉴 a요소 */
+.smsub a{
+    display: block;
+    padding: 7px 10px;
+    padding-right: 20px;
+    color: #747474;
+
+    /* 트랜지션 */
+    transition: .2s ease-in-out;
+}
+
+/* 서브메뉴 a요소에 마우스 오버시 */
+.smsub a:hover{
+    background-color: #fafafa;
+    color: #333;
 }
 
 /***************** 2. 하단영역 *****************/
