@@ -6,6 +6,19 @@
 .top{
     height: 206px;
 }
+/* 1-1. 상단메뉴 */
+.tmenu{
+    /* 플렉스박스 */
+    display: flex;
+    max-width: 970px;
+    height: 44px;
+    margin: 0 auto;
+}
+/* 플렉스 박스 직계자식 div */
+.tmenu>div{
+    /* 등분할박스 + 높이값 자동채움 */
+    flex: 1;
+}
 
 /***************** 2. 하단영역 *****************/
 .info{
