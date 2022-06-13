@@ -160,50 +160,14 @@
 
 
             // 이벤트 대상: 이동버튼
-            // 오른쪽버튼 - .rb 
-            document.querySelector(".rb")
-                .onclick = () => {
-                    // 1. 호출확인
-                    console.log("오버!");
+            let btn = document.querySelectorAll(".btn");
 
-                    // 2. 이미지 전역변수 1씩증가
-                    inum++;
-                    if (inum === 8) inum = 1; //한계수체크
-
-                    // 2. 변경대상 : #mbox img -> mimg변수
-                    // 3. 변경내용 : 이미지의 src속성변경
-                    mimg.src = `./images/img${inum}.jpg`;
-
-                    // 4. 추가변경내용 : 글자내용 + 글자색
-                    // 이미지번호보다 배열번호는 1작다!
-                    imgtxt.innerText = itxt[inum - 1];
-                    imgtxt.style.color = tcolor[inum - 1];
-
-                }; ///////// click ////////////
+            // 오른쪽버튼 - 두번째버튼
+            btn[1].onclick = () => goSlide(1);
 
 
-            // 왼쪽버튼 - .lb 
-            document.querySelector(".lb")
-                .onclick = () => {
-                    // 1. 호출확인
-                    console.log("왼버!");
-
-                    // 2. 이미지 전역변수 1씩감소
-                    inum--;
-                    if (inum === 0) inum = 7; //한계수체크
-
-                    // 2. 변경대상 : #mbox img -> mimg변수
-                    // 3. 변경내용 : 이미지의 src속성변경
-                    mimg.src = `./images/img${inum}.jpg`;
-
-
-                    // 4. 추가변경내용 : 글자내용 + 글자색
-                    // 이미지번호보다 배열번호는 1작다!
-                    imgtxt.innerText = itxt[inum - 1];
-                    imgtxt.style.color = tcolor[inum - 1];
-
-
-                }; ///////// click ////////////
+            // 왼쪽버튼 - 첫번째버튼
+            btn[0].onclick = () => goSlide(0);
 
             /**************************************** 
                 함수명: goSlide
@@ -213,7 +177,7 @@
                 // dir - 버튼구분(1-오른쪽,0-왼쪽)
 
                 // 1. 호출확인
-                console.log("왼버!");
+                console.log("넌 누구냐?", dir);
 
                 // 2. 버튼에 따른 분기
                 // 2-1. 오른쪽버튼 : 이미지 전역변수 1씩증가
@@ -239,6 +203,86 @@
 
             }; ///////////// goSlide 함수 /////////////
             ///////////////////////////////////////////
+
+            /******************************************* 
+                [ JS 타이밍 함수 : Timing Function ]
+
+                1. setInterval(함수,시간)
+                - 일정시간 간격으로 함수를 호출!
+                - 시간은 1/1000초, 단위안씀(예:1000->1초)
+                -> 인터발함수를 지울때는 변수에 담고
+                아래 함수를 호출한다!
+                ->>> clearInterval(변수)
+
+                ____________________________________
+
+                1. setTimeout(함수,시간)
+                - 일정시간 후 한번만 함수를 호출!
+                - 시간은 1/1000초, 단위안씀
+                -> 타임아웃을 지울때는 변수에 담고
+                아래 함수를 호출한다!
+                ->>> clearTimeout(변수)
+
+                ******************************
+
+                [ JS 클래스 관련 내장함수 ]
+                classList 객체
+                -> 클래스를 요소에 넣거나 빼거나 클래스여부 판별
+                ((관련메서드))
+                1. add(클래스명) : 클래스추가
+                2. remove(클래스명) : 클래스제거
+                3. toggle(클래스명) : 클래스추가/제거
+                4. contains(클래스명) : 클래스명 일치시 true
+                5. replace(이전클래스명,변경클래스명)
+                    : 특정클래스를 다른 클래스로 변경
+
+                -> 클래스 추가나 제거시 콤마로 구분하여
+                여러개의 클래스를 추가하거나 제거할 수 있다!
+                예) 요소.classList.add("tt","cc","dd")
+
+            *******************************************/
+
+            // 자동넘김 버튼 클릭시 인터발함수 셋팅하기!! ///
+            // 이벤트 대상: .abtn button
+            let abtn = document.querySelectorAll(".abtn button");
+            console.log("자동버튼:",abtn);
+
+            // 인터발 변수(지우기용!)
+            let autoI;
+
+            // 버튼에 클릭이벤트 설정하기 ////////
+            for(let x of abtn){
+
+                x.onclick = ()=>{
+                    // "자동넘김" 버튼여부
+                    let isB = x.classList.contains("start");
+                    console.log("자동넘김 버튼인가?",isB);
+
+                    // 분기문 ////////////
+                    if(isB){ // true이면 "자동넘김" 버튼임!
+                        // 인터발주기 : 2초간격 goSlide(1)호출
+                        // "멈춤"버튼 클릭시 지우기위해 변수에 할당
+                        autoI = setInterval(()=>{
+                            goSlide(1);
+                        },2000);
+                        // 자기자신 버튼은 없애기
+                        x.style.display = "none";
+                        // "멈춤" 버튼보이기
+                        abtn[1].style.display = "inline-block";
+                    } ///////////// if ////////////
+                    else{ // "멈춤"버튼
+                        // 인터발 지우기
+                        clearInterval(autoI);
+                        // 자기자신 버튼은 없애기
+                        x.style.display = "none";
+                        // "자동넘김" 버튼보이기
+                        abtn[0].style.display = "inline-block";
+                    } //////////// else ///////////////
+
+
+                }; ////////// click ///////
+
+            } ///////// for of /////////////
 
 
         }); /////////// 로드구역 ///////////////////
