@@ -20,6 +20,17 @@
     flex: 1;
 }
 
+/* 1-1-1. sns박스 */
+.sns a{
+    width: 16px;
+    height: 16px;
+    /* .fi 설정에 inline-block되어 있음
+    (크기적용됨!) */
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+}
+
 /***************** 2. 하단영역 *****************/
 .info{
     height: 285px;

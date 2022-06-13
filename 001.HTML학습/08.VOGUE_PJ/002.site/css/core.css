@@ -102,3 +102,11 @@ font-family: 'Roboto Condensed', sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* IR(Image Replacement) 또는 일반숨김용 클래스 */
+.ir{
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
