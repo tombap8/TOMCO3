@@ -245,32 +245,32 @@
             // 자동넘김 버튼 클릭시 인터발함수 셋팅하기!! ///
             // 이벤트 대상: .abtn button
             let abtn = document.querySelectorAll(".abtn button");
-            console.log("자동버튼:",abtn);
+            console.log("자동버튼:", abtn);
 
             // 인터발 변수(지우기용!)
             let autoI;
 
             // 버튼에 클릭이벤트 설정하기 ////////
-            for(let x of abtn){
+            for (let x of abtn) {
 
-                x.onclick = ()=>{
+                x.onclick = () => {
                     // "자동넘김" 버튼여부
                     let isB = x.classList.contains("start");
-                    console.log("자동넘김 버튼인가?",isB);
+                    console.log("자동넘김 버튼인가?", isB);
 
                     // 분기문 ////////////
-                    if(isB){ // true이면 "자동넘김" 버튼임!
+                    if (isB) { // true이면 "자동넘김" 버튼임!
                         // 인터발주기 : 2초간격 goSlide(1)호출
                         // "멈춤"버튼 클릭시 지우기위해 변수에 할당
-                        autoI = setInterval(()=>{
+                        autoI = setInterval(() => {
                             goSlide(1);
-                        },2000);
+                        }, 2000);
                         // 자기자신 버튼은 없애기
                         x.style.display = "none";
                         // "멈춤" 버튼보이기
                         abtn[1].style.display = "inline-block";
                     } ///////////// if ////////////
-                    else{ // "멈춤"버튼
+                    else { // "멈춤"버튼
                         // 인터발 지우기
                         clearInterval(autoI);
                         // 자기자신 버튼은 없애기
