@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Date객체와 Math객체</title>
+    <title>JS6.Date객체와 Math객체</title>
     <style>
         .time {
             width: 500px;
@@ -39,6 +39,56 @@
         ///////////////// 로드구역 //////////////////
         window.addEventListener("DOMContentLoaded", () => {
             console.log("로딩완료!");
+
+            /****************************************** 
+                구현내용:
+                - 날짜객체를 이용하여 오늘 년월일
+                현재 시간을 화면에 찍어본다!
+
+                변경대상: .tt - 각 날짜시간 출력 요소들
+            ******************************************/
+            let tt = document.querySelectorAll(".tt");
+            console.log("찍을박스:",tt);
+
+            /***************************************** 
+                함수명: showTime
+                기능: 오늘날짜, 현재시간 찍기
+            *****************************************/
+           const showTime = () => {
+
+                // console.log("시간찍어!");
+
+                // 날짜 객체로 시간찍기
+                // Date객체: 날짜, 시간을 표현하는 객체
+                // - 객체 생성법 : new 키워드로 생성!
+
+                let today = new Date();
+                // Date 객체를 메모리에 생성함!
+
+                // 1. 년도찍기 : tt[0]
+                tt[0].innerText = today.getFullYear();
+                // getFullYear() 전체년도
+                // 참고) getYear()는 1900을 뺀 년도
+
+                // 2. 월찍기 : tt[1]
+                tt[1].innerText = today.getMonth()+1;
+                // getMonth() -> 0부터 시작하는 월의 순번
+                // 왜 순번을 리턴하나?
+                // 각 나라별로 부르는 월의 이름이 다르기 때문!
+                // 이 이름을 배열에 넣고 출력할 수 있게
+                // 0부터 시작하는 순번을 리턴함!
+                // 예) ["Jan","Feb",...] 해당순번의 달을 호출
+                // -> 만약 월을 숫자로 찍고 싶으면 +1한다!
+
+                
+                
+
+
+           }; //////////// showTime 함수 ////////////
+
+           // 임시로 화면 클릭시 시간찍기
+           window.addEventListener("click",showTime);
+
         }); ///////////// 로드구역 //////////////////
         ////////////////////////////////////////////
     </script>
@@ -48,21 +98,21 @@
     <!-- 시간표시박스 -->
     <div class="time">
         <!-- 년도 -->
-        <span class="year tt"></span>.
+        <span class="year tt">1966</span>.
         <!-- 월 -->
-        <span class="month tt"></span>.
+        <span class="month tt">12</span>.
         <!-- 일 -->
-        <span class="date tt"></span>.
+        <span class="date tt">31</span>.
         <!-- 요일 -->
-        (<span class="day tt"></span>) <br />
+        (<span class="day tt">수</span>) <br />
         <!-- 오전/오후 -->
-        <span class="noon tt"></span>
+        <span class="noon tt">오전</span>
         <!-- 시간 -->
-        <span class="hour tt"></span> :
+        <span class="hour tt">10</span> :
         <!-- 분 -->
-        <span class="minute tt"></span> :
+        <span class="minute tt">32</span> :
         <!-- 초 -->
-        <span class="second tt"></span>
+        <span class="second tt">25</span>
     </div>
 
     <!-- 이미지박스 -->
