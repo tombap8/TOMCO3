@@ -38,7 +38,7 @@
 
                         // 2. 서브메뉴 ol요소 높이값 읽어오기
                         let hv = tg.querySelector("ol").offsetHeight;
-                        console.log("ol높이값:",hv);
+                        // console.log("ol높이값:",hv);
 
                         // 3. 서브메뉴 열리기 (보정값 +10)
                         tg.style.height = (hv+10)+"px";
@@ -87,6 +87,9 @@
                         // 1. a요소의 텍스트 읽어오기
                         let txt = x.innerText;
                         console.log("링크텍스트:",txt);
+
+                        // a요소의 기본이동막기
+                        return false;
 
                     }; /////////// click //////////
 
