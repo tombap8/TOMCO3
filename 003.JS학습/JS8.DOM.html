@@ -215,7 +215,7 @@
                 // ctg -> current target! 현재 타겟!
 
                 // 이미지설명 배열변수
-
+                let ialt = ["아이언맨","딱딱이","토르","닥스","스타로드"];
 
 
                 /////////////////////////////////////////////
@@ -234,11 +234,13 @@
                     let ne = document.createElement("li");
                     // createElement() 는 메모리상에 생성
 
-                    // 3. 이미지번호 랜덤
+                    // 3. 이미지번호 랜덤 : 1~5사이 랜덤수
+                    let rnum = Math.ceil(Math.random()*5);
+                    console.log("랜덤수:",rnum);
 
                     // 4. 메모리상에 생성된 li에 이미지넣기
                     ne.innerHTML =
-                    `<img src="images/ab1.jpg" alt="아이언맨">`;
+                    `<img src="images/ab${rnum}.jpg" alt="${ialt[rnum-1]}">`;
 
                     // 5. 새로운 li요소 title속성으로 툴팁넣기
 
