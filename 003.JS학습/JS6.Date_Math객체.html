@@ -222,9 +222,37 @@
             **************************************/
 
             // 예시난수
-            console.log("4~9사이의 난수:",
-            Math.ceil(Math.random()*6)+3);
+            // console.log("4~9사이의 난수:",
+            // Math.ceil(Math.random()*6)+3);
 
+
+            // 배열변수에 4개의 이미지 웹경로가 있다
+            // 이것을 랜덤하게 가져와서 .imbx 박스에
+            // 이미지태그로 넣어준다!
+
+            // 변경대상: .imbx
+            let imbx = document.querySelector(".imbx");
+
+            /***************************************** 
+                함수명: insImg
+                기능: 박스에 랜덤 이미지 넣기
+            *****************************************/
+           const insImg = () => {
+                // 1. 랜덤수 만들기 : 4개의 배열번호(0~3)
+                let rnum = Math.floor(Math.random()*4);
+                // 0부터니까 내림해준다! Math.floor()
+
+                console.log("랜덤수:",rnum);
+
+                // 2. 랜덤 이미지 넣기
+                // 대상: .imbx -> imbx변수
+                imbx.innerHTML =
+                `<img src="${rimg[rnum]}" alt="랜덤이미지">`;
+
+           }; /////////////// insImg 함수 /////////////
+
+           // 임시호출
+           window.addEventListener("click",insImg);
 
 
 
