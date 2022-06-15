@@ -68,10 +68,23 @@ function loadFn() {
     const abtn = document.querySelectorAll(".abtn");
     // console.log("이동버튼:",abtn);
 
+    // 광클금지용 변수
+    let prot = 0; // 0-허용, 1-금지
+
     // 버튼개수만큼 for of로 클릭이벤트설정
     for (let x of abtn) { // x는 a요소자신
 
         x.onclick = () => {
+
+            // console.log("광클막기:",prot);
+
+            ///////// 광클금지 /////////
+            if(prot) return; //돌아가! 
+            prot = 1; //잠금!
+            setTimeout(()=>prot=0,410);
+            // 타임아웃으로 슬라이드이동 후
+            // 잠금설정을 prot=0으로 해제
+            ////////////////////////////
 
             // 1. 오른쪽버튼 여부
             let isR = x.classList.contains("ab2");
