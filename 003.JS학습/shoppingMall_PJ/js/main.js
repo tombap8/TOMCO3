@@ -140,11 +140,26 @@ function loadFn() {
 
             // 첫번째 슬라이드 "data-seq"값을
             // 읽어와서 블릿순번에 적용하기!
+            // 주의: 오른쪽버튼은 [1], 왼쪽버튼은 [0]
+            // 즉, 오른쪽은 두번째li, 왼쪽은 첫번째li
+            // 오른쪽 버튼이면 isR 변수값이 true
+            // isR?1:0 -> 비?집:놀이동산 (조건연산자===삼항연산자)
+            // isR값이 true이면 1, 아니면 0
             let fseq = slide
-                .querySelectorAll("li")[0]
+                .querySelectorAll("li")[isR?1:0]
                 .getAttribute("data-seq");
+            // getAttribute(속성명) -> 속성값을 읽어옴!
+
+            // console.log("오른쪽/왼쪽다름:",isR?1:0);
+
+            // console.log("fseq값:",fseq);
+            // console.log("fseq값의 형:",typeof fseq);
 
             indic[fseq].classList.add("on");
+            // 원래는 fseq는 숫자값인데 숫자형이어야함
+            // 그래서 Number(fseq)로 형변환 해야했었음...
+            // 그런데 요즘 브라우저에서는 이런부분을 
+            // 형변환하지 않아도 숫자이면 숫자형으로 변환해줌~!
 
         }; /////// click ///////
 
