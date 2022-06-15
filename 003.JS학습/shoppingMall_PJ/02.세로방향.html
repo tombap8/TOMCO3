@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>JS - Slide Images 세로방향</title>
@@ -8,8 +9,24 @@
     <script src="js/main2.js"></script>
     <style>
         /* 플렉스 방향 변경 덮어쓰기 */
-        #slide{
+        #slide {
             flex-direction: column;
+        }
+
+        /* 이동버튼 배치 변경하기 */
+        .abtn {
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+        }
+        .ab1{/* 왼쪽버튼 */
+            top: -20px;
+        }
+        .ab2{/* 오른쪽버튼 */
+            bottom: -20px;
+
+            /* 기존값 해제 */
+            top: auto;
+            right: auto;
         }
     </style>
 </head>
@@ -62,12 +79,16 @@
         <aside><img src="images/index_03.jpg" width="467" height="564" alt="03"></aside>
         <!--하단영역-->
         <footer>
-            대표이사. So Hee Kim │ Business License. 130-86-24632 │ Mail-order Licenst. 제2014-서울마포-0835호 │ Personal info manager. Mi Ryung Oh [사업자정보확인]<br>
+            대표이사. So Hee Kim │ Business License. 130-86-24632 │ Mail-order Licenst. 제2014-서울마포-0835호 │ Personal info
+            manager. Mi Ryung Oh [사업자정보확인]<br>
 
-            Company. ㈜bebe │ Tel. 0502-707-8888 │ Fax. 02-335-5274 │ E-mail. nanda@stylenanda.com │ Address. 서울특별시 마포구 잔다리로 32 서문빌딩 2,3,4,6F<br>
+            Company. ㈜bebe │ Tel. 0502-707-8888 │ Fax. 02-335-5274 │ E-mail. nanda@stylenanda.com │ Address. 서울특별시 마포구
+            잔다리로 32 서문빌딩 2,3,4,6F<br>
 
             ⓒ 2017 NANDA All rights reserved. │ 개인정보취급방침 │ Terms of use │ Hosting by cafe24
 
         </footer>
     </section>
-</body></html>
+</body>
+
+</html>
