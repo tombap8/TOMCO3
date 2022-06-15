@@ -65,7 +65,7 @@ function loadFn() {
                 // 이동후 실행 -> 이동시간은 0.4초
                 // setTimeout(함수,시간) -> 일정시간후 한번실행!
                 setTimeout(() => {
-                    
+
                     // 2. 첫번째 li를 맨뒤로 이동
                     // 첫번째 li
                     let fli = slide.querySelectorAll("li")[0];
@@ -82,6 +82,18 @@ function loadFn() {
 
             } //////////// if //////////
             else { // 왼쪽버튼 ///////
+
+                // 1. 맨뒤 li 맨앞으로 이동
+                // li들
+                let lis = slide.querySelectorAll("li");
+                // insertBefore(넣을놈,넣을놈전놈)
+                // insertBefore(맨뒤li,맨앞li)
+                slide.insertBefore(lis[lis.length-1],lis[0]);
+                // lis[lis.length-1] 맨뒤li -> lis[개수-1]
+                // lis[0] 맨앞li
+
+                // 2. 동시에 left:-100%
+                slide.style.left = "-100%";
 
             } //////////// else /////////
 
