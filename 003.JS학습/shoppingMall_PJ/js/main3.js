@@ -37,11 +37,11 @@ function loadFn() {
     // 3. 변경 대상: 
     // (1) 슬라이드 박스 li(#slide li)
     const slide = document.querySelectorAll("#slide li");
-    console.log("슬라이드:", slide);
+    // console.log("슬라이드:", slide);
 
     // (2) 블릿박스 li(.indic li)
     const indic = document.querySelectorAll(".indic li");
-    console.log("블릿:", indic);
+    // console.log("블릿:", indic);
 
     // 4. 이동버튼에 클릭이벤트 설정
     // 이동버튼요소
@@ -68,16 +68,31 @@ function loadFn() {
 
             // 1. 오른쪽버튼 여부
             let isR = x.classList.contains("ab2");
-            console.log(".ab2인가?",isR);
+            // console.log(".ab2인가?",isR);
             // classList.contains(클래스명)
             // -> 지정클래스가 있으면 true리턴
 
+
             // 2. 오른쪽/왼쪽버튼 분기하기
             if (isR) { // 오른쪽버튼 ///
+                // 슬라이드 번호 증가
+                sno++;
+                if (sno === 5) sno = 0;
+
             } //////////// if //////////
             else { // 왼쪽버튼 ///////
-
+                // 슬라이드 번호 감소
+                sno--;
+                if (sno === -1) sno = 4;
             } //////////// else /////////
+
+            // 3. 초기화 //////
+            for (let y of slide)
+                y.classList.remove("on");
+
+            // 4. 해당순번에 class="on"
+            slide[sno].classList.add("on");
+
         }; /////// click ///////
 
     } /////////// for of //////////////
