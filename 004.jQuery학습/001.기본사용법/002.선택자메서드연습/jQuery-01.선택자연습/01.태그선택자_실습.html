@@ -80,11 +80,34 @@
       // 큰제목(h1) 배경색을 노란색,
       // 보더,글자크기,글자색을 모두 변경하시오!
 
-      $('header h2').click(()=>{
+      $('header h2').click(() => {
 
         $("h1").css({
-          backgroundColor: "yellow"
+          backgroundColor: "yellow",
+          border: "10px dotted blue",
+          fontSize: "70px",
+          transition: "2s"
         }); ////// css /////
+
+        // 추가미션: nav태그의 배경색은 녹색
+        // 테두리는 2px 빨간색 데쉬선, 글자크기 40px
+        // 글자색은 파란색, 트랜지션 4초 ease-in-out
+        $('nav').css({
+          backgroundColor: "green",
+          border: "2px dashed red",
+          fontSize: "40px",
+          color: "blue",
+          transition: "4s ease-in-out"
+        }); ////////// css ////////
+
+        // 추가미션: nav li에 보더 dotted lime색 10px넣기
+        $("nav li").css({
+          border: "10px dotted lime"
+        }); /////// css ////////
+
+        // 제이쿼리는 여러개의 요소를 선택시
+        // for문 없이도 자동으로 모두 셋팅함!
+
 
       }); /////////// click /////////
 
