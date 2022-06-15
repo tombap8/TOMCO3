@@ -41,9 +41,14 @@ function loadFn() {
     // 1. 호출확인
     // console.log("로딩완료!");
 
-    // 2. 변경 대상: 슬라이드 박스(#slide)
+    // 2. 변경 대상: 
+    // (1) 슬라이드 박스(#slide)
     const slide = document.querySelector("#slide");
     // console.log("슬라이드:",slide);
+
+    // (2) 블릿박스 li(.indic li)
+    const indic = document.querySelectorAll(".indic li");
+    // console.log("블릿:",indic);
 
     // 2.5. 변경 대상 li에 순번 속성넣기!
     // -> 넣는 이유: li가 이동하여 순서가 바뀌므로
@@ -129,8 +134,17 @@ function loadFn() {
             } //////////// else /////////
 
             // 4. 공통기능 : 블릿변경하기
+            // 블릿 class="on" 지우기 초기화
+            for (let x of indic)
+                x.classList.remove("on");
 
+            // 첫번째 슬라이드 "data-seq"값을
+            // 읽어와서 블릿순번에 적용하기!
+            let fseq = slide
+                .querySelectorAll("li")[0]
+                .getAttribute("data-seq");
 
+            indic[fseq].classList.add("on");
 
         }; /////// click ///////
 
