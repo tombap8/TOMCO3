@@ -31,7 +31,7 @@ function loadFn() {
     // 1. 호출확인
     // console.log("로딩완료!");
 
-    // 2. 전체 슬라이드 번호변수
+    // 2. 전체 슬라이드 순번변수
     let sno = 0; // 첫슬라이드번호
 
     // 3. 변경 대상: 
@@ -61,7 +61,7 @@ function loadFn() {
             ///////// 광클금지 /////////
             if (prot) return; //돌아가! 
             prot = 1; //잠금!
-            setTimeout(() => prot = 0, 410);
+            setTimeout(() => prot = 0, 600);
             // 타임아웃으로 슬라이드이동 후
             // 잠금설정을 prot=0으로 해제
             ////////////////////////////
@@ -86,12 +86,21 @@ function loadFn() {
                 if (sno === -1) sno = 4;
             } //////////// else /////////
 
+            // console.log("슬번:",sno);
+
             // 3. 초기화 //////
             for (let y of slide)
                 y.classList.remove("on");
 
-            // 4. 해당순번에 class="on"
+            // 4. 해당순번 슬라이드li에 class="on"
             slide[sno].classList.add("on");
+
+            // 5. 블릿 초기화 /////
+            for(let z of indic)
+                z.classList.remove("on");
+
+            // 6. 해당순번 블릿li에 class="on"
+            indic[sno].classList.add("on");
 
         }; /////// click ///////
 
