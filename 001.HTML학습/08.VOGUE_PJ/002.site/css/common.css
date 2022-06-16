@@ -166,6 +166,15 @@
     padding-top: 12px;
 }
 
+/* GNB a링크 트랜지션 */
+.gnb a{
+    transition: color .2s linear;
+}
+/* 오버시 a요소 */
+.gnb a:hover{
+    color: red;
+}
+
 /***************** 2. 하단영역 *****************/
 .info{
     height: 285px;
