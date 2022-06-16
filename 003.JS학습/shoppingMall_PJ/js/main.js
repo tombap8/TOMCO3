@@ -141,7 +141,7 @@ function loadFn() {
         함수명: goIndic
         기능: 블릿 표시자 작동하기
     *****************************************/
-    const goIndic = 헐 => { // 헐 : 오른쪽 1, 왼쪽 0
+    const goIndic = isR => { // isR : 오른쪽 1, 왼쪽 0
 
         // [ 공통기능 : 블릿변경하기 ]
 
@@ -157,7 +157,7 @@ function loadFn() {
         // isR?1:0 -> 비?집:놀이동산 (조건연산자===삼항연산자)
         // isR값이 true이면 1, 아니면 0
         let fseq = slide
-            .querySelectorAll("li")[헐 ? 1 : 0]
+            .querySelectorAll("li")[isR ? 1 : 0]
             .getAttribute("data-seq");
         // getAttribute(속성명) -> 속성값을 읽어옴!
 
