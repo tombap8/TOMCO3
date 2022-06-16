@@ -66,6 +66,9 @@ function loadFn() {
             // 잠금설정을 prot=0으로 해제
             ////////////////////////////
 
+            // 인터발 지우기 함수 호출!
+            clearAuto();
+
             // 1. 오른쪽버튼 여부
             let isR = x.classList.contains("ab2");
             // console.log(".ab2인가?",isR);
@@ -119,6 +122,41 @@ function loadFn() {
     }; ////////////// goSlide 함수 /////////////
     ////////////////////////////////////////////
 
+    // 인터발용변수
+    let autoI;
 
+    // 인터발 셋팅 함수 //////////////
+    const autoCall = () =>
+        autoI = setInterval(()=>{
+            // 슬라이드 번호 증가
+            sno++;
+            if (sno === 5) sno = 0;
+            // 슬라이드 변경함수 호출!
+            goSlide();
+        }, 2000);
+
+    // 인터발 셋팅 함수 최초호출!
+    autoCall();
+
+    // 타임아웃용 변수
+    let autoT;
+
+    // 인터발 지우기 함수 /////////////
+    const clearAuto = () => {
+        console.log("인터발지움!");
+
+        // 인터발지우기
+        clearInterval(autoI);
+
+        // 타임아웃지우기(실행쓰나미방지!)
+        clearTimeout(autoT);
+
+        // 일정시간후 인터발셋팅(4초후)
+        autoT = setTimeout(autoCall, 4000);
+        // 매번 타임아웃을 변수에 담고 먼저 지우기 때문에
+        // 최종적으로 남는 타임아웃은 하나뿐이다!
+        // 따라서 타임아웃 실행 쓰나미가 발생하지 않는다!
+
+    }; ///////// clearAuto 함수 ///////
 
 } /////////////// loadFn 함수 //////////////
