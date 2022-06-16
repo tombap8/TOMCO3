@@ -34,6 +34,13 @@
     /* 위치조정 */
     margin-top: 14px;
     margin-right: 17px;
+
+    /* 트랜지션: 속시이지 */
+    transition: opacity .2s;
+}
+/* a요소 오버시 */
+.sns a:hover{
+    opacity: .8;
 }
 /* 트위터 아이콘 조정 */
 .sns a.fi-twitter{
@@ -78,6 +85,14 @@
 .smbx>li:first-child{
     border-right: 1px solid #e5e5e5;
 }
+/* 첫번째 사이드 메뉴 마우스 오버시 커서모양 */
+.smbx>li:first-child>a{
+    cursor: auto;
+    /* 자동은 글자는 I모양,일반은 화살표로 나옴! */
+    /* 
+    참고) CSS커서모양종류:
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+}
 
 /* 사이드 메뉴 서브박스 */
 .smsub{
@@ -119,6 +134,7 @@
 /* 1-2. 로고박스 */
 .logo{
     text-align: center;
+    margin-bottom: 11px;
 }
 /* 1-3. GNB박스 */
 .gnb{
@@ -144,6 +160,7 @@
 /* 마지막 li의 a 돋보기 */
 .gnb li:last-child a{
     font-weight: bold;
+    padding-top: 12px;
 }
 
 /***************** 2. 하단영역 *****************/
