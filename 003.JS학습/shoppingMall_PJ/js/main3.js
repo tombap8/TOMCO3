@@ -88,23 +88,36 @@ function loadFn() {
 
             // console.log("슬번:",sno);
 
-            // 3. 초기화 //////
-            for (let y of slide)
-                y.classList.remove("on");
+            // 3. 슬라이드 + 블릿 변경함수 호출!
+            goSlide();
 
-            // 4. 해당순번 슬라이드li에 class="on"
-            slide[sno].classList.add("on");
-
-            // 5. 블릿 초기화 /////
-            for(let z of indic)
-                z.classList.remove("on");
-
-            // 6. 해당순번 블릿li에 class="on"
-            indic[sno].classList.add("on");
 
         }; /////// click ///////
 
     } /////////// for of //////////////
+
+    /*************************************** 
+        함수명: goSlide
+        기능: 슬라이드 변경하기
+    ***************************************/
+    const goSlide = () => {
+
+        // 1. 슬라이드 초기화 //////
+        for (let y of slide)
+            y.classList.remove("on");
+
+        // 2. 해당순번 슬라이드li에 class="on"
+        slide[sno].classList.add("on");
+
+        // 3. 블릿 초기화 /////
+        for (let z of indic)
+            z.classList.remove("on");
+
+        // 4. 해당순번 블릿li에 class="on"
+        indic[sno].classList.add("on");
+
+    }; ////////////// goSlide 함수 /////////////
+    ////////////////////////////////////////////
 
 
 
