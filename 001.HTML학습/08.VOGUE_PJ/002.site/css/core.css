@@ -159,7 +159,7 @@ font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
   color: #fff;
 
-  font-size: min(33px,2.6vw);
+  padding: min(50px,1.4vw);
   /* min()을 사용하여 작은크기선택으로
   최대 패딩크기를 제한함! */
 
