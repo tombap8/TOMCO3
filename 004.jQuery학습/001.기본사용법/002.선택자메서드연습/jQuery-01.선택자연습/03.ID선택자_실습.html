@@ -42,10 +42,17 @@
                   transition: ".8s 1s"
             }); //////// css /////////////
 
-
             // 아이디가 #total 는 글자를 "싸랑해요~!"로 바꾸고
             // 배경검정, 글자색빨강,보더2px solid purple,
             // 글자크기 152px, 트랜지션 0.8초 -> 2초후
+            $('#total').text("싸랑해요~!")
+            .css({
+                  backgroundColor: "black",
+                  color: "red",
+                  border: "2px solid purple",
+                  fontSize: "152px",
+                  transition:".8s 2s"
+            }); ////////// css ///////////
 
       }); ///////// click /////////
 
