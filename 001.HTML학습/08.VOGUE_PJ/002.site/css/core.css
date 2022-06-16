@@ -117,6 +117,31 @@ font-family: 'Roboto Condensed', sans-serif;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.878),rgba(0, 0, 0, 0));
 }
 
+/* 컨텐츠박스 가상요소로 보더애니 구현 */
+.cbx::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* 나의 부모? .cbx */
+
+  /* 크기유지박스 - 보더포함 */
+  box-sizing: border-box;
+  /* 보더설정 */
+  border: 0px solid red;
+  /* 손가락모양 */
+  cursor: pointer;
+  /* 트랜지션: 속시이지 */
+  transition: border .2s ease-in;
+}
+/* .cbx에 마우스 오버시 보더애니 */
+.cbx:hover::after{
+  border: 20px solid red;
+}
+
 /* 컨텐츠 타이틀박스 */
 .cbx h2{
   position: absolute;
