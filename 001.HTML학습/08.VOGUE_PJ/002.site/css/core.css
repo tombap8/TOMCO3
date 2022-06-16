@@ -152,12 +152,17 @@ font-family: 'Roboto Condensed', sans-serif;
   /* 글자설정 */
   font-family: pist,nbg;
   /* 웹폰트 영문체(Pistilli), 한글체(나눔바른고딕) */
-  font-size: 33px;
+  font-size: min(33px,3vw);
+  /* min()을 사용하여 작은크기선택으로
+  최대 글자크기를 제한함! */
   font-weight: normal;
   text-align: center;
   color: #fff;
 
-  padding: 50px;
+  font-size: min(33px,2.6vw);
+  /* min()을 사용하여 작은크기선택으로
+  최대 패딩크기를 제한함! */
+
   /* 박스크기유지 - 패딩포함 */
   box-sizing: border-box;
 }
