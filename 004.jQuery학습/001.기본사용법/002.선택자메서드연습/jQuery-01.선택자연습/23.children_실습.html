@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title> children </title>
-<!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
-<script>
-  /* 
+  <meta charset="utf-8">
+  <title> children </title>
+  <!-- jQuery library -->
+  <script src="jquery-1.7.2.min.js"></script>
+  <script>
+    /* 
     [ 탐색기능(Traversing:트래버싱) ]
 
     - 선택자 필터링이 끝난 후 내부에서 다시 한번 선택할 수 있는 
@@ -23,39 +24,80 @@
     1. children(선택요소)
     -> 선택요소의 직계자식요소를 선택하는 트래버싱 메서드
     */
-	
-	// 미션: #container를 클릭하면
-  
 
-    // 직계자식인 p태그를 찾아서 배경색을 노란색으로 바꾸고
-    
-    
-    // 동시에 직계자식인 div 를 찾아서  배경색을 빨간색으로 변경하시오.
-    
-</script>
+    $(() => { //////////// jQB ///////////////////
 
-<style>
-  div, p {float:left;margin:10px; background-color:#FFF;}
-  div#sub { width:80px; height:80px; border:#000 thin solid;}
-  p { width:50px; height:50px; border:#000 thin solid;}
-</style>
+      // 미션: #container를 클릭하면
+      $('#container').click(() => {
+      // $('#container').click(function(){
+
+        console.log("this의미:", this);
+        // this가 화살표함수 안에서는 window
+        // this가 익명함수 안에서는 이벤트요소
+        // 그.래.서...
+        // 화살표 함수일때는 
+        // event.currentTarget 을 사용해야함
+
+
+        // 직계자식인 p태그를 찾아서 배경색을 노란색으로 바꾸고
+        // $(this)
+        $(event.currentTarget)
+        .children('p').css({
+          backgroundColor: "yellow"
+        }); /////// css ////////////
+
+        // $(this) 
+        // -> 나자신 (클릭이벤트 설정요소)
+
+
+        // 동시에 직계자식인 div 를 찾아서  배경색을 빨간색으로 변경하시오.
+
+
+      }); ////////// click /////////////
+
+
+    }); //////////////// jQB ///////////////////
+  </script>
+
+  <style>
+    div,
+    p {
+      float: left;
+      margin: 10px;
+      background-color: #FFF;
+    }
+
+    div#sub {
+      width: 80px;
+      height: 80px;
+      border: #000 thin solid;
+    }
+
+    p {
+      width: 50px;
+      height: 50px;
+      border: #000 thin solid;
+    }
+  </style>
 </head>
-<body>
-<div id="container">
 
-    <div id = "sub">
+<body>
+  <div id="container">
+
+    <div id="sub">
       <p>div p</p>
     </div>
     <p>p</p>
     <p>p</p>
 
-</div>
+  </div>
 
-<!---------- jQuery code Start ---------->
-<script>
+  <!---------- jQuery code Start ---------->
+  <script>
 
 
-</script>
+  </script>
 
 </body>
+
 </html>
