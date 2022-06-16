@@ -29,11 +29,18 @@
                   fontSize: "42px",
                   transition: ".8s"
             }); /////// css //////
-
             
             // 아이디가 #main 는 글자를 "공유"로 바꾸고
             // 배경파랑, 글자색흰색,보더3px solid yellow,
             // 글자크기 52px, 트랜지션 0.8초 -> 1초후
+            $('#main').text("공유")
+            .css({
+                  backgroundColor: "blue",
+                  color: "white",
+                  border: "3px solid yellow",
+                  fontSize: "52px",
+                  transition: ".8s 1s"
+            }); //////// css /////////////
 
 
             // 아이디가 #total 는 글자를 "싸랑해요~!"로 바꾸고
