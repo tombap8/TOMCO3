@@ -51,6 +51,11 @@
 
 
         // 동시에 직계자식인 div 를 찾아서  배경색을 빨간색으로 변경하시오.
+        $(event.currentTarget)
+        .children('div').css({
+          backgroundColor: "red"
+        }); ////////// css //////////
+
 
 
       }); ////////// click /////////////
