@@ -8,6 +8,7 @@
   <script src="jquery-1.7.2.min.js"></script>
   <script>
     $(document).ready(function (e) {
+
       /* 
         find(선택요소) 
         -> 선택자 하위요소 중 자손요소를 모두 찾음
@@ -16,6 +17,13 @@
 
       // 미션: #container를 클릭하면 p태그를 모두 찾아서 
       //  배경 이미지를 넣으시오.
+      // $('#container').click(()=>{
+      $('#container').click(function(){
+        // $(event.currentTarget)
+        $(this).find('p').css({
+          background:"url(https://file.mk.co.kr/mkde/N0/2019/08/20190822_4206133_1566448073.jpeg) no-repeat center/cover"
+        })
+      }); //////// click /////////
      
       
 
