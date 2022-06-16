@@ -139,7 +139,8 @@ font-family: 'Roboto Condensed', sans-serif;
 }
 /* .cbx에 마우스 오버시 보더애니 */
 .cbx:hover::after{
-  border: 20px solid red;
+  border: min(20px,1.6vw) solid red;
+  /* min()으로 최대 보더크기 제한 */
 }
 
 /* 컨텐츠 타이틀박스 */

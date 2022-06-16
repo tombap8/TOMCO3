@@ -105,6 +105,7 @@
     opacity: 0;
     height: 0;
     overflow: hidden;
+    background-color: #fff;
 }
 /* 상위메뉴 li에 오버시 하위메뉴 보이기 */
 .smbx>li:hover .smsub{
