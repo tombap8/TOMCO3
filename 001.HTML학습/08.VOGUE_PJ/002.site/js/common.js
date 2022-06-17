@@ -66,7 +66,7 @@ window.addEventListener('scroll', () => {
     // 변경사항: .tbtn에 클래스 "on"넣기
     if (scTop >= 300) 
         tbtn.classList.add("on");
-    // 100px미만일 경우 클래스 "on" 제거
+    // 300px미만일 경우 클래스 "on" 제거
     else 
         tbtn.classList.remove("on");
 
