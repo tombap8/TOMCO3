@@ -72,10 +72,14 @@ window.addEventListener("DOMContentLoaded", () => {
 *************************************************/
 function scAction(seq) { // seq - 순번
 
+    // console.log("체크:",seq);
+
     // 해당범위이면 해당순번의 등장요소에 class="on"
     if (scTop >= scPos[seq] - winH &&
-        scTop < scPos[seq])
-        scAct[seq].classList.add("on");
+        scTop < scPos[seq]) {
+            scAct[seq].classList.add("on");
+            // console.log("적용:",seq);
+        } ////////// if /////////////
 
 } ////////////// scAction 함수 ///////////////////
 //////////////////////////////////////////////////
@@ -92,7 +96,7 @@ window.addEventListener('scroll', () => {
 
     // 스크롤 위치표시
     scTop = this.scrollY;
-    console.log("스위:", scTop);
+    // console.log("스위:", scTop);
     // scrollY - 세로축 스크롤 위치값 리턴
     // this는 화살표함수에서 window객체임!
     // console.log("this의미:",this);
