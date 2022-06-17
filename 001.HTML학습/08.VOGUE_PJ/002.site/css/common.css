@@ -183,8 +183,19 @@
 /* 슬림 상단 디자인 변경 */
 /* #top 최상위 박스에 class="on"을 줘서 적용 */
 
+#top.on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
 /* 속박스 */
 #top.on .top{
+    /* .ibx의 최대가로값 1300px을 해제함!
+    - 기본적으로 block 박스는 끝까지 차지함! */
+    max-width: none;
     min-height: 50px;
 }
 /* 상단메뉴 숨기기 */
@@ -193,14 +204,31 @@
 }
 /* 로고박스 */
 #top.on .logo{
-    position: absolute;
-    left: 0;
+    width: 100px;
+    float: left;
     padding: 10px;
     margin-bottom: 0;
 }
 /* 로고이미지 */
 #top.on .logo img{
     width: 100px;
+}
+/* GNB메뉴 */
+#top.on .gnb {
+    font-size: 14px;
+    padding: 5px 0 3px;
+}
+/* GNB 플렉스ul - 왼쪽여백조정 */
+#top.on .gnb>ul {
+    padding-left: 6px;
+}
+/* GNB 리스트 */
+#top.on .gnb li {
+    padding-right: 35px;
+}
+/* GNB a링크 */
+#top.on .gnb a {
+    color: #333;
 }
 
 
