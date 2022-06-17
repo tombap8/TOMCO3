@@ -16,6 +16,33 @@ window.addEventListener("DOMContentLoaded", () => {
     // 위로가기버튼 대상선정: .tbtn
     tbtn = document.querySelector(".tbtn");
 
+    // 메인 컨텐츠박스 스크롤 등장액션 클래스 적용하기
+    let contbx = document.querySelectorAll(".cont>section");
+    contbx.forEach((ele,idx)=>{ // ele - 요소자신, idx - 요소순번
+        if(idx!==0) ele.classList.add("scAct");
+    }); //////// forEach ////////////
+    // for(let x of contbx) x.classList.add("scAct");
+
+    /********************************************** 
+        [ HTML 컬렉션에서 forEach() 메서드 사용하기 ]
+        -> 원래 배열에서 사용되는 forEach가 유명함!^^
+        
+        컬렉션변수.forEach((요소자신,요소순번)=>{코드})
+
+        -> 컬렉션 변수에 담겨진 요소를 하나씩 자동을 돌아줌
+        -> 이때 2가지의 전달값이 함수내부에 전달된다
+        -> 전달값은 순서대로 요소자신, 요소순번이다
+        -> 요소순번은 0부터다!
+
+        -> 본인이 원하는 변수명을 사용한다.
+
+        예)
+        컬렉션변수.forEach((ele,idx)=>{코드})
+        ele -> element 요소
+        idx -> index 순번
+
+    **********************************************/
+
 
 }); ///////////// 로드구역 ///////////////////////
 
