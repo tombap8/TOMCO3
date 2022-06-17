@@ -59,7 +59,7 @@ function loadFn() {
             // console.log("광클막기:",prot);
 
             ///////// 광클금지 /////////
-            if (prot) return; //돌아가! 
+            if (prot) return false; //돌아가! 
             prot = 1; //잠금!
             setTimeout(() => prot = 0, 600);
             // 타임아웃으로 슬라이드이동 후
@@ -93,7 +93,10 @@ function loadFn() {
 
             // 3. 슬라이드 + 블릿 변경함수 호출!
             goSlide();
+            
 
+            // a요소 기본이동막기
+            return false;
 
         }; /////// click ///////
 
