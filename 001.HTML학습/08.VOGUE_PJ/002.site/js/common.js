@@ -4,11 +4,17 @@
 let scTop;
 // 슬림상단메뉴 대상: #top
 let slimTop;
+// 위로가기 버튼 대상: .tbtn
+let tbtn;
 
 ///////////////// 로드구역 ////////////////////////
 window.addEventListener("DOMContentLoaded", () => {
+
     // 슬림상단메뉴 대상선정: #top
     slimTop = document.querySelector("#top");
+
+    // 위로가기버튼 대상선정: .tbtn
+    tbtn = document.querySelector(".tbtn");
 
 
 }); ///////////// 로드구역 ///////////////////////
@@ -50,6 +56,19 @@ window.addEventListener('scroll', () => {
     // 100px미만일 경우 클래스 "on" 제거
     else 
         slimTop.classList.remove("on");
+
+
+    ////////////////////////////////////
+    /////// 위로가기 버튼 보이기 ////////
+    ////////////////////////////////////
+
+    // 1. 스크롤 위치가 300px 이상일때
+    // 변경사항: .tbtn에 클래스 "on"넣기
+    if (scTop >= 300) 
+        tbtn.classList.add("on");
+    // 100px미만일 경우 클래스 "on" 제거
+    else 
+        tbtn.classList.remove("on");
 
 
 }); ///////////// scroll //////////////////
