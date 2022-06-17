@@ -6,6 +6,8 @@ let scTop;
 let slimTop;
 // 위로가기 버튼 대상: .tbtn
 let tbtn;
+// 등장액션 대상: .scAct
+let scAct;
 
 ///////////////// 로드구역 ////////////////////////
 window.addEventListener("DOMContentLoaded", () => {
@@ -42,6 +44,9 @@ window.addEventListener("DOMContentLoaded", () => {
         idx -> index 순번
 
     **********************************************/
+
+        // 등장액션 요소
+        scAct = document.querySelectorAll(".scAct");
 
 
 }); ///////////// 로드구역 ///////////////////////
@@ -96,6 +101,17 @@ window.addEventListener('scroll', () => {
     // 300px미만일 경우 클래스 "on" 제거
     else 
         tbtn.classList.remove("on");
+
+
+        
+    //////////////////////////////////////////
+    /////// 컨텐츠 박스 등장 클래스주기 ////////
+    //////////////////////////////////////////
+    if(scTop >= 400)
+        scAct[0].classList.add("on");
+
+
+
 
 
 }); ///////////// scroll //////////////////
