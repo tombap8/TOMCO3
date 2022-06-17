@@ -8,6 +8,10 @@ let slimTop;
 let tbtn;
 // 등장액션 대상: .scAct
 let scAct;
+// 등장액션 대상위치(배열변수)
+const scPos = [];
+// 화면높이값 기준 등장액션 위치 보정변수 (화면높이의 2/3)
+const winH = window.innerHeight / 3 * 2
 
 ///////////////// 로드구역 ////////////////////////
 window.addEventListener("DOMContentLoaded", () => {
@@ -20,8 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 메인 컨텐츠박스 스크롤 등장액션 클래스 적용하기
     let contbx = document.querySelectorAll(".cont>section");
-    contbx.forEach((ele,idx)=>{ // ele - 요소자신, idx - 요소순번
-        if(idx!==0) ele.classList.add("scAct");
+    contbx.forEach((ele, idx) => { // ele - 요소자신, idx - 요소순번
+        if (idx !== 0) ele.classList.add("scAct");
     }); //////// forEach ////////////
     // for(let x of contbx) x.classList.add("scAct");
 
@@ -45,11 +49,38 @@ window.addEventListener("DOMContentLoaded", () => {
 
     **********************************************/
 
-        // 등장액션 요소
-        scAct = document.querySelectorAll(".scAct");
+    // 등장액션 요소
+    scAct = document.querySelectorAll(".scAct");
+
+    // 등장액션 요소의 위치값 저장하기
+    scAct.forEach((ele, idx) => { // ele-요소자신,idx-순번
+        // console.log("scAct위치:",ele.offsetTop);
+
+        // 전역배열변수에 위치값 저장함!
+        scPos[idx] = ele.offsetTop;
+    }); ///////// forEach ///////////
+
+    // 위치배열변수 확인
+    console.log(scPos);
 
 
 }); ///////////// 로드구역 ///////////////////////
+
+/************************************************* 
+    함수명: scAction
+    기능: 스크롤 등장액션 구간별 클래스 주기!
+*************************************************/
+function scAction(seq) { // seq - 순번
+
+    // 해당범위이면 해당순번의 등장요소에 class="on"
+    if (scTop >= scPos[seq] - winH &&
+        scTop < scPos[seq])
+        scAct[seq].classList.add("on");
+
+} ////////////// scAction 함수 ///////////////////
+//////////////////////////////////////////////////
+
+
 
 /***************************************** 
     [ 윈도우 스크롤 이벤트 함수 ]
@@ -83,10 +114,10 @@ window.addEventListener('scroll', () => {
 
     // 1. 스크롤 위치가 100px 이상일때
     // 변경사항: #top에 클래스 "on"넣기
-    if (scTop >= 100) 
+    if (scTop >= 100)
         slimTop.classList.add("on");
     // 100px미만일 경우 클래스 "on" 제거
-    else 
+    else
         slimTop.classList.remove("on");
 
 
@@ -96,21 +127,21 @@ window.addEventListener('scroll', () => {
 
     // 1. 스크롤 위치가 300px 이상일때
     // 변경사항: .tbtn에 클래스 "on"넣기
-    if (scTop >= 300) 
+    if (scTop >= 300)
         tbtn.classList.add("on");
     // 300px미만일 경우 클래스 "on" 제거
-    else 
+    else
         tbtn.classList.remove("on");
 
 
-        
+
     //////////////////////////////////////////
     /////// 컨텐츠 박스 등장 클래스주기 ////////
     //////////////////////////////////////////
-    if(scTop >= 400)
-        scAct[0].classList.add("on");
 
-
+    // 스크롤시 등장요소 위치값 개수 만큼 scAction함수 호출!
+    scPos.forEach((val, idx) => scAction(idx));
+    // 배열변수.forEach((배열값,순번)=>{구현코드})
 
 
 
