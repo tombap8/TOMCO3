@@ -16,11 +16,28 @@ const winH = window.innerHeight / 3 * 2
 ///////////////// 로드구역 ////////////////////////
 window.addEventListener("DOMContentLoaded", () => {
 
+    // 부드러운 스크롤 호출!
+    startSS();
+
     // 슬림상단메뉴 대상선정: #top
     slimTop = document.querySelector("#top");
 
     // 위로가기버튼 대상선정: .tbtn
     tbtn = document.querySelector(".tbtn");
+
+    // 위로가기버튼 클릭시 -> 제이쿼리로 부드러운 이동!
+    // 부드러운 스크롤 변수 pos업데이트!
+    $(".tbtn").click(()=>{
+        // 제이쿼리 스크롤 애니메이션
+        // animate({CSS속성변경},시간)
+        $("html,body").animate({
+            scrollTop: "0"
+        }, 300); //// animate ////
+
+        // 부드러운 스크롤 위치값 업데이트!
+        pos = 0;
+    }); ////////////// click /////////////
+    
 
     // 메인 컨텐츠박스 스크롤 등장액션 클래스 적용하기
     let contbx = document.querySelectorAll(".cont>section");
