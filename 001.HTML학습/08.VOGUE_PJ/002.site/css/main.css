@@ -7,9 +7,9 @@
 @import url(common.css);
 
 /* 공사중 박스표시 */
-body *{
+/* body *{
     outline: 1px dashed gray;
-}
+} */
 
 /* 개별 배경이미지 */
 /* 1번 - 1개 */
