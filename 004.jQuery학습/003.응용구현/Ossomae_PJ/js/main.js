@@ -1,9 +1,37 @@
 // 옷소매 갤러리 JS - main.js
 
 ///////////////// 로딩구역 ///////////////////////
-window.addEventListener("DOMContentLoaded",()=>{
+$(()=>{
 
     console.log("로딩완료!");
+
+    // 변경대상: .gbx
+    const gbx = $(".gbx");
+
+    // 오른쪽 버튼 클릭시 기능구현 /////
+    $(".rb").click(()=>{
+        console.log("오른쪽!");
+        // 기능: .gbx의 하위div 중 
+        // 첫번째 div를 맨뒤로 이동
+        // JS에서 맨뒤추가(이동) appendChild()
+        // 제이쿼리는 append()를 사용!
+        gbx.append(gbx.find('div').first());
+        // find() 는 하위자손요소 선택
+        // first() 선택요소중 첫번째
+
+    }); //////////// click ////////////
+
+    // 왼쪽 버튼 클릭시 기능구현 /////
+    $(".lb").click(()=>{
+        console.log("왼쪽!");
+        // 기능: .gbx의 하위div 중 
+        // 마지막째 div를 맨앞으로 이동
+        // JS에서 맨앞추가(이동) insertBefore(놈,놈놈)
+        // 제이쿼리는 prepend()를 사용!
+        gbx.prepend(gbx.find('div').last());
+        // find() 는 하위자손요소 선택
+        // last() 선택요소중 마지막째
+    }); //////////// click ////////////
 
 }); ///////////// 로딩구역 //////////////////////
 /////////////////////////////////////////////////
