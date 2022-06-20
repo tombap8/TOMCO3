@@ -315,6 +315,7 @@ function loadFn() {
                     .fadeIn(200) // 메시지 나타나기
                     .delay(1000)
                     .fadeOut(100, () => {
+
                         // 2. 메시지 다시 변경하기
                         msg.html("그래도 무서우니까<br>윗층으로 가자!")
                             .fadeIn(200); // 메시지 다시 나타나기
@@ -342,6 +343,24 @@ function loadFn() {
 
             // 콜백함수 : 이동후 실행함수 //////
             let callFn = () => {
+
+                // 1. 메시지 변경
+                msg.empty() // 선택요소 텍스트 지우기
+                    .fadeIn(200, () => msg.text("무"))
+                    .delay(500)
+                    .fadeIn(200, () => msg.text("무."))
+                    .delay(500)
+                    .fadeIn(200, () => msg.text("무.서"))
+                    .delay(500)
+                    .fadeIn(200, () => msg.text("무.서."))
+                    .delay(500)
+                    .fadeIn(200, () => msg.text("무.서.워"))
+                    .delay(500)
+                    .fadeIn(200, () => msg.text("무.서.워."))
+                    .delay(500)
+                    .fadeIn(200, () => msg.text("무.서.워.."))
+                    .delay(500)
+                    .fadeIn(200, () => msg.text("무.서.워..."))
 
                 // this는 현재버튼요소
                 // console.log("this의미:", this);
