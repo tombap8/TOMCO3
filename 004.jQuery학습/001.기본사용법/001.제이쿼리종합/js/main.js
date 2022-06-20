@@ -362,14 +362,67 @@ function loadFn() {
                     .fadeIn(200, () => msg.text("무.서.워.."))
                     .delay(500)
                     .fadeIn(200, () => msg.text("무.서.워..."))
+                    .delay(500)
+                    .fadeIn(200, () => {
 
-                // this는 현재버튼요소
-                // console.log("this의미:", this);
+                        // 2. 좀비 달려오기
 
-                // 2. 다음버튼 보이기
-                $(this).next().delay(500).slideDown(300);
-                // delay(시간)
-                // -> 애니메이션 메서드 앞에 사용!
+                        // -> 7번방 좀비: bd.eq(7).find(".mz")
+                        let tg = bd.eq(7);
+
+                        // 7번방 좀비가...
+                        tg.find(".mz")
+                            // 2-1. 윗층으로 올라오기 (0.5초)
+                            .animate({
+                                bottom: tg.height() + "px"
+                            }, 500, "easeOutBack")
+                            // 2-2. 주인공에게 달려오기 (2초간)
+                            .animate({
+                                    right: tg.width() * 1.2 + "px"
+                                }, 2000, "easeOutBounce",
+                                () => { // 콜백함수 - 물린후...
+                                    // 3. 주인공 사색되기(흑백처리)
+                                    mi.css({
+                                        filter: "grayscale(100%)"
+                                    });
+                                    // 4. 메시지 지우기
+                                    msg.hide();
+
+                                    // 5. 2초후 좀비되기
+                                    setTimeout(() => {
+                                        // 5-1. 좀비 이미지변경
+                                        mi.find("img")
+                                            .attr("src", "images/mz1.png");
+                                        // attr(속성명,속성값)
+                                        // -> 속성값 변경 메서드
+                                        // 비교) JS의 setAttribute()
+                                        // 참고) 속성값 가져오기는
+                                        // -> attr(속성명)
+                                        // 비교) JS의 getAttribute()
+
+                                        // 5-2. 좀비 메시지
+                                        msg.html("나도좀비!;;;<br>어서치료주사를!")
+                                            .css({
+                                                left: "100%"
+                                            }) // 메시지 위치변경
+                                            .fadeIn(400); // 메시지 보이기
+
+                                            // this는 현재버튼요소
+                                            // console.log("this의미:", this);
+                            
+                                            // 6. 다음버튼 보이기
+                                            $(this).next().delay(500).slideDown(300);
+                                            // delay(시간)
+                                            // -> 애니메이션 메서드 앞에 사용!
+
+                                    }, 2000); //// 타임아웃 //////////
+
+
+
+                                }); /////////// animate ///////////
+
+                    }); ////////////// fadeIn //////////////////////
+
 
             }; /////////// callFn함수 ///////
 
