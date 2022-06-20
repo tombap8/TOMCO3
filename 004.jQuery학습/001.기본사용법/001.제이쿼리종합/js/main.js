@@ -322,7 +322,7 @@ function loadFn() {
                         // this는 현재버튼요소
                         // console.log("this의미:", this);
 
-                        // 2. 다음버튼 보이기
+                        // 3. 다음버튼 보이기
                         $(this).next().delay(500).slideDown(300);
                         // delay(시간)
                         // -> 애니메이션 메서드 앞에 사용!
