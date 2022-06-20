@@ -44,7 +44,7 @@ function loadFn() {
 
     // 미니언즈 left 위치 보정값
     // 빌딩 li크기의 절반 - 미니언즈크기절반
-    const addL = bd.eq(0).width()/2 - mi.width()/2;
+    const addL = bd.eq(0).width() / 2 - mi.width() / 2;
     // console.log("미니언즈 위치조정값:", addL);
     // console.log("빌딩li가로:", bd.eq(0).width()/2);
     // console.log("미니언즈가로절반:", mi.width()/2);
@@ -122,11 +122,16 @@ function loadFn() {
         3. 버튼별 클릭 이벤트 함수 만들기
     *************************************/
 
-    // 3-1. "들어가기" 버튼 클릭 시작 ////////
-    btns.first().click(function () {
+    ///////////////////////////////////////
+    /////// 버튼 클릭시 공통 기능함수 //////
+    //////////////////////////////////////
+    const miniAct = (ele, seq, call) => {
+        // ele - 호출하는 버튼자신(this키워드값 받음)
+        // seq - 이동할 빌딩 li순번
+        // call - 이동후 콜백함수
 
         // 1. 클릭된 요소 자신 없애기
-        $(this).slideUp(300);
+        $(ele).slideUp(300);
         // slideUp(시간,이징,함수)
         // -> height값이 0되며 애니메이션
         // 애니메이션 후 display:none됨
@@ -142,7 +147,7 @@ function loadFn() {
         // 3. 이동위치정보 :
         // 이동할 빌딩 li의 위치를 알아내기
         // 이동할 li타겟 -> bd변수
-        let tg = bd.eq(8);
+        let tg = bd.eq(seq); // seq -> li순번
         // eq(순번) -> 선택요소들 중 몇번째 요소를 선택
         // eq는 seqence(순서)라는 단어에서 나온말
 
@@ -173,7 +178,8 @@ function loadFn() {
         mi.animate({
             top: tgtop + "px",
             left: tgleft + "px"
-        },800,"easeOutElastic")
+        }, 800, "easeOutElastic", call); 
+        // call -> 전달받은 콜백함수
 
         // animate({CSS설정},시간,이징,함수)
         // -> CSS 변경을 애니메이션 해주는 메서드
@@ -196,9 +202,29 @@ function loadFn() {
             -> 이징명이 틀리면 적용되지 않는다!
             (참고사이트에서 정확한 이징명을 복사해서 쓰자!)
 
-
         */
 
+    }; ///////////// miniAct 함수 //////////
+
+
+    // 3-1. "들어가기" 버튼 클릭 시작 ////////
+    btns.first().click(function () {
+
+        // 콜백함수 : 이동후 실행함수 //////
+        let callFn = () => {
+            // 1. 메시지 변경
+            msg.text("와~! 아늑하다! 옆방으로 가보자!")
+                .fadeIn(200); // 메시지 나타나기
+
+            // 2. 다음버튼 보이기
+            btns.eq(1).delay(500).slideDown(300);
+            // delay(시간)
+            // -> 애니메이션 메서드 앞에 사용!
+
+        }; /////////// callFn함수 ///////
+
+        // 공통기능함수 호출!
+        miniAct(this, 8, callFn);
 
 
     })
