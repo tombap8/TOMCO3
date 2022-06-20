@@ -173,7 +173,7 @@ function loadFn() {
         mi.animate({
             top: tgtop + "px",
             left: tgleft + "px"
-        },800,"easeOutBack")
+        },800,"easeOutElastic")
 
         // animate({CSS설정},시간,이징,함수)
         // -> CSS 변경을 애니메이션 해주는 메서드
