@@ -418,7 +418,6 @@ function loadFn() {
                                     }, 2000); //// 타임아웃 //////////
 
 
-
                                 }); /////////// animate ///////////
 
                     }); ////////////// fadeIn //////////////////////
@@ -438,13 +437,45 @@ function loadFn() {
             // 콜백함수 : 이동후 실행함수 //////
             let callFn = () => {
 
-                // this는 현재버튼요소
-                // console.log("this의미:", this);
+                // 1. 주사기 돌리기
+                // 주의: transform은 animate에서 사용불가!
+                // transform은 css로 transition으로 구현!
+                $('.inj').css({
+                    transform:"rotate(-150deg)",
+                    transition: ".5s ease-out 1s",
+                    zIndex:"9999"
+                }); /////////// css //////////
 
-                // 2. 다음버튼 보이기
-                $(this).next().delay(500).slideDown(300);
-                // delay(시간)
-                // -> 애니메이션 메서드 앞에 사용!
+                // 2. 주사놓은 후(1.5초) 다시 미니언즈2(후유증)
+                setTimeout(() => {
+                    // 2-1. 미니언즈 흑백모드 풀기
+                    mi.css({
+                        filter: "grayscale(0%)"
+                    })
+                    // 2-2. 새로운 미니언즈 이미지로 변경
+                    .find("img").attr("src","images/m2.png");
+
+                    // 2-3. 주사기 제거하기
+                    $(".inj").remove();
+                    // remove() 메서드 - 태그삭제하기
+
+                    // 3. 메시지 변경
+                    msg.text("치료완료!")
+                    .fadeIn(200)
+                    .delay(1000).fadeIn(200,()=>{
+                        msg.html("이제, 조금만 더<br>가면 탈출이닷!");
+                    }); /////// fadeIn ////////////
+                    
+                    // this는 현재버튼요소
+                    // console.log("this의미:", this);
+    
+                    // 4. 다음버튼 보이기
+                    $(this).next().delay(500).slideDown(300);
+                    // delay(시간)
+                    // -> 애니메이션 메서드 앞에 사용!
+
+                }, 1500); ////// 타임아웃 //////////
+
 
             }; /////////// callFn함수 ///////
 
