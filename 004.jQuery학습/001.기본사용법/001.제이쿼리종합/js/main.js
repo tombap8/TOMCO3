@@ -312,7 +312,7 @@ function loadFn() {
             let callFn = () => {
 
                 msg.text("여긴 없겠지?...")
-                fadeIn(200) // 메시지 나타나기
+                    .fadeIn(200) // 메시지 나타나기
                     .delay(1000)
                     .fadeOut(100, () => {
                         // 2. 메시지 다시 변경하기
