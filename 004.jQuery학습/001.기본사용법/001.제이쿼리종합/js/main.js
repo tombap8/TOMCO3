@@ -26,6 +26,10 @@ function loadFn() {
     const bd = $('.building li');
     // console.log(bd);
 
+    // 대상4 : 메시지 박스 - .msg
+    const msg = $('.msg');
+    // console.log(msg);
+
     // 삽입이미지 변수 셋팅 /////
     // 좀비 이미지 태그
     const mz1 = 
@@ -81,7 +85,9 @@ function loadFn() {
         // 2. 좀비 + 주사기 넣기
         // append(요소) - 선택요소 내부에 맨뒤추가
         if(idx===9) $(ele).append(mz1);
-
+        else if(idx===7) $(ele).append(mz2);
+        else if(idx===1) $(ele).append(zom);
+        else if(idx===2) $(ele).append(inj);
 
     }); //////// each ////////////
 
@@ -98,6 +104,28 @@ function loadFn() {
         - 전달변수는 순서와 개수가 중요함!
         - 이 메서드를 사용하면 for문을 안써도 됨!
     */
+
+    // 2-3. 모든 좀비 숨기기
+    $('.mz').hide();
+    // 선택요소가 여러개이면 for문없이 모두 셋팅됨!
+
+    /************************************* 
+        3. 버튼별 클릭 이벤트 함수 만들기
+    *************************************/
+
+    // 3-1. "들어가기" 버튼 클릭 시작 ////////
+    btns.first().click(function(){
+
+        // 1. 클릭된 요소 자신 없애기
+        $(this).slideUp(300);
+        // slideUp(시간,이징,함수)
+        // -> height값이 0되며 애니메이션
+        // 애니메이션 후 display:none됨
+        // 반대는 slideDown(시간,이징,함수)
+
+        // 2. 메시지 지우기
+    })
+    // 3-1. "들어가기" 버튼 클릭 끝 ////////
 
 
 } /////////// loadFn 함수 ///////////
