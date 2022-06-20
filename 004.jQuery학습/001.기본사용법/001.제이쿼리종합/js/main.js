@@ -576,9 +576,18 @@ function loadFn() {
                     }) //////////// animate /////////
                     // 헬기 애니메이션 이어짐!!!
                     .delay(1000) // 5. 1초 기다림
-                    .animate({
+                    .animate({ // 6. 오른쪽 끝으로 이동
                         left: "70%"
-                    },4000, "easeInOutQuart")
+                    },4000, "easeInOutQuart",
+                    function(){ // 끝으로 이동후
+                        // 7. 헬기 조종사 좀비이미지
+                        $(this).attr("src","images/heli3.png");
+                    }) /////////// animate ////////
+                    // 헬기애니 이어짐!!!
+                    // 8. 아주 천천히 화면 바깥으로 나감
+                    .animate({
+                        left: "100%"
+                    },10000,"easeInOutSine")
 
                 }); ///////////// fadeIn ///////////
 
