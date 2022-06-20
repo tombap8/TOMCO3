@@ -178,7 +178,7 @@ function loadFn() {
         mi.animate({
             top: tgtop + "px",
             left: tgleft + "px"
-        }, 800, "easeOutElastic", call); 
+        }, 800, "easeOutElastic", call);
         // call -> 전달받은 콜백함수
 
         // animate({CSS설정},시간,이징,함수)
@@ -210,43 +210,94 @@ function loadFn() {
     // 3-1. "들어가기" 버튼 클릭 시작 ////////
     btns.first().click(function () {
 
-        // 콜백함수 : 이동후 실행함수 //////
-        let callFn = () => {
-            // 1. 메시지 변경
-            msg.text("와~! 아늑하다! 옆방으로 가보자!")
-                .fadeIn(200); // 메시지 나타나기
+            // 콜백함수 : 이동후 실행함수 //////
+            let callFn = () => {
+                // 1. 메시지 변경
+                msg.text("와~! 아늑하다! 옆방으로 가보자!")
+                    .fadeIn(200); // 메시지 나타나기
 
-            // 2. 다음버튼 보이기
-            btns.eq(1).delay(500).slideDown(300);
-            // delay(시간)
-            // -> 애니메이션 메서드 앞에 사용!
+                // 2. 다음버튼 보이기
+                btns.eq(1).delay(500).slideDown(300);
+                // delay(시간)
+                // -> 애니메이션 메서드 앞에 사용!
 
-        }; /////////// callFn함수 ///////
+            }; /////////// callFn함수 ///////
 
-        // 공통기능함수 호출!
-        miniAct(this, 8, callFn);
-
-
-    })
-    // 3-1. "들어가기" 버튼 클릭 끝 ////////
+            // 공통기능함수 호출!
+            miniAct(this, 8, callFn);
 
 
-    // 앞에 세미콜론 없이 다음버튼 셋팅이 이어짐!
-    // next() 다음 버튼!
-    // 3-2. "옆방으로!" 버튼 클릭 시작 ////////
-    next().click(function () {
-
-        // 콜백함수 : 이동후 실행함수 //////
-        let callFn = () => {
-
-        }; /////////// callFn함수 ///////
-
-        // 공통기능함수 호출!
-        miniAct(this, 9, callFn);
+        })
+        // 3-1. "들어가기" 버튼 클릭 끝 ////////
 
 
-    })
-    // 3-2. "옆방으로!" 버튼 클릭 끝 ////////
+        // 앞에 세미콜론 없이 다음버튼 셋팅이 이어짐!
+        // next() 다음 버튼!
+        // 3-2. "옆방으로!" 버튼 클릭 시작 ////////
+        .next().click(function () {
+
+            // 콜백함수 : 이동후 실행함수 //////
+            let callFn = () => {
+
+                // this는 현재버튼요소
+                // console.log("this의미:", this);
+
+                // 2. 다음버튼 보이기
+                $(this).next().delay(500).slideDown(300);
+                // delay(시간)
+                // -> 애니메이션 메서드 앞에 사용!
+
+            }; /////////// callFn함수 ///////
+
+            // 공통기능함수 호출!
+            miniAct(this, 9, callFn);
+
+        })
+        // 3-2. "옆방으로!" 버튼 클릭 끝 ////////
+
+        // 3-3. "윗층으로 도망가!" 버튼 클릭 시작 ////////
+        .next().click(function () {
+
+            // 콜백함수 : 이동후 실행함수 //////
+            let callFn = () => {
+
+                // this는 현재버튼요소
+                // console.log("this의미:", this);
+
+                // 2. 다음버튼 보이기
+                $(this).next().delay(500).slideDown(300);
+                // delay(시간)
+                // -> 애니메이션 메서드 앞에 사용!
+
+            }; /////////// callFn함수 ///////
+
+            // 공통기능함수 호출!
+            miniAct(this, 7, callFn);
+
+        })
+        // 3-3. "윗층으로 도망가!" 버튼 클릭 끝 ////////
+        
+        // 3-4. "다시옆방으로!" 버튼 클릭 시작 ////////
+        .next().click(function () {
+
+            // 콜백함수 : 이동후 실행함수 //////
+            let callFn = () => {
+
+                // this는 현재버튼요소
+                // console.log("this의미:", this);
+
+                // 2. 다음버튼 보이기
+                $(this).next().delay(500).slideDown(300);
+                // delay(시간)
+                // -> 애니메이션 메서드 앞에 사용!
+
+            }; /////////// callFn함수 ///////
+
+            // 공통기능함수 호출!
+            miniAct(this, 6, callFn);
+
+        })
+    // 3-4. "다시옆방으로!" 버튼 클릭 끝 ////////
 
 
 } /////////// loadFn 함수 ///////////
