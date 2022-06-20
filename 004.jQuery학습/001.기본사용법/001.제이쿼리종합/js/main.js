@@ -346,6 +346,7 @@ function loadFn() {
 
                 // 1. 메시지 변경
                 msg.empty() // 선택요소 텍스트 지우기
+                    .delay(500)
                     .fadeIn(200, () => msg.text("무"))
                     .delay(500)
                     .fadeIn(200, () => msg.text("무."))
