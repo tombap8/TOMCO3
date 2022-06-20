@@ -42,10 +42,12 @@ function loadFn() {
     const inj =
         '<img src="images/inj.png" alt="주사기" class="inj">';
 
-    // 미니언즈 가로위치 보정값
-    // 윈도우 가로크기의 5%
-    const win5 = $(window).width() * 0.05;
-    // console.log("가로크기의 5%:", win5);
+    // 미니언즈 left 위치 보정값
+    // 빌딩 li크기의 절반 - 미니언즈크기절반
+    const addL = bd.eq(0).width()/2 - mi.width()/2;
+    // console.log("미니언즈 위치조정값:", addL);
+    // console.log("빌딩li가로:", bd.eq(0).width()/2);
+    // console.log("미니언즈가로절반:", mi.width()/2);
     // width() 가로크기, height() 세로크기
     // -> 단위없는 px 숫자값 리턴함!
 
@@ -147,7 +149,7 @@ function loadFn() {
         // 화면에서의 top값
         let tgtop = tg.offset().top;
         // 화면에서의 left값 + 미니언즈 위치보정값
-        let tgleft = tg.offset().left + win5;
+        let tgleft = tg.offset().left + addL;
 
         // console.log("top:", tgtop, "/left:", tgleft);
 
