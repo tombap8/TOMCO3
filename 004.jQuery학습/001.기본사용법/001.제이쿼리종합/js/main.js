@@ -574,6 +574,11 @@ function loadFn() {
                         // 4. 주인공 지우기(헬기에 탔으니까!)
                         mi.hide(); // display:none처리
                     }) //////////// animate /////////
+                    // 헬기 애니메이션 이어짐!!!
+                    .delay(1000) // 5. 1초 기다림
+                    .animate({
+                        left: "70%"
+                    },4000, "easeInOutQuart")
 
                 }); ///////////// fadeIn ///////////
 
