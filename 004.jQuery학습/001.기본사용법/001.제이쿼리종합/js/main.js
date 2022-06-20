@@ -491,6 +491,10 @@ function loadFn() {
             // 콜백함수 : 이동후 실행함수 //////
             let callFn = () => {
 
+                // 1. 메시지 변경
+                msg.text("이제 곧 탈출이닷!")
+                .fadeIn(200); /// 메시지 보이기
+
                 // this는 현재버튼요소
                 // console.log("this의미:", this);
 
@@ -512,6 +516,10 @@ function loadFn() {
 
             // 콜백함수 : 이동후 실행함수 //////
             let callFn = () => {
+                
+                // 1. 메시지 변경
+                msg.text("어서 헬기를 타야지!")
+                .fadeIn(200); /// 메시지 보이기
 
                 // this는 현재버튼요소
                 // console.log("this의미:", this);
@@ -534,6 +542,10 @@ function loadFn() {
 
             // 콜백함수 : 이동후 실행함수 //////
             let callFn = () => {
+                
+                // 1. 메시지 변경
+                msg.text("도와줘요~!!!")
+                .fadeIn(200); /// 메시지 보이기
 
                 // this는 현재버튼요소
                 // console.log("this의미:", this);
