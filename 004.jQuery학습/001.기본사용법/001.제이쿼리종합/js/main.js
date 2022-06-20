@@ -277,24 +277,24 @@ function loadFn() {
 
                 // 1. 메시지 변경
                 msg.text("여긴 없겠지?")
-                .fadeIn(200); // 메시지 나타나기
+                    .fadeIn(200); // 메시지 나타나기
 
                 // 2. 좀비 보이기 : 7번방
                 bd.eq(7).find(".mz")
-                .delay(500).fadeIn(500,"easeInExpo",
-                ()=>{
-                    // 3. 메시지 수정하기
-                    msg.text("악! 여기도!!!");
+                    .delay(500).fadeIn(500, "easeInExpo",
+                        () => {
+                            // 3. 메시지 수정하기
+                            msg.text("악! 여기도!!!");
 
-                    // this는 현재버튼요소
-                    // console.log("this의미:", this);
-    
-                    // 4. 다음버튼 보이기
-                    $(this).next().delay(500).slideDown(300);
-                    // delay(시간)
-                    // -> 애니메이션 메서드 앞에 사용!
-                    
-                }); ///////// fadeIn /////////////
+                            // this는 현재버튼요소
+                            // console.log("this의미:", this);
+
+                            // 4. 다음버튼 보이기
+                            $(this).next().delay(500).slideDown(300);
+                            // delay(시간)
+                            // -> 애니메이션 메서드 앞에 사용!
+
+                        }); ///////// fadeIn /////////////
 
 
             }; /////////// callFn함수 ///////
@@ -311,13 +311,23 @@ function loadFn() {
             // 콜백함수 : 이동후 실행함수 //////
             let callFn = () => {
 
-                // this는 현재버튼요소
-                // console.log("this의미:", this);
+                msg.text("여긴 없겠지?...")
+                fadeIn(200) // 메시지 나타나기
+                    .delay(1000)
+                    .fadeOut(100, () => {
+                        // 2. 메시지 다시 변경하기
+                        msg.html("그래도 무서우니까<br>윗층으로 가자!")
+                            .fadeIn(200); // 메시지 다시 나타나기
 
-                // 2. 다음버튼 보이기
-                $(this).next().delay(500).slideDown(300);
-                // delay(시간)
-                // -> 애니메이션 메서드 앞에 사용!
+                        // this는 현재버튼요소
+                        // console.log("this의미:", this);
+
+                        // 2. 다음버튼 보이기
+                        $(this).next().delay(500).slideDown(300);
+                        // delay(시간)
+                        // -> 애니메이션 메서드 앞에 사용!
+
+                    }); ///////////// fadeOut ///////////
 
             }; /////////// callFn함수 ///////
 
