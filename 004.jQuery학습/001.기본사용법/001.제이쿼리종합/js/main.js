@@ -239,13 +239,27 @@ function loadFn() {
             // 콜백함수 : 이동후 실행함수 //////
             let callFn = () => {
 
-                // this는 현재버튼요소
-                // console.log("this의미:", this);
+                // 1. 좀비등장
+                bd.eq(9).find(".mz")
+                    .delay(1000).fadeIn(400, () => {
 
-                // 2. 다음버튼 보이기
-                $(this).next().delay(500).slideDown(300);
-                // delay(시간)
-                // -> 애니메이션 메서드 앞에 사용!
+                        // 2. 메시지변경
+                        msg.html("악!;;; 좀비!<br>어서피하자!")
+                            .fadeIn(200) // 메시지 나타나기
+                            .css({
+                                left: "-133%"
+                            }); // 박스위치변경
+
+                        // this는 현재버튼요소
+                        // console.log("this의미:", this);
+
+                        // 3. 다음버튼 보이기
+                        $(this).next().delay(500).slideDown(300);
+                        // delay(시간)
+                        // -> 애니메이션 메서드 앞에 사용!
+
+                    }); ////// fadeIn //////////
+
 
             }; /////////// callFn함수 ///////
 
