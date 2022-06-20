@@ -55,8 +55,12 @@ function loadFn() {
         2. 초기화 셋팅
     ***************************/
     // 2-1. 버튼셋팅 : 모든 버튼 숨기고 첫번째만 보이기
-    btns.hide().first().show();
+    // btns.hide().first().show();
     // 버튼들.숨겨().첫번째().보여()
+
+
+    // 테스트용 버튼설정
+    btns.hide().eq(8).show();
 
     /* 
      - 제이쿼리 단순 숨김/보임 메서드
@@ -547,14 +551,33 @@ function loadFn() {
                 msg.text("도와줘요~!!!")
                 .fadeIn(200); /// 메시지 보이기
 
-                // this는 현재버튼요소
-                // console.log("this의미:", this);
+                // 2. 좀비들 최종추적!!!
+                // -> 1번방에 숨겨지 좀비들
+                // -> bd.eq(1).find(".mz")
+                bd.eq(1).find(".mz") // 좀비들(this)
+                .fadeIn(200,function(){ // 익명함수니까 주인공~!
+                    // 2-1. 좀비들 움직이기
+                    $(this) // 익명함수의 요소 좀비들자신
+                    .animate({
+                        right: $(this).parent().width()*1.3+"px"
+                    },5000,"easeInOutQuint");
+                    // parent() 선택요소의 부모요소로 올라감!
+                    // console.log("this의 부모:",$(this).parent());
 
-                // 2. 다음버튼 보이기
-                $(this).next().delay(500).slideDown(300);
-                // delay(시간)
-                // -> 애니메이션 메서드 앞에 사용!
+                    // 2-2. 헬기등장
+                    $(".heli").animate({
+                        left: "20%"
+                    },3000, "easeOutBack",
+                    function(){ // 콜백함수
+                        // 3. 주인공이 탄 이미지로 변경
+                        $(this).attr("src","images/heli2.png");
+                        // 4. 주인공 지우기(헬기에 탔으니까!)
+                        mi.hide(); // display:none처리
+                    }) //////////// animate /////////
 
+                }); ///////////// fadeIn ///////////
+
+                
             }; /////////// callFn함수 ///////
 
             // 공통기능함수 호출!
