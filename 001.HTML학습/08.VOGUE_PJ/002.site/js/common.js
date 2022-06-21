@@ -1,5 +1,11 @@
 // 보그 PJ 공통기능 JS - common.js ///////
 
+// 페이지명 변수
+let pname = location.pathname.split('/');
+// location.pathname 페이지명이 포함된 전체경로
+// split(자를문자열) -> 배열에 담는다!
+console.log("페이지이름:",pname);
+
 // 스크롤위치값 변수
 let scTop;
 // 슬림상단메뉴 대상: #top
@@ -86,7 +92,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 위치배열변수 확인
     console.log(scPos);
-
 
 }); ///////////// 로드구역 ///////////////////////
 
