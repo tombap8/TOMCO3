@@ -4,7 +4,10 @@
 let pname = location.pathname.split('/');
 // location.pathname 페이지명이 포함된 전체경로
 // split(자를문자열) -> 배열에 담는다!
-console.log("페이지이름:",pname);
+pname = pname[pname.length - 1];
+// pname[개수-1] -> 배열의 마지막 데이터
+pname = pname.split(".")[0]; // -> 페이지이름만!
+console.log("페이지이름:", pname);
 
 // 스크롤위치값 변수
 let scTop;
@@ -40,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 위로가기버튼 클릭시 -> 제이쿼리로 부드러운 이동!
     // 부드러운 스크롤 변수 pos업데이트!
-    $(".tbtn").click(()=>{
+    $(".tbtn").click(() => {
         // 제이쿼리 스크롤 애니메이션
         // animate({CSS속성변경},시간)
         $("html,body").animate({
@@ -50,14 +53,20 @@ window.addEventListener("DOMContentLoaded", () => {
         // 부드러운 스크롤 위치값 업데이트!
         pos = 0;
     }); ////////////// click /////////////
-    
 
-    // 메인 컨텐츠박스 스크롤 등장액션 클래스 적용하기
-    let contbx = document.querySelectorAll(".cont>section");
-    contbx.forEach((ele, idx) => { // ele - 요소자신, idx - 요소순번
-        if (idx !== 0) ele.classList.add("scAct");
-    }); //////// forEach ////////////
-    // for(let x of contbx) x.classList.add("scAct");
+
+    // 메인 페이지(index.html)에서만 적용!
+    if (pname === "index") {
+        
+        // 메인 컨텐츠박스 스크롤 등장액션 클래스 적용하기
+        let contbx = document.querySelectorAll(".cont>section");
+        contbx.forEach((ele, idx) => { // ele - 요소자신, idx - 요소순번
+            if (idx !== 0) ele.classList.add("scAct");
+        }); //////// forEach ////////////
+        // for(let x of contbx) x.classList.add("scAct");
+
+    } /////////////// if ////////////////////////////////
+
 
     /********************************************** 
         [ HTML 컬렉션에서 forEach() 메서드 사용하기 ]
@@ -91,7 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }); ///////// forEach ///////////
 
     // 위치배열변수 확인
-    console.log(scPos);
+    // console.log(scPos);
 
 }); ///////////// 로드구역 ///////////////////////
 
@@ -106,9 +115,9 @@ function scAction(seq) { // seq - 순번
     // 해당범위이면 해당순번의 등장요소에 class="on"
     if (scTop >= scPos[seq] - winH &&
         scTop < scPos[seq]) {
-            scAct[seq].classList.add("on");
-            // console.log("적용:",seq);
-        } ////////// if /////////////
+        scAct[seq].classList.add("on");
+        // console.log("적용:",seq);
+    } ////////// if /////////////
 
 } ////////////// scAction 함수 ///////////////////
 //////////////////////////////////////////////////
