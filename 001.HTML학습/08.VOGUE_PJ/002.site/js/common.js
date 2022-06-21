@@ -57,7 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 메인 페이지(index.html)에서만 적용!
     if (pname === "index") {
-        
+
         // 메인 컨텐츠박스 스크롤 등장액션 클래스 적용하기
         let contbx = document.querySelectorAll(".cont>section");
         contbx.forEach((ele, idx) => { // ele - 요소자신, idx - 요소순번
@@ -131,6 +131,9 @@ function scAction(seq) { // seq - 순번
     - 스크롤 이벤트값 : scrollY
 *****************************************/
 window.addEventListener('scroll', () => {
+
+    // 로그인, 회원가입 페이지는 스크롤셋팅 안함!
+    if (pname === "login" || pname === "member") return;
 
     // 스크롤 위치표시
     scTop = this.scrollY;

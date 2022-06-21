@@ -167,6 +167,10 @@ font-family: 'Roboto Condensed', sans-serif;
   /* 박스크기유지 - 패딩포함 */
   box-sizing: border-box;
 }
+/* 컨텐츠 타이틀 작은글자 */
+.cbx h2 small{
+  font-size: 14px;
+}
 
 
 /* 배경이미지 공통 class */
