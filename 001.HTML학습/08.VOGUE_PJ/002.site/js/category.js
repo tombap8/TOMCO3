@@ -116,4 +116,7 @@ let pm = location.href;
 // 물음표(?)로 잘라서 뒤엣것 -> [1]
 // 이퀄(=)로 잘라서 뒤엣것 -> [1]
 pm = pm.split('?')[1].split('=')[1];
-console.log(pm);
+console.log(decodeURIComponent(pm));
+// 특수문자가 있으므로 (time & gem) 이것을 보낼때
+// encodeURIComponent()로 변환하여 보내고 
+// 받는 곳에서는 decodeURIComponent()로 복원함

@@ -20,11 +20,15 @@ $(()=>{ //////////// jQB ////////////////////
 
         // 서브페이지 이동하기
         if(txt!=="search")
-            location.href = "category.html?cat="+txt;
+            location.href = "category.html?cat="+
+            encodeURIComponent(txt);
         // 카테고리를 구분하기위한 파라미터 키=값 쌍을 보냄
         // cat=카테고리명
         // 이것을 받아서 페이지 셋업을 한다!
         // 이렇게 데이터를 url로 전달하는 방식을 GET방식이라고 함!
+        // 특수문자가 있으므로 (time & gem) 이것을 보낼때
+        // encodeURIComponent()로 변환하여 보내고 
+        // 받는 곳에서는 decodeURIComponent()로 복원함
 
         // a요소 기본이동막기
         // (JS 기본방법 - 하단에 코딩)
