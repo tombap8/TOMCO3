@@ -7,6 +7,7 @@
     <script src="cat.json"></script>
     <!-- 제이슨파일은 변수에 할당된 형태여야한다! -->
     <script>
+        // 2. 변수에 제이슨을 파싱하여 할당한다
         let myjson = JSON.parse(JSON.stringify(jsdata));
 
         // JSON.parse() - 제이슨 데이터를 파싱한다
@@ -18,6 +19,7 @@
         // 할당한 바로 그 변수명이다! 제이슨 파일 자체에서는
         // 에러라고 인식하지만 가능하다!
 
+        // 3. 원하는대로 객체호출 형식으로 사용한다!
         console.log(myjson);
         console.log(myjson["fashion"]);
         console.log(myjson["fashion"]["제목"]);
