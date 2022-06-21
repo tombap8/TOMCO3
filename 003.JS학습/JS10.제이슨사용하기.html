@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>JS10.제이슨 사용하기</title>
+    <!-- 1. 먼저 제이슨 파일을 불러온다 -->
     <script src="cat.json"></script>
+    <!-- 제이슨파일은 변수에 할당된 형태여야한다! -->
     <script>
-        let myjson = JSON.parse(jsdata);
+        let myjson = JSON.parse(JSON.stringify(jsdata));
+
+        // JSON.parse() - 제이슨 데이터를 파싱한다
+        // 파싱이란? 문자열데이터를 분석하고 분해하여 
+        // 목적한 패턴에 맞게 문자열구조를 결정하는것!
+
+        // JSON.stringify() - 제이슨 형식 데이터를 문자열로 나타냄
+        // 여기서 jsdata라는 변수명은 제이슨파일에서 변수에
+        // 할당한 바로 그 변수명이다! 제이슨 파일 자체에서는
+        // 에러라고 인식하지만 가능하다!
+
         console.log(myjson);
+        console.log(myjson["fashion"]);
+        console.log(myjson["fashion"]["제목"]);
     </script>
 </head>
 <body>
