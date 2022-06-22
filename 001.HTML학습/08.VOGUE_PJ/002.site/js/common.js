@@ -188,16 +188,16 @@ window.addEventListener("DOMContentLoaded", () => {
     /////////////////////////////////////////
     // 햄버거 버튼 클릭시 모바일 메뉴 보이기 //
     // 대상: 이벤트 대상 - .hbtn, 변경대상 - #mobx
-    $(".hbtn").click(()=>{
-        $("#mobx").slideToggle(400,"easeInCirc");
+    $(".hbtn").click(() => {
+        $("#mobx").slideToggle(400, "easeInCirc");
         // slideToggle()은 slideDown/slideUp전환
     }); ///////////// click /////////////
 
     /////////////////////////////////////////
     // 검색 버튼 클릭시 검색박스 보이기 //
     // 대상: 이벤트 대상 - .sbtn, 변경대상 - .mos
-    $(".sbtn").click(()=>{
-        $(".mos").slideToggle(200,"easeInOutCubic");
+    $(".sbtn").click(() => {
+        $(".mos").slideToggle(200, "easeInOutCubic");
         // slideToggle()은 slideDown/slideUp전환
     }); ///////////// click /////////////
 
@@ -231,8 +231,10 @@ function scAction(seq) { // seq - 순번
 *****************************************/
 window.addEventListener('scroll', () => {
 
-    // 로그인, 회원가입 페이지는 스크롤셋팅 안함!
-    if (pname === "login" || pname === "member") return;
+    // 로그인, 회원가입, 갤러리 페이지는 스크롤셋팅 안함!
+    if (pname === "login" ||
+        pname === "member" ||
+        pname === "gallery") return;
 
     // 스크롤 위치표시
     scTop = this.scrollY;

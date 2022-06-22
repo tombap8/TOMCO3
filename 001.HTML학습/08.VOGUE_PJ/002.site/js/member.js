@@ -371,7 +371,7 @@ $(() => { /////////////// jQB /////////////////////
             // DB에 입력완료시 위의 메시지를 띄워준다!
 
             // 로그인 페이지로 이동!
-            // location.replace("login.html");
+            location.replace("login.html");
             // location.href = "login.html";
             /* 
                 회원가입 후 이전페이지로 못가도록
