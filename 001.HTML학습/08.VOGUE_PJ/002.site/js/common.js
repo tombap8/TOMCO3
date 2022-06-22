@@ -25,6 +25,9 @@ const winH = window.innerHeight / 3 * 2
 ///////////////// 로드구역 ////////////////////////
 window.addEventListener("DOMContentLoaded", () => {
 
+    // 로그인, 회원가입, 갤러리 html 메뉴코드 넣기
+    let hcode = ``;
+
     // 부드러운 스크롤 호출!
     startSS();
 
