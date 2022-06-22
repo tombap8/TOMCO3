@@ -185,6 +185,22 @@ window.addEventListener("DOMContentLoaded", () => {
     // 위치배열변수 확인
     // console.log(scPos);
 
+    /////////////////////////////////////////
+    // 햄버거 버튼 클릭시 모바일 메뉴 보이기 //
+    // 대상: 이벤트 대상 - .hbtn, 변경대상 - #mobx
+    $(".hbtn").click(()=>{
+        $("#mobx").slideToggle(400,"easeInCirc");
+        // slideToggle()은 slideDown/slideUp전환
+    }); ///////////// click /////////////
+
+    /////////////////////////////////////////
+    // 검색 버튼 클릭시 검색박스 보이기 //
+    // 대상: 이벤트 대상 - .sbtn, 변경대상 - .mos
+    $(".sbtn").click(()=>{
+        $(".mos").slideToggle(200,"easeInOutCubic");
+        // slideToggle()은 slideDown/slideUp전환
+    }); ///////////// click /////////////
+
 }); ///////////// 로드구역 ///////////////////////
 
 /************************************************* 

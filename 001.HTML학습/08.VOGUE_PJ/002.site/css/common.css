@@ -312,7 +312,12 @@
     padding-left: 15px;
     padding-top: 6px;
     padding-bottom: 30px;
-    background-color: #fff;
+    background-color: #fff; 
+
+    /* 스크롤 생기게 셋팅함! */  
+    height: calc(100vh - 54px);
+    overflow: auto;
+    
     display: none;/* 처음에 안보임 */
 }
 /* 1.5-1.모바일 GNb */
