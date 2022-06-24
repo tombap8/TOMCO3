@@ -13,20 +13,97 @@
             console.log("로딩완료!");
 
             // 1. 텍스트 바인딩 ////////////////
-           
-            // 2. 반복 렌더링 /////////////////////
+            new Vue({
+                el:"#app1",
+                // el - 요소를 선택 셋팅함(element)
+                data:{ // 속성명(변수명)은 내맘대로~!
+                    iam:"나는 프론트엔드 개발자다!",
+                    yo:"요"
+                }
+                // data - 선택요소 내부에서 사용할 데이터셋팅
+            }); ////////// Vue ////////////////
             
+
+            // 2. 반복 렌더링 /////////////////////
+            new Vue({
+                el:"#app2",
+                data: {
+                    menList: ["김수현","공유","송강","서강준"]
+                }
+            }); ////////////// Vue ////////////////
+           
             
 
             // 3. 이벤트 사용하기 /////////////////////
-            
+            new Vue({
+                el:"#app3",
+                methods:{
+                    myClick: function(e){
+                        console.log("마이클릭!");
+                        // 함수 전달변수 e
+                        // 함수 호출시 아무것도 안보내고
+                        // 변수를 하나만쓰면 이것이 이벤트
+                        // 전달변수다!
+                        // e.target 은 호출한 요소자신!
+                        e.target.innerText = "놀랐지?";
+                        e.target.style.fontSize = "60px";
+                        e.target.style.transition = "2s";
+
+                        // 4초후에 새로운 요소 추가하기
+                        setTimeout(()=>{
+                            this.$el.innerHTML +=
+                            '<div id="my">하하하</div>';
+                        },4000);
+                        /* 
+                            Vue 의 methods 속성 내부의 함수에서 this는?
+                            this는 Vue로 생성된 인스턴스 자신을 말한다!
+                            (인스턴스: instance란? new 키워드로 생성된 메모리상의 객체를 말한다!)
+                            하위 속성 선택요소인 element를 선택하려면 $el 이라고 표현한다!
+                            -> 여기서는 선택된 부모요소인 "#app3"를 말함
+                            ______________________________
+
+                            [ 인스턴스 속성 : Instance Properties ]
+                            - $el : Vue 인스턴스가 관리하는 컴포넌트 인스턴스인 루트 DOM요소
+                            - $data : 컴포넌트 인스턴스의 데이터 객체
+                        */
+                    }, //// myClick //////
+                    myOver:function(){
+                        // 함수 전달변수 e를 쓰지 않아도
+                        // event라는 키워드는 이벤트전달값을 셋팅함!
+                        // event.target 으로 쓰면 이 함수를 호출한 이벤트가 발생한 요소자신이 된다!
+                        event.target.innerText="오버하지마!";
+                        // 나를 불러줘 div#call에 글자바꾸기
+                        this.$el.querySelector("#call")
+                        .innerText = "지금 너를 불렀어!!!";
+
+                    }, ////// myOver /////////
+                    myClick2: function(txt){
+                        // txt는 함수호출시 전달값 받는 변수
+                        event.target.innerText = 
+                        `내가 ${txt}야!`;
+
+                    } ///////// myClick2 ///////
+                }
+                // methods 속성은 함수기능을 구현하여 할당함
+            }); /////////// Vue /////////////////////
             
 
             // 4. 입력 양식과 동기화하기 /////////
-           
+            new Vue({
+                el:"#app4",
+                data:{
+                    msg: "여기에 입력해봐~!"
+                }
+            }); ////////////// Vue //////////////
 
             // 5. 조건분기 ///////////////
-            
+            new Vue({
+                el:"#app5",
+                data:{
+                    show: true
+                }
+            }); //////////// Vue ///////////////
+           
             
 
         }); ///////////// 로딩구역 ///////////////////
@@ -41,27 +118,91 @@
     <hr>
 
     <h2>1. 텍스트 바인딩(binding->데이터넣기!)</h2>
-    <div id="app1"></div>
+    <div id="app1">
+        <p>{{iam}}</p>
+        <p>세상은{{yo}} 너희가{{yo}} 아는바{{yo}} 그 세상이{{yo}} 아니란다!{{yo}}</p>
+        <!-- 
+            {{}} 중복중괄호는 콧수염 표시자(Mustasch)
+            이 부분에 뷰JS의 data속성 변수의 값이 표시되는 자리다!
+         -->
+    </div>
 
     <hr>
 
     <h2>2. 반복 렌더링</h2>
-    <div id="app2"></div>
+    <div id="app2">
+        <ol>
+            <li v-for="man in menList">{{man}}</li>
+            <!-- 
+                v-for는 뷰JS에서 사용하는 반복구문 속성
+                반복할 요소에 직접 사용함
+                ____________________________________
+
+                * 값구성: 변수명 in 뷰data속성명
+                * 해석: 뷰data 속성명에 할당된 배열 데이터
+                만큼 돌아서 내가 지정한 변수에 하나씩 담긴다!
+                _____________________________________
+
+                'v-' 라고 표현된 방법을 '디렉티브'라고함
+                (directive 는 지시,명령의 단어임)
+             -->
+        </ol>
+    </div>
 
     <hr>
 
     <h2>3. 이벤트 사용하기</h2>
-    <div id="app3"></div>
+    <div id="app3">
+       <!-- <button v-on:click="myClick">Click</button> -->
+       <button @click="myClick">Click</button>
+       <button @mouseover="myOver" @click="myClick2('후계자')">오버해봐!</button>
+       <div id="call">나를 불러줘!</div>
+       <!-- 
+           v-on:이벤트명 (v-on:을 줄여서 @)
+           이벤트와 함수를 연결해주는 뷰JS 속성
+           값은 내가 만든 methods 안의 함수명을 써준다!
+        -->
+    </div>
 
     <hr>
 
     <h2>4. 입력 양식과 동기화하기</h2>
-    <div id="app4"></div>
+    <div id="app4">
+      <input v-model="msg">
+      <p>{{msg}}</p>
+      <!-- 
+        v-model 속성은 요소 자신의 값이 타겟 값으로 반영되게함
+        변경데이터와 뷰JS의 동기화기능!
+
+       -->
+    </div>
 
     <hr>
 
     <h2>5. 조건분기</h2>
-    <div id="app5"></div>
+    <div id="app5">
+       <button v-on:click="show=!show">변경하기</button>
+       <!-- 
+        v-on:click="값" -> 값으로 함수를 호출하면 함수가 실행
+        값으로 JS명령문을 쓰면 그것이 실행됨!
+        여기서는 show변수값을 Not연산자(!)를 이용하여
+        true이면 false, false이면 true로 변경하는 코드를 실행함
+        -->
+       <p v-if="show">나는 프론트엔드 개발자다!</p>
+       <!-- 
+           v-if 속성은 조건에 따라 결과를 다르게 해주는 기능
+           값에 show를 쓴것은 이 값이 true일때 해당요소를 보이게함
+           false이면 요소 자체의 태그를 출력하지 않음
+           (가상돔에서 태그를 지워서 출력되지 않는다!)
+           __________________________________________
+
+           가상돔에 먼저 반영하는 의미는?
+            여러개의 변경사항이 있을 경우 모두 가상돔에 
+            먼저 반영후 실제 DOM에 한꺼번에 단 한번만
+            반영하여 리소스 낭비를 줄이고 랜더링 속도도
+            향상시킨다!
+        -->
+    </div>
 
 
     

@@ -37,7 +37,45 @@
             console.log("로딩완료!");
 
             //// 데이터 바인딩을 위한 Vue인스턴스 생성하기 ///
-            
+            new Vue({
+                el:"#app",
+                data:{
+                    vals:[] // json 데이터를 담을 변수
+                    // 왜 배열이지? 가져올 json이 배열이면 배열로! 만약 객체면 객체형식으로 셋팅
+                    // vals:{}
+                }, ///// data /////
+                // mounted 속성: Vue 인스턴스가 메모리에 읽혀지면 실행하는 함수구역
+                // mounted는 '읽어들여진'의 뜻
+                mounted: function(){
+                    // 외부파일을 가져오기 위해 axios 라이브러리를 사용함!
+                    // 당연히 상단에 라이브러리가 있아야함!
+                    axios // 엑시오스 객체
+                    .get("test.json")
+                    .then(res=>this.vals = res);
+                    // .then((res)=>{this.vals = res});
+
+                    /* 
+                        axios.get(제이슨파일)
+                        .then(내부로값전달)
+                        __________________________
+
+                        res => this.vals = res
+
+                        해석: 제이슨에서 가져온 파일 내용을
+                        res변수로 함수 내부에 전달하여
+                        이 값을 Vue JS에 셋팅된 데이터변수
+                        vals에 집어 넣어라!
+
+                        this.vals는 Vue 인스턴스 내부의 데이터 변수임!
+                    */
+
+
+
+
+                } ////// mounted //////////////
+
+            }); //////////// Vue /////////////////
+
            
 
        }); //////////////// 로딩구역 /////////////////////////
@@ -49,6 +87,24 @@
 </head>
 <body>
     <h1>Vue JS 데이터 바인딩 연습</h1>
-    <div id="app"></div>
+    <div id="app">
+        <ul>
+            <li v-for="(v,i) in vals.data">
+                순번 : {{i}} <br>
+                no 데이터 : {{v.no}} <br>
+                title 데이터 : {{v.title}}
+            </li>
+        </ul>
+        <!-- 
+            v-for 디렉티브로 데이터 만큼 반복시킨다!
+            - 값 : (v,i) in vals.data
+            - 해석 : vals.data 는 위에서 셋팅된 제이슨 데이터
+                    변수명.data -> data는 정해진것!
+                    (v,i) 변수명은 자기맘대로~~~!
+                    첫번째 전달변수는 데이터값
+                    두번째 전달변수는 순번(0부터!)
+         -->
+        
+    </div>
 </body>
 </html>
