@@ -1,32 +1,279 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>아카이브 페이지</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>당신의 아카이브 : TOM</h1>
-        <h2>
-            <a href="#" target="_blank">김민지</a>
-        </h2>
-        <h2>
-            <a href="https://0happiness0.github.io/GITA_FED222/" target="_blank">김아영</a>
-        </h2>
-        <h2>
-            <a href="https://github.com/hniniik/KHN_PJ2022" target="_blank">김해니</a>
-        </h2>
-        <h2>
-            <a href="https://github.com/sn1091/PJ2_2022" target="_blank">박세나 PJ</a>
-        </h2>
-        <h2>
-            <a href="https://github.com/toreetutu/toree_PJ" target="_blank">선우현</a>
-        </h2>
-        <h2>
-            <a href="https://hyundong10082.github.io/MyArchivePage/" target="_blank">신현동</a>
-        </h2>
-        <h2>
-            <a href="https://github.com/oulico/GITA_FE-Projects_LJH" target="_blank">이정현 PJ</a>
-        </h2>
-  
-    </body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프론트엔드 2회차 보충수업</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&display=swap');
+
+        /*             
+                font-family: 'Black And White Picture', sans-serif;
+                font-family: 'Gugi', sans-serif;
+            */
+
+        html,
+        body,
+        h1,
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        body {
+            background: url(./imgs/worksbg.jpg) no-repeat fixed center/cover;
+        }
+
+        /* 초기화 */
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        .wrap {
+            width: 1200px;
+            max-width: 85%;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            padding: 15px;
+            white-space: nowrap;
+        }
+
+        .tit {
+            text-align: center;
+        }
+
+        .tit img {
+            max-width: 80%;
+            /* 이미지 크기의 80%보다 작아질때 최대 80%크기유지!
+            이 사이즈 보다 크면 원래 이미지 사이즈를 유지함! */
+        }
+
+        /* 프로젝트 박스 */
+        .pbx {
+            display: flex;
+            /* 자식 블록요소를 옆으로 흐르게함! */
+        }
+
+        .pbx>div {
+            position: relative;
+            flex: 1;
+            /* 부모가 flex인 자식을 등분할시 설정값은 1 */
+            padding: 10px;
+        }
+
+        .pbx h2 {
+            font-family: 'Gugi', sans-serif;
+            color: #fff;
+            font-weight: normal;
+            text-shadow: 2px 2px 2px #000;
+            font-size: 3rem;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Gugi', sans-serif;
+            color: #00f;
+            font-weight: normal;
+            text-shadow: 2px 2px 2px #000;
+            font-size: 3rem;
+            text-align: center;
+            padding-bottom: 4vh;
+        }
+
+        .pbx ul {
+            padding-top: 50px;
+        }
+
+        .pbx ul li {
+            padding-left: 5rem;
+        }
+
+        .pbx>div+div::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 70%;
+            top: 20%;
+            left: 10%;
+            border-left: 4px dotted rgb(204, 133, 0);
+
+        }
+
+        .pbx a {
+            font-family: 'Black And White Picture', sans-serif;
+            font-size: 2rem;
+            line-height: 2;
+        }
+
+        .pbx a:hover {
+            color: rgb(251, 123, 48);
+            text-decoration: overline;
+        }
+
+        /* 미디어쿼리 - 1000px이하 */
+        @media screen and (max-width:1000px) {
+
+            .pbx {
+                flex-direction: column;
+                /* 레이아웃 진행방향 세로! */
+                text-align: center;
+            }
+
+            .pbx>div+div::before {
+                width: 60%;
+                height: 1px;
+                top: -10px;
+                left: 20%;
+                border-left: none;
+                border-bottom: 4px dotted rgb(204, 133, 0);
+
+
+            }
+
+            .pbx>div:last-child {
+                margin-top: 50px;
+            }
+
+            .pbx ul li {
+                padding-left: 0;
+            }
+
+            .pbx a {
+                font-size: 7vmin;
+            }
+
+            .pbx h2 {
+                font-size: 8vmin;
+            }
+        }
+
+        /* 1000px이하 */
+    </style>
+</head>
+<body><div class="wrap">
+    <h1 class="tit">
+        <img src="imgs/mylogo_14.png" alt="아카이브로고">
+        <br>
+        프론트엔드 2회차 보충수업
+    </h1>
+
+    <div class="pbx">
+        <!-- 공통프로젝트 -->
+        <div>
+            <h2>Vue JS 보충강의</h2>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=gbXub4xH9wU" target="_blank">
+                        뷰JS : 1편 - 기초연습
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=6aODVHP6cWo" target="_blank">
+                        뷰JS : 2편 - 데이터 바인딩
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=DwlmgMiRpQo" target="_blank">
+                        뷰JS : 3편 - 응용연습
+                    </a>
+                </li>
+                <li>
+                    <a href="001.HTML학습/02.Drama_PJ/drama1.html" target="_blank">
+                        풀소스 다운로드
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- CSS문법사항 -->
+        <div>
+            <h2>CSS문법사항</h2>
+            <ul>
+                <li>
+                    <a href="002.CSS학습/001.배경연습.html" target="_blank">
+                        001.배경연습.html
+                    </a>
+                </li>
+                <li>
+                    <a href="002.CSS학습/002.블록과인라인.html" target="_blank">
+                        002.블록과인라인
+                    </a>
+                </li>
+                <li>
+                    <a href="002.CSS학습/003.블록플롯.html" target="_blank">
+                        003.블록플롯
+                    </a>
+                </li>
+                <li>
+                    <a href="002.CSS학습/004.가상클래스.html" target="_blank">
+                        004.가상클래스
+                    </a>
+                </li>
+                <li>
+                    <a href="002.CSS학습/005.가상요소.html" target="_blank">
+                        005.가상요소
+                    </a>
+                </li>
+                <li>
+                    <a href="002.CSS학습/006.블록가로크기.html" target="_blank">
+                        006.블록가로크기
+                    </a>
+                </li>
+                <li>
+                    <a href="002.CSS학습/007.블록세로크기.html" target="_blank">
+                        007.블록세로크기
+                    </a>
+                </li>
+                <li>
+                    <a href="002.CSS학습/008.트랜지션.html" target="_blank">
+                        008.트랜지션
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- JS문법사항 -->
+        <div>
+            <h2>JS문법사항</h2>
+            <ul>
+                <li>
+                    <a href="003.JS학습/JS1.기본사용법.html" target="_blank">
+                        JS1.기본사용법
+                    </a>
+                </li>
+                <li>
+                    <a href="003.JS학습/JS2-1.변수와연산자.html" target="_blank">
+                        JS2-1.변수와 연산자
+                    </a>
+                </li>
+                <li>
+                    <a href="003.JS학습/JS3-1.제어문.html" target="_blank">
+                        JS3-1.제어문
+                    </a>
+                </li>
+                <li>
+                    <a href="003.JS학습/JS4-1.배열과객체.html" target="_blank">
+                        JS4-1.배열과 객체
+                    </a>
+                </li>
+                <li>
+                    <a href="003.JS학습/JS5-1.함수.html" target="_blank">
+                        JS5-1.함수
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div></body>
 </html>
