@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid2 - Layout1</title>
+    <title>Grid2 - Layout2</title>
     <style>
         /************************************ 
             [ CSS에서 변수사용하기! ]
@@ -28,6 +28,7 @@
             --ht1: 200px;
             --ht2: 400px;
             --ht3: 300px;
+            --ht4: 350px;
             /* 영역별배경색 */
             --bc1: lightskyblue;
             --bc2: lightgreen;
@@ -48,7 +49,7 @@
             /* 가로방향 12그리드 셋팅 */
             grid-template-columns: repeat(12, 1fr);
             /* 세로방향 높이값 셋팅 */
-            grid-template-rows: var(--ht1) var(--ht2) var(--ht3);
+            grid-template-rows: var(--ht1) var(--ht2) var(--ht3) var(--ht4);
             /* 상하갭 */
             grid-row-gap: 10px;
             /* 좌우갭 */
@@ -103,31 +104,50 @@
         /* 3.상단 사이드 */
         .side {
             grid-column: 10 / 13;
+            grid-row: 1 / 3;
+            /* 
+                grid-row 를 설정하면 기존 한줄을
+                차지하던 설정이 변경된다!
+                세로방향의 영역을 설정함!
+            */
+            line-height: calc(var(--ht1) + var(--ht2));
+            /* 줄간격 계산
+            calc(높이변수1 + 높이변수2) */
         }
 
         /* 4.배너 */
         .ban {
-            grid-column: 1 / 11;
+            grid-column: 1 / 10;
+            /* 두번째 칸에 들어갈 수 있게 가로방향
+            영역을 조정하면 두번째줄에 표현됨! */
         }
 
         /* 5.배너 사이드 */
         .bnside {
-            grid-column: 11 / 13;
+            grid-column: 4 / 13;
+            /* 세번째줄에 내려가 있는 곳에서
+            가로방향 영역 조정 */
+            line-height: var(--ht3);
         }
 
         /* 6.하단 좌측 */
         .bleft {
             grid-column: 1 / 4;
+            grid-row: 3 / 4;
+            /* 세로방향 3번째 줄로 위치이동됨! */
         }
 
         /* 7.하단정보 */
         .binfo {
-            grid-column: 4 / 10;
+            grid-column: 1 / 10;
+            /* 마지막줄 가로방향 조정 */
+            line-height: var(--ht4);
         }
 
         /* 8.하단 우측 */
         .bright {
             grid-column: 10 / 13;
+            line-height: var(--ht4);
         }
 
         /* 
@@ -149,65 +169,11 @@
             
         */
 
-
-        /* 800px이하 미디어쿼리 */
-        @media screen and (max-width:800px) {
-
-            /* 숨길요소: .side,.bnside,.bleft */
-            .side,
-            .bnside,
-            .bleft {
-                display: none;
-            }
-
-            /* 높이값 변경은 변수값만 변경하면 된다! */
-            :root {
-                --ht1: 100px;
-                --ht2: 300px;
-                --ht3: 200px;
-            }
-
-            /* 1.로고 */
-            .logo {
-                grid-column: 1 / 5;
-            }
-
-            /* 2.GNB */
-            .gnb {
-                grid-column: 5 / 13;
-            }
-
-            /* 4.배너 */
-            .ban {
-                grid-column: 1 / 13;
-            }
-
-            /* 7.하단정보 */
-            .binfo {
-                grid-column: 1 / 9;
-            }
-
-            /* 8.하단 우측 */
-            .bright {
-                grid-column: 9 / 13;
-            }
-        }
-
-        /* 800px이하 */
-
-        /*  600px이하 */
-        @media screen and (max-width:600px) {
-            .grid>div{
-                grid-column: 1 / 13;
-                /* 모두 한줄에 하나씩! */
-            }
-        }
-        /* 600px이하 */
     </style>
 </head>
 
 <body>
-    <h1 class="tit">그리드2 - 사이트 레이아웃1</h1>
+    <h1 class="tit">그리드2 - 사이트 레이아웃2</h1>
     <div class="grid">
         <!-- 상단부분 -->
         <div class="logo rw1">Logo</div>
